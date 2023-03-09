@@ -1,0 +1,25 @@
+{
+    "modes": [ "Y" ], "cases": [
+        {
+            "name": "default",
+            "inputs": [
+                {
+                    "instance": "Main",
+                    "method": "main",
+                    "calldata": [
+                        "TestContract.address"
+                    ]
+                }
+            ],
+            "expected": [
+                "Main.address",
+                "TestContract.address"
+            ]
+        }
+    ],
+    "contracts": {
+        "Main": "Main.sol:Main",
+        "TestContract": "TestContract.sol:TestContract"
+    },
+    "system_mode": true
+}

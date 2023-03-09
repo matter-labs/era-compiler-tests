@@ -1,0 +1,27 @@
+{
+    "modes": [ "Y" ], "cases": [
+        {
+            "name": "default",
+            "inputs": [
+                {
+                    "instance": "First",
+                    "method": "main",
+                    "calldata": [
+                        "Second.address",
+                        "Third.address"
+                    ]
+                }
+            ],
+            "expected": [
+                "Second.address",
+                "Third.address"
+            ]
+        }
+    ],
+    "contracts": {
+        "First": "First.sol:First",
+        "Second": "Second.sol:Second",
+        "Third": "Third.sol:Third"
+    },
+    "system_mode": true
+}

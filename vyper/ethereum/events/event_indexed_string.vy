@@ -1,0 +1,24 @@
+x: String[100]
+y: uint256[4]
+
+event E:
+    r: indexed(String[100])
+    t: indexed(uint256[4])
+
+@external
+def deposit():
+    self.x = "\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F\x20\x21\x22\x23\x24\x25\x26\x27\x28\x29\x2A\x2B\x2C\x2D\x2E\x2F\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x3A\x3B\x3C\x3D\x3E\x3F\x40\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4A\x4B\x4C\x4D\x4E\x4F\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59"
+    self.y[0] = 4
+    self.y[1] = 5
+    self.y[2] = 6
+    self.y[3] = 7
+    log E(self.x, self.y)
+    
+# ====
+# compileViaYul: also
+# ----
+# deposit() ->
+# ~ emit E(string,uint256[4]): #0xa7fb06bb999a5eb9aff9e0779953f4e1e4ce58044936c2f51c7fb879b85c08bd, #0xe755d8cc1a8cde16a2a31160dcd8017ac32d7e2f13215b29a23cdae40a78aa81
+# gas irOptimized: 343396
+# gas legacy: 390742
+# gas legacyOptimized: 376774

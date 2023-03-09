@@ -1,0 +1,1446 @@
+---
+enabled: true
+entries:
+  abiencodedecode:
+    enabled: true
+    entries:
+      abi_encode_call_is_consistent.vy:
+        enabled: true
+      abi_encode_call_special_args.vy:
+        enabled: true
+      abi_encode_call_uint_bytes.vy:
+        enabled: true
+      abi_encode_empty_string_v1.vy:
+        enabled: true
+      abi_encode_with_selector.vy:
+        enabled: true
+      abi_encode_with_selectorv2.vy:
+        enabled: true
+      abi_encode_with_signature.vy:
+        enabled: true
+      abi_encode_with_signaturev2.vy:
+        enabled: true
+  abiEncoderV1:
+    enabled: true
+    entries:
+      abi_decode_fixed_arrays.vy:
+        enabled: true
+      abi_encode.vy:
+        enabled: true
+      abi_encode_call.vy:
+        enabled: true
+      abi_encode_calldata_slice.vy:
+        enabled: true
+      abi_encode_empty_string.vy:
+        enabled: true
+      abi_encode_rational.vy:
+        enabled: true
+      byte_arrays.vy:
+        enabled: true
+      calldata_arrays_too_large.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      dynamic_arrays.vy:
+        enabled: true
+      memory_params_in_external_function.vy:
+        enabled: true
+      return_dynamic_types_cross_call_advanced.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      return_dynamic_types_cross_call_simple.vy:
+        enabled: true
+      struct:
+        enabled: true
+        entries:
+          struct_storage_ptr.vy:
+            enabled: false
+            comment: "https://github.com/vyperlang/vyper/issues/2145"
+  abiEncoderV2:
+    enabled: true
+    entries:
+      abi_encode_calldata_slice.vy:
+        enabled: true
+      abi_encode_empty_string_v2.vy:
+        enabled: true
+      abi_encode_rational_v2.vy:
+        enabled: true
+      abi_encode_v2.vy:
+        enabled: true
+      bool_out_of_bounds.vy:
+        enabled: true
+      byte_arrays.vy:
+        enabled: true
+      calldata_array.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_dynamic.vy:
+        enabled: true
+      calldata_array_dynamic_index_access.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_dynamic_static_dynamic.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_dynamic_static_short_decode.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_dynamic_static_short_reencode.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_multi_dynamic.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_short_no_revert_string.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      calldata_array_static.vy:
+        enabled: true
+      calldata_array_static_dynamic_static.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_static_index_access.vy:
+        enabled: true
+      calldata_array_struct_dynamic.vy:
+        enabled: true
+      calldata_array_two_dynamic.vy:
+        enabled: true
+      calldata_array_two_static.vy:
+        enabled: true
+      calldata_nested_array_reencode.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      calldata_nested_array_static_reencode.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_struct_dynamic.vy:
+        enabled: true
+      calldata_struct_member_offset.vy:
+        enabled: true
+      calldata_struct_simple.vy:
+        enabled: true
+      cleanup:
+        enabled: true
+        entries:
+          address.vy:
+            enabled: true
+          bool.vy:
+            enabled: true
+          bytesx.vy:
+            enabled: true
+          cleanup.vy:
+            enabled: true
+          dynamic_array.vy:
+            enabled: true
+          intx.vy:
+            enabled: true
+          simple_struct.vy:
+            enabled: true
+          static_array.vy:
+            enabled: true
+          uintx.vy:
+            enabled: true
+      dynamic_arrays.vy:
+        enabled: true
+      dynamic_nested_arrays.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      memory_params_in_external_function.vy:
+        enabled: true
+      storage_array_encoding.vy:
+        enabled: true
+      struct:
+        enabled: true
+        entries:
+          mediocre2_struct.vy:
+            enabled: true
+          mediocre_struct.vy:
+            enabled: true
+          struct_short.vy:
+            enabled: true
+          struct_simple.vy:
+            enabled: true
+          struct_validation.vy:
+            enabled: true
+  accessor:
+    enabled: true
+    entries:
+      accessor_for_state_variable.vy:
+        enabled: true
+  arithmetics:
+    enabled: true
+    entries:
+      addmod_mulmod.vy:
+        enabled: true
+      addmod_mulmod_zero.vy:
+        enabled: true
+      checked_add_v2.vy:
+        enabled: true
+      divisiod_by_zero.vy:
+        enabled: true
+      signed_mod.vy:
+        enabled: true
+  array:
+    enabled: true
+    entries:
+      arrays_complex_from_and_to_storage.vy:
+        enabled: true
+      byte_array_transitional_2.vy:
+        enabled: true
+      bytes_length_member.vy:
+        enabled: true
+      bytes_to_fixed_bytes_cleanup.vy:
+        enabled: true
+      bytes_to_fixed_bytes_simple.vy:
+        enabled: true
+      bytes_to_fixed_bytes_too_long.vy:
+        enabled: true
+      calldata_array.vy:
+        enabled: true
+      calldata_array_as_argument_internal_function.vy:
+        enabled: true
+      calldata_array_dynamic_invalid.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      calldata_array_dynamic_invalid_static_middle.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_of_struct.vy:
+        enabled: true
+      calldata_array_two_dimensional.vy:
+        enabled: true
+      calldata_array_two_dimensional_1.vy:
+        enabled: true
+      calldata_bytes_array_bounds.vy:
+        enabled: true
+      concat:
+        enabled: true
+        entries:
+          bytes_concat_2_args.vy:
+            enabled: true
+          bytes_concat_3_args.vy:
+            enabled: true
+          bytes_concat_as_argument.vy:
+            enabled: true
+          bytes_concat_different_types.vy:
+            enabled: true
+          bytes_concat_empty_strings.vy:
+            enabled: true
+          bytes_concat_nested.vy:
+            enabled: true
+      constant_var_as_array_length.vy:
+        enabled: true
+      copying:
+        enabled: true
+        entries:
+          array_copy_calldata_storage.vy:
+            enabled: true
+          array_copy_cleanup_uint40.vy:
+            enabled: true
+          array_copy_cleanup_uint128.vy:
+            enabled: true
+          array_copy_clear_storage.vy:
+            enabled: true
+          array_copy_clear_storage_packed.vy:
+            enabled: true
+          array_copy_including_array.vy:
+            enabled: true
+          array_copy_memory_to_storage.vy:
+            enabled: true
+          array_copy_nested_array.vy:
+            enabled: true
+          array_copy_storage_abi_signed.vy:
+            enabled: true
+          array_copy_storage_storage_dyn_dyn.vy:
+            enabled: true
+            comment: "Without storageEmpty check"
+          array_copy_storage_storage_dynamic_dynamic.vy:
+            enabled: true
+          array_copy_storage_storage_static_dynamic.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+          array_copy_storage_storage_static_simple.vy:
+            enabled: true
+          array_copy_storage_storage_static_static.vy:
+            enabled: true
+          array_copy_storage_storage_struct.vy:
+            enabled: true
+          array_copy_storage_to_memory.vy:
+            enabled: true
+          array_copy_storage_to_memory_nested.vy:
+            enabled: true
+          array_nested_calldata_to_memory.vy:
+            enabled: true
+          array_nested_calldata_to_storage.vy:
+            enabled: true
+          array_nested_memory_to_storage.vy:
+            enabled: true
+          array_of_struct_calldata_to_memory.vy:
+            enabled: true
+          array_of_struct_calldata_to_storage.vy:
+            enabled: true
+          array_of_struct_memory_to_storage.vy:
+            enabled: true
+          array_of_structs_containing_arrays_calldata_to_memory.vy:
+            enabled: true
+          array_of_structs_containing_arrays_calldata_to_storage.vy:
+            enabled: true
+          array_of_structs_containing_arrays_memory_to_storage.vy:
+            enabled: true
+          array_storage_multi_items_per_slot.vy:
+            enabled: true
+          arrays_from_and_to_storage.vy:
+            enabled: true
+          bytes_calldata_to_string_calldata.vy:
+            enabled: true
+          bytes_inside_mappings.vy:
+            enabled: true
+            comment: "Without storageEmpty check"
+          bytes_memory_to_storage.vy:
+            enabled: true
+          bytes_storage_to_memory.vy:
+            enabled: true
+          bytes_storage_to_storage.vy:
+            enabled: true
+          calldata_2d_bytes_to_memory.vy:
+            enabled: true
+          calldata_2d_bytes_to_memory_2.vy:
+            enabled: true
+          calldata_array_dynamic_to_storage.vy:
+            enabled: true
+          calldata_array_of_struct_to_memory.vy:
+            enabled: true
+          calldata_array_static_to_memory.vy:
+            enabled: true
+          calldata_bytes_array_to_memory.vy:
+            enabled: true
+          calldata_bytes_to_storage.vy:
+            enabled: true
+          calldata_dyn_2d_bytes_to_memory.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+          calldata_dynamic_array_to_memory.vy:
+            enabled: true
+          calldata_nested_array_copy_to_memory.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+          cleanup_during_multi_element_per_slot_copy.vy:
+            enabled: true
+          copy_byte_array_in_struct_to_storage.vy:
+            enabled: true
+            comment: "Without storageEmpty check"
+          copy_removes_bytes_data.vy:
+            enabled: true
+            comment: "Without storageEmpty check"
+          empty_bytes_copy.vy:
+            enabled: true
+          memory_dyn_2d_bytes_to_storage.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+          storage_memory_nested.vy:
+            enabled: true
+          storage_memory_nested_bytes.vy:
+            enabled: true
+          storage_memory_nested_from_pointer.vy:
+            enabled: true
+          storage_memory_nested_struct.vy:
+            enabled: true
+          storage_memory_packed.vy:
+            enabled: true
+          storage_memory_packed_dyn.vy:
+            enabled: true
+          string_calldata_to_bytes_calldata.vy:
+            enabled: true
+      create_dynamic_array_with_zero_length.vy:
+        enabled: true
+      create_memory_array.vy:
+        enabled: true
+      create_memory_array_too_large.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      create_memory_byte_array.vy:
+        enabled: true
+      create_multiple_dynamic_arrays.vy:
+        enabled: true
+      dynamic_array_cleanup.vy:
+        enabled: true
+        comment: "Without storageEmpty check"
+      dynamic_arrays_in_storage.vy:
+        enabled: true
+      dynamic_multi_array_cleanup.vy:
+        enabled: true
+        comment: "Without storageEmpty check"
+      dynamic_out_of_bounds_array_access.vy:
+        enabled: true
+      delete:
+        enabled: true
+        entries:
+          delete_bytes_array.vy:
+            enabled: true
+          delete_memory_array.vy:
+            enabled: true
+          delete_on_array_of_structs.vy:
+            enabled: true
+          delete_removes_bytes_data.vy:
+            enabled: true
+            comment: "Without storageEmpty check"
+          delete_storage_array.vy:
+            enabled: true
+          delete_storage_array_packed.vy:
+            enabled: true
+          memory_arrays_delete.vy:
+            enabled: true
+      evm_exceptions_out_of_band_access.vy:
+        enabled: true
+      external_array_args.vy:
+        enabled: true
+      fixed_array_cleanup.vy:
+        enabled: true
+      fixed_arrays_in_constructors.vy:
+        enabled: true
+      fixed_arrays_in_storage.vy:
+        enabled: true
+      fixed_out_of_bounds_array_access.vy:
+        enabled: true
+      indexAccess:
+        enabled: true
+        entries:
+          arrays_complex_memory_index_access.vy:
+            enabled: true
+          inline_array_index_access_ints.vy:
+            enabled: true
+          inline_array_index_access_strings.vy:
+            enabled: true
+          memory_arrays_dynamic_index_access_write.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+          memory_arrays_index_access_write.vy:
+            enabled: false
+      inline_array_return.vy:
+        enabled: true
+      inline_array_singleton.vy:
+        enabled: true
+      inline_array_storage_to_memory_conversion_ints.vy:
+        enabled: true
+      inline_array_storage_to_memory_conversion_strings.vy:
+        enabled: true
+      inline_array_strings_from_document.vy:
+        enabled: true
+      memory.vy:
+        enabled: true
+      memory_arrays_of_various_sizes.vy:
+        enabled: true
+      pop:
+        enabled: true
+        entries:
+          array_pop.vy:
+            enabled: true
+          array_pop_array_transition.vy:
+            enabled: true
+          array_pop_empty_exception.vy:
+            enabled: true
+          array_pop_isolated.vy:
+            enabled: false
+            comment: "Expressions without assignment are disallowed"
+          array_pop_storage_empty.vy:
+            enabled: true
+          array_pop_uint16_transition.vy:
+            enabled: true
+          array_pop_uint24_transition.vy:
+            enabled: true
+          parenthesized.vy:
+            enabled: true
+      push:
+        enabled: true
+        entries:
+          array_push.vy:
+            enabled: true
+          array_push_nested.vy:
+            enabled: true
+          array_push_nested_from_calldata.vy:
+            enabled: true
+          array_push_nested_from_memory.vy:
+            enabled: true
+          array_push_packed_array.vy:
+            enabled: true
+          array_push_struct.vy:
+            enabled: true
+          array_push_struct_from_calldata.vy:
+            enabled: true
+      short_fixed_array_cleanup.vy:
+        enabled: true
+      slices:
+        enabled: true
+        entries:
+          array_slice_calldata_as_argument_of_external_calls.vy:
+            enabled: true
+      storage_array_ref.vy:
+        enabled: true
+      string_allocation_bug.vy:
+        enabled: true
+      string_bytes_conversion.vy:
+        enabled: true
+      string_literal_assign_to_storage_bytes.vy:
+        enabled: true
+      strings_in_struct.vy:
+        enabled: true
+  builtinFunctions:
+    enabled: true
+    entries:
+      assignment_to_const_var_involving_keccak.vy:
+        enabled: true
+      blockhash.vy:
+        enabled: false
+        comment: "Uses unsupported blockhash"
+      blockhash_shadow_resolution.vy:
+        enabled: true
+      iterated_keccak256_with_bytes.vy:
+        enabled: true
+      keccak256_empty.vy:
+        enabled: true
+      keccak256_multiple_arguments.vy:
+        enabled: true
+      keccak256_multiple_arguments_with_numeric_literals.vy:
+        enabled: true
+      keccak256_multiple_arguments_with_string_literals.vy:
+        enabled: true
+      keccak256_with_bytes.vy:
+        enabled: true
+      sha256_empty.vy:
+        enabled: true
+  byte_array_to_storage_cleanup.vy:
+    enabled: true
+    comment: "Without function g(with memory access from assembly)"
+  calldata:
+    enabled: true
+    entries:
+      calldata_array_dynamic_bytes.vy:
+        enabled: true
+      calldata_bound_bytes.vy:
+        enabled: true
+        comment: "Without bound"
+      calldata_bound_dynamic_array_or_slice.vy:
+        enabled: true
+        comment: "Without bound and slice"
+      calldata_bound_static_array.vy:
+        enabled: true
+        comment: "Without bound"
+      calldata_bound_struct.vy:
+        enabled: true
+        comment: "Without bound"
+      calldata_bytes_external.vy:
+        enabled: true
+      calldata_bytes_internal.vy:
+        enabled: true
+      calldata_bytes_to_memory.vy:
+        enabled: true
+      calldata_bytes_to_memory_encode.vy:
+        enabled: true
+      calldata_internal_multi_array.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_internal_multi_fixed_array.vy:
+        enabled: true
+      calldata_memory_mixed.vy:
+        enabled: true
+      calldata_string_array.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      calldata_struct.vy:
+        enabled: true
+      calldata_struct_cleaning.vy:
+        enabled: true
+      calldata_struct_internal.vy:
+        enabled: true
+      copy_from_calldata_removes_bytes_data.vy:
+        enabled: true
+  cleanup:
+    enabled: true
+    entries:
+      bool_conversion_v2.vy:
+        enabled: true
+      cleanup_address_types_v2.vy:
+        enabled: true
+      cleanup_bytes_types_v2.vy:
+        enabled: true
+  constantEvaluator:
+    enabled: true
+    entries:
+      negative_fractional_mod.vy:
+        enabled: true
+      rounding.vy:
+        enabled: true
+  constants:
+    enabled: true
+    entries:
+      constant_string.vy:
+        enabled: true
+      constant_string_at_file_level.vy:
+        enabled: true
+      constant_variables.vy:
+        enabled: true
+      consteval_array_length.vy:
+        enabled: true
+      simple_constant_variables_test.vy:
+        enabled: true
+  constructor:
+    enabled: true
+    entries:
+      bytes_in_constructors_unpacker.vy:
+        enabled: true
+      constructor_arguments_external.vy:
+        enabled: true
+      constructor_static_array_argument.vy:
+        enabled: true
+      functions_called_by_constructor.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/1631"
+      payable_constructor.vy:
+        enabled: true
+  constructor_with_params.vy:
+    enabled: true
+  conversions:
+    enabled: true
+    entries:
+      string_to_bytes.vy:
+        enabled: true
+  dirty_calldata_bytes.vy:
+    enabled: true
+  dirty_calldata_dynamic_array.vy:
+    enabled: true
+  ecrecover:
+    enabled: true
+    entries:
+      ecrecover.vy:
+        enabled: false
+        comment: "Uses an 's' value that is not valid anymore"
+      failing_ecrecover_invalid_input.vy:
+        enabled: false
+        comment: "The input is considered invalid"
+      failing_ecrecover_invalid_input_asm.vy:
+        enabled: false
+        comment: "The input is considered invalid"
+      failing_ecrecover_invalid_input_proper.vy:
+        enabled: false
+        comment: "The input is considered invalid"
+  empty_contract.vy:
+    enabled: false
+    comment: "https://github.com/vyperlang/vyper/issues/2803"
+  events:
+    enabled: true
+    entries:
+      event.vy:
+        enabled: true
+      event_constructor.vy:
+        enabled: true
+      event_dynamic_array_memory.vy:
+        enabled: true
+      event_dynamic_array_storage.vy:
+        enabled: true
+      event_dynamic_nested_array_memory_v2.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      event_dynamic_nested_array_storage_v2.vy:
+        enabled: true
+      event_emit.vy:
+        enabled: true
+      event_indexed_mixed.vy:
+        enabled: true
+      event_indexed_string.vy:
+        enabled: false
+        comment: "Disabled because event indexes may only be value types"
+      event_lots_of_data.vy:
+        enabled: true
+      event_no_arguments.vy:
+        enabled: true
+      event_really_lots_of_data.vy:
+        enabled: true
+      event_really_lots_of_data_from_storage.vy:
+        enabled: true
+      event_really_really_lots_of_data_from_storage.vy:
+        enabled: true
+      event_string.vy:
+        enabled: true
+      event_struct_memory_v2.vy:
+        enabled: true
+      event_struct_storage_v2.vy:
+        enabled: true
+  expressions:
+    enabled: true
+    entries:
+      bit_operators.vy:
+        enabled: true
+      exp_operator_const.vy:
+        enabled: true
+      exp_operator_const_signed.vy:
+        enabled: true
+      exp_zero_literal.vy:
+        enabled: true
+      unary_too_long_literal.vy:
+        enabled: true
+  fallback:
+    enabled: true
+    entries:
+      falback_return.vy:
+        enabled: true
+      fallback_return_data.vy:
+        enabled: true
+      short_data_calls_fallback.vy:
+        enabled: true
+  functionCall:
+    enabled: true
+    entries:
+      array_multiple_local_vars.vy:
+        enabled: true
+      call_internal_function_via_expression.vy:
+        enabled: true
+      calling_nonexisting_contract_throws.vy:
+        enabled: true
+      calling_other_functions.vy:
+        enabled: true
+      delegatecall_return_value.vy:
+        enabled: true
+      delegatecall_return_value_pre_byzantium.vy:
+        enabled: true
+      external_call.vy:
+        enabled: true
+      external_call_dynamic_returndata.vy:
+        enabled: true
+      external_call_to_nonexisting.vy:
+        enabled: true
+      external_call_value.vy:
+        enabled: true
+      external_function.vy:
+        enabled: true
+      member_accessors.vy:
+        enabled: true
+      multiple_functions.vy:
+        enabled: true
+      multiple_return_values.vy:
+        enabled: true
+      transaction_status.vy:
+        enabled: true
+      value_test.vy:
+        enabled: true
+  getters:
+    enabled: true
+    entries:
+      array_mapping_struct.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      arrays.vy:
+        enabled: true
+      bytes.vy:
+        enabled: true
+      mapping.vy:
+        enabled: true
+      mapping_array_struct.vy:
+        enabled: true
+      mapping_of_string.vy:
+        enabled: true
+      mapping_to_struct.vy:
+        enabled: true
+      string_and_bytes.vy:
+        enabled: true
+      struct_with_bytes.vy:
+        enabled: true
+      struct_with_bytes_simple.vy:
+        enabled: true
+      value_types.vy:
+        enabled: true
+  immutable:
+    enabled: true
+    entries:
+      assign_at_declaration.vy:
+        enabled: true
+      assign_from_immutables.vy:
+        enabled: true
+      fun_read_in_ctor.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/1631"
+      immutable_signed.vy:
+        enabled: true
+      read_in_ctor.vy:
+        enabled: true
+      small_types_in_reverse.vy:
+        enabled: true
+      stub.vy:
+        enabled: true
+      use_scratch.vy:
+        enabled: true
+  integer:
+    enabled: true
+    entries:
+      basic.vy:
+        enabled: true
+      int.vy:
+        enabled: true
+      many_local_variables.vy:
+        enabled: true
+      small_signed_types.vy:
+        enabled: true
+      uint.vy:
+        enabled: true
+  interfaceID:
+    enabled: true
+    entries:
+      homer.vy:
+        enabled: true
+      lisa.vy:
+        enabled: true
+  isoltestFormatting.vy:
+    enabled: true
+  isoltestTesting:
+    enabled: true
+    entries:
+      account.vy:
+        enabled: false
+        comment: "Uses unsupported isoltest"
+      balance_with_balance.vy:
+        enabled: true
+      balance_with_balance2.vy:
+        enabled: true
+      balance_without_balance.vy:
+        enabled: true
+      builtins.vy:
+        enabled: true
+      effects.vy:
+        enabled: false
+        comment: "Uses unsupported isoltest"
+      format_raw_string_with_control_chars.vy:
+        enabled: true
+      storage:
+        enabled: true
+        entries:
+          storage_empty.vy:
+            enabled: true
+          storage_nonempty.vy:
+            enabled: true
+  literals:
+    enabled: true
+    entries:
+      denominations.vy:
+        enabled: true
+      escape.vy:
+        enabled: true
+      ether.vy:
+        enabled: true
+      gwei.vy:
+        enabled: true
+      hex_string_with_non_printable_characters.vy:
+        enabled: true
+      scientific_notation.vy:
+        enabled: true
+      wei.vy:
+        enabled: true
+  memoryManagement:
+    enabled: true
+    entries:
+      memory_types_initialisation.vy:
+        enabled: true
+  operators:
+    enabled: true
+    entries:
+      compound_assign.vy:
+        enabled: true
+      shifts:
+        enabled: true
+        entries:
+          bitwise_shifting_constantinople.vy:
+            enabled: true
+          bitwise_shifting_constantinople_combined.vy:
+            enabled: true
+          bitwise_shifting_constants_constantinople.vy:
+            enabled: true
+          shift_cleanup.vy:
+            enabled: true
+          shift_cleanup_garbled.vy:
+            enabled: true
+          shift_constant_left.vy:
+            enabled: true
+          shift_constant_right.vy:
+            enabled: true
+          shift_left.vy:
+            enabled: true
+          shift_overflow.vy:
+            enabled: true
+          shift_right.vy:
+            enabled: true
+          shift_underflow_negative_rvalue.vy:
+            enabled: true
+          shifts.vy:
+            enabled: true
+  optimizer:
+    enabled: true
+    entries:
+      shift_bytes.vy:
+        enabled: true
+  reverts:
+    enabled: true
+    entries:
+      assert_require.vy:
+        enabled: true
+      revert.vy:
+        enabled: true
+      simple_throw.vy:
+        enabled: true
+  revertStrings:
+    enabled: true
+    entries:
+      calldata_array_dynamic_invalid.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      calldata_array_dynamic_static_short_decode.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_dynamic_static_short_reencode.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata_array_invalid_length.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      calldata_arrays_too_large.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      calldata_tail_short.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      called_contract_has_code.vy:
+        enabled: true
+      empty_v1.vy:
+        enabled: true
+        comment: "Without empty reason string"
+      ether_non_payable_function.vy:
+        enabled: true
+      function_entry_checks_v1.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      short_input_array.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      short_input_bytes.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      unknown_sig_no_fallback.vy:
+        enabled: true
+  smoke:
+    enabled: true
+    entries:
+      alignment.vy:
+        enabled: true
+      arrays.vy:
+        enabled: true
+      basic.vy:
+        enabled: true
+      bytes_and_strings.vy:
+        enabled: true
+      constructor.vy:
+        enabled: true
+      failure.vy:
+        enabled: true
+      fallback.vy:
+        enabled: true
+      multiline.vy:
+        enabled: true
+      multiline_comments.vy:
+        enabled: true
+      structs.vy:
+        enabled: true
+  specialFunctions:
+    enabled: true
+    entries:
+      keccak256_optimized.vy:
+        enabled: true
+  state:
+    enabled: true
+    entries:
+      gasleft.vy:
+        enabled: true
+      msg_data.vy:
+        enabled: true
+      msg_sender.vy:
+        enabled: true
+      msg_value.vy:
+        enabled: true
+  state_var_initialization.vy:
+    enabled: true
+  storage:
+    enabled: true
+    entries:
+      accessors_mapping_for_array.vy:
+        enabled: true
+      array_accessor.vy:
+        enabled: true
+      chop_sign_bits.vy:
+        enabled: true
+      complex_accessors.vy:
+        enabled: true
+      empty_nonempty_empty.vy:
+        enabled: true
+        comment: "Without storageEmpty checks"
+      mapping_state.vy:
+        enabled: true
+      mapping_string_key.vy:
+        enabled: true
+      mappings_array2d_pop_delete.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      mappings_array_pop_delete.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      packed_storage_signed.vy:
+        enabled: true
+      packed_storage_structs_bytes.vy:
+        enabled: true
+      packed_storage_structs_uint.vy:
+        enabled: true
+      simple_accessor.vy:
+        enabled: true
+      state_smoke_test.vy:
+        enabled: true
+      struct_accessor.vy:
+        enabled: true
+  strings:
+    enabled: true
+    entries:
+      concat:
+        enabled: true
+        entries:
+          string_concat_2_args.vy:
+            enabled: true
+          string_concat_different_types.vy:
+            enabled: true
+            comment: "Without storage reference and slice"
+          string_concat_empty_strings.vy:
+            enabled: true
+          string_concat_nested.vy:
+            enabled: true
+      constant_string_literal.vy:
+        enabled: true
+      empty_storage_string.vy:
+        enabled: true
+        comment: "Without error"
+      empty_string.vy:
+        enabled: true
+      empty_string_input.vy:
+        enabled: true
+      return_string.vy:
+        enabled: true
+      string_escapes.vy:
+        enabled: true
+      unicode_escapes.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2799"
+      unicode_string.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+  structs:
+    enabled: true
+    entries:
+      array_of_recursive_struct.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      calldata:
+        enabled: true
+        entries:
+          calldata_nested_structs.vy:
+            enabled: true
+          calldata_struct.vy:
+            enabled: true
+          calldata_struct_and_ints.vy:
+            enabled: true
+          calldata_struct_array_member.vy:
+            enabled: true
+          calldata_struct_array_member_dynamic.vy:
+            enabled: true
+          calldata_struct_as_memory_argument.vy:
+            enabled: false
+            comment: "https://github.com/vyperlang/vyper/issues/2800"
+          calldata_struct_struct_member.vy:
+            enabled: true
+          calldata_struct_struct_member_dynamic.vy:
+            enabled: true
+          calldata_struct_to_memory.vy:
+            enabled: true
+          calldata_struct_to_storage.vy:
+            enabled: true
+          calldata_struct_with_array_to_memory.vy:
+            enabled: true
+          calldata_struct_with_bytes_to_memory.vy:
+            enabled: true
+          calldata_struct_with_nested_array_to_memory.vy:
+            enabled: false
+            comment: "https://github.com/vyperlang/vyper/issues/2800"
+          calldata_struct_with_nested_array_to_storage.vy:
+            enabled: true
+          calldata_structs.vy:
+            enabled: true
+          dynamic_nested.vy:
+            enabled: true
+          dynamically_encoded.vy:
+            enabled: true
+      conversion:
+        enabled: true
+        entries:
+          recursive_storage_memory.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+          recursive_storage_memory_complex.vy:
+            enabled: false
+            comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      copy_from_storage.vy:
+        enabled: true
+      copy_struct_array_from_storage.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      delete_struct.vy:
+        enabled: true
+      event.vy:
+        enabled: true
+      global.vy:
+        enabled: true
+      lone_struct_array_type.vy:
+        enabled: true
+      memory_struct_named_constructor.vy:
+        enabled: false
+        comment: "Disabled because different order of fields is not allowed"
+      memory_structs_as_function_args.vy:
+        enabled: true
+      memory_structs_nested.vy:
+        enabled: true
+      memory_structs_nested_load.vy:
+        enabled: true
+      memory_structs_read_write.vy:
+        enabled: true
+      msg_data_to_struct_member_copy.vy:
+        enabled: true
+      multislot_struct_allocation.vy:
+        enabled: true
+      nested_struct_allocation.vy:
+        enabled: true
+      packed_storage_structs_delete.vy:
+        enabled: true
+      recursive_structs.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      simple_struct_allocation.vy:
+        enabled: true
+      struct_constructor_nested.vy:
+        enabled: true
+      struct_containing_bytes_copy_and_delete.vy:
+        enabled: true
+        comment: "Without storageEmpty checks"
+      struct_copy.vy:
+        enabled: true
+      struct_copy_via_local.vy:
+        enabled: true
+      struct_delete_member.vy:
+        enabled: true
+      struct_delete_storage.vy:
+        enabled: true
+      struct_delete_storage_nested_small.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      struct_delete_storage_small.vy:
+        enabled: true
+      struct_delete_storage_with_array.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2801"
+      struct_delete_storage_with_arrays_small.vy:
+        enabled: true
+      struct_delete_struct_in_mapping.vy:
+        enabled: true
+      struct_memory_to_storage.vy:
+        enabled: true
+      struct_named_constructor.vy:
+        enabled: false
+        comment: "Disabled because different order of fields is not allowed"
+      struct_storage_push_zero_value.vy:
+        enabled: true
+      struct_storage_to_mapping.vy:
+        enabled: true
+      struct_storage_to_memory.vy:
+        enabled: true
+      structs.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+  types:
+    enabled: true
+    entries:
+      assign_calldata_value_type.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2145"
+      convert_fixed_bytes_to_fixed_bytes_greater_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_fixed_bytes_smaller_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_greater_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_same_min_size.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_same_type.vy:
+        enabled: true
+      convert_fixed_bytes_to_uint_smaller_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_greater_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_same_min_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_same_size.vy:
+        enabled: true
+      convert_uint_to_fixed_bytes_smaller_size.vy:
+        enabled: true
+      mapping_contract_key.vy:
+        enabled: true
+      mapping_contract_key_getter.vy:
+        enabled: true
+      mapping_simple.vy:
+        enabled: true
+      packing_signed_types.vy:
+        enabled: true
+      packing_unpacking_types.vy:
+        enabled: true
+      strings.vy:
+        enabled: true
+  underscore:
+    enabled: true
+    entries:
+      as_function.vy:
+        enabled: true
+  variables:
+    enabled: true
+    entries:
+      delete_local.vy:
+        enabled: true
+      delete_locals.vy:
+        enabled: true
+  various:
+    enabled: true
+    entries:
+      assignment_to_const_var_involving_expression.vy:
+        enabled: true
+      balance.vy:
+        enabled: true
+      byte_optimization_bug.vy:
+        enabled: true
+      decayed_tuple.vy:
+        enabled: true
+      empty_name_return_parameter.vy:
+        enabled: true
+      erc20.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/1631"
+      flipping_sign_tests.vy:
+        enabled: true
+      gasleft_decrease.vy:
+        enabled: true
+      inline_member_init.vy:
+        enabled: true
+      inline_tuple_with_rational_numbers.vy:
+        enabled: true
+      iszero_bnot_correct.vy:
+        enabled: true
+      literal_empty_string.vy:
+        enabled: true
+      memory_overwrite.vy:
+        enabled: true
+      negative_stack_height.vy:
+        enabled: true
+      nested_calldata_struct.vy:
+        enabled: true
+      nested_calldata_struct_to_memory.vy:
+        enabled: true
+      positive_integers_to_signed.vy:
+        enabled: true
+      skip_dynamic_types.vy:
+        enabled: true
+      skip_dynamic_types_for_static_arrays_with_dynamic_elements.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      skip_dynamic_types_for_structs.vy:
+        enabled: false
+        comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
+      state_variable_local_variable_mixture.vy:
+        enabled: true
+      storage_string_as_mapping_key_without_variable.vy:
+        enabled: true
+      store_bytes.vy:
+        enabled: true
+      string_tuples.vy:
+        enabled: true
+      swap_in_storage_overwrite.vy:
+        enabled: true
+      tuples.vy:
+        enabled: true
+        comment: "Without tuples as rvalues"
+  viaYul:
+    enabled: true
+    entries:
+      array_2d_assignment.vy:
+        enabled: true
+      array_2d_new.vy:
+        enabled: true
+      array_3d_assignment.vy:
+        enabled: true
+      array_3d_new.vy:
+        enabled: true
+      array_memory_allocation:
+        enabled: true
+        entries:
+          array_2d_zeroed_memory_index_access.vy:
+            enabled: true
+          array_array_static.vy:
+            enabled: true
+          array_static_return_param_zeroed_memory_index_access.vy:
+            enabled: true
+          array_static_zeroed_memory_index_access.vy:
+            enabled: true
+          array_zeroed_memory_index_access.vy:
+            enabled: true
+      array_memory_as_parameter.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2145"
+      array_memory_create.vy:
+        enabled: true
+      array_memory_index_access.vy:
+        enabled: true
+      array_push_with_arg.vy:
+        enabled: true
+      array_storage_index_access.vy:
+        enabled: true
+      array_storage_index_boundary_test.vy:
+        enabled: true
+      array_storage_length_access.vy:
+        enabled: false
+        comment: "Out-of-gas currently unchecked"
+      array_storage_pop_zero_length.vy:
+        enabled: true
+      array_storage_push_pop.vy:
+        enabled: false
+        comment: "Out-of-gas currently unchecked"
+      assert.vy:
+        enabled: true
+      assert_and_require.vy:
+        enabled: true
+      assign_tuple_from_function_call.vy:
+        enabled: true
+      calldata_array_access.vy:
+        enabled: true
+      calldata_array_length.vy:
+        enabled: true
+        comment: "Without length for static array"
+      calldata_array_three_dimensional.vy:
+        enabled: true
+      calldata_bytes_array_bounds.vy:
+        enabled: true
+      comparison.vy:
+        enabled: true
+      conversion:
+        enabled: true
+        entries:
+          explicit_cast_assignment.vy:
+            enabled: true
+          explicit_cast_function_call.vy:
+            enabled: true
+          explicit_cast_local_assignment.vy:
+            enabled: true
+          explicit_string_bytes_calldata_cast.vy:
+            enabled: true
+      define_tuple_from_function_call.vy:
+        enabled: true
+      detect_add_overflow.vy:
+        enabled: true
+      detect_add_overflow_signed.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      detect_div_overflow.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      detect_mod_zero.vy:
+        enabled: true
+      detect_mod_zero_signed.vy:
+        enabled: true
+      detect_mul_overflow.vy:
+        enabled: true
+      detect_mul_overflow_signed.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      detect_sub_overflow.vy:
+        enabled: true
+      detect_sub_overflow_signed.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+      exp_literals.vy:
+        enabled: true
+      exp_literals_success.vy:
+        enabled: true
+      function_entry_checks.vy:
+        enabled: false
+        comment: "Other behavior on zkEVM"
+      if.vy:
+        enabled: true
+      keccak.vy:
+        enabled: true
+      local_address_assignment.vy:
+        enabled: true
+      local_assignment.vy:
+        enabled: true
+      local_bool_assignment.vy:
+        enabled: true
+      local_variable_without_init.vy:
+        enabled: true
+      loops:
+        enabled: true
+        entries:
+          break.vy:
+            enabled: true
+          continue.vy:
+            enabled: true
+          return.vy:
+            enabled: true
+          simple.vy:
+            enabled: true
+      mapping_getters.vy:
+        enabled: true
+      mapping_string_key.vy:
+        enabled: true
+      msg_sender.vy:
+        enabled: true
+      negation_bug.vy:
+        enabled: true
+      require.vy:
+        enabled: true
+      return.vy:
+        enabled: true
+      return_and_convert.vy:
+        enabled: true
+      short_circuit.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2145"
+      simple_assignment.vy:
+        enabled: true
+      smoke_test.vy:
+        enabled: false
+        comment: "https://github.com/vyperlang/vyper/issues/2803"
+      storage:
+        enabled: true
+        entries:
+          dirty_storage_bytes_long.vy:
+            enabled: true
+          mappings.vy:
+            enabled: true
+          packed_storage.vy:
+            enabled: false
+            comment: "Unsupported, but can be supported in the future"
+          simple_storage.vy:
+            enabled: true
+      string_format.vy:
+        enabled: true
+      string_literals.vy:
+        enabled: true
+      struct_member_access.vy:
+        enabled: true
+      tuple_evaluation_order.vy:
+        enabled: false
+        comment: "Disabled because different order of fields is not allowed"
+      unary_operations.vy:
+        enabled: true

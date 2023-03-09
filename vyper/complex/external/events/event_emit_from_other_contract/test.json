@@ -1,0 +1,43 @@
+{ "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "C",
+            "method": "#deployer",
+            "calldata": [
+                "D.address"
+            ],
+            "expected": [
+                "C.address"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "deposit",
+            "calldata": [
+                "0x1234"
+            ],
+            "value": "18 wei"
+        }
+    ],
+    "expected": {
+        "return_data": [],
+        "events": [
+            {
+                "topics": [
+                    "0x19dacbf83c5de6658e14cbf7bcae5c15eca2eedecf1c66fbca928e4d351bea0f",
+                    "C.address",
+                    "0x1234"
+                ],
+                "values": [
+                    "0x00"
+                ]
+            }
+        ]
+    }
+} ],
+    "contracts": {
+        "C": "C.vy",
+        "D": "D.vy"
+    }
+}

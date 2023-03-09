@@ -1,0 +1,12 @@
+event Deposit:
+    fixeda: uint256
+    dynx: Bytes[100]
+    fixedb: uint256
+@external
+def deposit():
+    log Deposit(10, slice(msg.data, 0, 4), 15)
+# ====
+# compileViaYul: also
+# ----
+# deposit() ->
+# ~ emit Deposit(uint256,bytes,uint256): 0x0a, 0x60, 0x0f, 0x04, 0xd0e30db000000000000000000000000000000000000000000000000000000000

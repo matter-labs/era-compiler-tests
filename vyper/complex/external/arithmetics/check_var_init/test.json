@@ -1,0 +1,32 @@
+{ "ignore": true, "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "D",
+            "method": "f",
+            "calldata": [
+                "C.address"
+            ],
+            "expected": {
+                "exception": true,
+                "return_data": []
+            }
+        },
+        {
+            "instance": "D",
+            "method": "g",
+            "calldata": [
+                "C.address"
+            ],
+            "value": "100 wei"
+        }
+    ],
+    "expected": [
+        "1"
+    ]
+} ],
+    "contracts": {
+        "C": "C.vy",
+        "D": "D.vy"
+    }
+}

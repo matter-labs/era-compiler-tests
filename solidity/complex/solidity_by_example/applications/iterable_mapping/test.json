@@ -1,0 +1,23 @@
+{ "cases": [ {
+    "name": "testIterableMap",
+    "inputs": [
+        {
+            "instance": "TestIterableMap",
+            "method": "testIterableMap",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+    ]
+} ],
+    "contracts": {
+        "TestIterableMap": "main.sol:TestIterableMap",
+        "IterableMapping": "main.sol:IterableMapping"
+    },
+    "libraries": {
+        "main.sol": {
+            "IterableMapping": "IterableMapping"
+        }
+    }
+}

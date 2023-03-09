@@ -1,0 +1,38 @@
+{ "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "A",
+            "method": "#deployer",
+            "calldata": [
+            ],
+            "expected": [
+		"*"
+	    ]
+        },
+        {
+            "instance": "B",
+            "method": "testIt",
+            "calldata": [
+                "0"
+            ],
+            "expected": {
+                "return_data": []
+            }
+        },
+        {
+            "instance": "B",
+            "method": "test",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "2"
+    ]
+} ],
+    "contracts": {
+        "A": "A.vy",
+        "B": "B.vy"
+    }
+}

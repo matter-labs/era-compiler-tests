@@ -1,0 +1,21 @@
+{ "cases": [ {
+    "name": "main",
+    "inputs": [
+        {
+            "instance": "D",
+            "method": "fview",
+            "calldata": [
+                "C.address"
+            ]
+        }
+    ],
+    "expected": {
+        "return_data": [],
+        "exception": true
+    }
+} ],
+    "contracts": {
+        "D": "d.vy",
+        "C": "c.vy"
+    }
+}

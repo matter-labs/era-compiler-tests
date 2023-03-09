@@ -1,0 +1,51 @@
+{ "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "C",
+            "method": "#deployer",
+            "calldata": [
+                "A.address",
+                "B.address"
+            ],
+            "expected": [
+                "C.address"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+                "A.address",
+                "B.address"
+            ],
+            "expected": [
+                "3", "7", "5"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "x",
+            "calldata": [
+            ],
+            "expected": [
+                "7"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "y",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "5"
+    ]
+} ],
+    "contracts": {
+        "A": "A.vy",
+        "B": "B.vy",
+        "C": "C.vy"
+    }
+}

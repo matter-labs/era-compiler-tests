@@ -1,0 +1,29 @@
+{ "ignore": true, "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "Test",
+            "method": "#deployer",
+            "calldata": [
+                "C.address"
+            ],
+            "expected": [
+                "Test.address"
+            ]
+        },
+        {
+            "instance": "Test",
+            "method": "test",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "1"
+    ]
+} ],
+    "contracts": {
+        "C": "C.vy",
+        "Test": "Test.vy"
+    }
+}

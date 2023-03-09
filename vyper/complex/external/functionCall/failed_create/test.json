@@ -1,0 +1,102 @@
+{ "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "C",
+            "method": "#deployer",
+            "calldata": [
+            ],
+            "value": "20 wei",
+            "expected": [
+                "C.address"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+                "20",
+                "D.address"
+            ],
+            "expected": [
+                "*"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "x",
+            "calldata": [
+            ],
+            "expected": [
+                "1"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+                "20",
+                "D.address"
+            ],
+            "expected": {
+                "exception": true,
+                "return_data": []
+            }
+        },
+        {
+            "instance": "C",
+            "method": "x",
+            "calldata": [
+            ],
+            "expected": [
+                "1"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "stack",
+            "calldata": [
+                "1023",
+                "D.address"
+            ],
+            "expected": {
+                "exception": true,
+                "return_data": []
+            }
+        },
+        {
+            "instance": "C",
+            "method": "x",
+            "calldata": [
+            ],
+            "expected": [
+                "1"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "stack",
+            "calldata": [
+                "10",
+                "D.address"
+            ],
+            "expected": [
+                "*"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "x",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "2"
+    ]
+} ],
+    "contracts": {
+        "C": "C.vy",
+        "D": "D.vy"
+    }
+}

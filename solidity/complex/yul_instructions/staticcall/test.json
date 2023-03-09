@@ -1,0 +1,1476 @@
+{
+    "cases": [ {
+        "name": "default",
+        "inputs": [ {
+                "comment": "zero gas (2 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "0"
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "low gas (3 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "20"
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "good gas (4 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "10000"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "max gas (5 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "0xFFFFFFFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "2 in 32 gas (6 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "0x100000000"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "ordinar bigger 2 in 32 gas (7 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "7898765678987654678"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "max U256 gas (8 index)",
+                "instance": "Main",
+                "method": "gas_test",
+                "calldata": [
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "zero address (9 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0"
+                ],
+                "expected": [
+                    "1"
+                ]
+            }, {
+                "comment": "system-contract address (10 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0x8006"
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "system address (11 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0xe63a"
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "this address (12 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "Main.address"
+                ],
+                "expected": [
+                    "1",
+                    "Main.address"
+                ]
+            }, {
+                "comment": "empty address (13 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0x28389238943f1b124238edffa000094232323232"
+                ],
+                "expected": [
+                    "1"
+                ]
+            }, {
+                "comment": "other address (14 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "AddressTest.address"
+                ],
+                "expected": [
+                    "1",
+                    "AddressTest.address"
+                ]
+            }, {
+                "comment": "2 in 160 address (15 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0x10000000000000000000000000000000000000000"
+                ],
+                "expected": [
+                    "1"
+                ]
+            }, {
+                "comment": "dirty address (16 index)",
+                "instance": "Main",
+                "method": "dirty_address_test",
+                "calldata": [
+                    "AddressTest.address"
+                ],
+                "expected": [
+                    "1",
+                    "AddressTest.address"
+                ]
+            }, {
+                "comment": "max address (17 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+                ],
+                "expected": [
+                    "1"
+                ]
+            }, {
+                "comment": "max U256 address (18 index)",
+                "instance": "Main",
+                "method": "address_test",
+                "calldata": [
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+                ],
+                "expected": [
+                    "1"
+                ]
+            }, {
+                "comment": "input zero offset (19 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0",
+                    "32"
+                ],
+                "expected": [
+                    "1",
+                    "32"
+                ]
+            }, {
+                "comment": "input one offset (20 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "1",
+                    "17"
+                ],
+                "expected": [
+                    "1",
+                    "17"
+                ]
+            }, {
+                "comment": "input small ordinar offset (21 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "19",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "input word offset (22 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "32",
+                    "342"
+                ],
+                "expected": [
+                    "1",
+                    "342"
+                ]
+            }, {
+                "comment": "input ordinar offset (23 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "2383",
+                    "0xA00"
+                ],
+                "expected": [
+                    "1",
+                    "0xA00"
+                ]
+            }, {
+                "comment": "input ordinar words offset (24 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xF100",
+                    "2323"
+                ],
+                "expected": [
+                    "1",
+                    "2323"
+                ]
+            }, {
+                "comment": "input big ordinar offset (25 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFAA",
+                    "32"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus 32 offset (26 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFE0",
+                    "113"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus 31 offset (27 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFE1",
+                    "0"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus ordinar offset (28 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFEF",
+                    "0xFFFFFFE1"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus one offset (29 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFFF",
+                    "1"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 offset (30 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0x100000000",
+                    "16777215"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input ordinar bigger 2 in 32 offset (31 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "3334353453452342342354355544445321191012012",
+                    "17"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input max offset (32 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+                    "256"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input zero size (33 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "32",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "input one size (34 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "17",
+                    "1"
+                ],
+                "expected": [
+                    "1",
+                    "1"
+                ]
+            }, {
+                "comment": "input small ordinar size (35 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0",
+                    "19"
+                ],
+                "expected": [
+                    "1",
+                    "19"
+                ]
+            }, {
+                "comment": "input word size (36 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "342",
+                    "32"
+                ],
+                "expected": [
+                    "1",
+                    "32"
+                ]
+            }, {
+                "comment": "input ordinar size (37 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xA00",
+                    "2383"
+                ],
+                "expected": [
+                    "1",
+                    "2383"
+                ]
+            }, {
+                "comment": "input ordinar words size (38 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "2323",
+                    "0xF100"
+                ],
+                "expected": [
+                    "1",
+                    "0xF100"
+                ]
+            }, {
+                "comment": "input big ordinar size (39 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "32",
+                    "0xFFFFFFAA"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus 32 size (40 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "113",
+                    "0xFFFFFFE0"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus 31 size (41 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0",
+                    "0xFFFFFFE1"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus ordinar size (42 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "0xFFFFFFE1",
+                    "0xFFFFFFEF"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 minus one size (43 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "1",
+                    "0xFFFFFFFF"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input 2 in 32 size (44 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "16777215",
+                    "0x100000000"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input ordinar bigger 2 in 32 size (45 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "17",
+                    "3334353453452342342354355544445321191012012"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input max size (46 index)",
+                "instance": "Main",
+                "method": "input_test",
+                "calldata": [
+                    "256",
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "input zero value one len (47 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input zero value small ordinar len (48 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input zero value word len (49 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input zero value ordinar len (50 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input zero value ordinar words len (51 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input one value one len (52 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input one value small ordinar len (53 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input one value word len (54 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input one value ordinar len (55 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input one value ordinar words len (56 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input ordinar value one len (57 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "0xA1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input ordinar value small ordinar len (58 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "0x44"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input ordinar value word len (59 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "0xE6"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input ordinar value ordinar len (60 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "0xD5"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input ordinar value ordinar words len (61 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0x82"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input max value one len (62 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input max value small ordinar len (63 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input max value word len (64 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input max value ordinar len (65 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "input max value ordinar words len (66 index)",
+                "instance": "Main",
+                "method": "input_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output zero offset (67 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0",
+                    "32",
+                    "15"
+                ],
+                "expected": [
+                    "1",
+                    "15"
+                ]
+            }, {
+                "comment": "output one offset (68 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "1",
+                    "17",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "output small ordinar offset (69 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "19",
+                    "0",
+                    "1"
+                ],
+                "expected": [
+                    "1",
+                    "1"
+                ]
+            }, {
+                "comment": "output word offset (70 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "32",
+                    "342",
+                    "342"
+                ],
+                "expected": [
+                    "1",
+                    "342"
+                ]
+            }, {
+                "comment": "output ordinar offset (71 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "2383",
+                    "0xA00",
+                    "2900"
+                ],
+                "expected": [
+                    "1",
+                    "2900"
+                ]
+            }, {
+                "comment": "output ordinar words offset (72 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xF100",
+                    "2323",
+                    "32"
+                ],
+                "expected": [
+                    "1",
+                    "32"
+                ]
+            }, {
+                "comment": "output big ordinar offset (73 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFAA",
+                    "32",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "output 2 in 32 minus 32 offset (74 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFE0",
+                    "113",
+                    "113"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "output 2 in 32 minus 31 offset (75 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFE1",
+                    "0",
+                    "1"
+                ],
+                "expected": [
+                    "1",
+                    "1"
+                ]
+            }, {
+                "comment": "output 2 in 32 minus ordinar offset (76 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFEF",
+                    "0xFFFFFFE1",
+                    "34"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "output 2 in 32 minus one offset (77 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFFF",
+                    "1",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "output 2 in 32 offset (78 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0x100000000",
+                    "16777215",
+                    "20"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "output ordinar bigger 2 in 32 offset (79 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "3334353453452342342354355544445321191012012",
+                    "17",
+                    "233"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "output max offset (80 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+                    "256",
+                    "256"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "output zero size (81 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "32",
+                    "0",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "output one size (82 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "17",
+                    "1",
+                    "1"
+                ],
+                "expected": [
+                    "1",
+                    "1"
+                ]
+            }, {
+                "comment": "output small ordinar size (83 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0",
+                    "19",
+                    "32"
+                ],
+                "expected": [
+                    "1",
+                    "32"
+                ]
+            }, {
+                "comment": "output word size (84 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "342",
+                    "32",
+                    "55"
+                ],
+                "expected": [
+                    "1",
+                    "55"
+                ]
+            }, {
+                "comment": "output ordinar size (85 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xA00",
+                    "2383",
+                    "15"
+                ],
+                "expected": [
+                    "1",
+                    "15"
+                ]
+            }, {
+                "comment": "output ordinar words size (86 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "2323",
+                    "0xF100",
+                    "0x101"
+                ],
+                "expected": [
+                    "1",
+                    "0x101"
+                ]
+            }, {
+                "comment": "output big ordinar size (87 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "32",
+                    "0xFFFFFFAA",
+                    "1"
+                ],
+                "expected": [
+                    "1",
+                    "1"
+                ]
+            }, {
+                "comment": "output 2 in 32 minus 32 size (88 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "113",
+                    "0xFFFFFFE0",
+                    "7"
+                ],
+                "expected": [
+                    "1",
+                    "7"
+                ]
+            }, {
+                "comment": "output 2 in 32 minus 31 size (89 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0",
+                    "0xFFFFFFE1",
+                    "34"
+                ],
+                "expected": [
+                    "1",
+                    "34"
+                ]
+            }, {
+                "comment": "output 2 in 32 minus ordinar size (90 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "0xFFFFFFE1",
+                    "0xFFFFFFEF",
+                    "1"
+                ],
+                "expected": {
+                    "exception": true,
+                    "return_data": []
+                }
+            }, {
+                "comment": "output 2 in 32 minus one size (91 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "1",
+                    "0xFFFFFFFF",
+                    "344"
+                ],
+                "expected": [
+                    "1",
+                    "344"
+                ]
+            }, {
+                "comment": "output 2 in 32 size (92 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "2048",
+                    "0x100000000",
+                    "1024"
+                ],
+                "expected": [
+                    "1",
+                    "1024"
+                ]
+            }, {
+                "comment": "output ordinar bigger 2 in 32 size (93 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "17",
+                    "3334353453452342342354355544445321191012012",
+                    "2443"
+                ],
+                "expected": [
+                    "1",
+                    "2443"
+                ]
+            }, {
+                "comment": "output max size (94 index)",
+                "instance": "Main",
+                "method": "output_test",
+                "calldata": [
+                    "256",
+                    "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+                    "0"
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "output zero value one len (95 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "15",
+                    "0",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output zero value small ordinar len (96 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "32",
+                    "0",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output zero value word len (97 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "31",
+                    "0",
+                    "0x44"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output zero value ordinar len (98 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "344",
+                    "0",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output zero value ordinar words len (99 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0xF100",
+                    "0",
+                    "0xAB"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output one value one len (100 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "15",
+                    "1",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output one value small ordinar len (101 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "32",
+                    "1",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output one value word len (102 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "31",
+                    "1",
+                    "0x44"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output one value ordinar len (103 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "344",
+                    "1",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output one value ordinar words len (104 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0xF100",
+                    "1",
+                    "0xAB"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output ordinar value one len (105 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "15",
+                    "0xA1",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output ordinar value small ordinar len (106 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "32",
+                    "0x44",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output ordinar value word len (107 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "31",
+                    "0xE6",
+                    "0x44"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output ordinar value ordinar len (108 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "344",
+                    "0xD5",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output ordinar value ordinar words len (109 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0xF100",
+                    "0x82",
+                    "0xAB"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output max value one len (110 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "32",
+                    "1",
+                    "15",
+                    "0xFF",
+                    "0"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output max value small ordinar len (111 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "0",
+                    "19",
+                    "32",
+                    "0xFF",
+                    "1"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output max value word len (112 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1",
+                    "32",
+                    "31",
+                    "0xFF",
+                    "0x44"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output max value ordinar len (113 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "1280",
+                    "2383",
+                    "344",
+                    "0xFF",
+                    "0xFF"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "output max value ordinar words len (114 index)",
+                "instance": "Main",
+                "method": "output_test_with_value",
+                "calldata": [
+                    "15",
+                    "0xF100",
+                    "0xF100",
+                    "0xFF",
+                    "0xAB"
+                ],
+                "expected": [
+                    "0xdeadbeef"
+                ]
+            }, {
+                "comment": "failure (115 index)",
+                "instance": "Main",
+                "method": "failure_test",
+                "calldata": [
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "caller (116 index)",
+                "instance": "Main",
+                "method": "caller_test",
+                "caller": "0xdeadbeef00000000000000000000000000000042",
+                "calldata": [
+                ],
+                "expected": [
+                    "1",
+                    "Main.address"
+                ]
+            }, {
+                "comment": "callvalue (117 index)",
+                "instance": "Main",
+                "method": "callvalue_test",
+                "value": "100 wei",
+                "calldata": [
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "selfbalance (118 index)",
+                "instance": "Main",
+                "method": "selfbalance_test",
+                "calldata": [
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "sstore (119 index)",
+                "instance": "Main",
+                "method": "sstore_test",
+                "calldata": [
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "sload (120 index)",
+                "instance": "Main",
+                "method": "sload_test",
+                "calldata": [
+                ],
+                "expected": [
+                    "1",
+                    "0"
+                ]
+            }, {
+                "comment": "log (121 index)",
+                "instance": "Main",
+                "method": "log_test",
+                "calldata": [
+                ],
+                "expected": [
+                    "0"
+                ]
+            }
+        ],
+        "expected": [
+            "0"
+        ]
+    } ],
+    "contracts": {
+        "Main": "main.sol:Main",
+        "AddressTest": "address_test.sol:AddressTest"
+    }
+}

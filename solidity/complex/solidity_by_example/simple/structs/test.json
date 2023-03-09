@@ -1,0 +1,11 @@
+{ "cases": [ {
+    "name": "entry",
+    "inputs": [
+    ],
+    "expected": [
+    ]
+} ],
+    "contracts": {
+        "Todos": "main.sol:Todos"
+    }
+}

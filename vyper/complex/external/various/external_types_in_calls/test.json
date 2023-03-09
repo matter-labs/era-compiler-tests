@@ -1,0 +1,28 @@
+{ "ignore": true, "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "C",
+            "method": "test",
+            "calldata": [
+            ],
+            "expected": [
+                "9", "7"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "t2",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "9"
+    ]
+} ],
+    "contracts": {
+        "C1": "C1.vy",
+        "C": "C.vy"
+    }
+}

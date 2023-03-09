@@ -1,0 +1,42 @@
+{ "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "D",
+            "method": "f",
+            "calldata": [
+                "C.address"
+            ],
+            "expected": [
+                "0x1"
+            ]
+        },
+        {
+            "instance": "D",
+            "method": "fview",
+            "calldata": [
+                "C.address"
+            ],
+            "expected": {
+                "exception": true,
+                "return_data": []
+            }
+        },
+        {
+            "instance": "D",
+            "method": "fpure",
+            "calldata": [
+                "C.address"
+            ]
+        }
+    ],
+    "expected": {
+        "exception": true,
+        "return_data": []
+    }
+} ],
+    "contracts": {
+        "C": "C.vy",
+        "D": "D.vy"
+    }
+}

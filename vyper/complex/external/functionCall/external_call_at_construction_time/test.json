@@ -1,0 +1,47 @@
+{ "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+                "0",
+                "T.address",
+                "U.address"
+            ],
+            "expected": [
+                "1"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+                "1",
+                "T.address",
+                "U.address"
+            ],
+            "expected": [
+                "2"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+                "2",
+                "T.address",
+                "U.address"
+            ]
+        }
+    ],
+    "expected": [
+        "3"
+    ]
+} ],
+    "contracts": {
+        "T": "T.vy",
+        "U": "U.vy",
+        "C": "C.vy"
+    }
+}

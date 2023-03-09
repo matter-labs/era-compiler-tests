@@ -1,0 +1,74 @@
+{ "cases": [ {
+    "name": "zero_zero",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "0",
+                "0"
+            ],
+            "value": "2000 ETH"
+        }
+    ],
+    "expected": [
+        "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ]
+}, {
+    "name": "zero_creation",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "0",
+                "0xdeadbeef"
+            ],
+            "value": "2000 ETH"
+        }
+    ],
+    "expected": [
+        "0x000000000000000000000000deadbeef000000000000000000000000deadbeef"
+    ]
+}, {
+    "name": "zero_call",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "1",
+                "0"
+            ],
+            "value": "2000 ETH"
+        }
+    ],
+    "expected": [
+        "0x0000000000000000000000000000000100000000000000000000000000000000"
+    ]
+}, {
+    "name": "complex",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "34567",
+                "567890009"
+            ],
+            "value": "2000 ETH"
+        }
+    ],
+    "expected": [
+        "0x00000000000000000000000021D9D76000000000000000000000000021D95059"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.vy",
+        "Callable": "callable.vy"
+    }
+}
