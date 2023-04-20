@@ -26,7 +26,7 @@ object "Test" {
     }
     object "Test_deployed" {
         code {
-            abi_decode_tuple(0, 0)
+            pop(abi_decode_tuple(0, 0))
             test(0)
             return(0, 0)
 

@@ -9,6 +9,122 @@ developers to write smart contracts in popular languages such as C++ and Rust.
 
 This repository contains the collection of tests for the compilers for zkEVM.
 
+## Test types
+
+This repository contains three types of tests:
+
+- Ethereum - which uses the [Ethereum Solidity semantic tests format](https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests).
+- Matter Labs simple - which is a one-contract type created by Matter Labs.
+- Matter Labs complex - which is a multi-contract type also created by Matter Labs.
+
+The `solidity` and `vyper` directories each have three subdirectories, one for each type.
+The `yul`, `llvm`, and `zkevm` directories contain Matter Labs simple tests.
+
+## Matter Labs simple/complex test format
+
+Each test comprises source code files and metadata.
+Simple tests have only one source file, and their metadata is located in comments that start with `!`, for example, `//!` for Solidity.
+Complex tests use the `test.json` file to describe their metadata and refer to source code files.
+
+## Metadata
+
+Metadata is a JSON file that contains the following fields:
+
+- `cases` - an array used to describe the test cases (more information below).
+- `contracts` - this field should only be used for complex tests to describe the contract instances to deploy. For example:
+```
+"contracts": {
+  "Main": "main.sol:Main",
+  "Callable": "callable.sol:Callable"
+}
+```
+In simple tests, only one `Test` contract instance is deployed.
+- `libraries` - an optional field that specifies library addresses for the compiler linkage. Libraries can be described using the following format:
+```
+"libraries": {
+    "libraries/UQ112x112.sol": { "UQ112x112": "UQ112x112" },
+    "libraries/Math.sol": { "Math": "Math" }
+},
+```
+- `ignore` - an optional flag that disables a test.
+- `modes` - an optional field that specifies mode filters for tests. Compiler versions (for Solidity and Vyper) can be specified as SemVer range. For example:
+```
+"modes": [
+    "Y-",
+    "E-",
+    "E+ >=0.4",
+    "E+ <0.5"
+]
+```
+- `system_mode` - an optional system mode compiler flag (`false` by default). Set it to true if you need to enable the zkEVM extensions.
+- `group` - an optional string field that specifies a test group. Currently, it is only used for benchmarking.
+
+## Case
+
+All test cases are executed in a clean context, making them independent of each other.
+
+Each test case contains the following fields:
+
+- `name` - a string name.
+- `comment` - an optional string comment.
+- `inputs` - an array of inputs (described below).
+- `expected` - the expected return data for the last input (the format is described below in the input section).
+- `ignore`, `modes` - the same as in the test metadata.
+
+## Input
+
+Inputs are utilized to specify the contract calls in the test case. The input fields are as follows:
+
+- `comment` - an optional string comment.
+- `instance` - an optional string field that represents the contract instance to call. By default, it is set to `Test`.
+- `caller` - an optional string field that denotes the caller address. By default, it is set to `0xdeadbeef01000000000000000000000000000000`.
+- `method` - a string field with three options:
+    1. `#deployer` for the deployer call.
+    2. `#fallback` to perform a call with the raw calldata.
+    3. Any other string will be recognized as a function name to call. The function selector will be appended at the beginning of the calldata.
+- `calldata` - the input calldata. There are two variants:
+    1. The hexadecimal string, for example: `"calldata": "0x00"`.
+    2. The numbers array. Hex and decimal (including negative) literals or instance addresses (like `Test.address`) are supported. Every number will be padded to 32 bytes. Example: `"calldata": [ "1", "2"]`.
+- `value` - an optional string field to specify `msg.value`, a decimal number with the ` wei` or ` ETH` suffix.
+- `storage` - storage values to set before the call. It is a mapping, where the key is the contract address (`InstanceName.address` can be used), and the value is an array or mapping. Example:
+```
+"storage": { "Test.address": [
+    "1", "2", "3", "4"
+] }
+```
+- `expected` - the expected return data for the input. There are two variants of the format:
+    1. An array of numbers, the same as calldata. Example: `"expected": [ "1", "2"]`.
+    2. Extended expected, which contains three main fields: `return_data` - an array, `exception` - a boolean flag indicating whether the revert is expected, `events` - an array of the expected events, where each event contains `address`(optional), `topics`, `values` fields. Example:
+```
+"expected": {
+    "return_data": [
+        "Shit.address"
+    ],
+    "events": [
+        {
+            "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "0x000000000000000000000000deadbeef00000000000000000000000000000002"
+            ],
+            "values": [
+                "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            ]
+        }
+    ],
+    "exception": false
+}
+```
+
+The `expected` field can also be an array of the objects described above if different expected data is needed for different compiler versions.
+A `compiler_version` as a SemVer range can be specified for the extended expected.
+The `expected` field is optional for the input, and the default value is empty return data.
+
+Additional notes:
+
+- `InstanceName.address` can be used instead of numbers (in the expected, calldata, storage) to insert the contract instance address
+- If the deployer call is not specified for some instance, it will be generated automatically with empty calldata.
+
 ## License
 
 The Solidity compiler is distributed under the terms of either

@@ -418,7 +418,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.4.21;
 
 contract Test {
     function main(uint256 a, uint256 b) external pure returns(uint256 result) {

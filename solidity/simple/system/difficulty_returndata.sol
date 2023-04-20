@@ -13,7 +13,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16 <=0.8.17;
+pragma solidity >=0.4.19 <=0.8.17;
 
 contract Test {
     function main() public {

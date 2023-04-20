@@ -49,10 +49,11 @@ contract Main {
         }
     }
 
-    function failure_test(uint256 value, address _address) external payable {
+    function failure_test(address _address) external payable {
         assembly {
             mstore(36, extcodehash(_address))
-            let result := create(0, 0, 132)
+            mstore(132, 1)
+            let result := create(0, 0, 164)
             mstore(0, result)
             return(0, 32)
         }

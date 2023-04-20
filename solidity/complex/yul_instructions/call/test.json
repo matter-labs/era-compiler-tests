@@ -1516,7 +1516,17 @@
                     "0"
                 ]
             }, {
-                "comment": "sstore (127 index)",
+                "comment": "codesize (127 index)",
+                "instance": "Main",
+                "method": "codesize_test",
+                "calldata": [
+                ],
+                "expected": [
+                    "1",
+                    "1"
+                ]
+            }, {
+                "comment": "sstore (128 index)",
                 "instance": "Main",
                 "method": "sstore_test",
                 "calldata": [
@@ -1525,7 +1535,7 @@
                     "0"
                 ]
             }, {
-                "comment": "sload (128 index)",
+                "comment": "sload (129 index)",
                 "instance": "Main",
                 "method": "sload_test",
                 "calldata": [
@@ -1535,7 +1545,7 @@
                     "0"
                 ]
             }, {
-                "comment": "log (129 index)",
+                "comment": "log (130 index)",
                 "instance": "Main",
                 "method": "log_test",
                 "calldata": [

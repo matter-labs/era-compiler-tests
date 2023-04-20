@@ -40,9 +40,6 @@ contract Callable {
             uint[] memory a;
             uint b = 2<<100;
             a = new uint[](b);
-        } else if (reason == 0x51) {
-            function () internal a;
-            a();
         }
     }
 

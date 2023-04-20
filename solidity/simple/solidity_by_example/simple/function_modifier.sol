@@ -1,4 +1,4 @@
-//! { "modes": [ "Y" ], "cases": [ {
+//! { "modes": [ "Y >=0.8.1" ], "cases": [ {
 //!     "name": "changeOwnerOk",
 //!     "inputs": [
 //!         {

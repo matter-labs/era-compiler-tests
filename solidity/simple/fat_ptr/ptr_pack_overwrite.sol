@@ -37,7 +37,7 @@ contract Test {
             // set system call flag
             pop(staticcall(shl(248, 1), 0xFFE7, 0, 0xFFFF, 0, 0))
             // set gas and forwarding mode (should overwrite system call flag)
-            pop(staticcall(or(shl(192, gas()), shl(232, 1)), 0xFFE7, 0, 0xFFFF, 0, 0))
+            pop(staticcall(or(shl(192, gas()), shl(224, 1)), 0xFFE7, 0, 0xFFFF, 0, 0))
             // should be an exception as the system call flag should be overwritten.
             success := call(ADDRESS_CONTRACT_DEPLOYER, 0xFFF6, 0, 0, 0xFFFF, 0, 0)
         }

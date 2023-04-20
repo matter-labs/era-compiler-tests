@@ -1,5 +1,5 @@
 //! { "system_mode": true,
-//!     "modes": [ "Y" ],
+//!     "modes": [ "Y >=0.8.4" ],
 //!     "cases": [ {
 //!     "name": "case",
 //!     "inputs": [

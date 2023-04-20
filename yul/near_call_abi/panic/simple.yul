@@ -43,7 +43,7 @@ object "Test" {
                 let go_static := calldataload(64)
                 if eq(go_static, 1) {
                     calldatacopy(0, 0, 64)
-                    staticcall(gas(), address(), 0, 64, 0, 32)
+                    pop(staticcall(gas(), address(), 0, 64, 0, 32))
                     return(0, 32)
                 }
 

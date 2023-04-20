@@ -57,10 +57,11 @@ contract Main {
         }
     }
 
-    function failure_test(uint256 value, address _address) external {
+    function failure_test(address _address) external {
         assembly {
             mstore(36, extcodehash(_address))
-            let result := create2(0, 0, 132, 0)
+            mstore(132, 1)
+            let result := create2(0, 0, 164, 0)
             mstore(0, result)
             return(0, 32)
         }

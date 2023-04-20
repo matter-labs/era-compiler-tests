@@ -11,6 +11,7 @@ import "./failure_test.sol";
 import "./caller_test.sol";
 import "./callvalue_test.sol";
 import "./selfbalance_test.sol";
+import "./codesize_test.sol";
 import "./sstore_test.sol";
 import "./sload_test.sol";
 import "./log_test.sol";
@@ -27,6 +28,7 @@ contract Main {
     CallerTest callerTest;
     CallvalueTest callvalueTest;
     SelfbalanceTest selfbalanceTest;
+    CodesizeTest codesizeTest;
     SstoreTest sstoreTest;
     SloadTest sloadTest;
     LogTest logTest;
@@ -41,6 +43,7 @@ contract Main {
         callerTest = new CallerTest();
         callvalueTest = new CallvalueTest();
         selfbalanceTest = new SelfbalanceTest();
+        codesizeTest = new CodesizeTest();
         sstoreTest = new SstoreTest();
         sloadTest = new SloadTest();
         logTest = new LogTest();
@@ -203,6 +206,16 @@ contract Main {
         assembly {
             let result := staticcall(gas(), _selfbalanceTest, 0, 0, 32, 32)
             mstore(0, result)
+            return(0, add(32, returndatasize()))
+        }
+    }
+
+    function codesize_test() external {
+        address _codesizeTest = address(codesizeTest);
+        assembly {
+            let result := staticcall(gas(), _codesizeTest, 0, 0, 32, 32)
+            mstore(0, result)
+            mstore(32, eq(mload(32), extcodesize(_codesizeTest)))
             return(0, add(32, returndatasize()))
         }
     }

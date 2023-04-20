@@ -2753,7 +2753,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.4.21;
 
 // TODO: enable some cases with zero sizes after the VM fix
 contract Test {

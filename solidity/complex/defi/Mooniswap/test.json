@@ -1,4 +1,7 @@
-{ "cases": [ {
+{ "modes": [
+    "Y >=0.8.9",
+    "E"
+], "cases": [ {
     "name": "default",
     "inputs": [
         {

@@ -1043,7 +1043,17 @@
                     ]
                 }
             }, {
-                "comment": "zero salt (60 index)",
+                "comment": "failure (60 index)",
+                "instance": "Main",
+                "method": "failure_test",
+                "calldata": [
+                    "FailureTest.address"
+                ],
+                "expected": [
+                    "0"
+                ]
+            }, {
+                "comment": "zero salt (61 index)",
                 "instance": "Main",
                 "method": "salt_test",
                 "calldata": [
@@ -1054,7 +1064,7 @@
                     "1"
                 ]
             }, {
-                "comment": "one salt (61 index)",
+                "comment": "one salt (62 index)",
                 "instance": "Main",
                 "method": "salt_test",
                 "calldata": [
@@ -1065,7 +1075,7 @@
                     "1"
                 ]
             }, {
-                "comment": "ordinar salt (62 index)",
+                "comment": "ordinar salt (63 index)",
                 "instance": "Main",
                 "method": "salt_test",
                 "calldata": [
@@ -1076,7 +1086,7 @@
                     "1"
                 ]
             }, {
-                "comment": "max salt (63 index)",
+                "comment": "max salt (64 index)",
                 "instance": "Main",
                 "method": "salt_test",
                 "calldata": [
@@ -1087,7 +1097,7 @@
                     "1"
                 ]
             }, {
-                "comment": "same address (64 index)",
+                "comment": "same address (65 index)",
                 "instance": "Main",
                 "method": "create2_same_address",
                 "calldata": [

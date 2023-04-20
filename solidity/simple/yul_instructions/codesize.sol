@@ -1,5 +1,5 @@
 //! { "cases": [ {
-//!     "name": "zero",
+//!     "name": "zero_deploy",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
@@ -17,7 +17,7 @@
 //!         ]
 //!     }
 //! }, {
-//!     "name": "one",
+//!     "name": "one_deploy",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
@@ -34,7 +34,7 @@
 //!         ]
 //!     }
 //! }, {
-//!     "name": "small_ordinar",
+//!     "name": "small_ordinar_deploy",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
@@ -51,7 +51,7 @@
 //!         ]
 //!     }
 //! }, {
-//!     "name": "word",
+//!     "name": "word_deploy",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
@@ -68,7 +68,7 @@
 //!         ]
 //!     }
 //! }, {
-//!     "name": "ordinar",
+//!     "name": "ordinar_deploy",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
@@ -85,7 +85,7 @@
 //!         ]
 //!     }
 //! }, {
-//!     "name": "ordinar_words",
+//!     "name": "ordinar_words_deploy",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
@@ -101,17 +101,50 @@
 //!             }
 //!         ]
 //!     }
+//! }, {
+//!     "name": "runtime",
+//!     "inputs": [
+//!         {
+//!             "method": "#deployer",
+//!             "calldata": [
+//!             ],
+//!             "expected": {
+//!                 "return_data": ["*"],
+//!                 "events": [
+//!                     {
+//!                         "topics": [],
+//!                         "values": ["0"]
+//!                     }
+//!                 ]
+//!             }
+//!         },
+//!         {
+//!             "method": "runtime",
+//!             "calldata": [
+//!             ]
+//!         }
+//!     ],
+//!     "expected": [
+//!         "1"
+//!     ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.4.22;
 
 contract Test {
     constructor() public {
         assembly {
             mstore(0, codesize())
             log0(0, 32)
+        }
+    }
+
+    function runtime() external {
+        assembly {
+            mstore(0, eq(codesize(), extcodesize(address())))
+            return(0, 32)
         }
     }
 }
