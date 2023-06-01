@@ -1,6 +1,6 @@
 @external
 def test(a: uint256[8], b: uint256[3], c: uint256[5], a_index: uint256, b_index: uint256, c_index: uint256) -> (uint256, uint256, uint256):
-    return (convert(a[a_index], uint256), b[b_index], c[c_index])
+    return (a[a_index], b[b_index], c[c_index])
 
 # ====
 # compileToEwasm: also

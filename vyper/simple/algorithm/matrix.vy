@@ -57,7 +57,8 @@ def mul(_self: Matrix, other: Matrix) -> Matrix:
 
 @internal
 @pure
-def add(_self: Matrix, other: Matrix) -> Matrix:
+def add(__self: Matrix, other: Matrix) -> Matrix:
+    _self: Matrix = __self
     for i in range(MAX_SIZE):
         if not i < _self.n:
             break
@@ -69,7 +70,8 @@ def add(_self: Matrix, other: Matrix) -> Matrix:
 
 @internal
 @pure
-def scalar(_self: Matrix, n: uint256) -> Matrix:
+def scalar(__self: Matrix, n: uint256) -> Matrix:
+    _self: Matrix = __self
     for i in range(MAX_SIZE):
         if not i < _self.n:
             break

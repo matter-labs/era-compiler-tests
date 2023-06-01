@@ -13,7 +13,7 @@
 #!         "events": [
 #!             {
 #!                 "topics": [
-#!                     "0x07392b89121f4d481601a3db92f2daf8c73cc086a942b4522c58abcbdeac4d01",
+#!                     "0xb0f98cf6a3ac72f8ce21b36c00f0c5bc98b2acbda7853638c61ce3199b220011",
 #!                     "9876543211",
 #!                     "9876543212"
 #!                 ],
@@ -26,7 +26,7 @@
 #!     }
 #! } ] }
 
-event Event:
+event MyEvent:
     _: indexed(uint256)
     __: indexed(uint256)
     ___: uint256
@@ -34,4 +34,4 @@ event Event:
 
 @external
 def test():
-    log Event(9876543211, 9876543212, 1234567890, 1234567891)
+    log MyEvent(9876543211, 9876543212, 1234567890, 1234567891)

@@ -60,77 +60,77 @@ def main(
     if param == 1:
         result = convert(p1.a, uint256)
     elif param == 2:
-        result = convert(p1.b[0], uint256)
+        result = p1.b[0]
     elif param == 3:
-        result = convert(p1.b[1], uint256)
+        result = p1.b[1]
     elif param == 4:
         result = convert(p2[0].a.a, uint256)
     elif param == 5:
-        result = convert(p2[0].a.b[0], uint256)
+        result = p2[0].a.b[0]
     elif param == 6:
-        result = convert(p2[0].a.b[1], uint256)
+        result = p2[0].a.b[1]
     elif param == 7:
         result = convert(p2[0].b, uint256)
     elif param == 8:
-        result = convert(self.toUint(p2[0].c), uint256)
+        result = self.toUint(p2[0].c)
     elif param == 9:
         result = convert(p2[1].a.a, uint256)
     elif param == 10:
-        result = convert(p2[1].a.b[0], uint256)
+        result =p2[1].a.b[0]
     elif param == 11:
-        result = convert(p2[1].a.b[1], uint256)
+        result = p2[1].a.b[1]
     elif param == 12:
         result = convert(p2[1].b, uint256)
     elif param == 13:
-        result = convert(self.toUint(p2[1].c), uint256)
+        result = self.toUint(p2[1].c)
     elif param == 14:
         result = convert(p3, uint256)
     elif param == 15:
         result = convert(p4[0].a, uint256)
     elif param == 16:
-        result = convert(p4[0].b[0], uint256)
+        result = p4[0].b[0]
     elif param == 17:
-        result = convert(p4[0].b[1], uint256)
+        result = p4[0].b[1]
     elif param == 18:
         result = convert(p4[1].a, uint256)
     elif param == 19:
-        result = convert(p4[1].b[0], uint256)
+        result = p4[1].b[0]
     elif param == 20:
-        result = convert(p4[1].b[1], uint256)
+        result = p4[1].b[1]
     elif param == 21:
         result = convert(p4[2].a, uint256)
     elif param == 22:
-        result = convert(p4[2].b[0], uint256)
+        result = p4[2].b[0]
     elif param == 23:
-        result = convert(p4[2].b[1], uint256)
+        result = p4[2].b[1]
     elif param == 24:
         result = convert(p5.a.a, uint256)
     elif param == 25:
-        result = convert(p5.a.b[0], uint256)
+        result = p5.a.b[0]
     elif param == 26:
-        result = convert(p5.a.b[1], uint256)
+        result = p5.a.b[1]
     elif param == 27:
         result = convert(p5.b, uint256)
     elif param == 28:
-        result = convert(self.toUint(p5.c), uint256)
+        result = self.toUint(p5.c)
     elif param == 29:
         result = convert(p6, uint256)
     elif param == 30:
-        result = convert(self.toUint(p7), uint256)
+        result = self.toUint(p7)
     elif param == 31:
         result = convert(p8[0].a, uint256)
     elif param == 32:
-        result = convert(p8[0].b[0], uint256)
+        result = p8[0].b[0]
     elif param == 33:
-        result = convert(p8[0].b[1], uint256)
+        result = p8[0].b[1]
     elif param == 34:
         result = convert(p9, uint256)
     elif param == 35:
-        result = convert(self.toUint(p10[0]), uint256)
+        result = self.toUint(p10[0])
     elif param == 36:
-        result = convert(self.toUint(p10[1]), uint256)
+        result = self.toUint(p10[1])
     elif param == 37:
-        result = convert(self.toUint(p10[2]), uint256)
+        result = self.toUint(p10[2])
     elif param == 38:
         result = convert(p11[0], uint256)
     elif param == 39:

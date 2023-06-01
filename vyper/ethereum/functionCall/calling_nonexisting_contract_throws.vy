@@ -5,7 +5,7 @@ d: D
 
 @external
 def __init__():
-    self.d = convert(0x1212, D)
+    self.d = D(convert(0x1212, address))
 
 @external
 def f() -> uint256:

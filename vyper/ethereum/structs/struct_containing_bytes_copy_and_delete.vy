@@ -1,10 +1,10 @@
-struct Struct:
+struct MyStruct:
     a: uint256
     data: Bytes[100]
     b: uint256
 
-data1: Struct
-data2: Struct
+data1: MyStruct
+data2: MyStruct
 
 @external
 def set(_a: uint256, _data: Bytes[100], _b: uint256) -> bool:
@@ -20,7 +20,7 @@ def copy() -> bool:
     
 @external
 def del_() -> bool:
-    self.data1 = empty(Struct)
+    self.data1 = empty(MyStruct)
     return True
     
 @external

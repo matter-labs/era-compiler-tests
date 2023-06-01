@@ -39,7 +39,7 @@ def main(
 ) -> uint256:
     result: uint256 = 0
     if param == 0:
-        result = convert(p1, uint256) + convert(p2, uint256) + convert(p3, uint256) + convert(p4, uint256) + convert(p5, uint256) + convert(p6, uint256) + convert(p7, uint256) + convert(p8, uint256) + convert(p9, uint256) + convert(p10, uint256) + convert(p11, uint256) + convert(p12, uint256) + convert(p13, uint256) + convert(p14, uint256) + convert(p15, uint256) + convert(p16, uint256) + convert(p17, uint256) + convert(p18, uint256) + convert(p19, uint256) + convert(p20, uint256)
+        result = convert(p1, uint256) + convert(p2, uint256) + convert(p3, uint256) + convert(p4, uint256) + convert(p5, uint256) + convert(p6, uint256) + convert(p7, uint256) + convert(p8, uint256) + convert(p9, uint256) + convert(p10, uint256) + convert(p11, uint256) + convert(p12, uint256) + convert(p13, uint256) + convert(p14, uint256) + convert(p15, uint256) + convert(p16, uint256) + convert(p17, uint256) + convert(p18, uint256) + convert(p19, uint256) + p20
     elif param == 1:
         result = convert(p1, uint256)
     elif param == 2:
@@ -81,7 +81,7 @@ def main(
     elif param == 20:
         result = p20
     else:
-        result = convert(p1, uint256) * convert(p2, uint256) * convert(p3, uint256) * convert(p4, uint256) * convert(p5, uint256) * convert(p6, uint256) * convert(p7, uint256) * convert(p8, uint256) * convert(p9, uint256) * convert(p10, uint256) * convert(p11, uint256) * convert(p12, uint256) * convert(p13, uint256) * convert(p14, uint256) * convert(p15, uint256) * convert(p16, uint256) * convert(p17, uint256) * convert(p18, uint256) * convert(p19, uint256) * convert(p20, uint256)
+        result = convert(p1, uint256) * convert(p2, uint256) * convert(p3, uint256) * convert(p4, uint256) * convert(p5, uint256) * convert(p6, uint256) * convert(p7, uint256) * convert(p8, uint256) * convert(p9, uint256) * convert(p10, uint256) * convert(p11, uint256) * convert(p12, uint256) * convert(p13, uint256) * convert(p14, uint256) * convert(p15, uint256) * convert(p16, uint256) * convert(p17, uint256) * convert(p18, uint256) * convert(p19, uint256) * p20
 
     return result
 

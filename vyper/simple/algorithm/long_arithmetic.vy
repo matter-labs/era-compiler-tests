@@ -205,10 +205,10 @@ def pow(__self: BigUint, _n: uint256) -> BigUint:
     for _ in range(1000000000):
         if not (n != 0):
             break
-        if bitwise_and(n, 1) != 0:
+        if n % 2 != 0:
             result = self.mul(result, _self)
         _self = self.mul(_self, _self)
-        n = shift(n, -1)
+        n = n / 2
     return result
 
 @external

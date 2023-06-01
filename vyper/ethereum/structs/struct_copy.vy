@@ -2,12 +2,12 @@ struct Nested:
     x: uint256
     y: uint256
     
-struct Struct:
+struct MyStruct:
     a: uint256
     nested: Nested
     c: uint256
 
-data: HashMap[uint256, Struct]
+data: HashMap[uint256, MyStruct]
 
 @external
 def set(k: uint256) -> bool:

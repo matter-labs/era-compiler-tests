@@ -9,9 +9,7 @@ def f(a: bool) -> bool:
 @external
 @pure
 def fail() -> bool:
-    x: bool = True
-    assert False
-    return x
+    raise
 
 @external
 @pure

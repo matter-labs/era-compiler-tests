@@ -21,10 +21,11 @@ struct Data:
 @internal
 @pure
 def fill(data: Data, values: uint8[3]) -> Data:
-    data.a = values[0]
-    data.b = values[1]
-    data.c = values[2]
-    return data
+    _data: Data = data
+    _data.a = values[0]
+    _data.b = values[1]
+    _data.c = values[2]
+    return _data
 
 @external
 def main(witness: Data) -> uint8:

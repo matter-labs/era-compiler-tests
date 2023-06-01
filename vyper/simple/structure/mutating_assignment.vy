@@ -22,5 +22,6 @@ struct Data:
 @external
 @pure
 def main(data: Data, divider: uint8) -> Data:
-    data.inner.value /= divider
-    return data
+    _data: Data = data
+    _data.inner.value /= divider
+    return _data

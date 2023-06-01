@@ -13,7 +13,7 @@
 #!         "events": [
 #!             {
 #!                 "topics": [
-#!                     "0x57050ab73f6b9ebdd9f76b8d4997793f48cf956e965ee070551b9ca0bb71584e"
+#!                     "0x4dbfb68b43dddfa12b51ebe99ab8fded620f9a0ac23142879a4f192a1b7952d2"
 #!                 ],
 #!                 "values": []
 #!             }
@@ -21,9 +21,9 @@
 #!     }
 #! } ] }
 
-event Event:
+event MyEvent:
     pass
     
 @external
 def test():
-    log Event()
+    log MyEvent()

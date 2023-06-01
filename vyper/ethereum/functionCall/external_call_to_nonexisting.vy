@@ -11,7 +11,7 @@ i: I
 
 @external
 def __init__():
-    self.i = convert(0xcafecafe, I)
+    self.i = I(convert(0xcafecafe, address))
    
 @external
 def f(c: uint256) -> uint256:

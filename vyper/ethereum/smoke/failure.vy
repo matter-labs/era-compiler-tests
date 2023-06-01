@@ -17,8 +17,7 @@ def g(_value: bool):
 @external
 @pure
 def h() -> uint256:
-    assert False
-    return 0
+    raise
     
 # ====
 # EVMVersion: >homestead

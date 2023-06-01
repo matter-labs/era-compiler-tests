@@ -4,7 +4,8 @@ struct S:
 
 @external
 @view
-def gg(s: S) -> Bytes[68]:
+def gg(_s: S) -> Bytes[68]:
+    s: S = _s
     s.a = 0
     s.b = 0x00 # only this will validate.
     return slice(msg.data, 0, 68)

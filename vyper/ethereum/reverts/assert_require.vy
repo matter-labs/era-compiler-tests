@@ -1,6 +1,6 @@
 @external
-def f():
-    assert False
+def f(val: bool):
+    assert val
     
 @external
 def g(val: bool) -> bool:
@@ -16,7 +16,7 @@ def h(val: bool) -> bool:
 # compileToEwasm: also
 # compileViaYul: also
 # ----
-# f() -> FAILURE
+# f(): false -> FAILURE
 # g(bool): false -> FAILURE
 # g(bool): true -> true
 # h(bool): false -> FAILURE
