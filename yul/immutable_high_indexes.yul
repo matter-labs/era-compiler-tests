@@ -33,9 +33,9 @@ object "Test_29" {
     object "Test_29_deployed" {
         code {
             {
-                mstore(0, loadimmutable("10000000000000000000000000")
-                mstore(32, loadimmutable("20000000000000000000000000")
-                mstore(64, loadimmutable("30000000000000000000000000")
+                mstore(0, loadimmutable("10000000000000000000000000"))
+                mstore(32, loadimmutable("20000000000000000000000000"))
+                mstore(64, loadimmutable("30000000000000000000000000"))
                 return(0, 96)
             }
         }

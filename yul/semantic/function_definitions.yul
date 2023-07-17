@@ -142,7 +142,7 @@
 //!     ]
 //! } ] }
 
-object "Test_29" {
+object "Test" {
     code {
         {
             return(0, 0)

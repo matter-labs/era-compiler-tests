@@ -1,4 +1,4 @@
-//! { "modes": [ "Y" ], "cases": [ {
+//! { "modes": [ "Y", "y" ], "cases": [ {
 //!     "name": "outerConstructedStartTokenId",
 //!     "inputs": [
 //!         {

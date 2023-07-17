@@ -131,6 +131,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.24'
   abiEncoderV2:
     enabled: true
@@ -161,6 +162,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       abi_encoder_v2_head_overflow_with_static_array_cleanup_bug.sol:
         hash: '0x148ce14ad3d17a698f542abc7adb637e'
@@ -205,6 +207,11 @@ entries:
       calldata_array_function_types.sol:
         hash: '0xb38b15276042b08935eacac024adaff3'
         enabled: true
+        comment: 'TODO: https://linear.app/matterlabs/issue/CPR-532/implement-the-recursion-workaround'
+        modes:
+          - Y
+          - E
+          - y
         version: '>=0.7.5'
       calldata_array_multi_dynamic.sol:
         hash: '0x8c858cf50e12fefc2a605180d8af3d80'
@@ -452,6 +459,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       abi_encode_with_signaturev2.sol:
         hash: '0xda9b685dff16a7497b30ffee22ea16bf'
@@ -459,6 +467,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       contract_array.sol:
         hash: '0x990a671dd5a4e62f2f21ba2a69aa9303'
@@ -531,6 +540,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       divisiod_by_zero.sol:
         hash: '0x828783b431366bfeb11afb853888d37d'
@@ -686,6 +696,7 @@ entries:
         modes:
         - Y >=0.8.5
         - E
+        - y
         version: '>=0.4.12'
       bytes_to_fixed_bytes_simple.sol:
         hash: '0x561fca74d5d015874db511d567eaacb0'
@@ -795,6 +806,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_including_array.sol:
             hash: '0x6c7f74959af60a2c53ff9397e3c66935'
@@ -818,6 +830,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_storage_storage_different_base_nested.sol:
             hash: '0xf86e77490ef70a203a0de61ea97b374f'
@@ -825,6 +838,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_storage_storage_dyn_dyn.sol:
             hash: '0xf2cd5240e9c8822c9c242e93abe8653f'
@@ -844,6 +858,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_storage_storage_static_static.sol:
             hash: '0x8d6eb7f04e60be5f12bfb63272ae1a79'
@@ -867,6 +882,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_target_leftover2.sol:
             hash: '0x307ee011cc5acbe04e593f832f8662d5'
@@ -874,6 +890,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_target_simple.sol:
             hash: '0xee66f7a0fa14112b029b5f76484400a8'
@@ -881,6 +898,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_copy_target_simple_2.sol:
             hash: '0xb3a76256e7644b9fd9f2f8d4acf75d89'
@@ -888,6 +906,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           array_elements_to_mapping.sol:
             hash: '0x69cb7359d98ddfe2643fc05449e7e2d8'
@@ -911,22 +930,23 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.7.5'
           array_of_function_external_storage_to_storage_dynamic.sol:
             hash: '0x255b1fda204fa2540001ecb7fe88f70e'
             enabled: true
+            comment: 'TODO: https://linear.app/matterlabs/issue/CPR-558/support-the-function-pointers'
             modes:
             - Y >=0.8.11
             - Y =0.8.0
-            - E
             version: '>=0.7.0'
           array_of_function_external_storage_to_storage_dynamic_different_mutability.sol:
             hash: '0x926eaaa57bd9d066ab925002c5a4c7bc'
             enabled: true
+            comment: 'TODO: https://linear.app/matterlabs/issue/CPR-558/support-the-function-pointers'
             modes:
             - Y >=0.8.11
             - Y =0.8.0
-            - E
             version: '>=0.7.0'
           array_of_struct_calldata_to_memory.sol:
             hash: '0x4fc11b51b4e3a581f8208317b3b185c4'
@@ -970,6 +990,7 @@ entries:
             modes:
             - Y >=0.8.2
             - E
+            - y
             version: '>=0.6.9'
           bytes_inside_mappings.sol:
             hash: '0x7a7cf09091ac362cd01c9b7faf51c5f8'
@@ -994,6 +1015,7 @@ entries:
             - Y <=0.8.4
             - Y >=0.8.12
             - E
+            - y
             version: '>=0.7.5'
           calldata_2d_bytes_to_memory.sol:
             hash: '0xd803dcba673095b38f853ac17af02c1a'
@@ -1046,10 +1068,11 @@ entries:
           cleanup_during_multi_element_per_slot_copy.sol:
             hash: '0x0ca561dcc27968e18d54e402a7296a3f'
             enabled: true
-            comment: Yul difference was fixed in the solc 0.8.16
+            comment: solc bug fixed in v0.8.17
             modes:
             - Y >=0.8.16
             - E
+            - y >=0.8.16
             version: '>=0.7.0'
           copy_byte_array_in_struct_to_storage.sol:
             hash: '0x952eefa4a431896743b2208c004db2c7'
@@ -1083,6 +1106,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.7.0'
           dirty_memory_bytes_to_storage_copy.sol:
             hash: '0x1cb32d3c640ab8400252ec0dc47f1bd1'
@@ -1098,6 +1122,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           elements_of_nested_array_of_structs_memory_to_storage.sol:
             hash: '0xf10e8b45cf391c2c27af8d9eff7be878'
@@ -1105,6 +1130,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           empty_bytes_copy.sol:
             hash: '0xca41ac6f297320f952aeeb40772c86ff'
@@ -1113,10 +1139,11 @@ entries:
           function_type_array_to_storage.sol:
             hash: '0x896b794f7155ff04f637e3ed356a00bd'
             enabled: true
+            comment: solc bug fixed in v0.8.16
             modes:
-            - Y <=0.8.11
             - Y >=0.8.16
             - E
+            - y >=0.8.16
             version: '>=0.8.12'
           memory_dyn_2d_bytes_to_storage.sol:
             hash: '0xfaf2461bae5fc15b5c1a2ce7980a485e'
@@ -1133,6 +1160,7 @@ entries:
             - Y <=0.8.4
             - Y >=0.8.12
             - E
+            - y
             version: '>=0.7.6'
           nested_array_element_calldata_to_storage.sol:
             hash: '0x2b13ed6d9cfe4e4182cf02c63eebec72'
@@ -1153,6 +1181,7 @@ entries:
             - Y <=0.8.4
             - Y >=0.8.12
             - E
+            - y
             version: '>=0.7.5'
           nested_array_element_storage_to_storage.sol:
             hash: '0x5b999bf37a3f713982a5fe687c88d0ad'
@@ -1168,6 +1197,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           nested_array_of_structs_memory_to_memory.sol:
             hash: '0x388cb8fcd0347e5023108cce904c15b7'
@@ -1179,6 +1209,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           nested_array_of_structs_storage_to_storage.sol:
             hash: '0x2db69dd612548aa00b32e1b3e3692cab'
@@ -1186,6 +1217,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           nested_array_of_structs_with_nested_array_from_storage_to_memory.sol:
             hash: '0x90a48b15c456547df8721539f9e619e7'
@@ -1193,6 +1225,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           nested_dynamic_array_element_calldata_to_storage.sol:
             hash: '0x4e20365222b4ce3f24269e12d4c50045'
@@ -1209,6 +1242,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.7.5'
           storage_memory_nested_from_pointer.sol:
             hash: '0x4ad0808cb416efad9f968b6b0da7555f'
@@ -1220,6 +1254,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.6.0'
           storage_memory_packed.sol:
             hash: '0x43d83a052ae60a5944c6e9e5e0c4849a'
@@ -1235,6 +1270,7 @@ entries:
             modes:
             - Y >=0.8.2
             - E
+            - y
             version: '>=0.6.9'
       create_dynamic_array_with_zero_length.sol:
         hash: '0x48981cbc1565a63f9311de3224b0997e'
@@ -1387,6 +1423,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.12'
           memory_arrays_dynamic_index_access_write.sol:
             hash: '0x33fcc152609d56bbf3618ca668dddf2d'
@@ -1423,6 +1460,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       memory.sol:
         hash: '0xd15eba50d775bf2b79190b31ece648ac'
@@ -1516,6 +1554,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.6.9'
           array_push_nested_from_memory.sol:
             hash: '0x90c080e2a652159a8f0294bb72ad9b4a'
@@ -1523,6 +1562,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.22'
           array_push_packed_array.sol:
             hash: '0x8bb3dfa156c3ad4ec967bb5c921b0713'
@@ -1534,6 +1574,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.4.22'
           array_push_struct_from_calldata.sol:
             hash: '0xe2c73568e7d196c18e8d2cbfeac7da59'
@@ -1541,6 +1582,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.7.5'
           byte_array_push.sol:
             hash: '0x92c48321d8bf5816125dcbb1cc6066d5'
@@ -1557,6 +1599,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.7.5'
           push_no_args_1d.sol:
             hash: '0xead6d81bcd65068e46ed49571a746641'
@@ -1591,6 +1634,7 @@ entries:
             modes:
             - Y >=0.8.2
             - E
+            - y
             version: '>=0.6.11'
           array_slice_calldata_as_argument_of_external_calls.sol:
             hash: '0x5f01e514b242a0c3a0a0239fe9ff4950'
@@ -1627,6 +1671,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       string_bytes_conversion.sol:
         hash: '0xf5de9e61f8c9ca5b5fc068a1b1620acd'
@@ -1638,6 +1683,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       strings_in_struct.sol:
         hash: '0xf07dcca9b708f21aa7a2d5887a8f3f42'
@@ -1645,6 +1691,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
   asmForLoop:
     enabled: true
@@ -1799,6 +1846,7 @@ entries:
         modes:
         - E >=0.8.7
         - Y
+        - y
         version: '>=0.8.5'
       calldata_attached_to_static_array.sol:
         hash: '0x41951b15bb669986e073fe256822ca92'
@@ -1807,6 +1855,7 @@ entries:
         modes:
         - E >=0.8.7
         - Y
+        - y
         version: '>=0.8.0'
       calldata_attached_to_struct.sol:
         hash: '0xfb5e47ecbe45e3ed4e83046e9fd04e8c'
@@ -1815,6 +1864,7 @@ entries:
         modes:
         - E >=0.8.7
         - Y
+        - y
         version: '>=0.8.0'
       calldata_bytes_array_bounds.sol:
         hash: '0x8ae1e9bf8544ea46cba50f7c4af62101'
@@ -1919,6 +1969,7 @@ entries:
         modes:
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.4.12'
       cleanup_bytes_types_v1.sol:
         hash: '0x15195d30040396447d31c5654298c3ca'
@@ -1939,6 +1990,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       exp_cleanup_direct.sol:
         hash: '0xea9046617be2f3ef01b8037ad5a39693'
@@ -1947,6 +1999,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       exp_cleanup_nonzero_base.sol:
         hash: '0x61fd1280632346241561b557a2866db3'
@@ -1955,6 +2008,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       exp_cleanup_smaller_base.sol:
         hash: '0x8f604f2c0e81f6f527c1d72ef0e2ca44'
@@ -1963,6 +2017,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       indexed_log_topic_during_explicit_downcast.sol:
         hash: '0xb0537ad968c4aa4f9fd7be6fb22621ea'
@@ -1970,6 +2025,7 @@ entries:
         modes:
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.7.0'
       indexed_log_topic_during_explicit_downcast_during_emissions.sol:
         hash: '0xec21fa2b954b3066a578a2d2ebf850b1'
@@ -1977,6 +2033,7 @@ entries:
         modes:
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.7.0'
   constantEvaluator:
     enabled: true
@@ -2002,6 +2059,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.4'
       constant_string.sol:
         hash: '0x6429e2688e0d07160f19db522b55f209'
@@ -2029,6 +2087,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.6.3'
       same_constants_different_files.sol:
         hash: '0x4c53995dda7afcf8924a7c3dcf690ef0'
@@ -2059,6 +2118,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       callvalue_check.sol:
         hash: '0x7f56fe98d97056e266feeae37d6a4700'
@@ -2078,6 +2138,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.7.0'
       constructor_function_complex.sol:
         hash: '0xcae19a9c342bd32d46f009c2e6e0d4ea'
@@ -2085,6 +2146,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.7.0'
       constructor_static_array_argument.sol:
         hash: '0x1a122e571ec92899427929fddbc96f54'
@@ -2379,6 +2441,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.8.4'
       error_selector.sol:
         hash: '0x668864d46dd29ddaf0a0fac5e0fbf716'
@@ -2386,6 +2449,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.8.4'
       error_static_calldata_uint_array_and_dynamic_array.sol:
         hash: '0x04a3dbb040f363af03362623688c7b72'
@@ -2484,6 +2548,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       event_emit.sol:
         hash: '0x5f401903b94dcf5475f7ef1eb786af11'
@@ -2536,6 +2601,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.8.15'
       event_signature_in_library.sol:
         hash: '0x6a773005f62c5142216c38848ae79a19'
@@ -2544,6 +2610,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.7.5'
       event_static_calldata_uint_array_and_dynamic_array.sol:
         hash: '0x0c9dde0fa64d48d43a2bff22b80dc38b'
@@ -2582,6 +2649,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       signed_base.sol:
         hash: '0xf8e88d91a9d2cbd822f35d8384f7f746'
@@ -2594,6 +2662,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
   expressions:
     enabled: true
@@ -2667,6 +2736,7 @@ entries:
         modes:
         - Y >=0.8.7
         - E
+        - y
         version: '>=0.4.12'
       uncalled_address_transfer_send.sol:
         hash: '0xd0297994ee61ac3a8836cf5d519e066e'
@@ -2682,6 +2752,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.0'
       _base64:
         enabled: false
@@ -2775,6 +2846,7 @@ entries:
         modes:
         - Y+ >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       snark.sol:
         hash: '0x5972c878557f3b8206deda7d20a46850'
@@ -2999,6 +3071,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.6'
       fallback_or_receive.sol:
         hash: '0x18f004b3c3f85a02718a2ae664def760'
@@ -3321,6 +3394,7 @@ entries:
         modes:
         - Y >=0.8.13
         - E
+        - y
         version: '>=0.4.12'
       return_size_shorter_than_expected.sol:
         hash: '0x03e534455c50daa7718065c72e6dcbc9'
@@ -3359,6 +3433,9 @@ entries:
       call_to_zero_initialized_function_type_ir.sol:
         hash: '0xd3a070861a56a572005843c294f9bdba'
         enabled: true
+        comment: 'TODO: https://linear.app/matterlabs/issue/CPR-558/support-the-function-pointers'
+        modes:
+        - Y
         version: '>=0.4.12'
       call_to_zero_initialized_function_type_legacy.sol:
         hash: '0xf26b998bd66e591443bbc0c347641f83'
@@ -3399,6 +3476,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.4.22'
       function_type_library_internal.sol:
         hash: '0xe434db671a34a71294295b613a7b5853'
@@ -3446,6 +3524,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.4.12'
       selector_2.sol:
         hash: '0x11021aea8a241cda00c5e56fbcbca43a'
@@ -3497,6 +3576,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       mapping.sol:
         hash: '0xae06e417d43fde53f12c12e32a8ee68c'
@@ -3524,6 +3604,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       struct_with_bytes.sol:
         hash: '0xc51c440f19cd5baee4e1fbf90f2cb942'
@@ -3531,6 +3612,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       struct_with_bytes_simple.sol:
         hash: '0x3192bf389c89573431114020e2d06117'
@@ -3538,6 +3620,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       value_types.sol:
         hash: '0x66ff10373d8bff42d340e955d1afa100'
@@ -3814,6 +3897,7 @@ entries:
         modes:
         - Y >=0.8.8
         - E
+        - y
         version: '>=0.4.12'
       function_name_clash.sol:
         hash: '0x67f18f79ecff1dbb97f30e403880dca0'
@@ -3853,6 +3937,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       inline_assembly_memory_access.sol:
         hash: '0x057b05deca738e77c3c1d96742ef7292'
@@ -3962,10 +4047,11 @@ entries:
       slot_access_via_mapping_pointer.sol:
         hash: '0xd924067412e12d53f351598b4f3909ba'
         enabled: true
-        comment: solc issue for Y* <0.8.17
+        comment: solc bug fixed in v0.8.17
         modes:
         - Y* >=0.8.17
         - E
+        - y* >=0.8.17
         version: '>=0.7.0'
       truefalse.sol:
         hash: '0xaeebd7f3edd276083af9907c316a7c23'
@@ -4113,6 +4199,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.5.1'
       internal_call_attached_with_parentheses.sol:
         hash: '0x4069d2070382f6ee7e0fe1111305f9c9'
@@ -4124,6 +4211,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.4.12'
       internal_library_function.sol:
         hash: '0x977236127c1c90e5ae9f9aa798fd7ce1'
@@ -4162,6 +4250,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.4.16'
       internal_library_function_attached_to_external_function_type.sol:
         hash: '0x491acd66e32f21bca9abce635b642889'
@@ -4203,6 +4292,7 @@ entries:
         modes:
         - Y >=0.8.5
         - E
+        - y
         version: '>=0.8.4'
       internal_library_function_attached_to_mapping.sol:
         hash: '0x361ff6a27000667d99516d65bcb1b146'
@@ -4244,6 +4334,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.8'
       library_address.sol:
         hash: '0xde1d6a4f0836728888610a88cd184675'
@@ -4252,6 +4343,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       library_address_homestead.sol:
         hash: '0x945203ee8e819a57b2eca0c6f05d77a5'
@@ -4263,6 +4355,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       library_call_in_homestead.sol:
         hash: '0x003599f87017b44fe7f9722815bfec50'
@@ -4274,6 +4367,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       library_delegatecall_guard_view_needed.sol:
         hash: '0xd2d85de915a0810ed8e733973494c7b8'
@@ -4281,6 +4375,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       library_delegatecall_guard_view_not_needed.sol:
         hash: '0xaf0639159702489e7c96d02131fbf1d1'
@@ -4288,6 +4383,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       library_delegatecall_guard_view_staticcall.sol:
         hash: '0x91709b0e84fd535c31cb0faf8d8689ba'
@@ -4295,6 +4391,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       library_enum_as_an_expression.sol:
         hash: '0x8900a692743a04a96657b64d4c67a6aa'
@@ -4309,6 +4406,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       library_function_selectors_struct.sol:
         hash: '0xd1c06bbbbde6ed31e40cc3f63a522513'
@@ -4316,6 +4414,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       library_references_preserve.sol:
         hash: '0xb943c70f09d4c5b3df21d1e83896d367'
@@ -4327,6 +4426,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       library_staticcall_delegatecall.sol:
         hash: '0x180865514156940cf1a467d8dd849854'
@@ -4392,6 +4492,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.5.1'
       using_library_mappings_return.sol:
         hash: '0xfd98f68b87ea6391254451b52fc8fbfa'
@@ -4399,6 +4500,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.5.1'
       using_library_structs.sol:
         hash: '0xaa009b3526c5ced982692182dae21d1d'
@@ -4406,6 +4508,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.0'
   literals:
     enabled: true
@@ -4440,6 +4543,7 @@ entries:
         modes:
         - Y >=0.8.7
         - E
+        - y
         version: '>=0.8.4'
       hex_string_with_underscore.sol:
         hash: '0xdaa41a80db197598eca523aafc72384a'
@@ -4489,6 +4593,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.1'
   modifiers:
     enabled: true
@@ -4499,6 +4604,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       access_through_module_name.sol:
         hash: '0xcddf75eadd7ff9bdf6e0350ff06acefc'
@@ -4506,6 +4612,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       break_in_modifier.sol:
         hash: '0x70252e00b6fc3ed941ea8153b28ba9ca'
@@ -4513,6 +4620,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       continue_in_modifier.sol:
         hash: '0x5891b2f12673ec593bc2086f54664873'
@@ -4520,6 +4628,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       evaluation_order.sol:
         hash: '0xa641b592d5cb91a54ab4d5c70c10e7b6'
@@ -4527,6 +4636,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       function_modifier.sol:
         hash: '0x9d2d6241a85a2f0981b14b55eabe021d'
@@ -4534,6 +4644,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       function_modifier_calling_functions_in_creation_context.sol:
         hash: '0x4ba626c0a19fc774be8c05238c4c29b9'
@@ -4541,6 +4652,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       function_modifier_empty.sol:
         hash: '0x49eea9cd36748a26ac12aed2c8155e2d'
@@ -4548,6 +4660,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.7'
       function_modifier_for_constructor.sol:
         hash: '0x2011dd55b65ccaafc11d0049fff33936'
@@ -4555,6 +4668,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       function_modifier_library.sol:
         hash: '0xa83724586baaa652d46127495a334594'
@@ -4563,6 +4677,7 @@ entries:
         modes:
         - Y+ >=0.8.1
         - E
+        - y
         version: '>=0.4.22'
       function_modifier_library_inheritance.sol:
         hash: '0x165effbcec41b96ab9e7e143387146d6'
@@ -4571,6 +4686,7 @@ entries:
         modes:
         - Y+ >=0.8.1
         - E
+        - y
         version: '>=0.4.22'
       function_modifier_local_variables.sol:
         hash: '0x11406e8a1c20af1486fe361876845696'
@@ -4578,6 +4694,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       function_modifier_loop.sol:
         hash: '0xb8bf76f6f3f72d3047646e70ec73ced9'
@@ -4589,6 +4706,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       function_modifier_multi_invocation.sol:
         hash: '0x44f70024310ba1def5265a282e03d510'
@@ -4600,6 +4718,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       function_modifier_multi_with_return.sol:
         hash: '0xed1ce7ef247c224e6d9e8a5422d674ff'
@@ -4611,6 +4730,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.14'
       function_modifier_multiple_times_local_vars.sol:
         hash: '0x2f14941ab498563e3c9dbc33c698c2fd'
@@ -4618,6 +4738,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.14'
       function_modifier_overriding.sol:
         hash: '0x7df43b5518be16b2ea8035a31c19d472'
@@ -4625,6 +4746,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.0'
       function_modifier_return_reference.sol:
         hash: '0xb36a00512c098590233eade7b161344d'
@@ -4632,6 +4754,7 @@ entries:
         modes:
         - Y >=0.8.10
         - E
+        - y
         version: '>=0.4.12'
       function_return_parameter.sol:
         hash: '0x745e8a29df23242972c73574d10cca24'
@@ -4639,6 +4762,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.4.16'
       function_return_parameter_complex.sol:
         hash: '0xaacae2908b3b6c94e5c2d7f14d4b1dce'
@@ -4646,6 +4770,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.4.22'
       modifer_recursive.sol:
         hash: '0xb9f53e03391108abb206edb1663298aa'
@@ -4660,6 +4785,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.7.0'
       modifier_init_return.sol:
         hash: '0x61b19a227f2dabff62a4fbcd7142d11e'
@@ -4667,6 +4793,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       modifiers_in_construction_context.sol:
         hash: '0xbc1c073fb8b81802901c8fd06278c1bc'
@@ -4674,6 +4801,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.7.0'
       return_does_not_skip_modifier.sol:
         hash: '0x4358dc89727c6460e958790023d9a2b5'
@@ -4681,6 +4809,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       return_in_modifier.sol:
         hash: '0x6f3c4ddd6003ab4371c7fc3d75a29c6e'
@@ -4688,6 +4817,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       stacked_return_with_modifiers.sol:
         hash: '0xd1ee0f170fbd297468f66e609c820ddf'
@@ -4695,6 +4825,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.14'
   multiSource:
     enabled: true
@@ -4792,6 +4923,7 @@ entries:
             modes:
             - Y >=0.8.7
             - E
+            - y
             version: '>=0.4.12'
           shift_cleanup.sol:
             hash: '0x499524c8a71ffe962dc24a1965051095'
@@ -5035,6 +5167,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
   receive:
     enabled: true
@@ -5153,6 +5286,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.5.13'
       short_input_array.sol:
         hash: '0x780633eac999147705e0ae87a15e38f5'
@@ -5277,6 +5411,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.0'
       multiline.sol:
         hash: '0x320ccb30e5453fd6c1f1bf1b4cf07b64'
@@ -5300,6 +5435,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.22'
       abi_functions_member_access.sol:
         hash: '0x01222640f00e981d5218aab5ea116f5f'
@@ -5467,6 +5603,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.5.0'
       mappings_array2d_pop_delete.sol:
         hash: '0x504110d29cfb801b6dc864070d80e71a'
@@ -5474,6 +5611,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.0'
       mappings_array_pop_delete.sol:
         hash: '0xe99e5d6adae65c477b24009529d4b03f'
@@ -5481,6 +5619,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.0'
       packed_functions.sol:
         hash: '0xe67c6dfbfceed00e9c5dcd7dd220fdc2'
@@ -5496,6 +5635,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       packed_storage_signed.sol:
         hash: '0x7cabe85498a02a45e4895ccb4fffa2aa'
@@ -5573,6 +5713,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.5.0'
       string_escapes.sol:
         hash: '0x7394a366ecd1b84bde2f1b5f12f65732'
@@ -5695,6 +5836,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       copy_from_storage.sol:
         hash: '0x65129cecf8930a429b293268c0198a0d'
@@ -5703,6 +5845,7 @@ entries:
         - Y <=0.8.4
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.7.5'
       copy_struct_array_from_storage.sol:
         hash: '0xeb7d23d0b27dca1a1d9d034623ee55ff'
@@ -5711,6 +5854,7 @@ entries:
         - Y >=0.8.1,<=0.8.4
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.7.5'
       copy_struct_with_nested_array_from_calldata_to_memory.sol:
         hash: '0x43ec20bd0bef00d24ef70c96588c2024'
@@ -5736,6 +5880,7 @@ entries:
         - Y >=0.8.1,<=0.8.4
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.7.5'
       copy_substructures_to_mapping.sol:
         hash: '0x46014551faacd2da78cacda0dc8bb2d7'
@@ -5743,6 +5888,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       copy_to_mapping.sol:
         hash: '0x94fd2aabb26bd41fe1449d5efaa6c9ad'
@@ -5750,6 +5896,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       delete_struct.sol:
         hash: '0xe1f956d19c7e22b428697a23a9656979'
@@ -5757,6 +5904,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.0'
       event.sol:
         hash: '0x96a8bfa6db37f1a24929d6f2d2c22023'
@@ -5764,6 +5912,7 @@ entries:
         modes:
         - Y >=0.8.2
         - E
+        - y
         version: '>=0.7.5'
       function_type_copy.sol:
         hash: '0x0a294d14a43b5ebb43e53d2809395513'
@@ -5795,6 +5944,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       memory_structs_read_write.sol:
         hash: '0x9837e8680a89d5d1f5d38ff5e3bbb4c8'
@@ -5802,6 +5952,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.12'
       msg_data_to_struct_member_copy.sol:
         hash: '0x243d8ec46f08dbd1b1353531530bd360'
@@ -5810,6 +5961,7 @@ entries:
         - Y <=0.8.4
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.7.5'
       multislot_struct_allocation.sol:
         hash: '0x848459222a23fe29a65363beb8228028'
@@ -5872,6 +6024,9 @@ entries:
       struct_delete_storage_nested_small.sol:
         hash: '0xc0a175d8be130b9ce386bb0677b10218'
         enabled: true
+        comment: 'TODO: https://linear.app/matterlabs/issue/CPR-532/implement-the-recursion-workaround'
+        modes:
+          - Y
         version: '>=0.4.12'
       struct_delete_storage_small.sol:
         hash: '0xc1c4891420ce6fe4c6ba03065b8c4654'
@@ -6087,6 +6242,7 @@ entries:
             modes:
             - Y >=0.8.1
             - E
+            - y
             version: '>=0.7.5'
           copy_struct_to_array_stored_in_mapping.sol:
             hash: '0x6f72265921939ccddfca3cdfe25ab338'
@@ -6114,6 +6270,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.6.3'
       mapping_enum_key_getter_v1.sol:
         hash: '0xe615c5b15a2e004627dce33a87daf3f1'
@@ -6133,6 +6290,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       mapping_enum_key_v1.sol:
         hash: '0x56bd37cea69e35ae0eed8e3dbeb75ba5'
@@ -6222,15 +6380,21 @@ entries:
       uninitialized_internal_storage_function_via_yul.sol:
         hash: '0x1bf634740ae92998d1b9db5b970ac2c0'
         enabled: true
+        comment: 'TODO: https://linear.app/matterlabs/issue/CPR-558/support-the-function-pointers'
+        modes:
+          - Y
         version: '>=0.4.12'
   unused_store_storage_removal_bug.sol:
     hash: '0x1950b69672b5925d7ce990be02cdd612'
     enabled: true
+    comment: solc bug fixed in v0.8.17
     modes:
     - Y+ >=0.8.17
     - Y+ <=0.8.12
     - Y-
     - E
+    - y+ >=0.8.17
+    - y+ <=0.8.12
     version: '>=0.4.12'
   userDefinedValueType:
     enabled: true
@@ -6258,6 +6422,7 @@ entries:
         modes:
         - Y >=0.8.9
         - E
+        - y
         version: '>=0.8.8'
       cleanup.sol:
         hash: '0xd06134a6a7fd814dab623bab3d3e45c7'
@@ -6298,6 +6463,7 @@ entries:
         modes:
         - Y+
         - E
+        - y
         version: '>=0.8.8'
       immutable_signed.sol:
         hash: '0xaace9c38ec829bef8a98feea808f5d51'
@@ -6320,6 +6486,7 @@ entries:
         modes:
         - Y >=0.8.9
         - E
+        - y
         version: '>=0.8.8'
       multisource.sol:
         hash: '0x35680657564ca708cadd0954b25aab67'
@@ -6465,6 +6632,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       public_state_overridding_mapping_to_dynamic_struct.sol:
         hash: '0x30f2b93c837b1f0e6da07d39b47ae1f9'
@@ -6472,6 +6640,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.7.5'
       storing_invalid_boolean.sol:
         hash: '0xae0630569bf5603ed696749ab21c00bc'
@@ -6563,6 +6732,7 @@ entries:
         modes:
           - Y >=0.8.1
           - E
+          - y
         version: '>=0.7.0'
       create_random.sol:
         hash: '0xa653e58fd770a8f05a337017ab4516fb'
@@ -6599,6 +6769,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.8.0'
       gasleft_decrease.sol:
         hash: '0x8c8c67c2273ee68883242f8502951c63'
@@ -6638,6 +6809,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.13'
       multi_variable_declaration.sol:
         hash: '0x2199dbd8c221f5cf582e002c4c63bc65'
@@ -6686,6 +6858,7 @@ entries:
         modes:
         - Y >=0.8.1
         - E
+        - y
         version: '>=0.4.24'
       state_variable_local_variable_mixture.sol:
         hash: '0x1d9040015fa78afabad1a84ab08db11c'
@@ -6728,6 +6901,9 @@ entries:
       super_parentheses.sol:
         hash: '0x90de9f3d83aeec4858254430c7c87789'
         enabled: true
+        comment: 'TODO: https://linear.app/matterlabs/issue/CPR-532/implement-the-recursion-workaround'
+        modes:
+          - Y
         version: '>=0.6.0'
       swap_in_storage_overwrite.sol:
         hash: '0xb8ff8a934afb52061d39ab5e35247593'
@@ -6860,6 +7036,7 @@ entries:
         modes:
         - Y >=0.8.12
         - E
+        - y
         version: '>=0.4.12'
       define_tuple_from_function_call.sol:
         hash: '0x2d1fdd4180f8d2788e0289a637eb4dec'
@@ -7060,6 +7237,7 @@ entries:
         modes:
         - Y >=0.8.7
         - E
+        - y
         version: '>=0.8.0'
       require.sol:
         hash: '0x5eebc112020617aa423860276f76bfd7'

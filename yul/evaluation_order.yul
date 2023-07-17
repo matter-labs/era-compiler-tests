@@ -990,14 +990,14 @@
 //!     }
 //! } ], "system_mode": true }
 
-object "eveluation_order_29" {
+object "Test" {
     code {
         {
             return(0, 0)
         }
     }
 
-    object "eveluation_order_deployed" {
+    object "Test_deployed" {
         code {
             {
                 function lhs() -> cnt {
@@ -1129,7 +1129,7 @@ object "eveluation_order_29" {
                 }
                 case 0x3e {
                     // Call the keccak256 precompiler to make returndatasize() > 0
-                    staticcall(gas(), 0x8010, 0, 0, 0, 32)
+                    pop(staticcall(gas(), 0x8010, 0, 0, 0, 32))
                     returndatacopy(rhs(), lhs(), rhs())
                 }
                 case 0x52 {
