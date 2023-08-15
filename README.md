@@ -9,18 +9,18 @@ developers to write smart contracts in popular languages such as C++ and Rust.
 
 This repository contains the collection of tests for the compilers for zkEVM.
 
-## Test types
+## Types
 
 This repository contains three types of tests:
 
-- Ethereum - which uses the [Ethereum Solidity semantic tests format](https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests).
-- Matter Labs simple - which is a one-contract type created by Matter Labs.
-- Matter Labs complex - which is a multi-contract type also created by Matter Labs.
+- Ethereum - [Ethereum Solidity semantic tests format](https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests).
+- Simple - single-contract tests created by Matter Labs.
+- Complex - multi-contract tests created by Matter Labs and vendored DeFi projects developed by other organizations.
 
-The `solidity` and `vyper` directories each have three subdirectories, one for each type.
-The `yul`, `llvm`, and `zkevm` directories contain Matter Labs simple tests.
+The `solidity` and `vyper` directories have three subdirectories each, one for each type.
+The `yul`, `llvm`, and `zkevm` directories only contain Matter Labs simple tests as multi-contract projects are not supported in these languages.
 
-## Matter Labs simple/complex test format
+## Matter Labs simple/complex format
 
 Each test comprises source code files and metadata.
 Simple tests have only one source file, and their metadata is located in comments that start with `!`, for example, `//!` for Solidity.
@@ -127,12 +127,25 @@ Additional notes:
 
 ## License
 
-The Solidity compiler is distributed under the terms of either
+The Test Collection is distributed under the terms of either
 
 - Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
 
 at your option.
+
+Additionally, this repository vendors test projects preserving their original licenses:
+
+- [UniswapV2](./solidity/complex/defi/UniswapV2Router01)
+- [UniswapV3](./solidity/complex/defi/UniswapV3)
+- [StarkEx Verifier](./solidity/complex/defi/starkex-verifier)
+- [Curve](./vyper/complex/defi/Curve)
+- [Mooniswap](./solidity/complex/defi/Mooniswap)
+- [SHIT](./solidity/complex/defi/shitdao)
+
+These projects are modified for the purposes of testing our compiler toolchain and are not used outside of this repository.  
+Visit the project directories to discover the terms of each license in detail. The projects are licensed in either per-file or
+per-project manner.
 
 ## Official Links
 
