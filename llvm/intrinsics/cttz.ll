@@ -120,7 +120,7 @@
 ; ModuleID = 'main'
 source_filename = "main"
 target datalayout = "E-p:256:256-i256:256:256-S32-a:256:256"
-target triple = "syncvm"
+target triple = "eravm"
 
 @calldatasize = private unnamed_addr global i256 0
 @ptr_calldata = private unnamed_addr global i8 addrspace(3)* null
@@ -152,7 +152,7 @@ runtime:
   store i256 %result, i256 addrspace(1)* inttoptr (i256 0 to i256 addrspace(1)*), align 32
 
   %abi_data = shl i256 32, 96
-  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  tail call void @llvm.eravm.return(i256 %abi_data) #1
   unreachable
 }
 
@@ -162,7 +162,7 @@ define private void @__constructor() local_unnamed_addr #0 personality i32 ()* @
   store i256 0, i256 addrspace(1)* inttoptr (i256 32 to i256 addrspace(1)*), align 32
 
   %abi_data = shl i256 64, 96
-  tail call void @llvm.syncvm.return(i256 %abi_data) #1
+  tail call void @llvm.eravm.return(i256 %abi_data) #1
   unreachable
 }
 
@@ -172,4 +172,4 @@ attributes #1 = { nounwind }
 declare i256 @llvm.cttz.i256(i256, i1)
 
 ; Function Attrs: noreturn nounwind
-declare void @llvm.syncvm.return(i256) #0
+declare void @llvm.eravm.return(i256) #0

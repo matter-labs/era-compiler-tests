@@ -850,7 +850,7 @@
 pragma solidity >=0.4.16;
 
 contract Test {
-    function main(uint256 a, uint256 b) external pure returns(uint256 result) {
+    function main(int256 a, int256 b) external pure returns(uint256 result) {
         assembly {
             result := slt(a, b)
         }

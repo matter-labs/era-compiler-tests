@@ -3,8 +3,6 @@ contract C {
         return block.gaslimit;
     }
 }
-// ====
-// compileToEwasm: also
 // ----
 // f() -> 0x40000000
 // f() -> 0x40000000

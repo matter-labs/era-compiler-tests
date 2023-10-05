@@ -4,8 +4,6 @@ contract C {
         return block.timestamp;
     }
 }
-// ====
-// compileToEwasm: also
 // ----
 // constructor()
 // f() -> 0xdeadbeef

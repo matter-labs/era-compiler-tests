@@ -39,7 +39,7 @@ entries:
         enabled: true
       calldata_arrays_too_large.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       dynamic_arrays.vy:
         enabled: true
       memory_params_in_external_function.vy:
@@ -92,7 +92,7 @@ entries:
         comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_short_no_revert_string.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       calldata_array_static.vy:
         enabled: true
       calldata_array_static_dynamic_static.vy:
@@ -108,7 +108,7 @@ entries:
         enabled: true
       calldata_nested_array_reencode.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       calldata_nested_array_static_reencode.vy:
         enabled: false
         comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
@@ -200,7 +200,7 @@ entries:
         enabled: true
       calldata_array_dynamic_invalid.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       calldata_array_dynamic_invalid_static_middle.vy:
         enabled: false
         comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
@@ -356,7 +356,7 @@ entries:
         enabled: true
       create_memory_array_too_large.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       create_memory_byte_array.vy:
         enabled: true
       create_multiple_dynamic_arrays.vy:
@@ -888,7 +888,7 @@ entries:
     entries:
       calldata_array_dynamic_invalid.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       calldata_array_dynamic_static_short_decode.vy:
         enabled: false
         comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
@@ -897,13 +897,13 @@ entries:
         comment: "https://linear.app/matterlabs/issue/CPR-722/vyper-problems"
       calldata_array_invalid_length.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       calldata_arrays_too_large.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       calldata_tail_short.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       called_contract_has_code.vy:
         enabled: true
       empty_v1.vy:
@@ -913,13 +913,13 @@ entries:
         enabled: true
       function_entry_checks_v1.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       short_input_array.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       short_input_bytes.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       unknown_sig_no_fallback.vy:
         enabled: true
   smoke:
@@ -1375,7 +1375,7 @@ entries:
         enabled: true
       function_entry_checks.vy:
         enabled: false
-        comment: "Other behavior on zkEVM"
+        comment: "Other behavior on EraVM"
       if.vy:
         enabled: true
       keccak.vy:

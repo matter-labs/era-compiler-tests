@@ -17,7 +17,9 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+// solc <=0.4.16 fails with the message "TypeError: Constants of non-value type
+// not yet implemented."
+pragma solidity >=0.4.17;
 
 contract Test {
     bytes constant longData = hex"112233445566778899112233445566778899112233445566778899112233445566778899112233445566778899";

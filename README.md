@@ -1,4 +1,4 @@
-# zkSync Era: The zkEVM Compiler Tests Collection
+# zkSync Era: The EraVM Compiler Tests Collection
 
 [![Logo](eraLogo.svg)](https://zksync.io/)
 
@@ -7,7 +7,7 @@ or decentralization. As it's EVM-compatible (with Solidity/Vyper), 99% of Ethere
 needing to refactor or re-audit any code. zkSync Era also uses an LLVM-based compiler that will eventually enable
 developers to write smart contracts in popular languages such as C++ and Rust.
 
-This repository contains the collection of tests for the compilers for zkEVM.
+This repository contains the collection of tests for the compilers for EraVM.
 
 ## Types
 
@@ -56,7 +56,7 @@ In simple tests, only one `Test` contract instance is deployed.
     "E+ <0.5"
 ]
 ```
-- `system_mode` - an optional system mode compiler flag (`false` by default). Set it to true if you need to enable the zkEVM extensions.
+- `system_mode` - an optional system mode compiler flag (`false` by default). Set it to true if you need to enable the EraVM extensions.
 - `group` - an optional string field that specifies a test group. Currently, it is only used for benchmarking.
 
 ## Case

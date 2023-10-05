@@ -21,7 +21,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.12;
+pragma solidity >=0.4.21;
 
 contract Test {
     event E1(uint256 Number);
