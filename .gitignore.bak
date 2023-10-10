@@ -1,8 +1,0 @@
-# IDE
-
-/.idea/
-/.vscode/
-
-# CI
-
-./.github/
