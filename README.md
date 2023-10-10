@@ -7,7 +7,7 @@ or decentralization. As it's EVM-compatible (with Solidity/Vyper), 99% of Ethere
 needing to refactor or re-audit any code. zkSync Era also uses an LLVM-based compiler that will eventually enable
 developers to write smart contracts in popular languages such as C++ and Rust.
 
-This repository contains the collection of tests for the compilers for EraVM.
+This repository contains the collection of tests for the EraVM compilers.
 
 ## Types
 
@@ -23,7 +23,7 @@ The `yul`, `llvm`, and `zkevm` directories only contain Matter Labs simple tests
 ## Matter Labs simple/complex format
 
 Each test comprises source code files and metadata.
-Simple tests have only one source file, and their metadata is located in comments that start with `!`, for example, `//!` for Solidity.
+Simple tests have only one source file, and their metadata is written in comments that start with `!`, for example, `//!` for Solidity.
 Complex tests use the `test.json` file to describe their metadata and refer to source code files.
 
 ## Metadata
