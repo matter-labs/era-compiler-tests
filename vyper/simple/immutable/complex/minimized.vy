@@ -27,7 +27,7 @@
 #!     "expected": [ "43" ]
 #! } ] }
 
-# @version 0.3.9
+# @version >=0.3.9
 
 X: public(immutable(bytes32))
 Y: public(immutable(bytes32))

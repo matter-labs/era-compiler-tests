@@ -27,7 +27,7 @@
 #!     "expected": [ "0x19ed957342c0dd93f726a54a983583a4ccd3ae9b41e0f15c834de372bc5955b6" ]
 #! } ] }
 
-# @version 0.3.9
+# @version >=0.3.9
 
 EIP712_TYPEHASH: public(constant(bytes32)) = keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)")
 DOMAIN_SEPARATOR_0: public(immutable(bytes32))
