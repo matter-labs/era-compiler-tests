@@ -1,4 +1,4 @@
-#! { "ignore": true, "cases": [ {
+#! { "modes": [ ">=0.3.9" ], "cases": [ {
 #!     "name": "zero_by_zero",
 #!     "inputs": [
 #!         {
