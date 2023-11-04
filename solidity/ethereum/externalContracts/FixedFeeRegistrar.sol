@@ -35,7 +35,7 @@ contract FixedFeeRegistrar is Registrar {
 		delete m_recordData[uint(keccak256(bytes(_name))) / 8];
 		bool success;
 		assembly {
-			success := call(gas(), _refund, c_fee, 0, 0, 0, 0)
+		    success := call(gas(), _refund, c_fee, 0, 0, 0, 0)
 		}
 		if (!success) {
 			revert();
@@ -79,7 +79,7 @@ contract FixedFeeRegistrar is Registrar {
 }
 // ----
 // constructor()
-// gas irOptimized: 413501
+// gas irOptimized: 384610
 // gas legacy: 913421
 // gas legacyOptimized: 476928
 // reserve(string), 69 ether: 0x20, 3, "abc" ->
