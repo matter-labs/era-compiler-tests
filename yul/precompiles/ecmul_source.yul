@@ -1,4 +1,6 @@
-//! { "cases": [ {
+//! { "system_mode" : true,
+//!   "group": "Precompiles",
+//!   "cases": [ {
 //!     "name": "(0, 0) * 0",
 //!     "inputs": [
 //!         {
@@ -287,41 +289,16 @@
 //!        "return_data": []
 //!     }
 //! } ] }
+
 object "EcMul" {
     code {
-        mstore(0, 0x20)
-        mstore(0x20, 0)
-        return(0, 64)
+        return(0, 0)
     }
     object "EcMul_deployed" {
         code {
             ////////////////////////////////////////////////////////////////
             //                      CONSTANTS
             ////////////////////////////////////////////////////////////////
-
-            /// @notice Constant function for value zero.
-            /// @return zero The value zero.
-            function ZERO() -> zero {
-                zero := 0x00
-            }
-
-            /// @notice Constant function for value one.
-            /// @return one The value one.
-            function ONE() -> one {
-                one := 0x01
-            }
-
-            /// @notice Constant function for value two.
-            /// @return two The value two.
-            function TWO() -> two {
-                two := 0x02
-            }
-
-            /// @notice Constant function for value three.
-            /// @return three The value three.
-            function THREE() -> three {
-                three := 0x03
-            }
 
             /// @notice Constant function for value one in Montgomery form.
             /// @dev This value was precomputed using Python.
@@ -337,30 +314,31 @@ object "EcMul" {
                 m_three := 19052624634359457937016868847204597229365286637454337178037183604060995791063
             }
 
-            /// @notice Constant function for the alt_bn128 group order.
-            /// @dev See https://eips.ethereum.org/EIPS/eip-196 for further details.
-            /// @return ret The alt_bn128 group order.
-            function P() -> ret {
-                ret := 21888242871839275222246405745257275088696311157297823662689037894645226208583
+            /// @notice Constant function for value 3*b (i.e. 9) in Montgomery form.
+            /// @dev This value was precomputed using Python.
+            /// @return m_b3 The value 9 in Montgomery form.
+            function MONTGOMERY_B3() -> m_b3 {
+                m_b3 := 13381388159399823366557795051099241510703237597767364208733475022892534956023
             }
 
-            /// @notice Constant function for the alt_bn128 group order minus one.
-            /// @return ret The alt_bn128 group order minus one.
-            function P_MINUS_ONE() -> ret {
-                ret := 21888242871839275222246405745257275088696311157297823662689037894645226208582
+            /// @notice Constant function for the alt_bn128 field order.
+            /// @dev See https://eips.ethereum.org/EIPS/eip-196 for further details.
+            /// @return ret The alt_bn128 field order.
+            function P() -> ret {
+                ret := 21888242871839275222246405745257275088696311157297823662689037894645226208583
             }
 
             /// @notice Constant function for the pre-computation of R^2 % N for the Montgomery REDC algorithm.
             /// @dev R^2 is the Montgomery residue of the value 2^512.
             /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_REDC_algorithm for further detals.
             /// @dev This value was precomputed using Python.
-            /// @return ret The value R^2 modulus the curve group order.
+            /// @return ret The value R^2 modulus the curve field order.
             function R2_MOD_P() -> ret {
                 ret := 3096616502983703923843567936837374451735540968419076528771170197431451843209
             }
 
             /// @notice Constant function for the pre-computation of N' for the Montgomery REDC algorithm.
-            /// @dev N' is a value such that NN' = -1 mod R, with N being the curve group order.
+            /// @dev N' is a value such that NN' = -1 mod R, with N being the curve field order.
             /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_REDC_algorithm for further detals.
             /// @dev This value was precomputed using Python.
             /// @return ret The value N'.
@@ -373,18 +351,18 @@ object "EcMul" {
             // ////////////////////////////////////////////////////////////////
 
             /// @dev Executes the `precompileCall` opcode.
-            function precompileCall(precompileParams, gasToBurn) -> ret {
-                // Compiler simulation for calling `precompileCall` opcode
-                ret := verbatim_2i_1o("precompile", precompileParams, gasToBurn)
-            }
+			function precompileCall(precompileParams, gasToBurn) -> ret {
+				// Compiler simulation for calling `precompileCall` opcode
+				ret := verbatim_2i_1o("precompile", precompileParams, gasToBurn)
+			}
 
             /// @notice Burns remaining gas until revert.
             /// @dev This function is used to burn gas in the case of a failed precompile call.
-            function burnGas() {
-                // Precompiles that do not have a circuit counterpart
-                // will burn the provided gas by calling this function.
-                let ret := precompileCall(0, gas())
-            }
+			function burnGas() {
+				// Precompiles that do not have a circuit counterpart
+				// will burn the provided gas by calling this function.
+				precompileCall(0, gas())
+		  	}
 
             /// @notice Retrieves the highest half of the multiplication result.
             /// @param multiplicand The value to multiply.
@@ -401,63 +379,61 @@ object "EcMul" {
             /// @return overflowed True if the addition overflowed, false otherwise.
             function overflowingAdd(augend, addend) -> sum, overflowed {
                 sum := add(augend, addend)
-                overflowed := or(lt(sum, augend), lt(sum, addend))
+                overflowed := lt(sum, augend)
             }
 
             /// @notice Checks if the LSB of a number is 1.
             /// @param x The number to check.
             /// @return ret True if the LSB is 1, false otherwise.
             function lsbIsOne(x) -> ret {
-                ret := and(x, ONE())
+                ret := and(x, 1)
             }
 
+            /// @notice Computes the inverse in Montgomery Form of a number in Montgomery Form.
+            /// @dev Reference: https://github.com/lambdaclass/lambdaworks/blob/main/math/src/field/fields/montgomery_backed_prime_fields.rs#L169
+            /// @dev Let `base` be a number in Montgomery Form, then base = a*R mod P() being `a` the base number (not in Montgomery Form)
+            /// @dev Let `inv` be the inverse of a number `a` in Montgomery Form, then inv = a^(-1)*R mod P()
+            /// @dev The original binary extended euclidean algorithms takes a number a and returns a^(-1) mod N
+            /// @dev In our case N is P(), and we'd like the input and output to be in Montgomery Form (a*R mod P() 
+            /// @dev and a^(-1)*R mod P() respectively).
+            /// @dev If we just pass the input as a number in Montgomery Form the result would be a^(-1)*R^(-1) mod P(),
+            /// @dev but we want it to be a^(-1)*R mod P().
+            /// @dev For that, we take advantage of the algorithm's linearity and multiply the result by R^2 mod P()
+            /// @dev to get R^2*a^(-1)*R^(-1) mod P() = a^(-1)*R mod P() as the desired result in Montgomery Form.
+            /// @dev `inv` takes the value of `b` or `c` being the result sometimes `b` and sometimes `c`. In paper
+            /// @dev multiplying `b` or `c` by R^2 mod P() results on starting their values as b = R2_MOD_P() and c = 0.
+            /// @param base A number `a` in Montgomery Form, then base = a*R mod P().
+            /// @return inv The inverse of a number `a` in Montgomery Form, then inv = a^(-1)*R mod P().
             function binaryExtendedEuclideanAlgorithm(base) -> inv {
-                // Precomputation of 1 << 255
-                let mask := 57896044618658097711785492504343953926634992332820282019728792003956564819968
                 let modulus := P()
-                // modulus >> 255 == 0 -> modulus & 1 << 255 == 0
-                let modulusHasSpareBits := iszero(and(modulus, mask))
-
                 let u := base
                 let v := modulus
                 // Avoids unnecessary reduction step.
                 let b := R2_MOD_P()
-                let c := ZERO()
+                let c := 0
 
-                for {} and(iszero(eq(u, ONE())), iszero(eq(v, ONE()))) {} {
-                    for {} iszero(and(u, ONE())) {} {
+                for {} and(iszero(eq(u, 1)), iszero(eq(v, 1))) {} {
+                    for {} iszero(and(u, 1)) {} {
                         u := shr(1, u)
                         let current := b
-                        switch and(current, ONE())
+                        switch and(current, 1)
                         case 0 {
                             b := shr(1, b)
                         }
                         case 1 {
-                            let newB := add(b, modulus)
-                            let carry := or(lt(newB, b), lt(newB, modulus))
-                            b := shr(1, newB)
-
-                            if and(iszero(modulusHasSpareBits), carry) {
-                                b := or(b, mask)
-                            }
+                            b := shr(1, add(b, modulus))
                         }
                     }
 
-                    for {} iszero(and(v, ONE())) {} {
+                    for {} iszero(and(v, 1)) {} {
                         v := shr(1, v)
                         let current := c
-                        switch and(current, ONE())
+                        switch and(current, 1)
                         case 0 {
                             c := shr(1, c)
                         }
                         case 1 {
-                            let newC := add(c, modulus)
-                            let carry := or(lt(newC, c), lt(newC, modulus))
-                            c := shr(1, newC)
-
-                            if and(iszero(modulusHasSpareBits), carry) {
-                                c := or(c, mask)
-                            }
+                            c := shr(1, add(c, modulus))
                         }
                     }
 
@@ -478,7 +454,7 @@ object "EcMul" {
                     }
                 }
 
-                switch eq(u, ONE())
+                switch eq(u, 1)
                 case 0 {
                     inv := c
                 }
@@ -488,7 +464,7 @@ object "EcMul" {
             }
 
             /// @notice Implementation of the Montgomery reduction algorithm (a.k.a. REDC).
-            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication//The_REDC_algorithm
+            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm
             /// @param lowestHalfOfT The lowest half of the value T.
             /// @param higherHalfOfT The higher half of the value T.
             /// @return S The result of the Montgomery reduction.
@@ -497,7 +473,7 @@ object "EcMul" {
                 let hi := add(higherHalfOfT, getHighestHalfOfMultiplication(m, P()))
                 let lo, overflowed := overflowingAdd(lowestHalfOfT, mul(m, P()))
                 if overflowed {
-                    hi := add(hi, ONE())
+                    hi := add(hi, 1)
                 }
                 S := hi
                 if iszero(lt(hi, P())) {
@@ -506,36 +482,48 @@ object "EcMul" {
             }
 
             /// @notice Encodes a field element into the Montgomery form using the Montgomery reduction algorithm (REDC).
-            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication//The_REDC_algorithmfor further details on transforming a field element into the Montgomery form.
+            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on transforming a field element into the Montgomery form.
             /// @param a The field element to encode.
             /// @return ret The field element in Montgomery form.
             function intoMontgomeryForm(a) -> ret {
-                let temp := mod(a, P())
-                let hi := getHighestHalfOfMultiplication(temp, R2_MOD_P())
-                let lo := mul(temp, R2_MOD_P())
+                let hi := getHighestHalfOfMultiplication(a, R2_MOD_P())
+                let lo := mul(a, R2_MOD_P())
                 ret := REDC(lo, hi)
             }
 
             /// @notice Decodes a field element out of the Montgomery form using the Montgomery reduction algorithm (REDC).
-            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication//The_REDC_algorithm for further details on transforming a field element out of the Montgomery form.
+            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on transforming a field element out of the Montgomery form.
             /// @param m The field element in Montgomery form to decode.
             /// @return ret The decoded field element.
             function outOfMontgomeryForm(m) -> ret {
-                let hi := ZERO()
+                let hi := 0
                 let lo := m
                 ret := REDC(lo, hi)
             }
 
+            /// @notice Computes the Montgomery addition.
+            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on the Montgomery multiplication.
+            /// @param augend The augend in Montgomery form.
+            /// @param addend The addend in Montgomery form.
+            /// @return ret The result of the Montgomery addition.
             function montgomeryAdd(augend, addend) -> ret {
-                ret := addmod(augend, addend, P())
+                ret := add(augend, addend)
+                if iszero(lt(ret, P())) {
+                    ret := sub(ret, P())
+                }
             }
 
+            /// @notice Computes the Montgomery subtraction.
+            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on the Montgomery multiplication.
+            /// @param minuend The minuend in Montgomery form.
+            /// @param subtrahend The subtrahend in Montgomery form.
+            /// @return ret The result of the Montgomery addition.
             function montgomerySub(minuend, subtrahend) -> ret {
                 ret := montgomeryAdd(minuend, sub(P(), subtrahend))
             }
 
             /// @notice Computes the Montgomery multiplication using the Montgomery reduction algorithm (REDC).
-            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication//The_REDC_algorithm for further details on the Montgomery multiplication.
+            /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on the Montgomery multiplication.
             /// @param multiplicand The multiplicand in Montgomery form.
             /// @param multiplier The multiplier in Montgomery form.
             /// @return ret The result of the Montgomery multiplication.
@@ -543,23 +531,6 @@ object "EcMul" {
                 let hi := getHighestHalfOfMultiplication(multiplicand, multiplier)
                 let lo := mul(multiplicand, multiplier)
                 ret := REDC(lo, hi)
-            }
-
-            /// @notice Computes the Montgomery exponentiation using the Montgomery multiplication and reduction algorithms.
-            /// @dev See the functions `montgomeryMul` and `REDC` for further details on the Montgomery exponentiation.
-            /// @param base The base in Montgomery form.
-            /// @param exponent The exponent.
-            /// @return pow The result of the Montgomery exponentiation.
-            function montgomeryModExp(base, exponent) -> pow {
-                pow := MONTGOMERY_ONE()
-                let aux := exponent
-                for { } gt(aux, ZERO()) { } {
-                        if mod(aux, 2) {
-                            pow := montgomeryMul(pow, base)
-                        }
-                        aux := shr(1, aux)
-                        base := montgomeryMul(base, base)
-                }
             }
 
             /// @notice Computes the Montgomery modular inverse skipping the Montgomery reduction step.
@@ -571,32 +542,32 @@ object "EcMul" {
                 invmod := binaryExtendedEuclideanAlgorithm(a)
             }
 
-            /// @notice Checks if a coordinate is on the curve group order.
-            /// @dev A coordinate is on the curve group order if it is on the range [0, curveGroupOrder).
+            /// @notice Checks if a coordinate is on the curve field order.
+            /// @dev A coordinate is on the curve field order if it is on the range [0, curveFieldOrder).
             /// @param coordinate The coordinate to check.
             /// @return ret True if the coordinate is in the range, false otherwise.
-            function coordinateIsOnGroupOrder(coordinate) -> ret {
+            function coordinateIsOnFieldOrder(coordinate) -> ret {
                 ret := lt(coordinate, P())
             }
 
-            /// @notice Checks if affine coordinates are on the curve group order.
-            /// @dev Affine coordinates are on the curve group order if both coordinates are on the range [0, curveGroupOrder).
+            /// @notice Checks if affine coordinates are on the curve field order.
+            /// @dev Affine coordinates are on the curve field order if both coordinates are on the range [0, curveFieldOrder).
             /// @param x The x coordinate to check.
             /// @param y The y coordinate to check.
             /// @return ret True if the coordinates are in the range, false otherwise.
-            function affinePointCoordinatesAreOnGroupOrder(x, y) -> ret {
-                ret := and(coordinateIsOnGroupOrder(x), coordinateIsOnGroupOrder(y))
+            function affinePointCoordinatesAreOnFieldOrder(x, y) -> ret {
+                ret := and(coordinateIsOnFieldOrder(x), coordinateIsOnFieldOrder(y))
             }
 
-            /// @notice Checks if projective coordinates are on the curve group order.
-            /// @dev Projective coordinates are on the curve group order if the coordinates are on the range [0, curveGroupOrder) and the z coordinate is not zero.
+            /// @notice Checks if projective coordinates are on the curve field order.
+            /// @dev Projective coordinates are on the curve field order if the coordinates are on the range [0, curveFieldOrder) and the z coordinate is not zero.
             /// @param x The x coordinate to check.
             /// @param y The y coordinate to check.
             /// @param z The z coordinate to check.
             /// @return ret True if the coordinates are in the range, false otherwise.
-            function projectivePointCoordinatesAreOnGroupOrder(x, y, z) -> ret {
+            function projectivePointCoordinatesAreOnFieldOrder(x, y, z) -> ret {
                 let _x, _y := projectiveIntoAffine(x, y, z)
-                ret := and(z, affinePointCoordinatesAreOnGroupOrder(_x, _y))
+                ret := and(z, affinePointCoordinatesAreOnFieldOrder(_x, _y))
             }
 
             // @notice Checks if a point in affine coordinates in Montgomery form is on the curve.
@@ -612,18 +583,6 @@ object "EcMul" {
                 let xQubedPlusThree := montgomeryAdd(xQubed, MONTGOMERY_THREE())
 
                 ret := eq(ySquared, xQubedPlusThree)
-			}
-
-            // @notice Checks if a point in projective coordinates in Montgomery form is on the curve.
-            // @dev The curve in question is the alt_bn128 curve.
-            // @dev The Short Weierstrass equation of the curve is y^2 = x^3 + 3.
-            // @param x The x coordinate of the point in Montgomery form.
-            // @param y The y coordinate of the point in Montgomery form.
-            // @param z The z coordinate of the point in Montgomery form.
-            // @return ret True if the point is on the curve, false otherwise.
-            function projectivePointIsOnCurve(x, y, z) -> ret {
-                let _x, _y := projectiveIntoAffine(x, y, z)
-                ret := affinePointIsOnCurve(_x, _y)
 			}
 
             /// @notice Checks if a point in affine coordinates is the point at infinity.
@@ -670,22 +629,17 @@ object "EcMul" {
             /// @return xr The x coordinate of the point P in affine coordinates in Montgomery form.
             /// @return yr The y coordinate of the point P in affine coordinates in Montgomery form.
             function projectiveIntoAffine(xp, yp, zp) -> xr, yr {
-                switch zp
-                case 0 {
-                    xr := ZERO()
-                    yr := ZERO()
-                }
-                default {
-                    let zp_inv := montgomeryModularInverse(zp)
-                    xr := montgomeryMul(xp, zp_inv)
-                    yr := montgomeryMul(yp, zp_inv)
-                }
+                if zp {
+                     let zp_inv := montgomeryModularInverse(zp)
+                     xr := montgomeryMul(xp, zp_inv)
+                     yr := montgomeryMul(yp, zp_inv)
+                 }
             }
 
             /// @notice Doubles a point in projective coordinates in Montgomery form.
-            /// @dev See https://www.nayuki.io/page/elliptic-curve-point-addition-in-projective-coordinates for further details.
-            /// @dev For performance reasons, the point is assumed to be previously checked to be on the
-            /// @dev curve and not the point at infinity.
+            /// @dev See Algorithm 9 in https://eprint.iacr.org/2015/1060.pdf for further details.
+            /// @dev The point is assumed to be on the curve.
+            /// @dev It works correctly for the point at infinity.
             /// @param xp The x coordinate of the point P in projective coordinates in Montgomery form.
             /// @param yp The y coordinate of the point P in projective coordinates in Montgomery form.
             /// @param zp The z coordinate of the point P in projective coordinates in Montgomery form.
@@ -693,19 +647,24 @@ object "EcMul" {
             /// @return yr The y coordinate of the point 2P in projective coordinates in Montgomery form.
             /// @return zr The z coordinate of the point 2P in projective coordinates in Montgomery form.
             function projectiveDouble(xp, yp, zp) -> xr, yr, zr {
-                let x_squared := montgomeryMul(xp, xp)
-                let t := montgomeryAdd(x_squared, montgomeryAdd(x_squared, x_squared))
-                let yz := montgomeryMul(yp, zp)
-                let u := montgomeryAdd(yz, yz)
-                let uxy := montgomeryMul(u, montgomeryMul(xp, yp))
-                let v := montgomeryAdd(uxy, uxy)
-                let w := montgomerySub(montgomeryMul(t, t), montgomeryAdd(v, v))
-
-                xr := montgomeryMul(u, w)
-                let uy := montgomeryMul(u, yp)
-                let uy_squared := montgomeryMul(uy, uy)
-                yr := montgomerySub(montgomeryMul(t, montgomerySub(v, w)), montgomeryAdd(uy_squared, uy_squared))
-                zr := montgomeryMul(u, montgomeryMul(u, u))
+                let t0 := montgomeryMul(yp, yp)
+                zr := montgomeryAdd(t0, t0)
+                zr := montgomeryAdd(zr, zr)
+                zr := montgomeryAdd(zr, zr)
+                let t1 := montgomeryMul(yp, zp)
+                let t2 := montgomeryMul(zp, zp)
+                t2 := montgomeryMul(MONTGOMERY_B3(), t2)
+                xr := montgomeryMul(t2, zr)
+                yr := montgomeryAdd(t0, t2)
+                zr := montgomeryMul(t1, zr)
+                t1 := montgomeryAdd(t2, t2)
+                t2 := montgomeryAdd(t1, t2)
+                t0 := montgomerySub(t0, t2)
+                yr := montgomeryMul(t0, yr)
+                yr := montgomeryAdd(xr, yr)
+                t1 := montgomeryMul(xp, yp)
+                xr := montgomeryMul(t0, t1)
+                xr := montgomeryAdd(xr, xr)
             }
 
             ////////////////////////////////////////////////////////////////
@@ -715,13 +674,15 @@ object "EcMul" {
             // Retrieve the coordinates from the calldata
             let x := calldataload(0)
             let y := calldataload(32)
-            if iszero(affinePointCoordinatesAreOnGroupOrder(x, y)) {
+            if iszero(affinePointCoordinatesAreOnFieldOrder(x, y)) {
                 burnGas()
             }
             let scalar := calldataload(64)
 
             if affinePointIsInfinity(x, y) {
                 // Infinity * scalar = Infinity
+                mstore(0x00, 0x00)
+                mstore(0x20, 0x00)
                 return(0x00, 0x40)
             }
 
@@ -733,11 +694,13 @@ object "EcMul" {
                 burnGas()
             }
 
-            if eq(scalar, ZERO()) {
+            if eq(scalar, 0) {
                 // P * 0 = Infinity
+                mstore(0x00, 0x00)
+                mstore(0x20, 0x00)
                 return(0x00, 0x40)
             }
-            if eq(scalar, ONE()) {
+            if eq(scalar, 1) {
                 // P * 1 = P
                 mstore(0x00, x)
                 mstore(0x20, y)
@@ -746,7 +709,7 @@ object "EcMul" {
 
             let xp, yp, zp := projectiveFromAffine(m_x, m_y)
 
-            if eq(scalar, TWO()) {
+            if eq(scalar, 2) {
                 let xr, yr, zr := projectiveDouble(xp, yp, zp)
                 
                 xr, yr := projectiveIntoAffine(xr, yr, zr)
@@ -761,18 +724,14 @@ object "EcMul" {
             let xq := xp
             let yq := yp
             let zq := zp
-            let xr := ZERO()
+            let xr := 0
             let yr := MONTGOMERY_ONE()
-            let zr := ZERO()
+            let zr := 0
             for {} scalar {} {
                 if lsbIsOne(scalar) {
-                    let qIsInfinity := projectivePointIsInfinity(xq, yq, zq)
                     let rIsInfinity := projectivePointIsInfinity(xr, yr, zr)
-                    if and(rIsInfinity, qIsInfinity) {
-                        // Infinity + Infinity = Infinity
-                        break
-                    }
-                    if and(rIsInfinity, iszero(qIsInfinity)) {
+
+                    if rIsInfinity {
                         // Infinity + P = P
                         xr := xq
                         yr := yq
@@ -783,22 +742,16 @@ object "EcMul" {
                         scalar := shr(1, scalar)
                         continue
                     }
-                    if and(iszero(rIsInfinity), qIsInfinity) {
-                        // P + Infinity = P
-                        break
-                    }
-                    if and(and(eq(xr, xq), eq(montgomerySub(ZERO(), yr), yq)), eq(zr, zq)) {
-                        // P + (-P) = Infinity
-                        xr := ZERO()
-                        yr := ZERO()
-                        zr := ZERO()
 
-                        xq, yq, zq := projectiveDouble(xq, yq, zq)
-                        // Check next bit
-                        scalar := shr(1, scalar)
-                        continue
-                    }
-                    if and(and(eq(xr, xq), eq(yr, yq)), eq(zr, zq)) {
+                    let t0 := montgomeryMul(yq, zr)
+                    let t1 := montgomeryMul(yr, zq)
+                    let t := montgomerySub(t0, t1)
+                    let u0 := montgomeryMul(xq, zr)
+                    let u1 := montgomeryMul(xr, zq)
+                    let u := montgomerySub(u0, u1)
+
+                    // t = (yq*zr - yr*zq); u = (xq*zr - xr*zq)
+                    if iszero(or(t, u)) { 
                         // P + P = 2P
                         xr, yr, zr := projectiveDouble(xr, yr, zr)
 
@@ -811,13 +764,6 @@ object "EcMul" {
                     }
 
                     // P1 + P2 = P3
-
-                    let t0 := montgomeryMul(yq, zr)
-                    let t1 := montgomeryMul(yr, zq)
-                    let t := montgomerySub(t0, t1)
-                    let u0 := montgomeryMul(xq, zr)
-                    let u1 := montgomeryMul(xr, zq)
-                    let u := montgomerySub(u0, u1)
                     let u2 := montgomeryMul(u, u)
                     let u3 := montgomeryMul(u2, u)
                     let v := montgomeryMul(zq, zr)
@@ -843,4 +789,3 @@ object "EcMul" {
         }
     }
 }
-
