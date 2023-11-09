@@ -485,7 +485,7 @@ object "EcMul" {
             /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on transforming a field element into the Montgomery form.
             /// @param a The field element to encode.
             /// @return ret The field element in Montgomery form.
-            function intoMontgomeryForm(a) -> ret {
+            function $llvm_AlwaysInline_llvm$_intoMontgomeryForm(a) -> ret {
                 let hi := getHighestHalfOfMultiplication(a, R2_MOD_P())
                 let lo := mul(a, R2_MOD_P())
                 ret := REDC(lo, hi)
@@ -495,7 +495,7 @@ object "EcMul" {
             /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_The_REDC_algorithm for further details on transforming a field element out of the Montgomery form.
             /// @param m The field element in Montgomery form to decode.
             /// @return ret The decoded field element.
-            function outOfMontgomeryForm(m) -> ret {
+            function $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(m) -> ret {
                 let hi := 0
                 let lo := m
                 ret := REDC(lo, hi)
@@ -686,8 +686,8 @@ object "EcMul" {
                 return(0x00, 0x40)
             }
 
-            let m_x := intoMontgomeryForm(x)
-            let m_y := intoMontgomeryForm(y)
+            let m_x := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x)
+            let m_y := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y)
 
             // Ensure that the point is in the curve (Y^2 = X^3 + 3).
             if iszero(affinePointIsOnCurve(m_x, m_y)) {
@@ -713,8 +713,8 @@ object "EcMul" {
                 let xr, yr, zr := projectiveDouble(xp, yp, zp)
                 
                 xr, yr := projectiveIntoAffine(xr, yr, zr)
-                xr := outOfMontgomeryForm(xr)
-                yr := outOfMontgomeryForm(yr)
+                xr := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(xr)
+                yr := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(yr)
 
                 mstore(0x00, xr)
                 mstore(0x20, yr)
@@ -780,8 +780,8 @@ object "EcMul" {
             }
 
             xr, yr := projectiveIntoAffine(xr, yr, zr)
-            xr := outOfMontgomeryForm(xr)
-            yr := outOfMontgomeryForm(yr)
+            xr := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(xr)
+            yr := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(yr)
 
             mstore(0, xr)
             mstore(32, yr)
