@@ -372,7 +372,7 @@ object "EcAdd" {
             /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_REDC_algorithm for further details on transforming a field element into the Montgomery form.
             /// @param a The field element to encode.
             /// @return ret The field element in Montgomery form.
-            function intoMontgomeryForm(a) -> ret {
+            function $llvm_AlwaysInline_llvm$_intoMontgomeryForm(a) -> ret {
                 let hi := getHighestHalfOfMultiplication(a, R2_MOD_P())
                 let lo := mul(a, R2_MOD_P())
                 ret := REDC(lo, hi)
@@ -382,7 +382,7 @@ object "EcAdd" {
             /// @dev See https://en.wikipedia.org/wiki/Montgomery_modular_multiplication#The_REDC_algorithm for further details on transforming a field element out of the Montgomery form.
             /// @param m The field element in Montgomery form to decode.
             /// @return ret The decoded field element.
-            function outOfMontgomeryForm(m) -> ret {
+            function $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(m) -> ret {
                 let hi := 0
                 let lo := m
                 ret := REDC(lo, hi)
@@ -465,8 +465,8 @@ object "EcAdd" {
                     burnGas()
                 }
 
-                let m_x2 := intoMontgomeryForm(x2)
-                let m_y2 := intoMontgomeryForm(y2)
+                let m_x2 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x2)
+                let m_y2 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y2)
 
                 // Ensure that the point is in the curve (Y^2 = X^3 + 3).
                 if iszero(pointIsInCurve(m_x2, m_y2)) {
@@ -488,8 +488,8 @@ object "EcAdd" {
                     burnGas()
                 }
 
-                let m_x1 := intoMontgomeryForm(x1)
-                let m_y1 := intoMontgomeryForm(y1)
+                let m_x1 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x1)
+                let m_y1 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y1)
 
                 // Ensure that the point is in the curve (Y^2 = X^3 + 3).
                 if iszero(pointIsInCurve(m_x1, m_y1)) {
@@ -519,10 +519,10 @@ object "EcAdd" {
             if and(eq(x1, x2), eq(submod(0, y1, P()), y2)) {
                 // P + (-P) = Infinity
 
-                let m_x1 := intoMontgomeryForm(x1)
-                let m_y1 := intoMontgomeryForm(y1)
-                let m_x2 := intoMontgomeryForm(x2)
-                let m_y2 := intoMontgomeryForm(y2)
+                let m_x1 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x1)
+                let m_y1 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y1)
+                let m_x2 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x2)
+                let m_y2 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y2)
 
                 // Ensure that the points are in the curve (Y^2 = X^3 + 3).
                 if iszero(pointIsInCurve(m_x1, m_y1)) {
@@ -540,8 +540,8 @@ object "EcAdd" {
             if and(eq(x1, x2), eq(y1, y2)) {
                 // P + P = 2P
 
-                let x := intoMontgomeryForm(x1)
-                let y := intoMontgomeryForm(y1)
+                let x := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x1)
+                let y := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y1)
 
                 // Ensure that the points are in the curve (Y^2 = X^3 + 3).
                 if iszero(pointIsInCurve(x, y)) {
@@ -556,8 +556,8 @@ object "EcAdd" {
                 // y3 = slope * (x1 - x3) - y1
                 let y3 := montgomerySub(montgomeryMul(slope, montgomerySub(x, x3)), y)
 
-                x3 := outOfMontgomeryForm(x3)
-                y3 := outOfMontgomeryForm(y3)
+                x3 := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(x3)
+                y3 := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(y3)
 
                 mstore(0, x3)
                 mstore(32, y3)
@@ -566,10 +566,10 @@ object "EcAdd" {
 
             // P1 + P2 = P3
 
-            x1 := intoMontgomeryForm(x1)
-            y1 := intoMontgomeryForm(y1)
-            x2 := intoMontgomeryForm(x2)
-            y2 := intoMontgomeryForm(y2)
+            x1 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x1)
+            y1 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y1)
+            x2 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(x2)
+            y2 := $llvm_AlwaysInline_llvm$_intoMontgomeryForm(y2)
 
             // Ensure that the points are in the curve (Y^2 = X^3 + 3).
             if or(iszero(pointIsInCurve(x1, y1)), iszero(pointIsInCurve(x2, y2))) {
@@ -583,8 +583,8 @@ object "EcAdd" {
             // y3 = slope * (x1 - x3) - y1
             let y3 := montgomerySub(montgomeryMul(slope, montgomerySub(x1, x3)), y1)
 
-            x3 := outOfMontgomeryForm(x3)
-            y3 := outOfMontgomeryForm(y3)
+            x3 := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(x3)
+            y3 := $llvm_AlwaysInline_llvm$_outOfMontgomeryForm(y3)
 
             mstore(0, x3)
             mstore(32, y3)
