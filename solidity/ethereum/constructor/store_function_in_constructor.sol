@@ -2,7 +2,7 @@ contract C {
     uint256 public result_in_constructor;
     function(uint256) returns (uint256) internal x;
 
-    constructor() {
+    constructor() public {
         x = double;
         result_in_constructor = use(2);
     }

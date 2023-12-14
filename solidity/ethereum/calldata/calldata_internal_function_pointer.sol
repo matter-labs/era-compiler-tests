@@ -1,6 +1,6 @@
 contract C {
     function(bytes calldata) returns (bytes1) x;
-    constructor() { x = f; }
+    constructor() public { x = f; }
     function f(bytes calldata b) internal pure returns (bytes1) {
         return b[2];
     }

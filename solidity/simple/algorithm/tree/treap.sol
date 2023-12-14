@@ -1,4 +1,4 @@
-//! { "modes": [ "Y" ], "cases": [ {
+//! { "modes": [ "Y", "E" ], "cases": [ {
 //!     "name": "one",
 //!     "inputs": [
 //!         {
@@ -26,7 +26,8 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+// solc < 0.5.0 complains "Error: Identifier already declared. uint8 p = ..."
+pragma solidity >=0.5.0;
 
 contract Test {
     // Limit for nodes in memory and array size

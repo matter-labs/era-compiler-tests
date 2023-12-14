@@ -14,7 +14,7 @@ contract Flow {
         return 2;
     }
 
-    constructor() {
+    constructor() public {
         t[0].a = 0xff07;
         t[0].b = 0xff07;
         t[1].x = Y;

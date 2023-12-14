@@ -1,4 +1,4 @@
-//! { "modes": [ "Y" ], "comment": "TODO: https://linear.app/matterlabs/issue/CPR-558/support-the-function-pointers", "cases": [ {
+//! { "modes": [ "Y", "E", "y" ], "cases": [ {
 //!     "name": "reverseTest",
 //!     "inputs": [
 //!         {

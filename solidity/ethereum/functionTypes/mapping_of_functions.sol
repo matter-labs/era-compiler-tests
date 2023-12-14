@@ -15,7 +15,7 @@ contract Flow {
         success = true;
     }
 
-    constructor() {
+    constructor() public {
         stages[msg.sender] = stage0;
     }
 
