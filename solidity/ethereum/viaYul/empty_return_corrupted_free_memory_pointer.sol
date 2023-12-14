@@ -4,4 +4,4 @@ contract C {
     }
 }
 // ----
-// f() -> FAILURE
+// f() -> 

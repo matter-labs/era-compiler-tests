@@ -17,7 +17,8 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+// `if` in yul was introduced from 0.4.19
+pragma solidity >=0.4.19;
 
 contract Test {
     function main() public {

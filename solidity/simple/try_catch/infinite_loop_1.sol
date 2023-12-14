@@ -1,8 +1,8 @@
-//! { "modes": [ "Y" ], "comment": "TODO: https://linear.app/matterlabs/issue/CPR-532/implement-the-recursion-workaround", "cases": [ {
+//! { "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {
-//!             "method": "tryAnyFunctionInAWhileLoop",
+//!             "method": "main",
 //!             "calldata": [
 //!             ]
 //!         }
@@ -21,7 +21,7 @@ pragma solidity >=0.6.0;
 contract Test {
     bool private testvar = true;
 
-    function tryAnyFunctionInAWhileLoop() external returns (bool) {
+    function main() external returns (bool) {
         testvar = !testvar;
         return testvar;
     }
@@ -30,7 +30,7 @@ contract Test {
         while (testvar) {
             testvar = !testvar;
 
-            try this.tryAnyFunctionInAWhileLoop() returns (bool s) {
+            try this.main() returns (bool s) {
                 if (s == testvar) break;
             } catch {  }
         }

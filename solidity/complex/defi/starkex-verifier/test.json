@@ -1,5 +1,4 @@
 {
-    "modes": [ "+M^B3" ],
     "cases": [ {
     "name": "dydx_proof_verification",
     "inputs": [

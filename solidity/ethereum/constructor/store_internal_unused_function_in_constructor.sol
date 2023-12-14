@@ -1,7 +1,7 @@
 contract C {
     function() returns (uint256) internal x;
 
-    constructor() {
+    constructor() public {
         x = unused;
     }
 

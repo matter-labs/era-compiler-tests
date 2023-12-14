@@ -5,7 +5,7 @@ contract C {
     }
     uint8[77] padding;
     S s;
-    constructor() {
+    constructor() public {
          s.v = 21;
          s.x.push(); s.x.push(); s.x.push();
          s.x[0].v = 101; s.x[1].v = 102; s.x[2].v = 103;

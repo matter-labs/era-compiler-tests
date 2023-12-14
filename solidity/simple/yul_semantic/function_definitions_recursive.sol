@@ -27,8 +27,8 @@ contract Test {
                     leave
                 }
                 ret := add(
-                sum(sub(n, 1)),
-                n
+                    sum(sub(n, 1)),
+                    n
                 )
             }
             mstore(0, sum(100)) // 1 + 2 + ... + 100 = 100 * (1 + 100) / 2 = 5050
