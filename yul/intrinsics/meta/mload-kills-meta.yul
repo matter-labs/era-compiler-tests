@@ -22,10 +22,12 @@ object "Test" {
         }
     }
 
-    // This tests fails if `meta` value was cached and `mstore` did not kill it.
-    // The value of `before` has the heap size encoded in it.
-    // The instruction `mload(999)` grows the heap, the value `after` should
-    // contain the heap size after growth.
+    // This test fails if `meta` value was cached and `mload` did not kill it.
+    // The value of `before` encodes the heap size.
+    // The instruction `mload(999)` grows the heap, so the value `after` should
+    // encode the heap size after growth.
+    // The value may be cached if the intrinsic `meta` is marked with incorrect
+    // attributes in file IntrinsicsEraVM.td (backend)
     object "Test_deployed" {
         code {
             {
