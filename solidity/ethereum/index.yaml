@@ -3514,15 +3514,19 @@ entries:
       selector_assignment_expression.sol:
         hash: '0x03bc505c17286bc7df9d651f60af7b4d'
         enabled: true
+        version: '>=0.8.21'
       selector_expression_side_effect.sol:
         hash: '0x3c2bfdf50cfa098b4671e9105ca51d2f'
         enabled: true
+        version: '>=0.8.21'
       selector_ternary.sol:
         hash: '0xec83dc05a5f62bfb062fd2fee9c0a172'
         enabled: true
+        version: '>=0.8.21'
       selector_ternary_function_pointer_from_function_call.sol:
         hash: '0xa95e8b23ec265d1a9fd51b8832d5c18d'
         enabled: true
+        version: '>=0.8.21'
       stack_height_check_on_adding_gas_variable_to_function.sol:
         hash: '0xedd459bf1900c92a3b46dab133a67800'
         enabled: true
@@ -3638,6 +3642,7 @@ entries:
       delete.sol:
         hash: '0xfcd42f6e615392cd3653a49ecd97c766'
         enabled: true
+        version: '>=0.8.21'
       fun_read_in_ctor.sol:
         hash: '0x44a7f8cf78232b9b12c49b4538eacd57'
         enabled: true
@@ -3657,6 +3662,7 @@ entries:
       increment_decrement.sol:
         hash: '0x55119edb85c106990d395a15dc809aa7'
         enabled: true
+        version: '>=0.8.21'
       inheritance.sol:
         hash: '0xe6faca1a8b82cd37d3619b30bcbc1542'
         enabled: true
@@ -3673,6 +3679,7 @@ entries:
       multiple_initializations.sol:
         hash: '0xaf5138cffc848edec152b4f2800d62db'
         enabled: true
+        version: '>=0.8.21'
       read_in_ctor.sol:
         hash: '0x3c9e256f47e5fae817c9ffdb53d48d26'
         enabled: true
@@ -3688,6 +3695,7 @@ entries:
       uninitialized.sol:
         hash: '0x86f4ed93d072dd13f75939d54d192596'
         enabled: true
+        version: '>=0.8.21'
       use_scratch.sol:
         hash: '0x13b1ace4b4f37ecf6b2000d60e3f8191'
         enabled: true
