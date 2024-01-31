@@ -4046,15 +4046,19 @@ entries:
       mcopy.sol:
         hash: '0x87d3b80292ea0cee09a52d8675719c17'
         enabled: true
+        version: '>=0.8.24'
       mcopy_as_identifier_pre_cancun.sol:
         hash: '0xf5c3d50cd9353b5fc7fb9347c786b77d'
         enabled: true
+        version: '<0.8.24'
       mcopy_empty.sol:
         hash: '0x51612a8c512cb835c37e67939a89594c'
         enabled: true
+        version: '>=0.8.24'
       mcopy_overlap.sol:
         hash: '0x74927b09d3f839c7ccb03a78ff97269a'
         enabled: true
+        version: '>=0.8.24'
       optimize_memory_store_multi_block.sol:
         hash: '0x82c6c8b315ce5c7f2f52470cab394797'
         enabled: true
