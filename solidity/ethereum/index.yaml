@@ -2643,11 +2643,13 @@ entries:
     entries:
       stub.sol:
         hash: '0x1bc72846a93358308b3e3b05501d835a'
-        enabled: true
-        version: '>=0.8.24'
+        enabled: false
+        comment: "TODO: unsupported format"
       type_class.sol:
         hash: '0x8f7bb794a09a49ebf95c03183e1938a2'
         enabled: true
+        modes:
+        - E
         version: '>=0.8.24'
   exponentiation:
     enabled: true
