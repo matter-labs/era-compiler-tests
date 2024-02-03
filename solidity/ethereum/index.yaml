@@ -4057,7 +4057,8 @@ entries:
         version: '>=0.8.24'
       mcopy_overlap.sol:
         hash: '0x74927b09d3f839c7ccb03a78ff97269a'
-        enabled: true
+        enabled: false
+        comment: 'https://linear.app/matterlabs/issue/CPR-1529/enable-generation-of-memmove-for-eravm'
         version: '>=0.8.24'
       optimize_memory_store_multi_block.sol:
         hash: '0x82c6c8b315ce5c7f2f52470cab394797'
@@ -4070,7 +4071,6 @@ entries:
       prevrandao.sol:
         hash: '0xcd0569ad2ec413eeeed4d4d54771f9ca'
         enabled: true
-        comment: Expected updated
         version: '>=0.8.18'
       selfbalance.sol:
         hash: '0x2e91b6be06a564479b4a8abb677e8988'
