@@ -4096,7 +4096,7 @@ entries:
       tload_tstore_not_reserved_before_cancun.sol:
         hash: '0x0efaf55c8394dc2f7e7cb6881df0ec82'
         enabled: true
-        version: '>=0.8.24'
+        version: '<0.8.24'
       transient_storage_creation.sol:
         hash: '0xd402aa69c5df98c5094a1bfe9f066b11'
         enabled: true
@@ -4128,6 +4128,9 @@ entries:
       transient_storage_simple_reentrancy_lock.sol:
         hash: '0x6c772ad2e01e89deadc0992ec318848f'
         enabled: true
+        modes:
+        - Y
+        - E
         version: '>=0.8.24'
       truefalse.sol:
         hash: '0x5223e4c6a4aa0b155912ca8bd8118d3a'
