@@ -4095,48 +4095,48 @@ entries:
         version: '>=0.7.0'
       tload_tstore_not_reserved_before_cancun.sol:
         hash: '0x0efaf55c8394dc2f7e7cb6881df0ec82'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_creation.sol:
         hash: '0xd402aa69c5df98c5094a1bfe9f066b11'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_low_level_calls.sol:
         hash: '0xe80dfca1e5aa0e9f66c3f35c364b9787'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_multiple_calls_different_transactions.sol:
         hash: '0x106d41a1b0f0f2f76034b9a1f5975ce9'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_multiple_transactions.sol:
         hash: '0x0fe3e45c24fd48a74c3e95d9c886f2f5'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_reset_between_creation_runtime.sol:
         hash: '0xe077fe5257f7c1916de2a7ee790d119d'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_sanity_checks.sol:
         hash: '0xfc499eb99e091d3ca0226dfc6535592a'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       transient_storage_selfdestruct.sol:
         hash: '0xfa6ba8120ced6574f9aadaeebc66989e'
         enabled: false
         comment: "TODO: SELFDESTRUCT"
       transient_storage_simple_reentrancy_lock.sol:
         hash: '0x6c772ad2e01e89deadc0992ec318848f'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
       truefalse.sol:
         hash: '0x5223e4c6a4aa0b155912ca8bd8118d3a'
         enabled: true
         version: '>=0.6.2'
       tstore_hidden_staticcall.sol:
         hash: '0xe77f02ed15c2b1226b38cc16d0f2b769'
-        enabled: false
-        comment: "TODO: zkVM v1.5.0"
+        enabled: true
+        version: '>=0.8.24'
   integer:
     enabled: true
     entries:
