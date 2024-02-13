@@ -1,4 +1,3 @@
-# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 import receiver as receiver
 
 @external

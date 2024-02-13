@@ -1,4 +1,4 @@
-#! { "modes": [ ">=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.3.9" ], "cases": [ {
 #!     "name": "_default",
 #!     "inputs": [
 #!         {
@@ -12,7 +12,6 @@
 #!         "1024"
 #!     ]
 #! } ] }
-# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 
 @external
 @pure

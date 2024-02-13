@@ -6,6 +6,6 @@ def main(n: uint256, implementation: address) -> uint256:
     if n == 1:
         return 1
 
-    forwarder: address = create_from_blueprint(implementation)
+    callee: address = create_from_blueprint(implementation)
 
-    return Self(forwarder).main(n - 1, implementation) * n
+    return Self(callee).main(n - 1, implementation) * n

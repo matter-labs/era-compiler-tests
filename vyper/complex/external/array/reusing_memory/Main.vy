@@ -1,4 +1,3 @@
-# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 import Helper as Helper
 
 map: HashMap[uint256, uint256]

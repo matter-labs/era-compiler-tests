@@ -1,4 +1,4 @@
-#! { "modes": [ ">=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.3.9" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -20,7 +20,6 @@
 #!     ]
 #! } ] }
 
-# Ignored https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 # Report https://linear.app/matterlabs/issue/CPR-586/treap-minimization-failure-for-m1-m3
 
 interface Self:

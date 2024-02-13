@@ -7,6 +7,6 @@ def main(implementation: address) -> uint256:
     if msg.value == 1:
         return 1
 
-    forwarder: address = create_copy_of(implementation)
+    callee: address = create_copy_of(implementation)
 
-    return Self(forwarder).main(implementation, value=msg.value-1) * msg.value
+    return Self(callee).main(implementation, value=msg.value-1) * msg.value

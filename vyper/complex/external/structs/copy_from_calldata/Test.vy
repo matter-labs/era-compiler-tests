@@ -1,4 +1,3 @@
-# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 # Example from https:#github.com/ethereum/solidity/issues/12558
 
 import C as C

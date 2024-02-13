@@ -1,4 +1,3 @@
-# Ignored, https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 import A as A
 
 @external

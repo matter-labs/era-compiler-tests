@@ -1,4 +1,4 @@
-{ "cases": [ {
+{ "modes": [ "V >=0.3.9" ], "cases": [ {
     "name": "five",
     "inputs": [
         {
