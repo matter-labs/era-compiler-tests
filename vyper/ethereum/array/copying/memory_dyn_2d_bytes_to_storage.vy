@@ -7,7 +7,7 @@ def f() -> uint256:
     m[1] = b"cde"
     m[2] = b"fghij"
     self.s = m
-    assert len(s) == len(m)
+    assert len(self.s) == len(m)
     
     for i in range(3):
         if not i < len(s):

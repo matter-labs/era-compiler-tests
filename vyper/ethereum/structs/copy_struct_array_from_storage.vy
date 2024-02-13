@@ -19,7 +19,7 @@ def __init__():
 @external
 def test1() -> bool:
     self.a.append([])
-    self.a[1] = b
+    self.a[1] = self.b
     assert len(self.a) == 2
     assert len(self.a[0]) == 3
     assert len(self.a[1]) == 4
@@ -39,10 +39,10 @@ def test2() -> bool:
     assert len(temp) == 2
     assert len(temp[0]) == 3
     assert len(temp[1]) == 4
-    assert temp[1][0] == 4
-    assert temp[1][1] == 5
-    assert temp[1][2] == 6
-    assert temp[1][3] == 7
+    assert temp[1][0].value == 4
+    assert temp[1][1].value == 5
+    assert temp[1][2].value == 6
+    assert temp[1][3].value == 7
     
     return True
     
@@ -56,10 +56,10 @@ def test3() -> bool:
     assert len(temp) == 2
     assert len(temp[0]) == 3
     assert len(temp[1]) == 4
-    assert temp[1][0] == 4
-    assert temp[1][1] == 5
-    assert temp[1][2] == 6
-    assert temp[1][3] == 7
+    assert temp[1][0].value == 4
+    assert temp[1][1].value == 5
+    assert temp[1][2].value == 6
+    assert temp[1][3].value == 7
     
     return True
 
@@ -73,10 +73,10 @@ def test4() -> bool:
     assert len(temp) == 2
     assert len(temp[0]) == 3
     assert len(temp[1]) == 4
-    assert temp[1][0] == 4
-    assert temp[1][1] == 5
-    assert temp[1][2] == 6
-    assert temp[1][3] == 7
+    assert temp[1][0].value == 4
+    assert temp[1][1].value == 5
+    assert temp[1][2].value == 6
+    assert temp[1][3].value == 7
     
     return True
 

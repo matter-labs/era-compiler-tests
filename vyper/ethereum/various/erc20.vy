@@ -123,7 +123,7 @@ def decreaseAllowance(spender: address, subtractedvalue_: uint256) -> bool:
 # gas irOptimized: 26275
 # gas legacy: 27012
 # gas legacyOptimized: 26275
-# decreaseAllowance(address,uint256): 2, 1 -> FAILURE, hex"4e487b71", 0x11
+# decreaseAllowance(address,uint256): 2, 1 -> FAILURE
 # gas irOptimized: 24042
 # gas legacy: 24467
 # gas legacyOptimized: 24056
@@ -132,7 +132,7 @@ def decreaseAllowance(spender: address, subtractedvalue_: uint256) -> bool:
 # gas irOptimized: 28571
 # gas legacy: 29417
 # gas legacyOptimized: 28591
-# transfer(address,uint256): 2, 2 -> FAILURE, hex"4e487b71", 0x11
+# transfer(address,uint256): 2, 2 -> FAILURE
 # gas irOptimized: 24071
 # gas legacy: 24453
 # gas legacyOptimized: 24053

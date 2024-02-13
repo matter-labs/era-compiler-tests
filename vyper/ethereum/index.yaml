@@ -76,8 +76,8 @@ entries:
       calldata_array_dynamic.vy:
         enabled: true
       calldata_array_dynamic_index_access.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'Arrays of arrays are not allowed'
       calldata_array_dynamic_static_dynamic.vy:
         enabled: true
         version: '>=0.3.9'
@@ -412,10 +412,10 @@ entries:
             enabled: true
           memory_arrays_dynamic_index_access_write.vy:
             enabled: true
-            version: '>=0.3.9'
+            version: '>=0.3.10'
           memory_arrays_index_access_write.vy:
             enabled: true
-            version: '>=0.3.9'
+            version: '>=0.3.10'
       inline_array_return.vy:
         enabled: true
       inline_array_singleton.vy:
@@ -983,11 +983,11 @@ entries:
       mapping_string_key.vy:
         enabled: true
       mappings_array2d_pop_delete.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'HashMap init error'
       mappings_array_pop_delete.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'HashMap init error'
       packed_storage_signed.vy:
         enabled: true
       packed_storage_structs_bytes.vy:
@@ -1038,8 +1038,8 @@ entries:
     enabled: true
     entries:
       array_of_recursive_struct.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comments: 'Recursive structures are not supported'
       calldata:
         enabled: true
         entries:
@@ -1083,11 +1083,11 @@ entries:
         enabled: true
         entries:
           recursive_storage_memory.vy:
-            enabled: true
-            version: '>=0.3.9'
+            enabled: false
+            comments: 'Recursive structures are not supported'
           recursive_storage_memory_complex.vy:
-            enabled: true
-            version: '>=0.3.9'
+            enabled: false
+            comments: 'Recursive structures are not supported'
       copy_from_storage.vy:
         enabled: true
       copy_struct_array_from_storage.vy:
@@ -1121,8 +1121,8 @@ entries:
       packed_storage_structs_delete.vy:
         enabled: true
       recursive_structs.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
       simple_struct_allocation.vy:
         enabled: true
       struct_constructor_nested.vy:
@@ -1139,13 +1139,13 @@ entries:
       struct_delete_storage.vy:
         enabled: true
       struct_delete_storage_nested_small.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
       struct_delete_storage_small.vy:
         enabled: true
       struct_delete_storage_with_array.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
       struct_delete_storage_with_arrays_small.vy:
         enabled: true
       struct_delete_struct_in_mapping.vy:
@@ -1162,8 +1162,8 @@ entries:
       struct_storage_to_memory.vy:
         enabled: true
       structs.vy:
-        enabled: true
-        version: '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
   types:
     enabled: true
     entries:

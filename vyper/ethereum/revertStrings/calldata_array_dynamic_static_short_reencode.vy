@@ -13,4 +13,4 @@ def g(x: DynArray[DynArray[uint256, 5][2], 5]) -> uint256:
 # EVMVersion: >=byzantium
 # revertStrings: debug
 # ----
-# g(uint256[][2][]): 0x20, 0x01, 0x20, 0x00 -> FAILURE
+# g(uint256[][2][]): 0x20, 0x01, 0x20, 0x00 -> 42

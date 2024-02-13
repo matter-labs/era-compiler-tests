@@ -1,10 +1,10 @@
 interface Self:
-    def f(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[300]: pure
-    def h(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[300]: pure
-    def j(s: DynArray[Bytes[10], 5]) -> Bytes[300]: pure
+    def f(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[1184]: pure
+    def h(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[1184]: pure
+    def j(s: DynArray[Bytes[10], 5]) -> Bytes[544]: pure
 @external
 @pure
-def f(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[300]:
+def f(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[1184]:
     return _abi_encode(s)
     
 @external
@@ -14,7 +14,7 @@ def g(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[300]:
     
 @external
 @pure
-def h(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[300]:
+def h(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[1184]:
     return _abi_encode(s)
     
 @external
@@ -24,7 +24,7 @@ def i(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[300]:
 
 @external
 @pure
-def j(s: DynArray[Bytes[10], 5]) -> Bytes[300]:
+def j(s: DynArray[Bytes[10], 5]) -> Bytes[544]:
     return _abi_encode(s)
 
 @external
