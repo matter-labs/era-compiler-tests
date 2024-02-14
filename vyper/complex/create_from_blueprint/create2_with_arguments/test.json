@@ -7,7 +7,7 @@
             "calldata": [
                 "0x0"
             ],
-            "expected":[
+            "expected": [
                 "Callable.address"
             ]
         },
@@ -16,12 +16,15 @@
             "method": "main",
             "calldata": [
                 "0x3123e234234",
-                "Callable.address"
+                "Callable.address",
+                "10",
+                "20",
+                "12"
             ]
         }
     ],
     "expected": [
-        "10"
+        "42"
     ]
 } ],
     "contracts": {

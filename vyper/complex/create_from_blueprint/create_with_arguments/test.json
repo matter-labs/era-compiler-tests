@@ -5,7 +5,9 @@
             "instance": "Callable",
             "method": "#deployer",
             "calldata": [
-                "0x0"
+                "1",
+                "2",
+                "3"
             ],
             "expected": [
                 "Callable.address"
