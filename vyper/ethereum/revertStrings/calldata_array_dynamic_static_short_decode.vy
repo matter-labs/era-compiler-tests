@@ -1,6 +1,6 @@
 @external
 def f(x: DynArray[DynArray[uint256, 5][2], 5]) -> uint256:
-    _: uint256 = x[0]
+    _: uint256 = x[0][0][0]
     return 23
     
 # ====

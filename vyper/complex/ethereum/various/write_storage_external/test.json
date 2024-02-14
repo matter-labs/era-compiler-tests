@@ -3,6 +3,16 @@
     "inputs": [
         {
             "instance": "D",
+            "method": "#deployer",
+            "calldata": [
+                "C.address"
+            ],
+            "expected": [
+                "D.address"
+            ]
+        },
+        {
+            "instance": "D",
             "method": "f",
             "calldata": [
             ],
