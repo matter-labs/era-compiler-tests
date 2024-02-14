@@ -3,8 +3,8 @@ s: DynArray[Bytes[5], 3]
 @external
 def f() -> uint256:
     m: DynArray[Bytes[5], 3] = [empty(Bytes[5]), empty(Bytes[5]), empty(Bytes[5])]
-    m[0] = b"ab"
-    m[1] = b"cde"
+    m[0] = b"ab000"
+    m[1] = b"cde00"
     m[2] = b"fghij"
     self.s = m
     assert len(self.s) == len(m)
