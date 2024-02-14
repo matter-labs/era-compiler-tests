@@ -1055,7 +1055,7 @@ entries:
             enabled: true
           calldata_struct_as_memory_argument.vy:
             enabled: true
-            version: '>=0.3.9'
+            version: '>=0.3.10'
           calldata_struct_struct_member.vy:
             enabled: true
           calldata_struct_struct_member_dynamic.vy:

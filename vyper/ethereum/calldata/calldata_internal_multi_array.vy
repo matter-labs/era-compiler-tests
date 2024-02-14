@@ -4,7 +4,7 @@ interface Self:
 @internal
 @pure
 def g1(s: DynArray[uint256, 2][2]) -> (uint256, DynArray[uint256, 2]):
-    return (self.s[0][1], self.s[1])
+    return (s[0][1], s[1])
     
 @external
 @view

@@ -10,15 +10,15 @@ def f() -> uint256:
     assert len(self.s) == len(m)
     
     for i in range(3):
-        if not i < len(s):
+        if not i < len(self.s):
             break
-        assert len(s[i]) == len(m[i])
+        assert len(self.s[i]) == len(m[i])
         for j in range(5):
-            if not i < len(s[i]):
+            if not i < len(self.s[i]):
                 break
-            assert convert(slice(s[i], j, 1), bytes1) == convert(slice(m[i], j, 1), bytes1)
+            assert convert(slice(self.s[i], j, 1), bytes1) == convert(slice(m[i], j, 1), bytes1)
     
-    return len(s)
+    return len(self.s)
     
 # ----
 # f() -> 3

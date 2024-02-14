@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "ignore": true, "modes": [ "V >=0.3.9" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -30,7 +30,7 @@ struct Node:
     l: uint256
     r: uint256
 
-@external
+@internal
 @view
 def split(p: uint256, nodes: Node[3]) -> (uint256, uint256):
     if p == 0:

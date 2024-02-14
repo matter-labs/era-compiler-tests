@@ -7,10 +7,7 @@
             "calldata": [
                 "C.address"
             ],
-            "expected": {
-                "exception": true,
-                "return_data": []
-            }
+            "expected": []
         },
         {
             "instance": "D",

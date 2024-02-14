@@ -9,7 +9,7 @@ def f(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[1184]:
     
 @external
 @view
-def g(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[300]:
+def g(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[1184]:
     return Self(self).f(s)
     
 @external
@@ -19,7 +19,7 @@ def h(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[1184]:
     
 @external
 @view
-def i(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[300]:
+def i(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[1184]:
     return Self(self).h(s)
 
 @external
@@ -29,7 +29,7 @@ def j(s: DynArray[Bytes[10], 5]) -> Bytes[544]:
 
 @external
 @view
-def k(s: DynArray[Bytes[10], 5]) -> Bytes[300]:
+def k(s: DynArray[Bytes[10], 5]) -> Bytes[544]:
     return Self(self).j(s)
     
 # ====
