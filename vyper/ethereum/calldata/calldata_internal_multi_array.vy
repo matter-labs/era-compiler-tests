@@ -3,15 +3,15 @@ interface Self:
 
 @internal
 @pure
-def g(s: DynArray[uint256, 2][2]) -> (uint256, DynArray[uint256, 2]):
-    return (self.s[0][1], self.s[1])
+def g1(s: DynArray[uint256, 2][2]) -> (uint256, DynArray[uint256, 2]):
+    return (s[0][1], s[1])
     
 @external
 @view
 def f(_: uint256, s: DynArray[uint256, 2][2], __: uint256) -> (uint256, uint256):
     x: uint256 = empty(uint256)
     y: DynArray[uint256, 2] = empty(DynArray[uint256, 2])
-    (x, y) = self.g(s)
+    (x, y) = self.g1(s)
     return (x, y[0])
     
 @external

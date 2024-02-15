@@ -1,0 +1,30 @@
+{ "modes": [ "V >=0.3.9" ], "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "D",
+            "method": "#deployer",
+            "calldata": [
+                "2",
+                "C.address"
+            ],
+            "expected": [
+                "D.address"
+            ]
+        },
+        {
+            "instance": "D",
+            "method": "f",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "2"
+    ]
+} ],
+    "contracts": {
+        "C": "C.vy",
+        "D": "D.vy"
+    }
+}

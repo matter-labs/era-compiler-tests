@@ -38,16 +38,15 @@ entries:
       byte_arrays.vy:
         enabled: true
       calldata_arrays_too_large.vy:
-        enabled: false
-        comment: "Other behavior on EraVM"
+        enabled: true
+        version: '=0.3.3'
       dynamic_arrays.vy:
         enabled: true
       memory_params_in_external_function.vy:
         enabled: true
       return_dynamic_types_cross_call_advanced.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       return_dynamic_types_cross_call_simple.vy:
         enabled: true
       struct:
@@ -73,30 +72,21 @@ entries:
         enabled: true
       calldata_array.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_array_dynamic.vy:
         enabled: true
       calldata_array_dynamic_index_access.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'Arrays of arrays are not allowed'
       calldata_array_dynamic_static_dynamic.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
-      calldata_array_dynamic_static_short_decode.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_array_dynamic_static_short_reencode.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_array_multi_dynamic.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_array_short_no_revert_string.vy:
         enabled: false
         comment: "Other behavior on EraVM"
@@ -104,8 +94,7 @@ entries:
         enabled: true
       calldata_array_static_dynamic_static.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_array_static_index_access.vy:
         enabled: true
       calldata_array_struct_dynamic.vy:
@@ -119,8 +108,7 @@ entries:
         comment: "Other behavior on EraVM"
       calldata_nested_array_static_reencode.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_struct_dynamic.vy:
         enabled: true
       calldata_struct_member_offset.vy:
@@ -152,8 +140,7 @@ entries:
         enabled: true
       dynamic_nested_arrays.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       memory_params_in_external_function.vy:
         enabled: true
       storage_array_encoding.vy:
@@ -213,8 +200,7 @@ entries:
         comment: "Other behavior on EraVM"
       calldata_array_dynamic_invalid_static_middle.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_array_of_struct.vy:
         enabled: true
       calldata_array_two_dimensional.vy:
@@ -266,10 +252,6 @@ entries:
             comment: "Without storageEmpty check"
           array_copy_storage_storage_dynamic_dynamic.vy:
             enabled: true
-          array_copy_storage_storage_static_dynamic.vy:
-            enabled: true
-            modes:
-            - '>=0.3.9'
           array_copy_storage_storage_static_simple.vy:
             enabled: true
           array_copy_storage_storage_static_static.vy:
@@ -329,14 +311,12 @@ entries:
             enabled: true
           calldata_dyn_2d_bytes_to_memory.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.9'
           calldata_dynamic_array_to_memory.vy:
             enabled: true
           calldata_nested_array_copy_to_memory.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.9'
           cleanup_during_multi_element_per_slot_copy.vy:
             enabled: true
           copy_byte_array_in_struct_to_storage.vy:
@@ -349,8 +329,7 @@ entries:
             enabled: true
           memory_dyn_2d_bytes_to_storage.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.9'
           storage_memory_nested.vy:
             enabled: true
           storage_memory_nested_bytes.vy:
@@ -427,12 +406,10 @@ entries:
             enabled: true
           memory_arrays_dynamic_index_access_write.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.10'
           memory_arrays_index_access_write.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.10'
       inline_array_return.vy:
         enabled: true
       inline_array_singleton.vy:
@@ -555,8 +532,7 @@ entries:
         enabled: true
       calldata_internal_multi_array.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       calldata_internal_multi_fixed_array.vy:
         enabled: true
       calldata_memory_mixed.vy:
@@ -612,8 +588,7 @@ entries:
         enabled: true
       functions_called_by_constructor.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       payable_constructor.vy:
         enabled: true
   constructor_with_params.vy:
@@ -644,8 +619,7 @@ entries:
         comment: "The input is considered invalid"
   empty_contract.vy:
     enabled: true
-    modes:
-    - '>=0.3.9'
+    version: '>=0.3.9'
   events:
     enabled: true
     entries:
@@ -659,8 +633,7 @@ entries:
         enabled: true
       event_dynamic_nested_array_memory_v2.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       event_dynamic_nested_array_storage_v2.vy:
         enabled: true
       event_emit.vy:
@@ -778,8 +751,7 @@ entries:
         enabled: true
       fun_read_in_ctor.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       immutable_signed.vy:
         enabled: true
       read_in_ctor.vy:
@@ -912,14 +884,6 @@ entries:
       calldata_array_dynamic_invalid.vy:
         enabled: false
         comment: "Other behavior on EraVM"
-      calldata_array_dynamic_static_short_decode.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
-      calldata_array_dynamic_static_short_reencode.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
       calldata_array_invalid_length.vy:
         enabled: false
         comment: "Other behavior on EraVM"
@@ -1007,13 +971,11 @@ entries:
       mapping_string_key.vy:
         enabled: true
       mappings_array2d_pop_delete.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'HashMap init error'
       mappings_array_pop_delete.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'HashMap init error'
       packed_storage_signed.vy:
         enabled: true
       packed_storage_structs_bytes.vy:
@@ -1064,9 +1026,8 @@ entries:
     enabled: true
     entries:
       array_of_recursive_struct.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comments: 'Recursive structures are not supported'
       calldata:
         enabled: true
         entries:
@@ -1082,8 +1043,7 @@ entries:
             enabled: true
           calldata_struct_as_memory_argument.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.10'
           calldata_struct_struct_member.vy:
             enabled: true
           calldata_struct_struct_member_dynamic.vy:
@@ -1098,8 +1058,7 @@ entries:
             enabled: true
           calldata_struct_with_nested_array_to_memory.vy:
             enabled: true
-            modes:
-            - '>=0.3.9'
+            version: '>=0.3.9'
           calldata_struct_with_nested_array_to_storage.vy:
             enabled: true
           calldata_structs.vy:
@@ -1112,19 +1071,16 @@ entries:
         enabled: true
         entries:
           recursive_storage_memory.vy:
-            enabled: true
-            modes:
-            - '>=0.3.9'
+            enabled: false
+            comments: 'Recursive structures are not supported'
           recursive_storage_memory_complex.vy:
-            enabled: true
-            modes:
-            - '>=0.3.9'
+            enabled: false
+            comments: 'Recursive structures are not supported'
       copy_from_storage.vy:
         enabled: true
       copy_struct_array_from_storage.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       delete_struct.vy:
         enabled: true
       event.vy:
@@ -1153,9 +1109,8 @@ entries:
       packed_storage_structs_delete.vy:
         enabled: true
       recursive_structs.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
       simple_struct_allocation.vy:
         enabled: true
       struct_constructor_nested.vy:
@@ -1172,15 +1127,13 @@ entries:
       struct_delete_storage.vy:
         enabled: true
       struct_delete_storage_nested_small.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
       struct_delete_storage_small.vy:
         enabled: true
       struct_delete_storage_with_array.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
       struct_delete_storage_with_arrays_small.vy:
         enabled: true
       struct_delete_struct_in_mapping.vy:
@@ -1197,9 +1150,8 @@ entries:
       struct_storage_to_memory.vy:
         enabled: true
       structs.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        enabled: false
+        comment: 'Recursive structures are not supported'
   types:
     enabled: true
     entries:
@@ -1265,8 +1217,7 @@ entries:
         enabled: true
       erc20.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       flipping_sign_tests.vy:
         enabled: true
       gasleft_decrease.vy:
@@ -1293,12 +1244,7 @@ entries:
         enabled: true
       skip_dynamic_types_for_static_arrays_with_dynamic_elements.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
-      skip_dynamic_types_for_structs.vy:
-        enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       state_variable_local_variable_mixture.vy:
         enabled: true
       storage_string_as_mapping_key_without_variable.vy:
@@ -1460,8 +1406,7 @@ entries:
         enabled: true
       smoke_test.vy:
         enabled: true
-        modes:
-        - '>=0.3.9'
+        version: '>=0.3.9'
       storage:
         enabled: true
         entries:

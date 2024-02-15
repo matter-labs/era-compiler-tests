@@ -16,4 +16,4 @@ def f(p1: uint32, c: S) -> (uint32, uint128, uint256, uint256, uint32):
 # ====
 # compileViaYul: also
 # ----
-# f(uint32,(uint128,uint256[][2],uint32)): 55, 0x40, 77, 0x60, 88, 0x40, 0x40, 2, 1, 2 -> 55, 78, 1, 2, 88
+# f(uint32,(uint128,uint256[2][2],uint32)): 55, 77, 1, 2, 1, 2, 88 -> 55, 78, 1, 2, 88

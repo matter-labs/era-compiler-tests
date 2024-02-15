@@ -1,12 +1,13 @@
 @internal
-def set(x: uint8[3][4]):
+def set(x: uint8[3][4]) -> uint8[3][4]:
     x[2][2] = 1
     x[3][2] = 7
+    return x
 
 @external
 def f() -> uint8[3][4]:
     data: uint8[3][4] = empty(uint8[3][4])
-    self.set(data)
+    data = self.set(data)
     return data
 # ====
 # compileToEwasm: also
