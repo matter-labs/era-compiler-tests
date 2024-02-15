@@ -81,9 +81,6 @@ entries:
       calldata_array_dynamic_static_dynamic.vy:
         enabled: true
         version: '>=0.3.9'
-      calldata_array_dynamic_static_short_decode.vy:
-        enabled: true
-        version: '>=0.3.9'
       calldata_array_dynamic_static_short_reencode.vy:
         enabled: true
         version: '>=0.3.9'
@@ -255,9 +252,6 @@ entries:
             comment: "Without storageEmpty check"
           array_copy_storage_storage_dynamic_dynamic.vy:
             enabled: true
-          array_copy_storage_storage_static_dynamic.vy:
-            enabled: true
-            version: '>=0.3.9'
           array_copy_storage_storage_static_simple.vy:
             enabled: true
           array_copy_storage_storage_static_static.vy:
@@ -890,12 +884,6 @@ entries:
       calldata_array_dynamic_invalid.vy:
         enabled: false
         comment: "Other behavior on EraVM"
-      calldata_array_dynamic_static_short_decode.vy:
-        enabled: true
-        version: '>=0.3.9'
-      calldata_array_dynamic_static_short_reencode.vy:
-        enabled: true
-        version: '>=0.3.9'
       calldata_array_invalid_length.vy:
         enabled: false
         comment: "Other behavior on EraVM"
@@ -1255,9 +1243,6 @@ entries:
       skip_dynamic_types.vy:
         enabled: true
       skip_dynamic_types_for_static_arrays_with_dynamic_elements.vy:
-        enabled: true
-        version: '>=0.3.9'
-      skip_dynamic_types_for_structs.vy:
         enabled: true
         version: '>=0.3.9'
       state_variable_local_variable_mixture.vy:
