@@ -3444,9 +3444,6 @@ entries:
       duplicated_function_definition_with_same_id_in_internal_dispatcher.sol:
         hash: '0xd48b1bb137fdd04634846aa52617b608'
         enabled: true
-        comment: 'TODO: https://linear.app/matterlabs/issue/CPR-558/support-the-function-pointers'
-        modes:
-        - Y
         version: '>=0.4.12'
       external_functions_with_calldata_args_assigned_to_function_pointers_with_memory_type.sol:
         hash: '0xfe328ab76f0a78defc958be5d667eb3c'
@@ -4057,8 +4054,7 @@ entries:
         version: '>=0.8.24'
       mcopy_overlap.sol:
         hash: '0x74927b09d3f839c7ccb03a78ff97269a'
-        enabled: false
-        comment: 'https://linear.app/matterlabs/issue/CPR-1529/enable-generation-of-memmove-for-eravm'
+        enabled: true
         version: '>=0.8.24'
       optimize_memory_store_multi_block.sol:
         hash: '0x82c6c8b315ce5c7f2f52470cab394797'
