@@ -19,14 +19,14 @@ object "Test_16" {
                     0xFFFF,
                     0xFFFF
                 )
-                staticcall(
+                pop(staticcall(
                     0xFFFF,
                     0xFFDC,
                     0xFFFF,
                     0xFFFF,
                     0xFFFF,
                     0xFFFF
-                )
+                ))
 
                 return(0, 0)
             }
