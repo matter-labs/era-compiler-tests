@@ -12,7 +12,7 @@ def f() -> DynArray[uint24[3], 4]:
         if not len(self.data[1]) < 4:
             break
         self.data[1].append(empty(uint24[3]))
-    return self.set(data)[1]
+    return self.set(self.data)[1]
 
 # ----
 # f() -> 0x20, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x07

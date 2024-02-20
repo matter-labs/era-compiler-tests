@@ -14,12 +14,12 @@ def h(a: DynArray[DynArray[uint256, 5][1], 5]) -> uint256:
 
 # ----
 # f(uint256[][1][]): 0x20, 0x0 -> 42 # valid access stub #
-# f(uint256[][1][]): 0x20, 0x1 -> FAILURE # invalid on argument decoding #
+# f(uint256[][1][]): 0x20, 0x1 -> 42 # no invalid encoding checks on Vyper #
 # f(uint256[][1][]): 0x20, 0x1, 0x20 -> 42 # invalid on outer access #
-# g(uint256[][1][]): 0x20, 0x1, 0x20 -> FAILURE
+# g(uint256[][1][]): 0x20, 0x1, 0x20 -> 42 # no invalid encoding checks on Vyper #
 # f(uint256[][1][]): 0x20, 0x1, 0x20, 0x20 -> 42 # invalid on inner access #
 # g(uint256[][1][]): 0x20, 0x1, 0x20, 0x20 -> 42
-# h(uint256[][1][]): 0x20, 0x1, 0x20, 0x20 -> FAILURE
+# h(uint256[][1][]): 0x20, 0x1, 0x20, 0x20 -> 42 # no invalid encoding checks on Vyper #
 # f(uint256[][1][]): 0x20, 0x1, 0x20, 0x20, 0x1 -> 42
 # g(uint256[][1][]): 0x20, 0x1, 0x20, 0x20, 0x1 -> 42
-# h(uint256[][1][]): 0x20, 0x1, 0x20, 0x20, 0x1 -> FAILURE
+# h(uint256[][1][]): 0x20, 0x1, 0x20, 0x20, 0x1 -> 42 # no invalid encoding checks on Vyper #

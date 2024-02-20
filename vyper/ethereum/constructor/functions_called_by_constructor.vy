@@ -7,7 +7,7 @@ def setName(_name: bytes32):
 
 @external
 def __init__():
-    self.setName(extract32(convert("abc", Bytes[32]), 0))
+    self.setName(convert(convert("abc", Bytes[32]), bytes32))
 
 @external
 def getName() -> bytes32:

@@ -1,0 +1,46 @@
+{ "modes": [ "V >=0.3.10" ], "cases": [ {
+    "name": "entry",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "0xAAAAAAAAAAAAAA",
+                "Callable.address",
+                "3"
+            ],
+            "expected": [
+                "10"
+            ]
+        },
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "0xBBBBBBBBBBBBBB",
+                "Callable.address",
+                "-1"
+            ],
+            "expected": [
+                "10"
+            ]
+        },
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "0xCCCCCCCCCCCCCC",
+                "Callable.address",
+                "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+            ]
+        }
+    ],
+    "expected": [
+        "10"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.vy",
+        "Callable": "callable.vy"
+    }
+}

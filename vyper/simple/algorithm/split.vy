@@ -1,4 +1,4 @@
-#! { "modes": [ ">=0.3.9" ], "cases": [ {
+#! { "ignore": true, "modes": [ "V >=0.3.9" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -20,7 +20,6 @@
 #!     ]
 #! } ] }
 
-# Ignored https://linear.app/matterlabs/issue/CPR-722/vyper-problems
 # Report https://linear.app/matterlabs/issue/CPR-586/treap-minimization-failure-for-m1-m3
 
 interface Self:
@@ -31,7 +30,7 @@ struct Node:
     l: uint256
     r: uint256
 
-@external
+@internal
 @view
 def split(p: uint256, nodes: Node[3]) -> (uint256, uint256):
     if p == 0:

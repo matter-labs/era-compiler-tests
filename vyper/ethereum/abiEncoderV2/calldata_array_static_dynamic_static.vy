@@ -1,16 +1,16 @@
 interface Self:
-    def f(s: DynArray[uint8[1], 1][1]) -> Bytes[300]: pure
-    def f2(s: DynArray[uint256[2], 1][2]) -> Bytes[300]: pure
+    def f(s: DynArray[uint8[1], 1][1]) -> Bytes[300]: view
+    def f2(s: DynArray[uint256[2], 1][2]) -> Bytes[300]: view
     def reenc_f(s: DynArray[uint8[1], 1][1]) -> Bytes[300]: view
     def reenc_f2(s: DynArray[uint256[2], 1][2]) -> Bytes[300]: view
 
 @external
-@pure
+@view
 def f(s: DynArray[uint8[1], 1][1]) -> Bytes[300]:
     return slice(msg.data, 0, 132)
 
 @external
-@pure
+@view
 def f2(s: DynArray[uint256[2], 1][2]) -> Bytes[300]:
     return slice(msg.data, 0, 292)
 
@@ -36,12 +36,12 @@ def h() -> Bytes[300]:
     
 @external
 def i() -> Bytes[300]:
-    m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
+    m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142, uint256)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
     return Self(self).f2(m)
     
 @external
 def j() -> Bytes[300]:
-    m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
+    m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142, uint256)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
     return Self(self).reenc_f2(m)
 
 # ====
