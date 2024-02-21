@@ -1,0 +1,26 @@
+{ "system_mode": true,
+    "group": "Precompiles",
+    "cases": [ {
+        "name": "default",
+        "inputs": [
+            {
+                "instance": "Main",
+                "method": "#fallback",
+                "calldata": [
+                    "0x10001"
+                ]
+            },
+            {
+                "instance": "Main",
+                "method": "#fallback",
+                "calldata": [
+                    "0x10002"
+                ]
+            }
+        ],
+        "expected": []
+    } ],
+    "contracts": {
+        "Main": "main.sol:Main"
+    }
+}
