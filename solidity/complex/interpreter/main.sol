@@ -13,7 +13,7 @@ contract Main {
     fallback() external payable {
         assembly {
             calldatacopy(0, 0, calldatasize())
-            let success := call(gas(), 0xE594Ae1D7205E8e92fB22c59d040c31E1FcD139D, 0, 0, calldatasize(), 0, 0)
+            let success := call(gas(), 0xE594Ae1D7205E8e92fB22c59d040c31E1FcD139F, 0, 0, calldatasize(), 0, 0)
             returndatacopy(0, 0, returndatasize())
             if iszero(success) {
                 revert(0, returndatasize())
