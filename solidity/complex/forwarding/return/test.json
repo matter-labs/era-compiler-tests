@@ -1,4 +1,4 @@
-{ "system_mode": true, "cases": [ {
+{ "system_mode": true, "modes": [ "Y" ], "cases": [ {
     "name": "short",
     "inputs": [
         {

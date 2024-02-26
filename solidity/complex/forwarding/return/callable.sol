@@ -6,7 +6,7 @@ contract Callable {
     fallback() external {
         assembly {
             calldatacopy(0, 0, calldatasize())
-            return(0x20, calldatasize())
+            return(0x20, sub(calldatasize(), 0x20))
         }
     }
 }
