@@ -5,20 +5,17 @@
         "inputs": [
             {
                 "instance": "Main",
-                "method": "#fallback",
+                "method": "benchmark",
                 "calldata": [
-                    "0x10001"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "#fallback",
-                "calldata": [
+                    "0xe594aE1d7205E8E92fb22C59D040c31e1FCD139f",
+                    "0x10001",
                     "0x10002"
                 ]
             }
         ],
-        "expected": []
+        "expected": [
+            "3"
+        ]
     } ],
     "contracts": {
         "Main": "main.sol:Main"
