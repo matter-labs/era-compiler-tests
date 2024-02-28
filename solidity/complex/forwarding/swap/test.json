@@ -1,0 +1,20 @@
+{ "system_mode": true, "modes": [ "Y" ], "cases": [ {
+    "name": "short",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "Callable.address"
+            ]
+        }
+    ],
+    "expected": [
+        "1"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.sol:Main",
+        "Callable": "callable.sol:Callable"
+    }
+}
