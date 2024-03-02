@@ -1,5 +1,7 @@
-{ "system_mode": true,
-    "group": "Precompiles",
+{ 
+    "system_mode": true,
+    "result_is_benchmark": true,
+    "group": "EVMInterpreter",
     "cases": [ {
         "name": "default",
         "inputs": [
@@ -8,8 +10,11 @@
                 "method": "benchmark",
                 "calldata": [
                     "BenchmarkCaller.address",
-                    "TargetShort.address",
-                    "TargetLong.address"
+                    "TargetPUSH1Template.address",
+                    "TargetPUSH1Full.address"
+                ],
+                "expected": [
+                    "*"
                 ]
             }
         ],
@@ -21,8 +26,18 @@
         "Main": "main.sol:Main"
     },
     "evm_contracts": {
-        "BenchmarkCaller": "608060405234801561000f575f80fd5b5060c08061001c5f395ff3fe6080604052348015600e575f80fd5b50600436106026575f3560e01c8063f55332ab14602a575b5f80fd5b60396035366004605f565b604b565b60405190815260200160405180910390f35b5f5a5f805f805f8786f1505a900392915050565b5f60208284031215606e575f80fd5b81356001600160a01b03811681146083575f80fd5b939250505056fea26469706673582212201122d5aa52fb2d37606b7a2a738389b1f019309deafe4b50ad4111bb7f6c39cb64736f6c63430008180033",
-        "TargetShort": "608060405234801561000f575f80fd5b5060c08061001c5f395ff3fe602A60005260006020F3",
-        "TargetLong": "608060405234801561000f575f80fd5b5060c08061001c5f395ff3fe602A602A60005260006020F3"
+        "BenchmarkCaller": {
+            "init_code": "608060405234801561000f575f80fd5b5060c08061001c5f395ff3fe",
+            "runtime_code" : "6080604052348015600e575f80fd5b50600436106026575f3560e01c8063f55332ab14602a575b5f80fd5b60396035366004605f565b604b565b60405190815260200160405180910390f35b5f5a5f805f805f8786f1505a900392915050565b5f60208284031215606e575f80fd5b81356001600160a01b03811681146083575f80fd5b939250505056fea26469706673582212201122d5aa52fb2d37606b7a2a738389b1f019309deafe4b50ad4111bb7f6c39cb64736f6c63430008180033"
+        },
+
+        "TargetPUSH1Template": {
+            "init_code": "608060405234801561000f575f80fd5b5060c08061001c5f395ff3fe",
+            "runtime_code" : "602A60005260006020F3"
+        },
+        "TargetPUSH1Full": {
+            "init_code": "608060405234801561000f575f80fd5b5060c08061001c5f395ff3fe",
+            "runtime_code" : "602A602A60005260006020F3"
+        }
     }
 }
