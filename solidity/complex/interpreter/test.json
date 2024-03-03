@@ -1,16 +1,48 @@
 { 
     "system_mode": true,
-    "result_is_benchmark": true,
     "group": "EVMInterpreter",
     "cases": [ {
-        "name": "default",
+        "result_is_evm_gas": true,
+        "name": "PUSH1",
         "inputs": [
             {
                 "instance": "Main",
                 "method": "benchmark",
                 "calldata": [
                     "BenchmarkCaller.address",
-                    "TargetPUSH1Template.address",
+                    "TargetPUSH1Template.address"
+                ],
+                "expected": [
+                    "*"
+                ]
+            },
+            {
+                "instance": "Main",
+                "method": "benchmark",
+                "calldata": [
+                    "BenchmarkCaller.address",
+                    "TargetPUSH1Full.address"
+                ],
+                "expected": [
+                    "*"
+                ]
+            },
+            {
+                "instance": "Main",
+                "method": "benchmark",
+                "calldata": [
+                    "BenchmarkCaller.address",
+                    "TargetPUSH1Template.address"
+                ],
+                "expected": [
+                    "*"
+                ]
+            },
+            {
+                "instance": "Main",
+                "method": "benchmark",
+                "calldata": [
+                    "BenchmarkCaller.address",
                     "TargetPUSH1Full.address"
                 ],
                 "expected": [
