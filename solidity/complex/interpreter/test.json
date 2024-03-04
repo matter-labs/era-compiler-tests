@@ -1,8 +1,8 @@
 { 
     "system_mode": true,
+    "is_evm_interpreter_benchmark": true,
     "group": "EVMInterpreter",
     "cases": [ {
-        "result_is_evm_gas": true,
         "name": "PUSH1",
         "inputs": [
             {
@@ -54,7 +54,6 @@
             "*"
         ]
     }, {
-        "result_is_evm_gas": true,
         "name": "ADD",
         "inputs": [
             {
@@ -106,7 +105,6 @@
             "*"
         ]
     }, {
-        "result_is_evm_gas": true,
         "name": "MUL",
         "inputs": [
             {
@@ -158,7 +156,6 @@
             "*"
         ]
     }, {
-        "result_is_evm_gas": true,
         "name": "SUB",
         "inputs": [
             {
@@ -210,7 +207,6 @@
             "*"
         ]
     }, {
-        "result_is_evm_gas": true,
         "name": "DIV",
         "inputs": [
             {
