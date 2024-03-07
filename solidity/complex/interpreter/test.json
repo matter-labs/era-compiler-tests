@@ -380,6 +380,34 @@
         },
         "JUMPDEST_Full": {
             "runtime_code" : "5B"
+        },
+
+        "RETURN_Template": {
+            "runtime_code" : "60006000"
+        },
+        "RETURN_Full": {
+            "runtime_code" : "60006000F3"
+        },
+
+        "REVERT_Template": {
+            "runtime_code" : "60006000"
+        },
+        "REVERT_Full": {
+            "runtime_code" : "60006000FD"
+        },
+
+        "INVALID_Template": {
+            "runtime_code" : ""
+        },
+        "INVALID_Full": {
+            "runtime_code" : "00"
+        },
+
+        "SELFDESTRUCT_Template": {
+            "runtime_code" : ""
+        },
+        "SELFDESTRUCT_Full": {
+            "runtime_code" : "00"
         }
     }
 }
