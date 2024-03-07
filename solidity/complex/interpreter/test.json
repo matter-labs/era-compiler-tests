@@ -2,262 +2,7 @@
     "system_mode": true,
     "is_evm_interpreter_benchmark": true,
     "group": "EVMInterpreter",
-    "cases": [ {
-        "name": "PUSH1",
-        "inputs": [
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "PUSH1Template.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "PUSH1Full.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "PUSH1Template.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "PUSH1Full.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            }
-        ],
-        "expected": [
-            "*"
-        ]
-    }, {
-        "name": "ADD",
-        "inputs": [
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "ADDTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "ADDFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "ADDTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "ADDFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            }
-        ],
-        "expected": [
-            "*"
-        ]
-    }, {
-        "name": "MUL",
-        "inputs": [
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "MULTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "MULFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "MULTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "MULFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            }
-        ],
-        "expected": [
-            "*"
-        ]
-    }, {
-        "name": "SUB",
-        "inputs": [
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "SUBTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "SUBFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "SUBTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "SUBFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            }
-        ],
-        "expected": [
-            "*"
-        ]
-    }, {
-        "name": "DIV",
-        "inputs": [
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "DIVTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "DIVFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "DIVTemplate.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            },
-            {
-                "instance": "Main",
-                "method": "benchmark",
-                "calldata": [
-                    "BenchmarkCaller.address",
-                    "DIVFull.address"
-                ],
-                "expected": [
-                    "*"
-                ]
-            }
-        ],
-        "expected": [
-            "*"
-        ]
-    } ],
+    "cases": [],
     "contracts": {
         "Main": "main.sol:Main"
     },
@@ -266,39 +11,375 @@
             "runtime_code" : "6080604052348015600e575f80fd5b50600436106026575f3560e01c8063f55332ab14602a575b5f80fd5b60396035366004605f565b604b565b60405190815260200160405180910390f35b5f5a5f805f805f8786f1505a900392915050565b5f60208284031215606e575f80fd5b81356001600160a01b03811681146083575f80fd5b939250505056fea26469706673582212201122d5aa52fb2d37606b7a2a738389b1f019309deafe4b50ad4111bb7f6c39cb64736f6c63430008180033"
         },
 
-        "PUSH1Template": {
+        "PUSH1_Template": {
             "runtime_code" : ""
         },
-        "PUSH1Full": {
+        "PUSH1_Full": {
             "runtime_code" : "602A"
         },
 
-        "ADDTemplate": {
+        "ADD_Template": {
             "runtime_code" : "602A602A"
         },
-        "ADDFull": {
+        "ADD_Full": {
             "runtime_code" : "602A602A01"
         },
 
-        "MULTemplate": {
+        "MUL_Template": {
             "runtime_code" : "602A602A"
         },
-        "MULFull": {
+        "MUL_Full": {
             "runtime_code" : "602A602A02"
         },
 
-        "SUBTemplate": {
+        "SUB_Template": {
             "runtime_code" : "602A602A"
         },
-        "SUBFull": {
+        "SUB_Full": {
             "runtime_code" : "602A602A03"
         },
 
-        "DIVTemplate": {
+        "DIV_Template": {
             "runtime_code" : "602A602A"
         },
-        "DIVFull": {
+        "DIV_Full": {
             "runtime_code" : "602A602A04"
+        },
+
+        "SDIV_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "SDIV_Full": {
+            "runtime_code" : "602A602A05"
+        },
+
+        "MOD_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "MOD_Full": {
+            "runtime_code" : "602A602A06"
+        },
+
+        "SMOD_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "SMOD_Full": {
+            "runtime_code" : "602A602A07"
+        },
+
+        "ADDMOD_Template": {
+            "runtime_code" : "602A602A602A"
+        },
+        "ADDMOD_Full": {
+            "runtime_code" : "602A602A602A08"
+        },
+
+        "MULMOD_Template": {
+            "runtime_code" : "602A602A602A"
+        },
+        "MULMOD_Full": {
+            "runtime_code" : "602A602A602A09"
+        },
+
+        "EXP_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "EXP_Full": {
+            "runtime_code" : "602A602A0A"
+        },
+
+        "SIGNEXTEND_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "SIGNEXTEND_Full": {
+            "runtime_code" : "602A602A0B"
+        },
+
+        "LT_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "LT_Full": {
+            "runtime_code" : "602A602A10"
+        },
+
+        "GT_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "GT_Full": {
+            "runtime_code" : "602A602A11"
+        },
+
+        "SLT_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "SLT_Full": {
+            "runtime_code" : "602A602A12"
+        },
+
+        "SGT_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "SGT_Full": {
+            "runtime_code" : "602A602A13"
+        },
+
+        "EQ_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "EQ_Full": {
+            "runtime_code" : "602A602A14"
+        },
+
+        "ISZERO_Template": {
+            "runtime_code" : "602A"
+        },
+        "ISZERO_Full": {
+            "runtime_code" : "602A15"
+        },
+
+        "AND_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "AND_Full": {
+            "runtime_code" : "602A602A16"
+        },
+
+        "OR_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "OR_Full": {
+            "runtime_code" : "602A602A17"
+        },
+
+        "XOR_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "XOR_Full": {
+            "runtime_code" : "602A602A18"
+        },
+
+        "NOT_Template": {
+            "runtime_code" : "602A"
+        },
+        "NOT_Full": {
+            "runtime_code" : "602A19"
+        },
+
+        "BYTE_Template": {
+            "runtime_code" : "6001602A"
+        },
+        "BYTE_Full": {
+            "runtime_code" : "6001602A1A"
+        },
+
+        "SHL_Template": {
+            "runtime_code" : "6008602A"
+        },
+        "SHL_Full": {
+            "runtime_code" : "6008602A1B"
+        },
+
+        "SHR_Template": {
+            "runtime_code" : "6008602A"
+        },
+        "SHR_Full": {
+            "runtime_code" : "6008602A1C"
+        },
+
+        "SAR_Template": {
+            "runtime_code" : "6008602A"
+        },
+        "SAR_Full": {
+            "runtime_code" : "6008602A1D"
+        },
+
+        "SHA3_Template": {
+            "runtime_code" : "60006040"
+        },
+        "SHA3_Full": {
+            "runtime_code" : "6000604020"
+        },
+
+        "ADDRESS_Template": {
+            "runtime_code" : ""
+        },
+        "ADDRESS_Full": {
+            "runtime_code" : "30"
+        },
+
+        "BALANCE_Template": {
+            "runtime_code" : "30"
+        },
+        "BALANCE_Full": {
+            "runtime_code" : "3031"
+        },
+
+        "ORIGIN_Template": {
+            "runtime_code" : ""
+        },
+        "ORIGIN_Full": {
+            "runtime_code" : "32"
+        },
+
+        "CALLER_Template": {
+            "runtime_code" : ""
+        },
+        "CALLER_Full": {
+            "runtime_code" : "33"
+        },
+
+        "CALLVALUE_Template": {
+            "runtime_code" : ""
+        },
+        "CALLVALUE_Full": {
+            "runtime_code" : "34"
+        },
+
+        "BLOCKHASH_Template": {
+            "runtime_code" : "43"
+        },
+        "BLOCKHASH_Full": {
+            "runtime_code" : "4340"
+        },
+
+        "COINBASE_Template": {
+            "runtime_code" : ""
+        },
+        "COINBASE_Full": {
+            "runtime_code" : "41"
+        },
+
+        "TIMESTAMP_Template": {
+            "runtime_code" : ""
+        },
+        "TIMESTAMP_Full": {
+            "runtime_code" : "42"
+        },
+
+        "NUMBER_Template": {
+            "runtime_code" : ""
+        },
+        "NUMBER_Full": {
+            "runtime_code" : "43"
+        },
+
+        "PREVRANDAO_Template": {
+            "runtime_code" : ""
+        },
+        "PREVRANDAO_Full": {
+            "runtime_code" : "44"
+        },
+
+        "GASLIMIT_Template": {
+            "runtime_code" : ""
+        },
+        "GASLIMIT_Full": {
+            "runtime_code" : "45"
+        },
+
+        "CHAINID_Template": {
+            "runtime_code" : ""
+        },
+        "CHAINID_Full": {
+            "runtime_code" : "46"
+        },
+
+        "SELFBALANCE_Template": {
+            "runtime_code" : ""
+        },
+        "SELFBALANCE_Full": {
+            "runtime_code" : "47"
+        },
+
+        "BASEFEE_Template": {
+            "runtime_code" : ""
+        },
+        "BASEFEE_Full": {
+            "runtime_code" : "48"
+        },
+
+        "POP_Template": {
+            "runtime_code" : "602A"
+        },
+        "POP_Full": {
+            "runtime_code" : "602A50"
+        },
+
+        "MLOAD_Template": {
+            "runtime_code" : "602A"
+        },
+        "MLOAD_Full": {
+            "runtime_code" : "602A51"
+        },
+
+        "MSTORE_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "MSTORE_Full": {
+            "runtime_code" : "602A602A52"
+        },
+
+        "MSTORE8_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "MSTORE8_Full": {
+            "runtime_code" : "602A602A53"
+        },
+
+        "SLOAD_Template": {
+            "runtime_code" : "602A"
+        },
+        "SLOAD_Full": {
+            "runtime_code" : "602A54"
+        },
+
+        "SSTORE_Template": {
+            "runtime_code" : "602A602A"
+        },
+        "SSTORE_Full": {
+            "runtime_code" : "602A602A55"
+        },
+
+        "JUMP_Template": {
+            "runtime_code" : "5B6000"
+        },
+        "JUMP_Full": {
+            "runtime_code" : "5B600056"
+        },
+
+        "JUMPI_Template": {
+            "runtime_code" : "5B60006001"
+        },
+        "JUMPI_Full": {
+            "runtime_code" : "5B6001600057"
+        },
+
+        "PC_Template": {
+            "runtime_code" : ""
+        },
+        "PC_Full": {
+            "runtime_code" : "58"
+        },
+
+        "MSIZE_Template": {
+            "runtime_code" : ""
+        },
+        "MSIZE_Full": {
+            "runtime_code" : "59"
+        },
+
+        "GAS_Template": {
+            "runtime_code" : ""
+        },
+        "GAS_Full": {
+            "runtime_code" : "5A"
+        },
+
+        "JUMPDEST_Template": {
+            "runtime_code" : ""
+        },
+        "JUMPDEST_Full": {
+            "runtime_code" : "5B"
         }
     }
 }
