@@ -659,7 +659,7 @@ runtime:
   store i256 %cell_3, i256 addrspace(1)* inttoptr (i256 64 to i256 addrspace(1)*), align 32
 
   %write_ptr = inttoptr i256 %offset to i256 addrspace(1)*
-  call void @__memset_uma_as1(i256 addrspace(1)* align 1 %write_ptr, i256 %value, i256 64, i1 false)
+  call void @__memset_uma_as1(i256 addrspace(1)* align 1 %write_ptr, i256 %value, i256 64)
 
   %abi_data = shl i256 96, 96
   tail call void @llvm.eravm.return(i256 %abi_data) #1
@@ -679,7 +679,7 @@ define private void @__constructor() local_unnamed_addr #0 personality i32 ()* @
 ; Function Attrs: noreturn nounwind
 declare void @llvm.eravm.return(i256) #0
 
-declare void @__memset_uma_as1(i256 addrspace(1)*, i256, i256, i1)
+declare void @__memset_uma_as1(i256 addrspace(1)*, i256, i256)
 
 attributes #0 = { noreturn nounwind }
 attributes #1 = { nounwind }
