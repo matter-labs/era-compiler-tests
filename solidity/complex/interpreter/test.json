@@ -341,17 +341,17 @@
         },
 
         "JUMP_Template": {
-            "runtime_code" : "5B6000"
+            "runtime_code" : "6003005B00"
         },
         "JUMP_Full": {
-            "runtime_code" : "5B600056"
+            "runtime_code" : "6003565B00"
         },
 
         "JUMPI_Template": {
-            "runtime_code" : "5B60006001"
+            "runtime_code" : "60016005005B00"
         },
         "JUMPI_Full": {
-            "runtime_code" : "5B6001600057"
+            "runtime_code" : "60016005575B00"
         },
 
         "PC_Template": {
@@ -394,20 +394,6 @@
         },
         "REVERT_Full": {
             "runtime_code" : "60006000FD"
-        },
-
-        "INVALID_Template": {
-            "runtime_code" : ""
-        },
-        "INVALID_Full": {
-            "runtime_code" : "00"
-        },
-
-        "SELFDESTRUCT_Template": {
-            "runtime_code" : ""
-        },
-        "SELFDESTRUCT_Full": {
-            "runtime_code" : "00"
         }
     }
 }
