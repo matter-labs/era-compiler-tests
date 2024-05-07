@@ -11,13 +11,6 @@
             "runtime_code" : "6080604052348015600e575f80fd5b5036601f19018060205f375a5f80835f805f355af191505a81035f52503d5f60203e8015603c573d6020015ff35b503d6020015ffdfea26469706673582212205f8680c59539ea20d3b628bfd10fddba7ae0dcb956d36ecbd427f0002cf5062164736f6c63430008190033"
         },
 
-        "PUSH1_Template": {
-            "runtime_code" : ""
-        },
-        "PUSH1_Full": {
-            "runtime_code" : "602A"
-        },
-
         "ADD_Template": {
             "runtime_code" : "602A602A"
         },
@@ -380,6 +373,461 @@
         },
         "JUMPDEST_Full": {
             "runtime_code" : "5B"
+        },
+
+        "PUSH0_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH0_Full": {
+            "runtime_code" : "5F"
+        },
+
+        "PUSH1_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH1_Full": {
+            "runtime_code" : "602A"
+        },
+
+        "PUSH2_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH2_Full": {
+            "runtime_code" : "610000"
+        },
+
+        "PUSH3_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH3_Full": {
+            "runtime_code" : "62000000"
+        },
+
+        "PUSH4_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH4_Full": {
+            "runtime_code" : "6300000000"
+        },
+
+        "PUSH5_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH5_Full": {
+            "runtime_code" : "640000000000"
+        },
+
+        "PUSH6_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH6_Full": {
+            "runtime_code" : "65000000000000"
+        },
+
+        "PUSH7_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH7_Full": {
+            "runtime_code" : "6600000000000000"
+        },
+
+        "PUSH8_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH8_Full": {
+            "runtime_code" : "670000000000000000"
+        },
+
+        "PUSH9_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH9_Full": {
+            "runtime_code" : "68000000000000000000"
+        },
+
+        "PUSH10_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH10_Full": {
+            "runtime_code" : "6900000000000000000000"
+        },
+
+        "PUSH11_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH11_Full": {
+            "runtime_code" : "6A0000000000000000000000"
+        },
+
+        "PUSH12_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH12_Full": {
+            "runtime_code" : "6B000000000000000000000000"
+        },
+
+        "PUSH13_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH13_Full": {
+            "runtime_code" : "6C00000000000000000000000000"
+        },
+
+        "PUSH14_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH14_Full": {
+            "runtime_code" : "6D0000000000000000000000000000"
+        },
+
+        "PUSH15_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH15_Full": {
+            "runtime_code" : "6E000000000000000000000000000000"
+        },
+
+        "PUSH16_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH16_Full": {
+            "runtime_code" : "6F00000000000000000000000000000000"
+        },
+
+        "PUSH17_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH17_Full": {
+            "runtime_code" : "700000000000000000000000000000000000"
+        },
+
+        "PUSH18_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH18_Full": {
+            "runtime_code" : "71000000000000000000000000000000000000"
+        },
+
+        "PUSH19_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH19_Full": {
+            "runtime_code" : "7200000000000000000000000000000000000000"
+        },
+
+        "PUSH20_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH20_Full": {
+            "runtime_code" : "730000000000000000000000000000000000000000"
+        },
+
+        "PUSH21_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH21_Full": {
+            "runtime_code" : "74000000000000000000000000000000000000000000"
+        },
+
+        "PUSH22_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH22_Full": {
+            "runtime_code" : "7500000000000000000000000000000000000000000000"
+        },
+
+        "PUSH23_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH23_Full": {
+            "runtime_code" : "760000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH24_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH24_Full": {
+            "runtime_code" : "77000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH25_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH25_Full": {
+            "runtime_code" : "7800000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH26_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH26_Full": {
+            "runtime_code" : "790000000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH27_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH27_Full": {
+            "runtime_code" : "7A00000000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH28_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH28_Full": {
+            "runtime_code" : "7B0000000000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH29_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH29_Full": {
+            "runtime_code" : "7C0000000000000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH30_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH30_Full": {
+            "runtime_code" : "7D000000000000000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH31_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH31_Full": {
+            "runtime_code" : "7E00000000000000000000000000000000000000000000000000000000000000"
+        },
+
+        "PUSH32_Template": {
+            "runtime_code" : ""
+        },
+        "PUSH32_Full": {
+            "runtime_code" : "7F0000000000000000000000000000000000000000000000000000000000000000"
+        },
+
+        "DUP1_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP1_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F80"
+        },
+
+        "DUP2_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP2_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F81"
+        },
+
+        "DUP3_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP3_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F82"
+        },
+
+        "DUP4_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP4_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F83"
+        },
+
+        "DUP5_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP5_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F84"
+        },
+
+        "DUP6_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP6_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F85"
+        },
+
+        "DUP7_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP7_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F86"
+        },
+
+        "DUP8_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP8_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F87"
+        },
+
+        "DUP9_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP9_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F88"
+        },
+
+        "DUP10_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP10_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F89"
+        },
+
+        "DUP11_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP11_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F8A"
+        },
+
+        "DUP12_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP12_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F8B"
+        },
+
+        "DUP13_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP13_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F8C"
+        },
+
+        "DUP14_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP14_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F8D"
+        },
+
+        "DUP15_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP15_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F8E"
+        },
+
+        "DUP16_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "DUP16_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F8F"
+        },
+
+        "SWAP1_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP1_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F90"
+        },
+
+        "SWAP2_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP2_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F91"
+        },
+
+        "SWAP3_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP3_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F92"
+        },
+
+        "SWAP4_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP4_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F93"
+        },
+
+        "SWAP5_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP5_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F94"
+        },
+
+        "SWAP6_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP6_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F95"
+        },
+
+        "SWAP7_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP7_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F96"
+        },
+
+        "SWAP8_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP8_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F97"
+        },
+
+        "SWAP9_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP9_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F98"
+        },
+
+        "SWAP10_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP10_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F99"
+        },
+
+        "SWAP11_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP11_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9A"
+        },
+
+        "SWAP12_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP12_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9B"
+        },
+
+        "SWAP13_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP13_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9C"
+        },
+
+        "SWAP14_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP14_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9D"
+        },
+
+        "SWAP15_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP15_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9E"
+        },
+
+        "SWAP16_Template": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F"
+        },
+        "SWAP16_Full": {
+            "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9F"
         },
 
         "RETURN_Template": {
