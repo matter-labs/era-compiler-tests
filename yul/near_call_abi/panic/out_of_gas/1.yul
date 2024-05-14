@@ -1,4 +1,4 @@
-//! { "system_mode": true, "cases": [ {
+//! { "enable_eravm_extensions": true, "cases": [ {
 //!     "name": "500_gas",
 //!     "inputs": [
 //!         {

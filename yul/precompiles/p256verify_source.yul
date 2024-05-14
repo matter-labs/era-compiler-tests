@@ -1,4 +1,4 @@
-//! { "system_mode" : true,
+//! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
 //!   "cases": [ {
 //!     "name": "valid signature one",

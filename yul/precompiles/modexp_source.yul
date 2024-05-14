@@ -1,4 +1,4 @@
-//! { "system_mode" : true,
+//! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
 //!   "cases": [ {
 //!     "name": "modexp_one_limb_0_0_0",

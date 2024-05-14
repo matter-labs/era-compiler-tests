@@ -11,7 +11,7 @@
 //!         "666",
 //!         "0x20"
 //!     ]
-//! } ], "system_mode": true }
+//! } ], "enable_eravm_extensions": true }
 
 object "Test_16" {
     code {

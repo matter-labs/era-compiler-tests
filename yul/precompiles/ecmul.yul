@@ -1,4 +1,4 @@
-//! { "system_mode" : true,
+//! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
 //!   "cases": [ {
 //!     "name": "(0, 0) * 0",
