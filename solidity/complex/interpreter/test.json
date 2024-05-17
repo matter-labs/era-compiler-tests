@@ -1290,56 +1290,6 @@
             "runtime_code" : "5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F5F9F"
         },
 
-        "LOG0_Before": {
-            "runtime_code": ""
-        },
-        "LOG0_Template": {
-            "runtime_code" : "602560005260206000"
-        },
-        "LOG0_Full": {
-            "runtime_code" : "602560005260206000A0"
-        },
-
-        "LOG1_Before": {
-            "runtime_code": ""
-        },
-        "LOG1_Template": {
-            "runtime_code" : "602560005260206000"
-        },
-        "LOG1_Full": {
-            "runtime_code" : "602560005260206000A1"
-        },
-
-        "LOG2_Before": {
-            "runtime_code": ""
-        },
-        "LOG2_Template": {
-            "runtime_code" : "602560005260206000"
-        },
-        "LOG2_Full": {
-            "runtime_code" : "602560005260206000A2"
-        },
-
-        "LOG3_Before": {
-            "runtime_code": ""
-        },
-        "LOG3_Template": {
-            "runtime_code" : "602560005260206000"
-        },
-        "LOG3_Full": {
-            "runtime_code" : "602560005260206000A3"
-        },
-
-        "LOG4_Before": {
-            "runtime_code": ""
-        },
-        "LOG4_Template": {
-            "runtime_code" : "602560005260206000"
-        },
-        "LOG4_Full": {
-            "runtime_code" : "602560005260206000A4"
-        },
-
         "CREATE_Before": {
             "runtime_code": ""
         },
