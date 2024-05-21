@@ -1091,7 +1091,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "big_ordinar_zero",
 //!     "inputs": [
 //!         {
@@ -1102,7 +1101,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "big_ordinar_one",
@@ -1274,7 +1273,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "2_in_32_minus_32_zero",
 //!     "inputs": [
 //!         {
@@ -1285,7 +1283,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "2_in_32_minus_32_one",
@@ -1457,7 +1455,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "2_in_32_minus_31_zero",
 //!     "inputs": [
 //!         {
@@ -1468,7 +1465,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "2_in_32_minus_31_one",
@@ -1640,7 +1637,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "2_in_32_minus_ordinar_zero",
 //!     "inputs": [
 //!         {
@@ -1651,7 +1647,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "2_in_32_minus_ordinar_one",
@@ -1823,7 +1819,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "2_in_32_minus_one_zero",
 //!     "inputs": [
 //!         {
@@ -1834,7 +1829,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "2_in_32_minus_one_one",
@@ -2006,7 +2001,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "2_in_32_zero",
 //!     "inputs": [
 //!         {
@@ -2017,7 +2011,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "2_in_32_one",
@@ -2189,7 +2183,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "ordinar_bigger_2_in_32_zero",
 //!     "inputs": [
 //!         {
@@ -2200,7 +2193,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "ordinar_bigger_2_in_32_one",
@@ -2372,7 +2365,6 @@
 //!         "0"
 //!     ]
 //! }, {
-//!     "ignore": true,
 //!     "name": "max_zero",
 //!     "inputs": [
 //!         {
@@ -2383,7 +2375,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "0"
 //!     ]
 //! }, {
 //!     "name": "max_one",
