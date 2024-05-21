@@ -4,25 +4,16 @@
         "name": "default",
         "inputs": [
           {
-            "comment": "constructor (1 index)",
-            "instance": "Main",
-            "method": "#deployer",
-            "calldata": [
-            ],
-            "expected": {
-              "return_data": ["*"]
-            }
-          },
-          {
             "comment": "zero address (2 index)",
             "instance": "Main",
             "method": "main",
             "calldata": [
               "0"
             ],
-            "expected": [
-              "0"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           },
           {
             "comment": "precompile address (3 index)",
@@ -31,9 +22,10 @@
             "calldata": [
               "1"
             ],
-            "expected": [
-              "0"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           },
           {
             "comment": "system-contract address (4 index)",
@@ -42,9 +34,10 @@
             "calldata": [
               "0x8006"
             ],
-            "expected": [
-              "1"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           },
           {
             "comment": "system address (5 index)",
@@ -53,9 +46,10 @@
             "calldata": [
               "0xe63a"
             ],
-            "expected": [
-              "0"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           },
           {
             "comment": "this address (6 index)",
@@ -86,9 +80,10 @@
             "calldata": [
               "0x28389238943f1b124238edffa000094232323232"
             ],
-            "expected": [
-              "0"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           },
           {
             "comment": "max address (9 index)",
@@ -97,9 +92,10 @@
             "calldata": [
               "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
             ],
-            "expected": [
-              "0"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           },
           {
             "comment": "max U256 address (10 index)",
@@ -108,13 +104,14 @@
             "calldata": [
               "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
             ],
-            "expected": [
-              "0"
-            ]
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
           }
         ],
         "expected": [
-          "1"
+          "0"
         ]
     } ],
     "contracts": {
