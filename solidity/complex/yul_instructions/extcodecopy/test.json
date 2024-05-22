@@ -59,7 +59,8 @@
               "Main.address"
             ],
             "expected": [
-              "1"
+              "1",
+              "*"
             ]
           },
           {
@@ -70,7 +71,8 @@
               "Other.address"
             ],
             "expected": [
-              "1"
+              "1",
+              "*"
             ]
           },
           {
