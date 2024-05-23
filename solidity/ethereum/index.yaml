@@ -6707,14 +6707,12 @@ entries:
     entries:
       address_code.sol:
         hash: '0x7bd1dd313d8c86531d2ab6741cb021c0'
-        enabled: false
-        comment: 'TODO: extcodecopy'
-        version: '>=0.4.12'
+        enabled: true
+        version: '>=0.8.1'
       address_code_complex.sol:
         hash: '0x05597317edae983578d18d8577e3e810'
-        enabled: false
-        comment: 'TODO: extcodecopy'
-        version: '>=0.4.12'
+        enabled: true
+        version: '>=0.8.0'
       assignment_to_const_var_involving_expression.sol:
         hash: '0x1138b782cd27da4d7512d6b5617d5177'
         enabled: true
@@ -6753,8 +6751,7 @@ entries:
       code_length_contract_member.sol:
         hash: '0xc48a329cc0cbee7e1bf50690932f8348'
         enabled: true
-        comment: solc 0.8.0 `EXTCODECOPY` instruction
-        version: '>=0.8.1'
+        version: '>=0.8.0'
       codebalance_assembly.sol:
         hash: '0x4a0cbc404efd79da93e9ca4c9a59e93d'
         enabled: true

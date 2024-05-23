@@ -1,0 +1,123 @@
+{
+    "cases": [
+      {
+        "name": "default",
+        "inputs": [
+          {
+            "comment": "zero address (2 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "0"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          },
+          {
+            "comment": "precompile address (3 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "1"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          },
+          {
+            "comment": "system-contract address (4 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "0x8006"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          },
+          {
+            "comment": "system address (5 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "0xe63a"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          },
+          {
+            "comment": "this address (6 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "Main.address"
+            ],
+            "expected": [
+              "1",
+              "*"
+            ]
+          },
+          {
+            "comment": "other address (7 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "Other.address"
+            ],
+            "expected": [
+              "1",
+              "*"
+            ]
+          },
+          {
+            "comment": "empty address (8 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "0x28389238943f1b124238edffa000094232323232"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          },
+          {
+            "comment": "max address (9 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          },
+          {
+            "comment": "max U256 address (10 index)",
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+              "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+            ],
+            "expected": {
+              "return_data": [],
+              "exception": true
+            }
+          }
+        ],
+        "expected": [
+          "0"
+        ]
+    } ],
+    "contracts": {
+        "Main": "main.sol:Main",
+        "Other": "other.sol:Other"
+    }
+}
