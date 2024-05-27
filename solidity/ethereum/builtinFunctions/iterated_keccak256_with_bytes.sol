@@ -3,7 +3,7 @@ contract c {
 
     function foo() public returns (bytes32) {
         data.push("x");
-        data.push("I");
+        data.push("y");
         data.push("z");
         return keccak256(abi.encodePacked("b", keccak256(data), "a"));
     }
