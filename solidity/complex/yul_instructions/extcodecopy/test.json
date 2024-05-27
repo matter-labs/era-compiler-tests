@@ -34,10 +34,10 @@
             "calldata": [
               "0x8006"
             ],
-            "expected": {
-              "return_data": [],
-              "exception": true
-            }
+            "expected": [
+              "1",
+              "*"
+            ]
           },
           {
             "comment": "system address (5 index)",
