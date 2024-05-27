@@ -1,7 +1,7 @@
 { "modes": [
     "Y >=0.8.1",
     "E",
-    "y >=0.8.16"
+    "I >=0.8.16"
 ], "cases": [ {
     "name": "testSafeMath",
     "inputs": [

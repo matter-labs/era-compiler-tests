@@ -1,5 +1,5 @@
 { "modes": [
-   "E+", "y", "Y"
+   "E+", "I", "Y"
 ],
 "comment": "E- solc error: too deep into the stack",
 "cases": [ {

@@ -1,4 +1,4 @@
-//! { "modes": [ "E", "y" ], "cases": [ {
+//! { "modes": [ "E", "I" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {

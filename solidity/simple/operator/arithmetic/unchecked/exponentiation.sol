@@ -1,6 +1,6 @@
 //! { "modes": [
 //!     "Y >=0.8.1",
-//!     "E", "y"
+//!     "E", "I"
 //! ],
 //! "comment": "solc 0.8.0 yul difference",
 //! "cases": [ {
