@@ -1067,7 +1067,7 @@ entries:
             modes:
             - Y >=0.8.16
             - E
-            - y >=0.8.16
+            - I >=0.8.16
             version: '>=0.7.0'
           copy_byte_array_in_struct_to_storage.sol:
             hash: '0x1c31c2cc824bbf14431a0b38d6a43db5'
@@ -1133,7 +1133,7 @@ entries:
             modes:
             - Y >=0.8.16
             - E
-            - y >=0.8.16
+            - I >=0.8.16
             version: '>=0.8.12'
           memory_dyn_2d_bytes_to_storage.sol:
             hash: '0xe8cf50fe02204f384ff680cbcced3d0a'

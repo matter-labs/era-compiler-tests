@@ -17,7 +17,7 @@
 #!             ]
 #!         },
 #!         {
-#!             "method": "y",
+#!             "method": "I",
 #!             "calldata": [],
 #!             "expected": [
 #!                 "43"

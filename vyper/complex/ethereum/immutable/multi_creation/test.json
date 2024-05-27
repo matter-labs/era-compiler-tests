@@ -34,7 +34,7 @@
         },
         {
             "instance": "C",
-            "method": "y",
+            "method": "I",
             "calldata": [
             ]
         }
