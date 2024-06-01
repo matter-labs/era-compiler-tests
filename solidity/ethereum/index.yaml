@@ -4570,6 +4570,10 @@ entries:
       using_library_mappings_return.sol:
         hash: '0x80ace242348862da43ec45413f00a356'
         enabled: true
+        modes:
+        - Y >=0.8.1
+        - E
+        - y
         version: '>=0.5.1'
       using_library_structs.sol:
         hash: '0x8f1b959159863be3397cdaccd4cadab0'
