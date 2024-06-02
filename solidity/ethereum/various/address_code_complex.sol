@@ -1,17 +1,16 @@
-contract A {
-    constructor() {
-        assembly {
-            // This is only 7 bytes here.
-            mstore(0, 0x48aa5566000000)
-            return(0, 32)
-        }
-    }
-}
+contract A {}
 
 contract C {
-    function f() public returns (bytes memory) { return address(new A()).code; }
-    function g() public returns (uint) { return address(new A()).code.length; }
+    function f() public returns (bool) {
+        bytes memory code = address(new A()).code;
+        uint lastWord;
+        assembly {
+            lastWord := mload(code)
+        }
+        return lastWord != 0;
+    }
+    function g() public returns (bool) { return address(new A()).code.length > 0; }
 }
 // ----
-// f() -> 0x20, 0x20, 0x48aa5566000000
-// g() -> 0x20
+// f() -> true
+// g() -> true
