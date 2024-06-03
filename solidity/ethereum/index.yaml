@@ -4107,7 +4107,11 @@ entries:
       mcopy_as_identifier_pre_cancun.sol:
         hash: '0xf5c3d50cd9353b5fc7fb9347c786b77d'
         enabled: true
-        version: <0.8.24
+        modes:
+        - Y <=0.8.23
+        - E <=0.8.23
+        - I <=0.8.23
+        version: '>=0.4.16'
       mcopy_empty.sol:
         hash: '0x51612a8c512cb835c37e67939a89594c'
         enabled: true
@@ -4152,7 +4156,11 @@ entries:
       tload_tstore_not_reserved_before_cancun.sol:
         hash: '0x0efaf55c8394dc2f7e7cb6881df0ec82'
         enabled: true
-        version: <0.8.24
+        modes:
+        - Y <=0.8.23
+        - E <=0.8.23
+        - I <=0.8.23
+        version: '>=0.4.16'
       transient_storage_creation.sol:
         hash: '0xd402aa69c5df98c5094a1bfe9f066b11'
         enabled: true
@@ -4630,6 +4638,10 @@ entries:
       using_library_mappings_return.sol:
         hash: '0xf6f065063155db3c8ff5b5e1394d81b2'
         enabled: true
+        modes:
+        - Y >=0.8.1
+        - E
+        - y
         version: '>=0.5.1'
       using_library_structs.sol:
         hash: '0x8f1b959159863be3397cdaccd4cadab0'
