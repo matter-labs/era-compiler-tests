@@ -4047,7 +4047,9 @@ entries:
       mcopy_as_identifier_pre_cancun.sol:
         hash: '0xf5c3d50cd9353b5fc7fb9347c786b77d'
         enabled: true
-        version: '>0.4.15, <0.8.24'
+        modes:
+        - <=0.8.24
+        version: '>=0.4.16'
       mcopy_empty.sol:
         hash: '0x51612a8c512cb835c37e67939a89594c'
         enabled: true
