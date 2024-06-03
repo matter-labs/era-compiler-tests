@@ -4047,7 +4047,7 @@ entries:
       mcopy_as_identifier_pre_cancun.sol:
         hash: '0xf5c3d50cd9353b5fc7fb9347c786b77d'
         enabled: true
-        version: <0.8.24
+        version: '>0.4.15, <0.8.24'
       mcopy_empty.sol:
         hash: '0x51612a8c512cb835c37e67939a89594c'
         enabled: true
@@ -4092,7 +4092,7 @@ entries:
       tload_tstore_not_reserved_before_cancun.sol:
         hash: '0x0efaf55c8394dc2f7e7cb6881df0ec82'
         enabled: true
-        version: '<0.8.24'
+        version: '>0.4.15, <0.8.24'
       transient_storage_creation.sol:
         hash: '0xd402aa69c5df98c5094a1bfe9f066b11'
         enabled: true
