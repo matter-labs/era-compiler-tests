@@ -12,7 +12,7 @@
 //!         "1"
 //!     ]
 //! } ],
-//! "system_mode": true
+//! "enable_eravm_extensions": true
 //! }
 
 // Report https://linear.app/matterlabs/issue/CPR-655/near-call-with-abi-returns-tuple-bug

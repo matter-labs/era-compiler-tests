@@ -1,4 +1,4 @@
-//! { "system_mode": true, "modes": [ "Y" ], "cases": [ {
+//! { "enable_eravm_extensions": true, "modes": [ "Y" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {

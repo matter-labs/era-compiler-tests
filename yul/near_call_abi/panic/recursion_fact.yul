@@ -25,7 +25,7 @@
 //!         "120"
 //!     ]
 //! } ],
-//! "system_mode": true
+//! "enable_eravm_extensions": true
 //! }
 
 object "Test" {
