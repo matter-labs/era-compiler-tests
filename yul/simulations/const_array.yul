@@ -19,7 +19,7 @@
 //!         "0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb"
 //!     ]
 //! } ],
-//! "system_mode": true
+//! "enable_eravm_extensions": true
 //! }
 
 object "Test_16" {

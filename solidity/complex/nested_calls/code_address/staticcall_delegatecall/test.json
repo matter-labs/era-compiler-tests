@@ -23,5 +23,5 @@
         "Second": "Second.sol:Second",
         "Third": "Third.sol:Third"
     },
-    "system_mode": true
+    "enable_eravm_extensions": true
 }
