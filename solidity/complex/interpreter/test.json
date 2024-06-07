@@ -1,6 +1,5 @@
 { 
     "system_mode": true,
-    "is_evm_interpreter_benchmark": true,
     "group": "EVMInterpreter",
     "cases": [],
     "contracts": {
