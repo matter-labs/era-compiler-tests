@@ -4,7 +4,7 @@
     "group": "EVMInterpreter",
     "cases": [],
     "contracts": {
-        "Proxy": "Proxy.sol:Proxy"
+        "Dummy": "Dummy.sol:Dummy"
     },
     "evm_contracts": {
         "Benchmark": {
