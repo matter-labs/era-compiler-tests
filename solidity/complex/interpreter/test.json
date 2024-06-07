@@ -7,9 +7,6 @@
         "Dummy": "Dummy.sol:Dummy"
     },
     "evm_contracts": {
-        "Benchmark": {
-            "runtime_code" : "6080604052348015600e575f80fd5b5036601f19018060205f375a5f80835f805f355af191505a81035f52503d5f60203e8015603c573d6020015ff35b503d6020015ffdfea26469706673582212205f8680c59539ea20d3b628bfd10fddba7ae0dcb956d36ecbd427f0002cf5062164736f6c63430008190033"
-        },
         "ADD_Before": {
             "runtime_code": ""
         },
