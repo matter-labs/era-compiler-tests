@@ -8,8 +8,8 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "return_data": [],
+//!         "exception": true
 //!     }
 //! } ] }
 

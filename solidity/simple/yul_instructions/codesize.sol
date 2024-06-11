@@ -11,8 +11,9 @@
 //!         "return_data": ["*"],
 //!         "events": [
 //!             {
+//!                 "address": "Test.address",
 //!                 "topics": [],
-//!                 "values": ["0"]
+//!                 "values": ["*"]
 //!             }
 //!         ]
 //!     }
@@ -28,8 +29,9 @@
 //!         "return_data": ["*"],
 //!         "events": [
 //!             {
+//!                 "address": "Test.address",
 //!                 "topics": [],
-//!                 "values": ["1"]
+//!                 "values": ["*"]
 //!             }
 //!         ]
 //!     }
@@ -45,8 +47,9 @@
 //!         "return_data": ["*"],
 //!         "events": [
 //!             {
+//!                 "address": "Test.address",
 //!                 "topics": [],
-//!                 "values": ["19"]
+//!                 "values": ["*"]
 //!             }
 //!         ]
 //!     }
@@ -62,8 +65,9 @@
 //!         "return_data": ["*"],
 //!         "events": [
 //!             {
+//!                 "address": "Test.address",
 //!                 "topics": [],
-//!                 "values": ["32"]
+//!                 "values": ["*"]
 //!             }
 //!         ]
 //!     }
@@ -80,7 +84,7 @@
 //!         "events": [
 //!             {
 //!                 "topics": [],
-//!                 "values": ["46"]
+//!                 "values": ["*"]
 //!             }
 //!         ]
 //!     }
@@ -96,8 +100,9 @@
 //!         "return_data": ["*"],
 //!         "events": [
 //!             {
+//!                 "address": "Test.address",
 //!                 "topics": [],
-//!                 "values": ["0x100"]
+//!                 "values": ["*"]
 //!             }
 //!         ]
 //!     }
@@ -112,8 +117,9 @@
 //!                 "return_data": ["*"],
 //!                 "events": [
 //!                     {
+//!                         "address": "Test.address",
 //!                         "topics": [],
-//!                         "values": ["0"]
+//!                         "values": ["*"]
 //!                     }
 //!                 ]
 //!             }
