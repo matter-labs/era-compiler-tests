@@ -1,4 +1,4 @@
-//! { "enable_eravm_extensions": true, "modes": [ "Y" ], "cases": [ {
+//! { "targets": [ "EraVM" ], "enable_eravm_extensions": true, "modes": [ "Y" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {
