@@ -10,7 +10,8 @@ contract Main {
 
     function s() public returns (bool) {
         Receiver r = new Receiver();
-        return payable(r).send(0);
+        (bool success,) = payable(r).call{value: 0}("");
+        return success;
     }
 }
 // ----
