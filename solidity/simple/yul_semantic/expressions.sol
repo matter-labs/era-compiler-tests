@@ -110,7 +110,7 @@ contract Test {
     function variable() external {
         assembly {
             let a := 0xdeadbeef01
-            mstore(0, 0xdeadbeef01)
+            mstore(0, a)
             return(0, 32)
         }
     }
