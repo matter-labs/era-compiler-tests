@@ -14,11 +14,15 @@
 
 // Report https://linear.app/matterlabs/issue/CPR-220/mapping-test-failure
 
-object "Test_22" {
+object "Test" {
     code {
-        return (0, 0)
+        {
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
+        }
     }
-    object "Test_22_deployed" {
+    object "Test_deployed" {
         code {
             mstore(64, 128)
         

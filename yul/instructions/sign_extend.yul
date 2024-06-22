@@ -24,12 +24,16 @@
 //!     "expected": [ "-1" ]
 //! } ] }
 
-object "Test_222" {
+object "Test" {
     code {
-        return(0, 0)
+        {
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
+        }
     }
 
-    object "Test_222_deployed" {
+    object "Test_deployed" {
         code {
             mstore(0, signextend(0, calldataload(4)))
             return(0, 32)

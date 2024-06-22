@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "EraVM" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {
@@ -12,14 +12,16 @@
 //!     ]
 //! } ] }
 
-object "Test_29" {
+object "Test" {
     code {
         {
-            return(0, 0)
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
         }
     }
 
-    object "Test_29_deployed" {
+    object "Test_deployed" {
         code {
             {
                 calldatacopy(3334353453452342342354355544445321191012012, 122, 0)
