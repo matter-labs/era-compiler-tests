@@ -26,7 +26,8 @@ library UniERC20 {
     function uniTransfer(IERC20 token, address payable to, uint256 amount) internal {
         if (amount > 0) {
             if (isETH(token)) {
-                to.transfer(amount);
+                (bool success,) = to.call{value: amount}("");
+                require(success, "UniERC20: ETH transfer failed");
             } else {
                 token.safeTransfer(to, amount);
             }
@@ -39,7 +40,8 @@ library UniERC20 {
                 require(msg.value >= amount, "UniERC20: not enough value");
                 if (msg.value > amount) {
                     // Return remainder if exist
-                    payable(msg.sender).transfer(msg.value.sub(amount));
+                    (bool success,) = payable(msg.sender).call{value: msg.value.sub(amount)}("");
+                    require(success, "UniERC20: ETH transfer failed");
                 }
             } else {
                 token.safeTransferFrom(msg.sender, address(this), amount);
