@@ -1,5 +1,5 @@
 {
-    "modes": [ "Y" ], "cases": [
+    "targets": [ "EraVM" ], "modes": [ "Y" ], "cases": [
         {
             "name": "default",
             "inputs": [
