@@ -1,6 +1,6 @@
 //! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
-//!   "cases": [ {
+//!   "targets": [ "EraVM" ], "cases": [ {
 //!     "name": "modexp_one_limb_0_0_0",
 //!     "inputs": [
 //!         {
