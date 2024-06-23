@@ -4,13 +4,13 @@ interface Self:
 @external
 def __find(_data: uint256[8], _begin: uint256, _len: uint256, _value: uint256) -> uint256:
     if _len == 0 or (_len == 1 and _data[_begin] != _value):
-        return MAX_UINT256
-    halfLen: uint256 = _len / 2
+        return max_value(uint256)
+    halfLen: uint256 = _len // 2
     v: uint256 = _data[_begin + halfLen]
     if _value < v:
-        return Self(self).__find(_data, _begin, halfLen, _value)
+        return extcall Self(self).__find(_data, _begin, halfLen, _value)
     elif _value > v:
-        return Self(self).__find(_data, _begin + halfLen + 1, halfLen - 1, _value)
+        return extcall Self(self).__find(_data, _begin + halfLen + 1, halfLen - 1, _value)
     else:
         return _begin + halfLen
 
@@ -18,7 +18,7 @@ def __find(_data: uint256[8], _begin: uint256, _len: uint256, _value: uint256) -
 # Note that "internal" is important here, because storage references only work for internal or private functions
 @internal
 def _find(_data: uint256[8], _length: uint256, _value: uint256) -> uint256:
-    return Self(self).__find(_data, 0, _length, _value)
+    return extcall Self(self).__find(_data, 0, _length, _value)
 
 data: uint256[8]
 length: uint256

@@ -17,7 +17,7 @@ def f() -> uint256:
     self.data.append(3)
     a: uint256 = 0
     b: uint256 = 0
-    (a, b) = Self(self).h()
+    (a, b) = extcall Self(self).h()
     if a != 5 or b != 6:
         return 1
     c: DynArray[uint256, 1] = self.m_c

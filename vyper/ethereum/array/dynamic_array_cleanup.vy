@@ -3,12 +3,12 @@ dynamic: DynArray[uint256, 50]
 
 @external
 def fill():
-    for i in range(21):
+    for i: uint256 in range(21):
         self.dynamic.append(i + 1)
         
 @external
 def halfClear():
-    for _ in range(100):
+    for _: uint256 in range(100):
         if not len(self.dynamic) > 5:
             break
         self.dynamic.pop()

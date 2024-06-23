@@ -4,7 +4,7 @@ struct st:
     finalArray: uint256[4]
 multiple_map: public(HashMap[uint256, HashMap[uint256, st[5]]])
 
-@external
+@deploy
 def __init__():
     self.data[0] = 8
     

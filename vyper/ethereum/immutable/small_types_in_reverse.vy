@@ -4,7 +4,7 @@ c: immutable(uint16)
 
 x: public(uint16[3])
 
-@external
+@deploy
 def __init__():
     c = convert(0xffff, uint16)
     b = convert(0x0f0f, uint16)

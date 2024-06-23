@@ -1,6 +1,7 @@
 @external
 def foo(a: uint256, b: uint256, c: uint256) -> bytes32:
     return keccak256(concat(convert(a, bytes32), convert(b, bytes32), convert(c, bytes32)))
+
 # ====
 # compileViaYul: also
 # ----

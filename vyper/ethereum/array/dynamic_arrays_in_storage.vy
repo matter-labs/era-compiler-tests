@@ -34,11 +34,11 @@ def getLengths() -> (uint256, uint256):
     
 @external
 def setLengths(l1: uint256, l2: uint256):
-    for _ in range(100):
+    for _: uint256 in range(100):
         if not len(self.data) < l1:
             break
         self.data.append(empty(Data))
-    for _ in range(100):
+    for _: uint256 in range(100):
         if not len(self.ids) < l2:
             break
         self.ids.append(empty(uint256))

@@ -1,6 +1,6 @@
 s: Bytes[100]
 
-@external
+@deploy
 def __init__():
     self.s = convert("abcd", Bytes[100])
 
@@ -8,6 +8,7 @@ def __init__():
 def f() -> bytes32:
     data: Bytes[100] = self.s
     return convert(slice(data, 0, 1), bytes32)
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

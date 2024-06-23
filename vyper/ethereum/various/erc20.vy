@@ -53,7 +53,7 @@ def _burnFrom(account: address, value_: uint256):
     self._burn(account, value_)
     self._approve(account, msg.sender, self._allowances[account][msg.sender] - value_)
 
-@external
+@deploy
 def __init__():
     self._mint(msg.sender, 20)
 

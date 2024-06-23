@@ -21,7 +21,7 @@ def g() -> (uint256, uint256):
     x[1] = [0, 0]
     x[0][1] = 7
     x[1][0] = 8
-    return Self(self).f(4, x, 5)
+    return staticcall Self(self).f(4, x, 5)
     
 # ----
 # g() -> 7, 8

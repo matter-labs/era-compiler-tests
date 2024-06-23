@@ -4,7 +4,6 @@ def f(x: uint256) -> uint256:
         return x + 10
     else:
         raise
-    return 2
 
 # ====
 # compileToEwasm: also

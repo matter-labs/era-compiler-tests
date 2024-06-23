@@ -1,7 +1,7 @@
 arr: uint256[3]
 test: public(bool)
 
-@external
+@deploy
 def __init__():
     self.test = False
 

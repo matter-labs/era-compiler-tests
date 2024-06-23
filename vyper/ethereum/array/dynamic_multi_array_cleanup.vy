@@ -5,15 +5,15 @@ data: DynArray[s, 5]
 
 @external
 def fill() -> uint256:
-    for _ in range(3):
+    for _: uint256 in range(3):
         if not len(self.data) < 3:
             break
         self.data.append(empty(s))
-    for _ in range(4):
+    for _: uint256 in range(4):
         if not len(self.data[2].d) < 4:
             break
         self.data[2].d.append(empty(DynArray[uint256, 5]))
-    for _ in range(5):
+    for _: uint256 in range(5):
         if not len(self.data[2].d[3]) < 5:
             break
         self.data[2].d[3].append(empty(uint256))

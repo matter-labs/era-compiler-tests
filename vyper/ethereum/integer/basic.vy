@@ -4,7 +4,7 @@ def basic() -> bool:
     uint_min: uint256 = 0
     assert uint_min == 0
 
-    uint_max: uint256 = MAX_UINT256
+    uint_max: uint256 = max_value(uint256)
     assert uint_max == 115792089237316195423570985008687907853269984665640564039457584007913129639935
 
     int_min: int256 = -2**255

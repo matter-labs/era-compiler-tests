@@ -5,22 +5,23 @@ interface Self:
 @external
 @pure
 def f(s: uint256[3]) -> Bytes[100]:
-    return _abi_encode(s)
+    return abi_encode(s)
 
 @external
 @view
 def g(s: uint256[3]) -> Bytes[100]:
-    return Self(self).f(s)
+    return staticcall Self(self).f(s)
 
 @external
 @pure
 def h(s: uint8[3]) -> Bytes[100]:
-    return _abi_encode(s)
+    return abi_encode(s)
 
 @external
 @view
 def i(s: uint8[3]) -> Bytes[100]:
-    return Self(self).h(s)
+    return staticcall Self(self).h(s)
+
 # ====
 # EVMVersion: >homestead
 # compileViaYul: also

@@ -3,7 +3,7 @@ y: immutable(uint256)
 
 m: public(HashMap[uint256, uint256])
 
-@external
+@deploy
 def __init__(_a: uint256):
     x = 42
     y = 23

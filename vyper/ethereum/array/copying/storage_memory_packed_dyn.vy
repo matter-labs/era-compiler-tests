@@ -2,7 +2,7 @@ a: DynArray[uint8, 100]
 
 @external
 def f() -> (uint8, uint8, uint8):
-    for i in range(33):
+    for i: uint256 in range(33):
         self.a.append(7)
     self.a[0] = 2
     self.a[16] = 3

@@ -17,32 +17,32 @@ def f2(s: DynArray[uint256[2], 1][2]) -> Bytes[300]:
 @external
 @view
 def reenc_f(s: DynArray[uint8[1], 1][1]) -> Bytes[300]:
-    return Self(self).f(s)
+    return staticcall Self(self).f(s)
 
 @external
 @view
 def reenc_f2(s: DynArray[uint256[2], 1][2]) -> Bytes[300]:
-    return Self(self).f2(s)
+    return staticcall Self(self).f2(s)
 
 @external
 def g() -> Bytes[300]:
     m: DynArray[uint8[1], 1][1] = [[[42]]]
-    return Self(self).f(m)
+    return staticcall Self(self).f(m)
     
 @external
 def h() -> Bytes[300]:
     m: DynArray[uint8[1], 1][1] = [[[42]]]
-    return Self(self).reenc_f(m)
+    return staticcall Self(self).reenc_f(m)
     
 @external
 def i() -> Bytes[300]:
     m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142, uint256)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
-    return Self(self).f2(m)
+    return staticcall Self(self).f2(m)
     
 @external
 def j() -> Bytes[300]:
     m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142, uint256)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
-    return Self(self).reenc_f2(m)
+    return staticcall Self(self).reenc_f2(m)
 
 # ====
 # EVMVersion: >homestead

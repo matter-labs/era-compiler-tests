@@ -5,15 +5,15 @@ data: DynArray[uint24, 30]
 
 @external
 def test() -> (uint24, uint24):
-    for i in range(1, 31):
+    for i: uint256 in range(1, 31):
         self.data.append(convert(i, uint24))
-    for j in range(1, 11):
+    for j: uint256 in range(1, 11):
         self.data.pop()
     x: uint24 = self.data[len(self.data) - 1]
-    for k in range(1, 11):
+    for k: uint256 in range(1, 11):
         self.data.pop()
     y: uint24 = self.data[len(self.data) - 1]
-    for l in range(1, 11):
+    for l: uint256 in range(1, 11):
         self.data.pop()
     return x, y
     

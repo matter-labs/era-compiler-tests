@@ -20,8 +20,8 @@ def f() -> (uint256, uint256):
     arr: uint256[20] = empty(uint256[20])
     arr[0] = 31
     arr[2] = 84
-    b: B = B({a: A({a: 420, b: arr}), b: 11})
-    return (b.b, Self(self).g(b))
+    b: B = B(a=A(a=420, b=arr), b=11)
+    return (b.b, staticcall Self(self).g(b))
 
 # ====
 # compileViaYul: also

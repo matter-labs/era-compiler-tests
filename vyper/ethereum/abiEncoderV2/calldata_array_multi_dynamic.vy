@@ -5,32 +5,32 @@ interface Self:
 @external
 @pure
 def f(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[1184]:
-    return _abi_encode(s)
+    return abi_encode(s)
     
 @external
 @view
 def g(s: DynArray[DynArray[uint256, 5], 5]) -> Bytes[1184]:
-    return Self(self).f(s)
+    return staticcall Self(self).f(s)
     
 @external
 @pure
 def h(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[1184]:
-    return _abi_encode(s)
+    return abi_encode(s)
     
 @external
 @view
 def i(s: DynArray[DynArray[uint8, 5], 5]) -> Bytes[1184]:
-    return Self(self).h(s)
+    return staticcall Self(self).h(s)
 
 @external
 @pure
 def j(s: DynArray[Bytes[10], 5]) -> Bytes[544]:
-    return _abi_encode(s)
+    return abi_encode(s)
 
 @external
 @view
 def k(s: DynArray[Bytes[10], 5]) -> Bytes[544]:
-    return Self(self).j(s)
+    return staticcall Self(self).j(s)
     
 # ====
 # EVMVersion: >homestead

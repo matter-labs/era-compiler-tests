@@ -5,7 +5,7 @@ struct S:
 shifter: uint256
 s: public(S)
 
-@external
+@deploy
 def __init__():
     self.s.a = 7
     self.s.b = b"abc"

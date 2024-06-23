@@ -4,8 +4,8 @@ struct S:
 @external
 def f(c: S[3]) -> (uint256, uint256):
     s: S[3] = c
-    for i in range(3):
-        for j in range(3):
+    for i: uint256 in range(3):
+        for j: uint256 in range(3):
             assert s[i].a[j] == c[i].a[j]
     return (3, s[1].a[0])
 

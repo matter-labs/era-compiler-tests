@@ -4,6 +4,7 @@ data: Bytes[100]
 def foo() -> bytes32:
     self.data = convert("xyz", Bytes[100])
     return keccak256(concat(convert("b", Bytes[1]), keccak256(self.data), convert("a", Bytes[1])))
+
 # ====
 # compileViaYul: also
 # ----

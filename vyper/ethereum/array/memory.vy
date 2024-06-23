@@ -10,7 +10,7 @@ def h(n: uint256[4]) -> uint256:
 @external
 @view
 def i(n: uint256[4]) -> uint256:
-    return C(self).h(n) * 2
+    return staticcall C(self).h(n) * 2
 
 # ====
 # compileViaYul: also

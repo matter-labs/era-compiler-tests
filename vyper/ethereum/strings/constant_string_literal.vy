@@ -1,7 +1,7 @@
 b: constant(bytes32) = 0x6162636465666768696a6b6c6d6e6f7071000000000000000000000000000000
 x: constant(String[100]) = "abefghijklmnopqabcdefghijklmnopqabcdefghijklmnopqabca"
 
-@external
+@deploy
 def __init__():
     xx: String[100] = x
     bb: bytes32 = b

@@ -3,7 +3,7 @@ b: immutable(uint256)
 c: immutable(uint256)
 d: immutable(uint256)
 
-@external
+@deploy
 def __init__():
     a = 1
     b = a

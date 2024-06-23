@@ -6,7 +6,7 @@ x: uint8
 def _readA() -> uint8:
     return a
     
-@external
+@deploy
 def __init__():
     a = 3
     self.x = self._readA()

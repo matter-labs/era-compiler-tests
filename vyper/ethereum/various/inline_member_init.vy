@@ -1,4 +1,4 @@
-@external
+@deploy
 def __init__():
     self.m_a = 5
     self.m_c = 7

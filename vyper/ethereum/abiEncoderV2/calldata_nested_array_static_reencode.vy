@@ -1,20 +1,20 @@
 @external
 def f(a: DynArray[uint256[3], 3]):
-    _: Bytes[600] = _abi_encode(a)
+    _: Bytes[600] = abi_encode(a)
 
 @external
 def f1(a: DynArray[uint256, 3][3]):
-    _: Bytes[600] = _abi_encode(a)
+    _: Bytes[600] = abi_encode(a)
 
 @external
 def f2(a: uint256[2][2]):
-    _: Bytes[600] = _abi_encode(a)
+    _: Bytes[600] = abi_encode(a)
 
 # ----
 # f(uint256[3][]): 0x20, 1, 0x01 ->
 # f(uint256[3][]): 0x20, 1, 0x01, 0x02 ->
 # f(uint256[3][]): 0x20, 1, 0x01, 0x02, 0x03 ->
-# f1(uint256[][3]): 0x20, 0x60, 0x60, 0x60, 3, 0x01 -> FAILURE
+# f1(uint256[][3]): 0x20, 0x60, 0x60, 0x60, 3, 0x01 ->
 # f1(uint256[][3]): 0x20, 0x60, 0x60, 0x60, 3, 0x01, 0x02 ->
 # f1(uint256[][3]): 0x20, 0x60, 0x60, 0x60, 3, 0x01, 0x02, 0x03 ->
 # f2(uint256[2][2]): 0x01 -> FAILURE

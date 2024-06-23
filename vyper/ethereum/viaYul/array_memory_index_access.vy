@@ -2,10 +2,10 @@
 def index() -> bool:
     array: uint256[10] = empty(uint256[10])
     
-    for i in range(10):
+    for i: uint256 in range(10):
         array[i] = i + 1
         
-    for i in range(10):
+    for i: uint256 in range(10):
         assert array[i] == i + 1, "Unexpected value in array!"
         
     return True
@@ -14,7 +14,7 @@ def index() -> bool:
 def accessIndex(idx: int256) -> uint256:
     array: uint256[10] = empty(uint256[10])
     
-    for i in range(10):
+    for i: uint256 in range(10):
         array[i] = i + 1
         
     return array[convert(idx, uint256)]

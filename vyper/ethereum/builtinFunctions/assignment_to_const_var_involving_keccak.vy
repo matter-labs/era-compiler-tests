@@ -3,6 +3,7 @@ x: constant(bytes32) = keccak256("abc")
 @external
 def f() -> bytes32:
     return x
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

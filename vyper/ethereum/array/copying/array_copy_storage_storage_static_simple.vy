@@ -3,10 +3,11 @@ data2: bytes32[2]
 
 @external
 def test() -> (bytes32, bytes32):
-    for i in range(2):
+    for i: uint256 in range(2):
         self.data1[i] = convert(shift(1 + i, 248), bytes32)
     self.data2 = self.data1
     return (self.data2[0], self.data2[1])
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

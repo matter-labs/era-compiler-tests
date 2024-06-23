@@ -19,7 +19,7 @@ def compare(x: Bytes[192], y: Bytes[192]):
 def test_bytes():
     test: Bytes[128] = b"\x41\x42\x42"
     for i: uint256 in range(3):
-        for j: uint256 in range(i, i + 3):
+        for j: uint256 in range(i, i + 3, bound=3):
             if not j <= 3:
                 break
             self.compare(self.enc_bytes(test, i, j), self.enc_bytes_reference(test, i, j))

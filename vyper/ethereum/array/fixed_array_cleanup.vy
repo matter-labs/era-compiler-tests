@@ -4,11 +4,13 @@ data: uint256[20]
 
 @external
 def fill():
-    for i in range(20):
+    for i: uint256 in range(20):
         self.data[i] = i+1
+
 @external
 def clear():
     self.data = empty(uint256[20])
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

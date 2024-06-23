@@ -1,10 +1,11 @@
 r: public(uint256)
 ch: public(address)
 
-@external
+@deploy
 def __init__(s: address[3], x: uint256):
     self.r = x
     self.ch = s[2]
+
 # ====
 # compileViaYul: also
 # ----

@@ -6,7 +6,7 @@ struct S:
     
 x: public(HashMap[uint256, HashMap[uint256, S]])
 
-@external
+@deploy
 def __init__():
     self.x[1][2].a = 3
     self.x[1][2].b = 4

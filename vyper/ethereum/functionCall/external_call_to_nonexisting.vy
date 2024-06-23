@@ -9,7 +9,7 @@ interface I:
 
 i: I
 
-@external
+@deploy
 def __init__():
     self.i = I(convert(0xcafecafe, address))
    

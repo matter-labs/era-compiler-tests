@@ -9,7 +9,7 @@ def g(n: uint256) -> uint256:
 @external
 @view
 def f(n: uint256) -> uint256:
-    return Self(self).g(2 * n)
+    return staticcall Self(self).g(2 * n)
 
 # ====
 # compileViaYul: also

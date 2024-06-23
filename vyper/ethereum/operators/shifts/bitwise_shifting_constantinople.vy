@@ -1,14 +1,11 @@
 @external
 def shl_(a: uint256, b: uint256) -> uint256:
-    return shift(a, convert(b, int256))
+    return a << convert(b, int256)
 
 @external
 def shr_(a: uint256, b: uint256) -> uint256:
-    return shift(a, -convert(b, int256))
+    return a >> convert(b, int256)
 
-# ====
-# EVMVersion: >=constantinople
-# compileViaYul: also
 # ----
 # shl_(uint256,uint256): 0x01, 0x02 -> 0x04
 # shl_(uint256,uint256): 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, 0x01 -> 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe

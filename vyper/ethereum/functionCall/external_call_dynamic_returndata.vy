@@ -12,7 +12,7 @@ def d(n: uint256) -> Bytes[100]:
 def dt(n: uint256) -> uint256:
     data: Bytes[100] = Self(self).d(n)
     sum: uint256 = 0
-    for i in range(100):
+    for i: uint256 in range(100):
         if not i < len(data):
             break
         sum += convert(convert(slice(data, i, 1), uint8), uint256)

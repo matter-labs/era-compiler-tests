@@ -7,7 +7,7 @@ def test(a: uint256[4][2], i: uint256, j: uint256) -> uint256:
     
 @external
 def reenc(a: uint256[4][2], i: uint256, j: uint256) -> uint256:
-    return Self(self).test(a, i, j)
+    return extcall Self(self).test(a, i, j)
     
 # ====
 # compileViaYul: also

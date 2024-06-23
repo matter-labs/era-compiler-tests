@@ -1,6 +1,6 @@
 x: public(HashMap[uint256, HashMap[uint256, uint256]])
 
-@external
+@deploy
 def __init__():
     self.x[1][2] = 3
     

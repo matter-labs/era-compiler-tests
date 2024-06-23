@@ -8,7 +8,7 @@ g: public(bytes32)
 h: public(bool)
 i: public(address)
 
-@external
+@deploy
 def __init__():
     self.a = 3
     self.b = 4

@@ -4,7 +4,7 @@ interface Self:
 @external
 def dyn() -> (Bytes[100], uint256, DynArray[bytes20, 10], uint256):
 	a: Bytes[100] = b"1234567890123456789012345678901234567890"
-	b: uint256 = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+	b: uint256 = max_value(uint256)
 	c: DynArray[bytes20, 10] = [empty(bytes20), empty(bytes20), empty(bytes20), empty(bytes20)]
 	c[0] = convert(convert(1234, uint160), bytes20)
 	c[3] = convert(convert(6789, uint160), bytes20)

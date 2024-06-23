@@ -1,7 +1,7 @@
 a: public(uint256)
 b: public(uint256[3])
 
-@external
+@deploy
 def __init__(_a: uint256, _b: uint256[3]):
     self.a = _a
     self.b = _b

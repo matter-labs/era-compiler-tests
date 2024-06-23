@@ -4,11 +4,11 @@ def f1(c1: Bytes[100], s: uint256, e: uint256, c2: Bytes[100]) -> bool:
 
 @external
 def f3(c1: Bytes[100], s: uint256, e: uint256, c2: Bytes[100]) -> bool:
-    a: Bytes[200] = _abi_encode(slice(c1, s, e-s))
-    b: Bytes[200] = _abi_encode(c2)
+    a: Bytes[200] = abi_encode(slice(c1, s, e-s))
+    b: Bytes[200] = abi_encode(c2)
     if len(a) != len(b):
         return False
-    for i in range(100):
+    for i: uint256 in range(100):
         if not i < len(a):
             break
         if slice(a, i, 1) != slice(b, i, 1):

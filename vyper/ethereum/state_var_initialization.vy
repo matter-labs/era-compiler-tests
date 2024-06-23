@@ -1,7 +1,7 @@
 i: public(uint256)
 k: public(uint256)
 
-@external
+@deploy
 def __init__():
     self.i = 1
     self.k = 2

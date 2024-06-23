@@ -2,7 +2,7 @@ stateBool: public(bool)
 stateDecimal: public(uint256)
 stateBytes: public(bytes32)
 
-@external
+@deploy
 def __init__():
     self.stateBool = True
     self.stateDecimal = 42

@@ -23,10 +23,10 @@ interface Simpson:
 
 implements: Simpson
   
-@external
+@deploy
 def __init__():
     self.supportedInterfaces[convert(method_id("supportsInterface(bytes4)"), bytes4)] = True
-    self.supportedInterfaces[convert(slice(convert(bitwise_xor(convert(method_id("is2D()"), uint256), convert(method_id("skinColor()"), uint256)), bytes32), 28, 4), bytes4)] = True
+    self.supportedInterfaces[convert(slice(convert(convert(method_id("is2D()"), uint256) ^ convert(method_id("skinColor()"), uint256), bytes32), 28, 4), bytes4)] = True
     
 @external
 def is2D() -> bool:

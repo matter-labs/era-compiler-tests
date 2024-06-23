@@ -6,8 +6,8 @@ twodim: HashMap[uint256, HashMap[uint256, uint256]]
 def test_simple(_off: uint256) -> (uint256, uint256, uint256):
     self.simple[_off + 2] = 3
     self.simple[_off + 3] = 4
-    self.simple[MAX_UINT256] = 5
-    return self.simple[2 + _off], self.simple[3 + _off], self.simple[MAX_UINT256]
+    self.simple[max_value(uint256)] = 5
+    return self.simple[2 + _off], self.simple[3 + _off], self.simple[max_value(uint256)]
     
 @external
 def test_str() -> bool:

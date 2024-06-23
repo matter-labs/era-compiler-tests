@@ -3,7 +3,7 @@ interface D:
 
 d: D
 
-@external
+@deploy
 def __init__():
     self.d = D(convert(0x1212, address))
 

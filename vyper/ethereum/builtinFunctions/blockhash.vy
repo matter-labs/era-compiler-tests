@@ -1,12 +1,15 @@
 @external
 def f() -> bytes32:
     return blockhash(1)
+
 @external
 def g() -> bytes32:
     return blockhash(2)
+
 @external
 def h() -> bytes32:
     return blockhash(3)
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also
