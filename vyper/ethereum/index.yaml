@@ -4,12 +4,25 @@ entries:
   abiencodedecode:
     enabled: true
     entries:
+      abi_encode_call_is_consistent-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_call_is_consistent.vy:
         enabled: true
+        version: '>=0.4.0'
+      abi_encode_call_special_args-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_call_special_args.vy:
         enabled: true
-      abi_encode_call_uint_bytes.vy:
+        version: '>=0.4.0'
+      abi_encode_call_uint_bytes-0.3.vy:
         enabled: true
+        version: '<=0.3.10'
+      abi_encode_call_uint_bytes.vy:
+        enabled: false
+        comment: 'vyper.exceptions.CompilerPanic: risky overlap'
+        version: '>=0.4.0'
       abi_encode_empty_string_v1.vy:
         enabled: true
       abi_encode_with_selector.vy:
@@ -29,8 +42,12 @@ entries:
         enabled: true
       abi_encode_call.vy:
         enabled: true
+      abi_encode_calldata_slice-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_calldata_slice.vy:
         enabled: true
+        version: '>=0.4.0'
       abi_encode_empty_string.vy:
         enabled: true
       abi_encode_rational.vy:
@@ -42,13 +59,24 @@ entries:
         version: '=0.3.3'
       dynamic_arrays.vy:
         enabled: true
+      memory_params_in_external_function-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       memory_params_in_external_function.vy:
         enabled: true
+        version: '>=0.4.0'
+      return_dynamic_types_cross_call_advanced-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       return_dynamic_types_cross_call_advanced.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      return_dynamic_types_cross_call_simple-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       return_dynamic_types_cross_call_simple.vy:
         enabled: true
+        version: '>=0.4.0'
       struct:
         enabled: true
         entries:
@@ -161,8 +189,12 @@ entries:
   accessor:
     enabled: true
     entries:
+      accessor_for_state_variable-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       accessor_for_state_variable.vy:
         enabled: true
+        version: '>=0.4.0'
   arithmetics:
     enabled: true
     entries:
@@ -172,10 +204,18 @@ entries:
         enabled: true
       checked_add_v2.vy:
         enabled: true
-      divisiod_by_zero.vy:
+      division_by_zero-0.3.vy:
         enabled: true
+        version: '<=0.3.10'
+      division_by_zero.vy:
+        enabled: true
+        version: '>=0.4.0'
+      signed_mod-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       signed_mod.vy:
         enabled: true
+        version: '>=0.4.0'
   array:
     enabled: true
     entries:

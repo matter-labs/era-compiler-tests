@@ -1,13 +1,13 @@
 sideEffectRan: bool
 
-@deploy
+@external
 def __init__():
     self.sideEffectRan = False
 
 @external
 @pure
 def fSignatureFromLiteral() -> Bytes[200]:
-    return abi_encode(convert(1, uint256), "123", method_id=method_id("fExternal(uint256,string)"))
+    return _abi_encode(convert(1, uint256), "123", method_id=method_id("fExternal(uint256,string)"))
 
 # ====
 # compileViaYul: also

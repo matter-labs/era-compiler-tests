@@ -7,8 +7,7 @@ def f(a: int256, b: int256) -> int256:
 @pure
 def g() -> int256:
     x: int256 = -(2**255)
-    return x // -1
-
+    return x / -1
 # ====
 # compileToEwasm: also
 # ----

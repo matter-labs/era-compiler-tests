@@ -26,7 +26,7 @@
 #!     ]
 #! } ] }
 
-# @version >=0.4.0
+# @version <=0.3.10
 
 KEY_SZ: constant(uint8) = 4
 KEY: uint8[KEY_SZ][KEY_SZ][KEY_SZ]
@@ -34,7 +34,7 @@ KEY: uint8[KEY_SZ][KEY_SZ][KEY_SZ]
 SIZE: constant(uint8) = 10
 ALPHABET: constant(uint8) = 64
 
-@deploy
+@external
 def __init__():
     self.KEY = [
         [
@@ -64,11 +64,11 @@ def __init__():
 @view
 def encrypt(_data: uint8[SIZE]) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
-    for i: uint8 in range(0, SIZE):
+    for i in range(0, SIZE):
         fl: bool = False
-        for page: uint8 in range(0, KEY_SZ):
-            for row: uint8 in range(0, KEY_SZ):
-                for col: uint8 in range(0, KEY_SZ):
+        for page in range(0, KEY_SZ):
+            for row in range(0, KEY_SZ):
+                for col in range(0, KEY_SZ):
                     if self.KEY[page][row][col] == data[i]:
                         data[i] = page*KEY_SZ*KEY_SZ + row*KEY_SZ + col
                         fl = True
@@ -83,10 +83,10 @@ def encrypt(_data: uint8[SIZE]) -> uint8[SIZE]:
 @view
 def decrypt(_data: uint8[SIZE]) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
-    for i: uint8 in range(0, SIZE):
-        page: uint8 = data[i] // KEY_SZ // KEY_SZ
+    for i in range(0, SIZE):
+        page: uint8 = data[i] / KEY_SZ / KEY_SZ
         ost: uint8 = data[i] % (KEY_SZ * KEY_SZ)
-        row: uint8 = ost // KEY_SZ
+        row: uint8 = ost / KEY_SZ
         col: uint8 = ost % KEY_SZ
         data[i] = self.KEY[page][row][col]
     return data

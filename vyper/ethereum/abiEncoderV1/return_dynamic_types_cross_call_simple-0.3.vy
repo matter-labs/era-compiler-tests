@@ -7,7 +7,7 @@ def dyn() -> Bytes[100]:
 
 @external
 def f() -> Bytes[100]:
-    return extcall Self(self).dyn()
+    return Self(self).dyn()
 
 # ====
 # EVMVersion: >homestead

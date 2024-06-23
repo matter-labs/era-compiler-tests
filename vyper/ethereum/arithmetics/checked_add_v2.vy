@@ -1,6 +1,7 @@
 @external
 def f(a: uint8, b: uint8) -> uint8:
     return a + b
+
 # ====
 # compileViaYul: also
 # ----

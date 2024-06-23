@@ -1,6 +1,6 @@
 ticketPrice: public(uint256)
 
-@deploy
+@external
 def __init__():
     self.ticketPrice = 500
 
