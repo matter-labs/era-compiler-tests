@@ -1,0 +1,38 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "#deployer",
+            "calldata": [
+                "Helper.address"
+            ],
+            "expected": [
+                "Main.address"
+            ]
+        },
+        {
+            "instance": "Main",
+            "method": "getFlag",
+            "calldata": [
+            ],
+            "expected": [
+                "1"
+            ]
+        },
+        {
+            "instance": "Main",
+            "method": "getName",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x6162630000000000000000000000000000000000000000000000000000000000"
+    ]
+} ],
+    "contracts": {
+        "Main": "Main.vy",
+        "Helper": "Helper.vy"
+    }
+}

@@ -1,0 +1,65 @@
+{ "modes": [ "V 0.3.9", "V 0.3.10" ], "cases": [ {
+    "name": "five",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "5",
+                "Main.address"
+            ]
+        }
+    ],
+    "expected": [
+        "120"
+    ]
+}, {
+    "name": "twelve",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "12",
+                "Main.address"
+            ]
+        }
+    ],
+    "expected": [
+        "479001600"
+    ]
+},{
+    "name": "fifteen",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "15",
+                "Main.address"
+            ]
+        }
+    ],
+    "expected": [
+        "1307674368000"
+    ]
+}, {
+    "name": "twenty",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "20",
+                "Main.address"
+            ]
+        }
+    ],
+    "expected": [
+        "2432902008176640000"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.vy"
+    }
+}

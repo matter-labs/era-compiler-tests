@@ -2,7 +2,7 @@ import D as D
 
 d: D
 
-@external
+@deploy
 def __init__(_d: address):
     self.d = D(create_forwarder_to(_d))
 

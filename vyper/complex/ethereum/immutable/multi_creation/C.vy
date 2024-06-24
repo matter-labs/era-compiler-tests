@@ -5,7 +5,7 @@ a: immutable(uint256)
 x: public(uint256)
 y: public(uint256)
 
-@external
+@deploy
 def __init__(_a: address, _b: address):
     a = 3
     self.x = A(create_forwarder_to(_a)).f()

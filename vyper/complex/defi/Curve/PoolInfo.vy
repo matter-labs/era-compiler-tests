@@ -59,7 +59,7 @@ struct PoolCoins:
 address_provider: public(AddressProvider)
 
 
-@external
+@deploy
 def __init__(_provider: address):
     self.address_provider = AddressProvider(_provider)
 

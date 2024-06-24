@@ -39,7 +39,7 @@ queue_length: uint256
 get_id_info: public(HashMap[uint256, AddressInfo])
 
 
-@external
+@deploy
 def __init__(_admin: address):
     self.admin = _admin
     self.queue_length = 1

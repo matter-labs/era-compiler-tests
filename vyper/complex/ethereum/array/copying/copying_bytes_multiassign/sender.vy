@@ -1,6 +1,6 @@
 import receiver as receiver
 
-@external
+@deploy
 def __init__(_receiver: address):
     self.rec = receiver(create_forwarder_to(_receiver))
 

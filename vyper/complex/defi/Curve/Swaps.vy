@@ -92,7 +92,7 @@ pool_calculator: HashMap[address, address]
 is_approved: HashMap[address, HashMap[address, bool]]
 
 
-@external
+@deploy
 def __init__(_address_provider: address, _calculator: address):
     """
     @notice Constructor function
@@ -188,13 +188,13 @@ def _exchange(
     if is_underlying and _registry == self.factory_registry and Registry(_registry).is_meta(_pool):
         is_underlying = False
 
-    # perform / verify input transfer
+    # perform // verify input transfer
     if _from == ETH_ADDRESS:
         eth_amount = _amount
     else:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_encode(
+            _abi_decode(
                 _sender,
                 self,
                 _amount,
@@ -209,9 +209,9 @@ def _exchange(
     if not self.is_approved[_from][_pool]:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_encode(
+            _abi_decode(
                 _pool,
-                MAX_UINT256,
+                max_value(uint256),
                 method_id=method_id("approve(address,uint256)"),
             ),
             max_outsize=32,
@@ -234,7 +234,7 @@ def _exchange(
         received_amount = ERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
-            _abi_encode(
+            _abi_decode(
                 _receiver,
                 received_amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -277,13 +277,13 @@ def _crypto_exchange(
     j: uint256 = 0
     i, j = CryptoRegistry(self.crypto_registry).get_coin_indices(_pool, initial, target)  # dev: no market
 
-    # perform / verify input transfer
+    # perform // verify input transfer
     if _from == ETH_ADDRESS:
         eth_amount = _amount
     else:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_encode(
+            _abi_decode(
                 _sender,
                 self,
                 _amount,
@@ -298,9 +298,9 @@ def _crypto_exchange(
     if not self.is_approved[_from][_pool]:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_encode(
+            _abi_decode(
                 _pool,
-                MAX_UINT256,
+                max_value(uint256),
                 method_id=method_id("approve(address,uint256)"),
             ),
             max_outsize=32,
@@ -323,7 +323,7 @@ def _crypto_exchange(
         received_amount = ERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
-            _abi_encode(
+            _abi_decode(
                 _receiver,
                 received_amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -370,7 +370,7 @@ def exchange_with_best_rate(
     registry: address = self.registry
     best_pool: address = ZERO_ADDRESS
     max_dy: uint256 = 0
-    for i in range(65536):
+    for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
         if pool == ZERO_ADDRESS:
             break
@@ -449,14 +449,14 @@ def exchange_multiple(
     amount: uint256 = _amount
     output_token: address = ZERO_ADDRESS
 
-    # validate / transfer initial token
+    # validate // transfer initial token
     if input_token == ETH_ADDRESS:
         assert msg.value == amount
     else:
         assert msg.value == 0
         response: Bytes[32] = raw_call(
             input_token,
-            _abi_encode(
+            _abi_decode(
                 msg.sender,
                 self,
                 amount,
@@ -467,7 +467,7 @@ def exchange_multiple(
         if len(response) != 0:
             assert convert(response, bool)
 
-    for i in range(1,5):
+    for i: uint256 in range(1,5):
         # 4 rounds of iteration to perform up to 4 swaps
         swap: address = _route[i*2-1]
         output_token = _route[i*2]
@@ -477,9 +477,9 @@ def exchange_multiple(
             # approve the pool to transfer the input token
             response: Bytes[32] = raw_call(
                 input_token,
-                _abi_encode(
+                _abi_decode(
                     swap,
-                    MAX_UINT256,
+                    max_value(uint256),
                     method_id=method_id("approve(address,uint256)"),
                 ),
                 max_outsize=32,
@@ -528,7 +528,7 @@ def exchange_multiple(
     else:
         response: Bytes[32] = raw_call(
             output_token,
-            _abi_encode(
+            _abi_decode(
                 _receiver,
                 amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -566,7 +566,7 @@ def get_best_rate(
         target = WETH_ADDRESS
 
     registry: address = self.crypto_registry
-    for i in range(65536):
+    for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(initial, target, i)
         if pool == ZERO_ADDRESS:
             if i == 0:
@@ -581,7 +581,7 @@ def get_best_rate(
             max_dy = dy
 
     registry = self.registry
-    for i in range(65536):
+    for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
         if pool == ZERO_ADDRESS:
             break
@@ -593,7 +593,7 @@ def get_best_rate(
             max_dy = dy
 
     registry = self.factory_registry
-    for i in range(65536):
+    for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
         if pool == ZERO_ADDRESS:
             break
@@ -666,7 +666,7 @@ def get_input_amount(_pool: address, _from: address, _to: address, _amount: uint
     if is_underlying:
         balances = Registry(registry).get_underlying_balances(_pool)
         decimals = Registry(registry).get_underlying_decimals(_pool)
-        for x in range(MAX_COINS_UINT256):
+        for x: uint256 in range(MAX_COINS_UINT256):
             if x == n_coins:
                 break
             rates[x] = 10**18
@@ -675,7 +675,7 @@ def get_input_amount(_pool: address, _from: address, _to: address, _amount: uint
         decimals = Registry(registry).get_decimals(_pool)
         rates = Registry(registry).get_rates(_pool)
 
-    for x in range(MAX_COINS_UINT256):
+    for x: uint256 in range(MAX_COINS_UINT256):
         if x == n_coins:
             break
         decimals[x] = 10 ** (18 - decimals[x])
@@ -719,7 +719,7 @@ def get_exchange_amounts(
     if is_underlying:
         balances = Registry(registry).get_underlying_balances(_pool)
         decimals = Registry(registry).get_underlying_decimals(_pool)
-        for x in range(MAX_COINS_UINT256):
+        for x: uint256 in range(MAX_COINS_UINT256):
             if x == n_coins:
                 break
             rates[x] = 10**18
@@ -728,7 +728,7 @@ def get_exchange_amounts(
         decimals = Registry(registry).get_decimals(_pool)
         rates = Registry(registry).get_rates(_pool)
 
-    for x in range(MAX_COINS_UINT256):
+    for x: uint256 in range(MAX_COINS_UINT256):
         if x == n_coins:
             break
         decimals[x] = 10 ** (18 - decimals[x])

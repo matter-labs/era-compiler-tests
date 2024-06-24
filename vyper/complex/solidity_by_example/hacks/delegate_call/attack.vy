@@ -24,7 +24,7 @@
 
 hackMe: public(address)
 
-@external
+@deploy
 def __init__(_hackMe: address):
     self.hackMe = _hackMe
 

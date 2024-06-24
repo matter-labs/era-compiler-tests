@@ -1,0 +1,20 @@
+{ "modes": [ "V 0.3.9", "V 0.3.10" ], "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "B",
+            "method": "f",
+            "calldata": [
+                "A.address"
+            ]
+        }
+    ],
+    "expected": [
+        "2", "3", "4", "5", "6", "1000", "1001", "1002", "1003", "1004"
+    ]
+} ],
+    "contracts": {
+        "A": "A.vy",
+        "B": "B.vy"
+    }
+}

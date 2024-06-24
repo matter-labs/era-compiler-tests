@@ -1,0 +1,57 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "C",
+            "method": "#deployer",
+            "calldata": [
+                "A.address"
+            ],
+            "expected": [
+                "C.address"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "#fallback",
+            "calldata": [
+            ],
+            "value": "10 wei",
+            "expected": []
+        },
+        {
+            "instance": "C",
+            "method": "g",
+            "calldata": [
+            ],
+            "expected": [
+                "10"
+            ]
+        },
+        {
+            "instance": "C",
+            "method": "f",
+            "calldata": [
+            ],
+            "expected": {
+                "exception": true,
+                "return_data": []
+            }
+        },
+        {
+            "instance": "C",
+            "method": "h",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": {
+        "exception": true,
+        "return_data": []
+    }
+} ],
+    "contracts": {
+        "A": "A.vy",
+        "C": "C.vy"
+    }
+}

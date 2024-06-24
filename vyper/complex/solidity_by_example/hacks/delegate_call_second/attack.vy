@@ -26,7 +26,7 @@ someNumber: public(uint256)
 
 hackMe: public(HackMe)
 
-@external
+@deploy
 def __init__(_hackMe: address):
     self.hackMe = HackMe(_hackMe)
 

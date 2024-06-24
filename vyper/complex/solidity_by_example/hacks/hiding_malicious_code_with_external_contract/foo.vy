@@ -13,7 +13,7 @@ import bar as Bar
 
 bar: Bar
 
-@external
+@deploy
 def __init__(_bar: address):
     self.bar = Bar(_bar)
 

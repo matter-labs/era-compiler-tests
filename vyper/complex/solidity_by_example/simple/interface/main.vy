@@ -9,7 +9,7 @@ factory: address
 dai: address
 weth: address
 
-@external
+@deploy
 def __init__():
     self.factory = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f
     self.dai = 0x6B175474E89094C44Da98b954EedeAC495271d0F

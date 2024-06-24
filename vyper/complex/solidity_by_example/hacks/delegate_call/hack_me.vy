@@ -3,7 +3,7 @@ import lib as Lib
 owner: public(address)
 lib: public(address)
 
-@external
+@deploy
 def __init__(_lib: address):
     self.owner = msg.sender
     self.lib = _lib

@@ -3,7 +3,7 @@ import storage as Storage
 initial: uint256
 _storage: Storage
 
-@external
+@deploy
 def __init__(_initial: uint256, __storage: address):
     self.initial = _initial
     self._storage = Storage(__storage)

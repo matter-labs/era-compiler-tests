@@ -1,7 +1,7 @@
 import A as A
 test: public(uint256)
 
-@external
+@deploy
 def __init__():
     self.test = 1
 

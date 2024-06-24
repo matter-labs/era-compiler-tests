@@ -1,0 +1,48 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "ClientReceipt",
+            "method": "#deployer",
+            "calldata": [
+                "Other.address"
+            ],
+            "value": "2000 wei",
+            "expected": [
+                "ClientReceipt.address"
+            ]
+        },
+        {
+            "instance": "ClientReceipt",
+            "method": "balance_",
+            "calldata": [
+            ],
+            "expected": [
+                "1500"
+            ]
+        },
+        {
+            "instance": "ClientReceipt",
+            "method": "getAddress",
+            "calldata": [
+            ],
+            "expected": [
+                "*"
+            ]
+        },
+        {
+            "instance": "ClientReceipt",
+            "method": "balance_other",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "500"
+    ]
+} ],
+    "contracts": {
+        "Other": "Other.vy",
+        "ClientReceipt": "ClientReceipt.vy"
+    }
+}

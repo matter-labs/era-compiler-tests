@@ -25,7 +25,7 @@ proposals: public(Proposal[10])
 proposals_length: uint256
 
 # Create a new ballot to choose one of `proposalNames`.
-@external
+@deploy
 def __init__(length: uint256, proposalNames: bytes32[10]):
     self.chairperson = msg.sender
     self.voters[self.chairperson].weight = 1
@@ -33,7 +33,7 @@ def __init__(length: uint256, proposalNames: bytes32[10]):
     # For each of the provided proposal names,
     # create a new proposal object and add it
     # to the end of the array.
-    for i in range(10):
+    for i: uint256 in range(10):
         if not i < length:
             break
         # `Proposal({...})` creates a temporary
@@ -76,7 +76,7 @@ def delegate(_to: address):
     # In this case, the delegation will not be executed,
     # but in other situations, such loops might
     # cause a contract to get "stuck" completely.
-    for _ in range(1000000000):
+    for _: uint256 in range(1000000000):
         if not self.voters[to].delegate != convert(0, address):
             break
         to = self.voters[to].delegate
@@ -117,7 +117,7 @@ def vote(proposal: uint256):
 def winningProposalInternal() -> uint256:
     winningProposal_: uint256 = 0
     winningVoteCount: uint256 = 0
-    for p in range(10):
+    for p: uint256 in range(10):
         if not p < self.proposals_length:
             break
         if self.proposals[p].voteCount > winningVoteCount:
