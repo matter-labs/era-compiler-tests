@@ -16,17 +16,17 @@ def __init__():
 @external
 def f(c: uint256) -> uint256:
     if c == 0:
-        self.i.a()
+        staticcall self.i.a()
     elif c == 1:
-        self.i.b()
+        staticcall self.i.b()
     elif c == 2:
-        self.i.c()
+        staticcall self.i.c()
     elif c == 3:
-        self.i.c()
+        staticcall self.i.c()
     elif c == 4:
-        self.i.x()
+        staticcall self.i.x()
     elif c == 5:
-        self.i.y()
+        staticcall self.i.y()
     return 1 + c
 
 # ====

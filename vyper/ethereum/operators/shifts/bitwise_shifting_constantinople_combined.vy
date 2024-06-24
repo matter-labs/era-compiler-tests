@@ -8,11 +8,11 @@ def shr_zero(a: uint256) -> uint256:
 
 @external
 def shl_large(a: uint256) -> uint256:
-    return a << convert(0x0110, int256)
+    return a << convert(0x0110, uint256)
 
 @external
 def shr_large(a: uint256) -> uint256:
-    return a >> convert(0x0110, int256)
+    return a >> convert(0x0110, uint256)
 
 @external
 def shl_combined(a: uint256) -> uint256:
@@ -24,19 +24,19 @@ def shr_combined(a: uint256) -> uint256:
 
 @external
 def shl_combined_large(a: uint256) -> uint256:
-    return (a << convert(0x40, int256)) << convert(convert(0xd0, uint8), int256)
+    return (a << convert(0x40, uint256)) << convert(convert(0xd0, uint8), uint256)
 
 @external
 def shl_combined_overflow(a: uint256) -> uint256:
-    return (a << 2**255-1) << convert(0x01, int256)
+    return (a << 2**255-1) << convert(0x01, uint256)
 
 @external
 def shr_combined_large(a: uint256) -> uint256:
-    return (a >> convert(0x40, int256)) >> convert(convert(0xd0, uint8), int256)
+    return (a >> convert(0x40, uint256)) >> convert(convert(0xd0, uint8), uint256)
 
 @external
 def shr_combined_overflow(a: uint256) -> uint256:
-    return (a >> (2**255-1)) >> convert(0x01, int256)
+    return (a >> (2**255-1)) >> convert(0x01, uint256)
 
 # ----
 # shl_zero(uint256): 0x00 -> 0x00

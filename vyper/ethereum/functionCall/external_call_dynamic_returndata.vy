@@ -10,7 +10,7 @@ def d(n: uint256) -> Bytes[100]:
 @external
 @view
 def dt(n: uint256) -> uint256:
-    data: Bytes[100] = Self(self).d(n)
+    data: Bytes[100] = staticcall Self(self).d(n)
     sum: uint256 = 0
     for i: uint256 in range(100):
         if not i < len(data):
