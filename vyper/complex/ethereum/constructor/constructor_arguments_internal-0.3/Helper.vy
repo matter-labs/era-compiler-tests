@@ -1,10 +1,10 @@
 name: bytes3
-flag: bool
+_flag: bool
 
 @external
 def init_(x: bytes3, f: bool):
     self.name = x
-    self.flag = f
+    self._flag = f
 
 @external
 def getName() -> bytes3:
@@ -12,4 +12,4 @@ def getName() -> bytes3:
 
 @external
 def getFlag() -> bool:
-    return self.flag
+    return self._flag

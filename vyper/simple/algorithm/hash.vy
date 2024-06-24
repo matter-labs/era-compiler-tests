@@ -30,11 +30,11 @@ def hash(array: uint8[ARRAY_SIZE], begin: uint8, end: uint8) -> uint256:
 def complex() -> uint256:
     array: uint8[ARRAY_SIZE] = empty(uint8[ARRAY_SIZE])
     # generate array where first half equals second
-    for i: uint256 in range(ARRAY_SIZE):
+    for i: uint8 in range(ARRAY_SIZE):
         array[i] = (i % (ARRAY_SIZE // 2)) * (255 // (ARRAY_SIZE // 2 - 1))
 
     result: bool = True
-    for i: uint256 in range(ARRAY_SIZE/2):
+    for i: uint8 in range(ARRAY_SIZE // 2):
         result = result and self.hash(array, 0, i + 1) == self.hash(array, ARRAY_SIZE/2, ARRAY_SIZE/2 + i + 1) and self.hash(array, i, ARRAY_SIZE/2) == self.hash(array, i + ARRAY_SIZE/2, ARRAY_SIZE)
     if result:
         return 1

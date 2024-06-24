@@ -31,6 +31,6 @@ def main(witness: uint8) -> uint8:
     d: uint8 = 0
     (a, b, c, d) = self.tuple()
 
-    structure: Data = Data(value: witness)
+    structure: Data = Data(value=witness)
 
     return array[1][1] + d + structure.value

@@ -7,8 +7,8 @@ def g():
     raise
     
 @external
-def h(flag: bool):
-    assert flag
+def h(_flag: bool):
+    assert _flag
     
 # ====
 # compileToEwasm: also

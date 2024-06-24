@@ -108,7 +108,7 @@ def add(_self: BigUint, other: BigUint) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = _len
     carry: uint256 = 0
-    for i: uint256 in range(LEN):
+    for i: uint8 in range(LEN):
         if not i < _len:
             break
         result.digits[i] += carry
@@ -131,7 +131,7 @@ def sub(_self: BigUint, other: BigUint) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = _self._len
     carry: uint256 = 0
-    for i: uint256 in range(LEN):
+    for i: uint8 in range(LEN):
         if not i < _self._len:
             break
         d: uint256 = carry
@@ -143,7 +143,7 @@ def sub(_self: BigUint, other: BigUint) -> BigUint:
         else:
             carry = 0
             result.digits[i] = _self.digits[i] - d
-    for _: uint256 in range(LEN):
+    for _: uint8 in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break
         result._len -= 1
@@ -154,12 +154,12 @@ def sub(_self: BigUint, other: BigUint) -> BigUint:
 def mul(_self: BigUint, other: BigUint) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = _self._len + other._len
-    for i: uint256 in range(LEN):
+    for i: uint8 in range(LEN):
         if not i < _self._len:
             break
         carry: uint256 = 0
         j: uint8 = 0
-        for _: uint256 in range(LEN):
+        for _: uint8 in range(LEN):
             if not (j < other._len or carry != 0):
                 break
             b: uint256 = 0
@@ -169,7 +169,7 @@ def mul(_self: BigUint, other: BigUint) -> BigUint:
             result.digits[i + j] = curr % BASE
             carry = curr // BASE
             j += 1
-    for _: uint256 in range(LEN):
+    for _: uint8 in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break
         result._len -= 1
@@ -182,14 +182,14 @@ def div(_self: BigUint, other: uint256) -> BigUint:
     result._len = _self._len
     carry: uint256 = 0
     i: uint8 = _self._len - 1
-    for _: uint256 in range(LEN):
+    for _: uint8 in range(LEN):
         curr: uint256 = _self.digits[i] + carry * BASE
         result.digits[i] = curr // other
         carry = curr % other
         if i == 0:
             break
         i -= 1
-    for _: uint256 in range(LEN):
+    for _: uint8 in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break
         result._len -= 1

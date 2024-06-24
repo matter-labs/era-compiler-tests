@@ -51,17 +51,17 @@ def _new(a: uint256) -> Data:
 @internal
 @pure
 def double(data: Data) -> Data:
-    return Data(a: data.a * 2)
+    return Data(a=data.a * 2)
 
 @internal
 @pure
 def triple(data: Data) -> Data:
-    return Data(a: data.a * 3)
+    return Data(a=data.a * 3)
 
 @internal
 @pure
 def quadruple(data: Data) -> Data:
-    return Data(a: data.a * 4)
+    return Data(a=data.a * 4)
 
 @internal
 @pure

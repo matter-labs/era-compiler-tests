@@ -8,4 +8,4 @@ def main(n: uint256, implementation: address) -> uint256:
 
     callee: address = create_from_blueprint(implementation, salt=convert(0, bytes32))
 
-    return extcall Self(callee).main(n - 1, implementation) * n
+    return Self(callee).main(n - 1, implementation) * n

@@ -45,7 +45,7 @@ SIZE: constant(uint8) = 10
 @pure
 def encryptInternal(_data: uint8[SIZE], key: uint8) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
-    for i: uint256 in range(SIZE):
+    for i: uint8 in range(SIZE):
         data[i] = convert((convert(data[i], uint256) + convert(key, uint256)) % 256, uint8)
     return data
 
@@ -66,7 +66,7 @@ def complex(message: uint8[SIZE]) -> uint256:
     result: bool = True
     for key: uint256 in range(20):
         output: uint8[SIZE] = self.decryptInternal(self.encryptInternal(message, key), key)
-        for i: uint256 in range(SIZE):
+        for i: uint8 in range(SIZE):
             result = result and message[i] == output[i]
     if result:
         return 1

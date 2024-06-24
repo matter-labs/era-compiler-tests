@@ -155,7 +155,7 @@ def _unpack_decimals(_packed: uint256, _n_coins: uint256) -> uint256[MAX_COINS]:
     # the packed value is stored as uint256 to simplify unpacking via shift and modulo
     decimals: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
     n_coins: int128 = convert(_n_coins, int128)
-    for i: uint256 in range(MAX_COINS):
+    for i: int128 in range(MAX_COINS):
         if i == n_coins:
             break
         decimals[i] = shift(_packed, -8 * i) % 256
@@ -173,7 +173,7 @@ def _get_rates(_pool: address) -> uint256[MAX_COINS]:
         rate_calc_addr: uint256 = convert(slice(rate_info, 8, 20), uint256)
         rate_method_id: Bytes[4] = slice(rate_info, 28, 4)
 
-        for i: uint256 in range(MAX_COINS):
+        for i: int128 in range(MAX_COINS):
             coin: address = self.pool_data[_pool].coins[i]
             if coin == ZERO_ADDRESS:
                 break
@@ -202,7 +202,7 @@ def _get_balances(_pool: address) -> uint256[MAX_COINS]:
     is_v1: bool = self.pool_data[_pool].is_v1
 
     balances: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
-    for i: uint256 in range(MAX_COINS):
+    for i: int128 in range(MAX_COINS):
         if self.pool_data[_pool].coins[i] == ZERO_ADDRESS:
             assert i != 0
             break
@@ -222,7 +222,7 @@ def _get_underlying_balances(_pool: address) -> uint256[MAX_COINS]:
     rates: uint256[MAX_COINS] = self._get_rates(_pool)
     decimals: uint256 = self.pool_data[_pool].underlying_decimals
     underlying_balances: uint256[MAX_COINS] = balances
-    for i: uint256 in range(MAX_COINS):
+    for i: int128 in range(MAX_COINS):
         coin: address = self.pool_data[_pool].coins[i]
         if coin == ZERO_ADDRESS:
             break
@@ -830,7 +830,7 @@ def _get_new_pool_decimals(_coins: address[MAX_COINS], _n_coins: uint256) -> uin
     value: uint256 = 0
 
     n_coins: int128 = convert(_n_coins, int128)
-    for i: uint256 in range(MAX_COINS):
+    for i: int128 in range(MAX_COINS):
         if i == n_coins:
             break
         coin: address = _coins[i]
@@ -1096,7 +1096,7 @@ def remove_pool(_pool: address):
     coins: address[MAX_COINS] = empty(address[MAX_COINS])
     ucoins: address[MAX_COINS] = empty(address[MAX_COINS])
 
-    for i: uint256 in range(MAX_COINS):
+    for i: int128 in range(MAX_COINS):
         coins[i] = self.pool_data[_pool].coins[i]
         ucoins[i] = self.pool_data[_pool].ul_coins[i]
         if ucoins[i] == ZERO_ADDRESS and coins[i] == ZERO_ADDRESS:

@@ -1,7 +1,7 @@
 @external
 def shl_1() -> bool:
     c: uint256 = 0
-    c = a << 2
+    c = c << 2
     assert c == 4
     return True
 

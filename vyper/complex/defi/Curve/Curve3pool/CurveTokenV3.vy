@@ -7,7 +7,7 @@
      https://eips.ethereum.org/EIPS/eip-20
 """
 
-from vyper.interfaces import ERC20
+from ethereum.ercs import ERC20
 
 implements: ERC20
 

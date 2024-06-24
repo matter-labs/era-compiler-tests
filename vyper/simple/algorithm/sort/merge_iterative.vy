@@ -96,7 +96,7 @@ def mergeSort(_array: uint8[ARRAY_SIZE], direction: uint8) -> uint8[ARRAY_SIZE]:
                 tmp[ptr] = array[ptr2]
                 ptr += 1
                 ptr2 += 1
-        for i: uint256 in range(ARRAY_SIZE):
+        for i: uint8 in range(ARRAY_SIZE):
             array[i] = tmp[i]
         size *= 2
     return array

@@ -8,7 +8,7 @@ def exp_minus_2(y: uint256) -> int256:
 
 @external
 def exp_uint_max(y: uint256) -> uint256:
-    return max_value(uint256) ** y
+    return MAX_UINT256 ** y
 
 @external
 def exp_int_max(y: uint256) -> int256:

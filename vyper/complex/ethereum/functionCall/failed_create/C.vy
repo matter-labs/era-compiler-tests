@@ -25,6 +25,6 @@ def f(amount: uint256, _d: address) -> address:
 @payable
 def stack(depth: uint256, _d: address) -> address:
     if depth > 0:
-        return Self(self).stack(depth - 1, _d)
+        return extcall Self(self).stack(depth - 1, _d)
     else:
         return self._f(0, _d)

@@ -29,8 +29,8 @@ struct Data:
 @pure
 def foo() -> (Data):
     return Data(
-        a: Entry1(a: False, b=[8, 9]),
-        b: Entry2(a=1, b=[2, 3, 4, 5])
+        a=Entry1(a=False, b=[8, 9]),
+        b=Entry2(a=1, b=[2, 3, 4, 5])
     )
 
 @external

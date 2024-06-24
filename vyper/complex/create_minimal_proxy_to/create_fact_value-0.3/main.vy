@@ -9,4 +9,4 @@ def main(implementation: address) -> uint256:
 
     callee: address = create_forwarder_to(implementation)
 
-    return extcall Self(callee).main(implementation, value=msg.value-1) * msg.value
+    return Self(callee).main(implementation, value=msg.value-1) * msg.value

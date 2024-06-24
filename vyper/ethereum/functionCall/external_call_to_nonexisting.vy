@@ -16,7 +16,7 @@ def __init__():
 @external
 def f(c: uint256) -> uint256:
     if c == 0:
-        result: uint256 = staticall self.i.a()
+        result: uint256 = staticcall self.i.a()
     elif c == 1:
         extcall self.i.b()
     elif c == 2:

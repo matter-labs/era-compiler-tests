@@ -11,7 +11,7 @@ def f(s: DynArray[uint256, 5]) -> Bytes[300]:
 @external
 @view
 def g(s: DynArray[uint256, 5][2], which: uint256) -> Bytes[300]:
-    return Self(self).f(s[which])
+    return staticcall Self(self).f(s[which])
 
 @external
 @pure
@@ -21,7 +21,7 @@ def h(s: DynArray[uint8, 5]) -> Bytes[300]:
 @external
 @view
 def i(s: DynArray[uint8, 5][2], which: uint256) -> Bytes[300]:
-    return Self(self).h(s[which])
+    return staticcall Self(self).h(s[which])
 
 @external
 @pure
@@ -31,7 +31,7 @@ def j(s: Bytes[100]) -> Bytes[300]:
 @external
 @view
 def k(s: Bytes[100][2], which: uint256) -> Bytes[300]:
-    return Self(self).j(s[which])
+    return staticcall Self(self).j(s[which])
 
 # ====
 # EVMVersion: >homestead
