@@ -45,7 +45,7 @@ ARRAY_SIZE_4D: constant(uint8) = 1
 def array_2d() -> uint256:
     array: uint8[ARRAY_SIZE_2D][ARRAY_SIZE_2D] = empty(uint8[ARRAY_SIZE_2D][ARRAY_SIZE_2D])
 
-    for i: uint256 in range(0, ARRAY_SIZE_2D):
+    for i: uint8 in range(0, ARRAY_SIZE_2D):
         for j: uint256 in range(0, ARRAY_SIZE_2D):
             array[i][j] = i*ARRAY_SIZE_2D + j
 
@@ -53,7 +53,7 @@ def array_2d() -> uint256:
     # other order
 
     for j: uint256 in range(0, ARRAY_SIZE_2D):
-        for i: uint256 in range(0, ARRAY_SIZE_2D):
+        for i: uint8 in range(0, ARRAY_SIZE_2D):
             result = result and array[i][j] == i*ARRAY_SIZE_2D + j
 
     if result:
@@ -66,7 +66,7 @@ def array_2d() -> uint256:
 def array_3d() -> uint256:
     array: uint8[ARRAY_SIZE_3D][ARRAY_SIZE_3D][ARRAY_SIZE_3D] = empty(uint8[ARRAY_SIZE_3D][ARRAY_SIZE_3D][ARRAY_SIZE_3D])
 
-    for i: uint256 in range(0, ARRAY_SIZE_3D):
+    for i: uint8 in range(0, ARRAY_SIZE_3D):
         for j: uint256 in range(0, ARRAY_SIZE_3D):
             for p: uint256 in range(0, ARRAY_SIZE_3D):
                 array[i][j][p] = i*ARRAY_SIZE_3D*ARRAY_SIZE_3D + j*ARRAY_SIZE_3D + p
@@ -76,7 +76,7 @@ def array_3d() -> uint256:
 
     for p: uint256 in range(0, ARRAY_SIZE_3D):
         for j: uint256 in range(0, ARRAY_SIZE_3D):
-            for i: uint256 in range(0, ARRAY_SIZE_3D):
+            for i: uint8 in range(0, ARRAY_SIZE_3D):
                 result = result and array[i][j][p] == i*ARRAY_SIZE_3D*ARRAY_SIZE_3D + j*ARRAY_SIZE_3D + p
 
     if result:
@@ -89,7 +89,7 @@ def array_3d() -> uint256:
 def array_4d() -> uint256:
     array: uint8[ARRAY_SIZE_4D][ARRAY_SIZE_4D][ARRAY_SIZE_4D][ARRAY_SIZE_4D] = empty(uint8[ARRAY_SIZE_4D][ARRAY_SIZE_4D][ARRAY_SIZE_4D][ARRAY_SIZE_4D])
 
-    for i: uint256 in range(0, ARRAY_SIZE_4D):
+    for i: uint8 in range(0, ARRAY_SIZE_4D):
         for j: uint256 in range(0, ARRAY_SIZE_4D):
             for p: uint256 in range(0, ARRAY_SIZE_4D):
                 for h: uint256 in range(0, ARRAY_SIZE_4D):
@@ -101,7 +101,7 @@ def array_4d() -> uint256:
     for h: uint256 in range(0, ARRAY_SIZE_4D):
         for p: uint256 in range(0, ARRAY_SIZE_4D):
             for j: uint256 in range(0, ARRAY_SIZE_4D):
-                for i: uint256 in range(0, ARRAY_SIZE_4D):
+                for i: uint8 in range(0, ARRAY_SIZE_4D):
                     result = result and array[i][j][p][h] == i*ARRAY_SIZE_4D*ARRAY_SIZE_4D*ARRAY_SIZE_4D + j*ARRAY_SIZE_4D*ARRAY_SIZE_4D + p*ARRAY_SIZE_4D + h
 
     if result:

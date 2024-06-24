@@ -72,7 +72,7 @@ def entry() -> uint256:
 
     result: bool = True
 
-    for i: uint256 in range(1, 11):
+    for i: uint8 in range(1, 11):
         result = result and self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == convert(i * i, uint256)
 
     result = result and self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 506

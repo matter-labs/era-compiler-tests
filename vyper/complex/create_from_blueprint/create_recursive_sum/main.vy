@@ -8,4 +8,4 @@ def f(n: uint256) -> uint256:
     if n == 1:
         return 1
 
-    return Self(callee).f(n - 1) + n
+    return extcall Self(callee).f(n - 1) + n

@@ -31,7 +31,7 @@ def test(param: uint8) -> uint256:
                 break
             if param == 33 and j > 1:
                 return cnt
-            for _: uint8 in range(1000000):
+            for _: uint256 in range(1000000):
                 if param == 3:
                     return convert(param * 10, uint256) # 30
                 p += 2
@@ -102,10 +102,10 @@ def test(param: uint8) -> uint256:
 def entry() -> uint256:
     result: bool = True
     # test returns
-    for i: uint256 in range(1, 9):
+    for i: uint8 in range(1, 9):
         result = result and self.test(i) == convert(i * 10, uint256)
     # test break
-    for i: uint256 in range(1, 9):
+    for i: uint8 in range(1, 9):
         result = result and self.test(20 + i) == 0
     # test continue
     result = result and self.test(11) == 0

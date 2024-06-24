@@ -5,7 +5,7 @@ interface Self:
 
 x: public(uint256)
 
-@external
+@deploy
 @payable
 def __init__():
     pass

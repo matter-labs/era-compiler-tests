@@ -3,7 +3,7 @@ import Other as Other
 
 other: Other
 
-@external
+@deploy
 @payable
 def __init__(_other: address):
     self.other = Other(create_forwarder_to(_other, value = 500))

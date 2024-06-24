@@ -16,4 +16,4 @@
 @external
 @pure
 def main(a: uint256) -> uint256:
-    return shift(a, -255)
+    return a >> 255

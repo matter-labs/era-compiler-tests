@@ -42,4 +42,4 @@
 @external
 @pure
 def main(a: uint256) -> uint256:
-    return bitwise_not(a)
+    return ~a

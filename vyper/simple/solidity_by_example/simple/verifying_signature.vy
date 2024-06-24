@@ -57,7 +57,7 @@ def getMessageHash(_to: address, _amount: uint256, _message: String[100], _nonce
 # 3. Sign message hash
 # # using browser
 # account = "copy paste account of signer here"
-# ethereum.request({ method: "personal_sign", params: [account, hash]}).then(console.log)
+# ethereum.request( method: "personal_sign", params: [account, hash]).then(console.log)
 #
 # # using web3
 # web3.personal.sign(hash, web3.eth.defaultAccount, console.log)

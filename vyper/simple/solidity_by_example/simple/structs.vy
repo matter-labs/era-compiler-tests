@@ -89,7 +89,7 @@ count: uint256
 def create_(_text: String[100]):
     # 2 ways to initialize a struct
     # key value mapping
-    self.todos[self.count] = Todo({text: _text, completed: False})
+    self.todos[self.count] = Todo(text: _text, completed: False)
     self.count += 1
 
     # initialize an empty struct and then update it

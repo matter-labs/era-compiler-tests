@@ -147,14 +147,14 @@ MappingDiv: constant(uint8) = 3
 @internal
 @pure
 def fromArray(array: uint8[ARRAY_SIZE], size: uint8) -> Vector:
-    return Vector({array: array, size: size})
+    return Vector(array: array, size: size)
 
 @internal
 @pure
 def copy(vector: Vector) -> Vector:
     _new: Vector = empty(Vector)
     _new.size = vector.size
-    for i: uint256 in range(0, ARRAY_SIZE):
+    for i: uint8 in range(0, ARRAY_SIZE):
         if not i < vector.size:
             break
         _new.array[i] = vector.array[i]
@@ -163,7 +163,7 @@ def copy(vector: Vector) -> Vector:
 @internal
 def reverse(vector: Vector) -> Vector:
     result: Vector = self.copy(vector)
-    for i: uint256 in range(0, ARRAY_SIZE):
+    for i: uint8 in range(0, ARRAY_SIZE):
         if not i < result.size // 2:
             break
         tmp: uint8 = result.array[i]
@@ -175,7 +175,7 @@ def reverse(vector: Vector) -> Vector:
 @pure
 def unique(vector: Vector) -> Vector:
     result: Vector = empty(Vector)
-    for i: uint256 in range(0, ARRAY_SIZE):
+    for i: uint8 in range(0, ARRAY_SIZE):
         if not i < vector.size:
             break
         fl: bool = True
@@ -194,7 +194,7 @@ def unique(vector: Vector) -> Vector:
 @pure
 def filter(vector: Vector, _filter: uint8, param: uint8) -> Vector:
     result: Vector = empty(Vector)
-    for i: uint256 in range(0, ARRAY_SIZE):
+    for i: uint8 in range(0, ARRAY_SIZE):
         if not i < vector.size:
             break
         if (_filter == FilterGreater and vector.array[i] > param) or (_filter == FilterLess and vector.array[i] < param) or (_filter == FilterDivide and vector.array[i] % param == 0):
@@ -207,7 +207,7 @@ def filter(vector: Vector, _filter: uint8, param: uint8) -> Vector:
 def map(vector: Vector, _mapping: uint8, param: uint8) -> Vector:
     result: Vector = empty(Vector)
     result.size = vector.size
-    for i: uint256 in range(0, ARRAY_SIZE):
+    for i: uint8 in range(0, ARRAY_SIZE):
         if not i < vector.size:
             break
         if _mapping == MappingAdd:

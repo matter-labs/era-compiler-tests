@@ -45,7 +45,7 @@ struct Data:
 @internal
 @pure
 def _new(a: uint256) -> Data:
-    return Data({a: a})
+    return Data(a=a)
 
 @external
 def main(witness: uint256) -> uint256:

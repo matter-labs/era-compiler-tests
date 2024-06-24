@@ -131,7 +131,7 @@ def triangleArea(triangle: Triangle) -> uint256:
 def polygonArea(polygon: Polygon) -> uint256:
     sp: uint256 = 0
     sn: uint256 = 0
-    for i: uint256 in range(1, DIM):
+    for i: uint8 in range(1, DIM):
         if not i < polygon.n:
             break
         if polygon.x[i] > polygon.x[i - 1]:

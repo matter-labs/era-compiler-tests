@@ -21,7 +21,7 @@ struct Test:
 @external
 @pure
 def main(witness: uint8) -> uint8:
-    test: Test = Test({x: 1, y: 2, z: 3})
+    test: Test = Test(x: 1, y: 2, z: 3)
 
     test.x += 5 * witness
     test.y += 7 * witness

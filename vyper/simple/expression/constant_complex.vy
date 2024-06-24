@@ -20,9 +20,9 @@ struct Data:
 @pure
 def main(witness: uint8) -> uint8:
     data: Data[3] = [
-        Data({a: [1, 2, 3]}),
-        Data({a: [3, 4, 5]}),
-        Data({a: [7, 8, 9]})
+        Data(a=[1, 2, 3]),
+        Data(a=[3, 4, 5]),
+        Data(a=[7, 8, 9])
     ]
 
     return data[2].a[1] * witness

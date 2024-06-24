@@ -22,4 +22,4 @@ struct Test:
 @external
 @pure
 def main(witness: uint8) -> uint8:
-    return Test({inner: Inner({value: witness * 5})}).inner.value
+    return Test(inner=Inner(value: witness * 5)).inner.value

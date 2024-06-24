@@ -194,7 +194,7 @@ def _exchange(
     else:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_decode(
+            abi_decode(
                 _sender,
                 self,
                 _amount,
@@ -209,7 +209,7 @@ def _exchange(
     if not self.is_approved[_from][_pool]:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_decode(
+            abi_decode(
                 _pool,
                 max_value(uint256),
                 method_id=method_id("approve(address,uint256)"),
@@ -234,7 +234,7 @@ def _exchange(
         received_amount = ERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
-            _abi_decode(
+            abi_decode(
                 _receiver,
                 received_amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -283,7 +283,7 @@ def _crypto_exchange(
     else:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_decode(
+            abi_decode(
                 _sender,
                 self,
                 _amount,
@@ -298,7 +298,7 @@ def _crypto_exchange(
     if not self.is_approved[_from][_pool]:
         response: Bytes[32] = raw_call(
             _from,
-            _abi_decode(
+            abi_decode(
                 _pool,
                 max_value(uint256),
                 method_id=method_id("approve(address,uint256)"),
@@ -323,7 +323,7 @@ def _crypto_exchange(
         received_amount = ERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
-            _abi_decode(
+            abi_decode(
                 _receiver,
                 received_amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -456,7 +456,7 @@ def exchange_multiple(
         assert msg.value == 0
         response: Bytes[32] = raw_call(
             input_token,
-            _abi_decode(
+            abi_decode(
                 msg.sender,
                 self,
                 amount,
@@ -477,7 +477,7 @@ def exchange_multiple(
             # approve the pool to transfer the input token
             response: Bytes[32] = raw_call(
                 input_token,
-                _abi_decode(
+                abi_decode(
                     swap,
                     max_value(uint256),
                     method_id=method_id("approve(address,uint256)"),
@@ -528,7 +528,7 @@ def exchange_multiple(
     else:
         response: Bytes[32] = raw_call(
             output_token,
-            _abi_decode(
+            abi_decode(
                 _receiver,
                 amount,
                 method_id=method_id("transfer(address,uint256)"),

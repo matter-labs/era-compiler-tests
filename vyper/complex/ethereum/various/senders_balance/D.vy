@@ -2,7 +2,7 @@ import C as C
 
 c: C
 
-@external
+@deploy
 @payable
 def __init__(_c: address):
     self.c = C(create_forwarder_to(_c))

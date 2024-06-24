@@ -32,6 +32,6 @@ def inner(data: Data, _value: uint256, literal: uint8) -> uint256:
 
 @external
 def main(_value: uint256) -> uint256:
-    data: Data = Data({c: 10, d: 20})
+    data: Data = Data(c=10, d=20)
 
     return self.inner(data, _value, 42)
