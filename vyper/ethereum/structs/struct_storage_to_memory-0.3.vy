@@ -10,9 +10,9 @@ struct X:
 arr: uint256[79]
 x: X
 
-@deploy
+@external
 def __init__():
-    self.x = X(a=12, s=S(a=42, b=23, c=34))
+    self.x = X({a: 12, s: S({a: 42, b: 23, c: 34})})
     
 @external
 def f() -> (uint32, uint128, uint256):

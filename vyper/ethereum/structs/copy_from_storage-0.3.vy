@@ -3,8 +3,7 @@ struct S:
     x: uint256
 
 sStorage: S
-
-@deploy
+@external
 def __init__():
     self.sStorage.x = 13
 

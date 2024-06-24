@@ -3,7 +3,7 @@ struct testStruct:
     
 campaigns: HashMap[uint256, testStruct]
 
-@deploy
+@external
 def __init__():
     self.campaigns[0].m_value = 2
     

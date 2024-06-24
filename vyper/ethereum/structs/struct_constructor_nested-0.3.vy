@@ -9,11 +9,11 @@ struct S:
     
 s: S
 
-@deploy
+@external
 def __init__():
     s2: uint256[3] = empty(uint256[3])
     s2[1] = 9
-    self.s = S(s1=1, s2=s2, s3=X(x1=4, x2=5))
+    self.s = S({s1: 1, s2: s2, s3: X({x1: 4, x2: 5})})
 
 @external
 def get() -> (uint256, uint256[3], uint256, uint256):

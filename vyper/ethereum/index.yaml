@@ -1608,13 +1608,24 @@ entries:
           recursive_storage_memory_complex.vy:
             enabled: false
             comments: 'Recursive structures are not supported'
+      copy_from_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       copy_from_storage.vy:
         enabled: true
+        version: '>=0.4.0'
+      copy_struct_array_from_storage-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       copy_struct_array_from_storage.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      delete_struct-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       delete_struct.vy:
         enabled: true
+        version: '>=0.4.0'
       event.vy:
         enabled: true
       global.vy:
@@ -1645,8 +1656,12 @@ entries:
         comment: 'Recursive structures are not supported'
       simple_struct_allocation.vy:
         enabled: true
+      struct_constructor_nested-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_constructor_nested.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_containing_bytes_copy_and_delete.vy:
         enabled: true
         comment: "Without storageEmpty checks"
@@ -1654,10 +1669,18 @@ entries:
         enabled: true
       struct_copy_via_local.vy:
         enabled: true
+      struct_delete_member-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_delete_member.vy:
         enabled: true
+        version: '>=0.4.0'
+      struct_delete_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_delete_storage.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_delete_storage_nested_small.vy:
         enabled: false
         comment: 'Recursive structures are not supported'
@@ -1668,19 +1691,31 @@ entries:
         comment: 'Recursive structures are not supported'
       struct_delete_storage_with_arrays_small.vy:
         enabled: true
+      struct_delete_struct_in_mapping-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_delete_struct_in_mapping.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_memory_to_storage.vy:
         enabled: true
       struct_named_constructor.vy:
         enabled: false
         comment: "Disabled because different order of fields is not allowed"
+      struct_storage_push_zero_value-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_storage_push_zero_value.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_storage_to_mapping.vy:
         enabled: true
+      struct_storage_to_memory-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_storage_to_memory.vy:
         enabled: true
+        version: '>=0.4.0'
       structs.vy:
         enabled: false
         comment: 'Recursive structures are not supported'

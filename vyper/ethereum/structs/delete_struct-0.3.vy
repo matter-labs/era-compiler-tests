@@ -8,7 +8,7 @@ struct topStruct:
 toDelete: uint256
 str: topStruct
 
-@deploy
+@external
 def __init__():
     self.toDelete = 5
     self.str.topValue = 1

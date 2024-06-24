@@ -7,7 +7,7 @@ b: uint8
 s: S
 a: uint8
 
-@deploy
+@external
 def __init__():
     self.b = 23
     self.a = 17

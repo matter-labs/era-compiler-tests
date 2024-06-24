@@ -4,17 +4,17 @@ struct S:
 a: DynArray[DynArray[S, 5], 5]
 b: DynArray[S, 5]
 
-@deploy
+@external
 def __init__():
     self.a.append(empty(DynArray[S, 5]))
-    self.a[0].append(S(value=1))
-    self.a[0].append(S(value=2))
-    self.a[0].append(S(value=3))
+    self.a[0].append(S({value: 1}))
+    self.a[0].append(S({value: 2}))
+    self.a[0].append(S({value: 3}))
     
-    self.b.append(S(value=4))
-    self.b.append(S(value=5))
-    self.b.append(S(value=6))
-    self.b.append(S(value=7))
+    self.b.append(S({value: 4}))
+    self.b.append(S({value: 5}))
+    self.b.append(S({value: 6}))
+    self.b.append(S({value: 7}))
     
 @external
 def test1() -> bool:
