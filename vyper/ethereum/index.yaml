@@ -1528,18 +1528,32 @@ entries:
         entries:
           string_concat_2_args.vy:
             enabled: true
+          string_concat_different_types-0.3.vy:
+            enabled: true
+            comment: "Without storage reference and slice"
+            version: '<=0.3.10'
           string_concat_different_types.vy:
             enabled: true
             comment: "Without storage reference and slice"
+            version: '>=0.4.0'
           string_concat_empty_strings.vy:
             enabled: true
           string_concat_nested.vy:
             enabled: true
+      constant_string_literal-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       constant_string_literal.vy:
         enabled: true
+        version: '>=0.4.0'
+      empty_storage_string-0.3.vy:
+        enabled: true
+        comment: "Without error"
+        version: '<=0.3.10'
       empty_storage_string.vy:
         enabled: true
         comment: "Without error"
+        version: '>=0.4.0'
       empty_string.vy:
         enabled: true
       empty_string_input.vy:

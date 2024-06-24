@@ -1,6 +1,6 @@
 @external
 def f() -> bool:
-    x: int256 = -2**255
+    x: int256 = min_value(int256)
     assert -x == x
     return True
 

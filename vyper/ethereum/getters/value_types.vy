@@ -18,7 +18,7 @@ def __init__():
     self.f = 0x6465616462656566313564656164000000000010
     self.g = 0x6465616462656566313564656164000000000000000000000000000000000010
     self.h = True
-    self.i = convert((2**160-1)/3, address)
+    self.i = convert((2**160 - 1) // 3, address)
 
 # ====
 # compileToEwasm: also
