@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "remainder_zero",
 #!     "inputs": [
 #!         {
@@ -42,4 +42,4 @@
 @external
 @pure
 def main(witness: uint256) -> uint256:
-    return witness / 3
+    return witness // 3

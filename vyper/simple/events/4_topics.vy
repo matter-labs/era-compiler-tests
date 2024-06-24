@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -101,7 +101,7 @@ CONST: constant(uint256) = 3735928559 # 0xdeadbeef
 IMMUTABLE_: immutable(uint256)
 storage_var: Bytes[100]
 
-@external
+@deploy
 def __init__():
     IMMUTABLE_ = convert(0x0deadbeef3, uint256)
     self.storage_var = b"\x0d\xea\xdb\xee\xf4"

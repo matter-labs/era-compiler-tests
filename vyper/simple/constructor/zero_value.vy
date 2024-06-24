@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -26,7 +26,7 @@
 a: public(uint256)
 
 # if remove constructor or param - it works
-@external
+@deploy
 def __init__(b: uint256):
     self.a = 0
 

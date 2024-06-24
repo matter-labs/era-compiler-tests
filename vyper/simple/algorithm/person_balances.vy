@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "bitcoin",
 #!     "inputs": [
 #!         {
@@ -107,7 +107,7 @@ def main(tokenId: uint8) -> Result:
 
     result: Result = Result({id: person.id, sum: 0, dateOfBirth: person.dateOfBirth})
 
-    for id in range(TOKENS_COUNT):
+    for id: uint256 in range(TOKENS_COUNT):
         if person.balances[id].tokenId == tokenId:
             result.sum += person.balances[id]._balance
     return result

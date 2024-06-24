@@ -33,7 +33,7 @@ X: immutable(bytes32)
 Y: immutable(bytes32)
 Z: immutable(String[64])
 
-@external
+@deploy
 def __init__():
     X = convert(42, bytes32)
     Y = convert(43, bytes32)

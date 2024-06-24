@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry0",
 #!     "inputs": [
 #!         {
@@ -68,13 +68,13 @@
 @external
 @pure
 def main(param: uint8) -> uint256:
-    for i in range(0, 5):
+    for i: uint256 in range(0, 5):
         if param == 0 and i > 3:
             return i # 4
-        for j in range(5, 10):
+        for j: uint256 in range(5, 10):
             if param == 1:
                 return convert(param * j, uint256) # 5
-            for k in range(0, 5):
+            for k: uint256 in range(0, 5):
                 if param == 2 and k == 3:
                     return 6
         if param == 3:

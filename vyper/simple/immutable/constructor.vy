@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -36,7 +36,7 @@ a: immutable(uint256)
 b: immutable(address)
 c: immutable(uint8)
 
-@external
+@deploy
 def __init__(x: uint256, y: uint8):
     a = x
     b = msg.sender

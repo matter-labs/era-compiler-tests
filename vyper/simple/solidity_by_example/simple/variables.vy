@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "text",
 #!     "inputs": [
 #!         {
@@ -38,7 +38,7 @@
 text: public(String[5])
 num: public(uint256)
 
-@external
+@deploy
 def __init__():
     self.text = "Hello"
     self.num = 123

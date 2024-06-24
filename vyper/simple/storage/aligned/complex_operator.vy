@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -22,4 +22,4 @@ field_3: uint256
 
 @external
 def main(witness: uint8) -> uint8:
-    return 19 * 3 - 8 / convert(self.field_1, uint8) + (witness / (convert(self.field_2, uint8) - 3) + 5) * (8 / convert(self.field_3, uint8) / 2)
+    return 19 * 3 - 8 // convert(self.field_1, uint8) + (witness // (convert(self.field_2, uint8) - 3) + 5) * (8 // convert(self.field_3, uint8) // 2)

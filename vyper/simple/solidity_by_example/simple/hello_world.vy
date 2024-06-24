@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "get",
 #!     "inputs": [
 #!         {
@@ -16,6 +16,6 @@
 
 greet: public(String[12])
 
-@external
+@deploy
 def __init__():
     self.greet = "Hello World!"

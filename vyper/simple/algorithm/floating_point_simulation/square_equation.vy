@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "noSolution",
 #!     "inputs": [
 #!         {
@@ -49,10 +49,10 @@ def sqrt(n: uint256) -> uint256:
     # binary search
     l: uint256 = 0
     r: uint256 = MAX_U128_SQRT
-    for _ in range(64):
+    for _: uint256 in range(64):
         if l == r:
             break
-        m: uint256 = (l + r + 1) / 2
+        m: uint256 = (l + r + 1) // 2
         if m*m <= n:
             l = m
         else:
@@ -70,8 +70,8 @@ def main(a: uint256, mb: uint256, c: uint256) -> (bool, uint256, uint256):
         return (False, 0, 0)
     d: uint256 = (mb*mb - 4*a*c)*EPS*EPS
     sd: uint256 = self.sqrt(d)
-    x1: uint256 = (mb*EPS + sd) / 2 / a
-    x2: uint256 = (mb*EPS - sd) / 2 / a
+    x1: uint256 = (mb*EPS + sd) // 2 // a
+    x2: uint256 = (mb*EPS - sd) // 2 // a
     return (True, x1, x2)
 
 @external
@@ -81,7 +81,7 @@ def entry(a: uint256, mb: uint256, c: uint256) -> (bool, uint256, uint256):
     x2: uint256 = 0
     p, x1, x2 = self.main(a, mb, c)
     x1 *= PRECISION
-    x1 /= EPS
+    x1 //= EPS
     x2 *= PRECISION
-    x2 /= EPS
+    x2 //= EPS
     return (p, x1, x2)

@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -26,7 +26,7 @@
 a: immutable(uint256)
 b: immutable(uint256)
 
-@external
+@deploy
 def __init__(x: uint256, y: uint256):
     a = x
     b = y

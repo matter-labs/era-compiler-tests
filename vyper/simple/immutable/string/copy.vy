@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -23,7 +23,7 @@
 
 data: immutable(String[8])
 
-@external
+@deploy
 def __init__(input: String[8]):
     data = input
 

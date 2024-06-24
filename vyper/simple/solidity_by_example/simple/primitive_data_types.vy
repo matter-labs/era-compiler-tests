@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "boo",
 #!     "inputs": [
 #!         {
@@ -174,7 +174,7 @@ defaultUint: public(uint256) # 0
 defaultInt: public(int256) # 0
 defaultAddr: public(address) # 0x0000000000000000000000000000000000000000
 
-@external
+@deploy
 def __init__():
     self.boo = True
     self.u8 = 1

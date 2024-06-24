@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -28,7 +28,7 @@ field_1: immutable(uint8)
 field_2: immutable(uint8)
 field_3: immutable(uint8)
 
-@external
+@deploy
 def __init__(a: uint8, b: uint8, c: uint8):
     field_1 = a
     field_2 = b

@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -39,7 +39,7 @@ SELF: public(immutable(address))
 ABI_ENCODED_0: public(immutable(Bytes[4096]))
 ABI_ENCODED_1: public(immutable(Bytes[4096]))
 
-@external
+@deploy
 def __init__():
     name: String[64] = "Test"
     version: String[8] = "v1.0.0"

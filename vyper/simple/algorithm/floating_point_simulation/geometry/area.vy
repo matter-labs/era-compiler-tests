@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "triangle1",
 #!     "inputs": [
 #!         {
@@ -108,10 +108,10 @@ def sqrt(n: uint256) -> uint256:
     # binary search
     l: uint256 = 0
     r: uint256 = MAX_U128_SQRT
-    for _ in range(64):
+    for _: uint256 in range(64):
         if l == r:
             break
-        m: uint256 = (l + r + 1) / 2
+        m: uint256 = (l + r + 1) // 2
         if m*m <= n:
             l = m
         else:
@@ -123,7 +123,7 @@ def sqrt(n: uint256) -> uint256:
 
 @internal
 def triangleArea(triangle: Triangle) -> uint256:
-    p: uint256 = (triangle.a + triangle.b + triangle.c) / 2
+    p: uint256 = (triangle.a + triangle.b + triangle.c) // 2
     return self.sqrt(p * (p - triangle.a) * (p - triangle.b) * (p - triangle.c))
 
 @internal
@@ -131,7 +131,7 @@ def triangleArea(triangle: Triangle) -> uint256:
 def polygonArea(polygon: Polygon) -> uint256:
     sp: uint256 = 0
     sn: uint256 = 0
-    for i in range(1, DIM):
+    for i: uint256 in range(1, DIM):
         if not i < polygon.n:
             break
         if polygon.x[i] > polygon.x[i - 1]:
@@ -142,7 +142,7 @@ def polygonArea(polygon: Polygon) -> uint256:
         sp += (polygon.x[0] - polygon.x[polygon.n - 1]) * (polygon.y[0] + polygon.y[polygon.n - 1])
     else:
         sn += (polygon.x[polygon.n - 1] - polygon.x[0]) * (polygon.y[0] + polygon.y[polygon.n - 1])
-    return (sp - sn) / 2
+    return (sp - sn) // 2
 
 @internal
 @pure
@@ -156,20 +156,20 @@ def triangle(_triangle: Triangle) -> uint256:
     triangle.b *= EPS
     triangle.c *= EPS
     # area * PRECISION
-    return self.triangleArea(triangle) * PRECISION / EPS / EPS
+    return self.triangleArea(triangle) * PRECISION // EPS // EPS
 
 @external
 def polygon(_polygon: Polygon) -> uint256:
     polygon: Polygon = _polygon
-    for i in range(DIM):
+    for i: uint256 in range(DIM):
         if not i < polygon.n:
             break
         polygon.x[i] *= EPS
         polygon.y[i] *= EPS
     # area * PRECISION
-    return self.polygonArea(polygon) * PRECISION / EPS / EPS
+    return self.polygonArea(polygon) * PRECISION // EPS // EPS
 
 @external
 def sphere(sphere: Sphere) -> uint256:
     # surface * PRECISION
-    return self.sphereSurface(sphere, PI) * PRECISION / EPS / EPS / EPS
+    return self.sphereSurface(sphere, PI) * PRECISION // EPS // EPS // EPS

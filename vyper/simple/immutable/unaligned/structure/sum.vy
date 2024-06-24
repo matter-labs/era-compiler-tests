@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -32,7 +32,7 @@ struct Data:
 
 data: immutable(Data)
 
-@external
+@deploy
 def __init__(input: Data):
     data = input
 

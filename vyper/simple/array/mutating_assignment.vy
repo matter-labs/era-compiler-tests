@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -22,6 +22,6 @@ def main(_array: uint8[SIZE], witness: uint8) -> uint8:
     array[0] += witness
     array[1] -= witness
     array[2] *= witness
-    array[3] /= witness
+    array[3] //= witness
     array[4] %= witness
     return array[0] + array[1] + array[2] + array[3] + array[4]

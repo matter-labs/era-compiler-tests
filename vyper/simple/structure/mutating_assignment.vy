@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -23,5 +23,5 @@ struct Data:
 @pure
 def main(data: Data, divider: uint8) -> Data:
     _data: Data = data
-    _data.inner.value /= divider
+    _data.inner.value //= divider
     return _data

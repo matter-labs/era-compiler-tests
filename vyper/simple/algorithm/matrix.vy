@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "test",
 #!     "inputs": [
 #!         {
@@ -43,13 +43,13 @@ def mul(_self: Matrix, other: Matrix) -> Matrix:
     result: Matrix = empty(Matrix)
     result.n = _self.n
     result.m = other.m
-    for i in range(MAX_SIZE):
+    for i: uint256 in range(MAX_SIZE):
         if not i < _self.n:
             break
-        for j in range(MAX_SIZE):
+        for j: uint256 in range(MAX_SIZE):
             if not j < other.m:
                 break
-            for k in range(MAX_SIZE):
+            for k: uint256 in range(MAX_SIZE):
                 if not k < _self.m:
                     break
                 result.a[i][j] += _self.a[i][k] * other.a[k][j]
@@ -59,10 +59,10 @@ def mul(_self: Matrix, other: Matrix) -> Matrix:
 @pure
 def add(__self: Matrix, other: Matrix) -> Matrix:
     _self: Matrix = __self
-    for i in range(MAX_SIZE):
+    for i: uint256 in range(MAX_SIZE):
         if not i < _self.n:
             break
-        for j in range(MAX_SIZE):
+        for j: uint256 in range(MAX_SIZE):
             if not j < _self.m:
                 break
             _self.a[i][j] += other.a[i][j]
@@ -72,10 +72,10 @@ def add(__self: Matrix, other: Matrix) -> Matrix:
 @pure
 def scalar(__self: Matrix, n: uint256) -> Matrix:
     _self: Matrix = __self
-    for i in range(MAX_SIZE):
+    for i: uint256 in range(MAX_SIZE):
         if not i < _self.n:
             break
-        for j in range(MAX_SIZE):
+        for j: uint256 in range(MAX_SIZE):
             if not j < _self.m:
                 break
             _self.a[i][j] *= n
@@ -88,11 +88,11 @@ def pow(__self: Matrix, _n: uint256) -> Matrix:
     result: Matrix = empty(Matrix)
     result.n = _self.n
     result.m = _self.m
-    for i in range(MAX_SIZE):
+    for i: uint256 in range(MAX_SIZE):
         if not i < _self.n:
             break
         result.a[i][i] = 1
-    for _ in range(1000000000):
+    for _: uint256 in range(1000000000):
         if not n != 0:
             break
         if bitwise_and(n, 1) != 0:

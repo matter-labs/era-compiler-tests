@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "address",
 #!     "inputs": [
 #!         {
@@ -44,7 +44,7 @@
 MY_ADDRESS: immutable(address)
 MY_UINT: immutable(uint256)
 
-@external
+@deploy
 def __init__(_myUint: uint256):
     MY_ADDRESS = msg.sender
     MY_UINT = _myUint

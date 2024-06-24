@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -20,8 +20,8 @@
 def main(param: uint8) -> uint256:
     cnt: uint256 = 0
 
-    for j in [0, 1]:
-        for h in range(0, 1):
+    for j: uint256 in [0, 1]:
+        for h: uint256 in range(0, 1):
             if param == 4:
                 return 40
             cnt += 1

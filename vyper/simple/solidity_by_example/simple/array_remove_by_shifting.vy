@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "test",
 #!     "inputs": [
 #!         {
@@ -23,7 +23,7 @@ arr: public(DynArray[uint256, 10])
 def remove(_index: uint256):
     assert _index < len(self.arr), "index out of bound"
 
-    for i in range(_index, _index + 10):
+    for i: uint256 in range(_index, _index + 10):
         if not i < len(self.arr) - 1:
             break
         self.arr[i] = self.arr[i + 1]

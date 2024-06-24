@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "none",
 #!     "inputs": [
 #!         {
@@ -50,9 +50,9 @@ DirectionDescending: constant(uint8) = 2
 def main(_array: uint8[ARRAY_SIZE], direction: uint8) -> uint8[ARRAY_SIZE]:
     array: uint8[ARRAY_SIZE] = _array
     swapped: bool = True
-    for i in range(ARRAY_SIZE - 1):
+    for i: uint256 in range(ARRAY_SIZE - 1):
         swapped = False
-        for j in range(ARRAY_SIZE - 1):
+        for j: uint256 in range(ARRAY_SIZE - 1):
             if not j < ARRAY_SIZE - i - 1:
                 break
             if (direction == DirectionAscending and array[j] > array[j + 1]) or (direction == DirectionDescending and array[j] < array[j + 1]):

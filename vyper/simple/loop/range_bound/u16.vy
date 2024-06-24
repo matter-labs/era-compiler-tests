@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -16,6 +16,6 @@
 @pure
 def main() -> uint64:
     sum: uint64 = 0
-    for i in range(65525, 65535):
+    for i: uint256 in range(65525, 65535):
         sum += 1
     return sum

@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -28,7 +28,7 @@ field_1: immutable(uint256)
 field_2: immutable(uint256)
 field_3: immutable(uint256)
 
-@external
+@deploy
 def __init__(a: uint256, b: uint256, c: uint256):
     field_1 = a
     field_2 = b

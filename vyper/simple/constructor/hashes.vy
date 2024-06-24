@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "test",
 #!     "inputs": [
 #!         {
@@ -19,7 +19,7 @@ hashes: public(DynArray[bytes32, 10])
 # res: bytes32
 
 # If replace constructor with function call - works.
-@external
+@deploy
 def __init__():
     # self.res = keccak256(b"") If uncomment this line(with res declaration) and
     # push at the next line number - it will still not work, so maybe problem with keccak256 calls, not with storage

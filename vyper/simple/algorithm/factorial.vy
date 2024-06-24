@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "one",
 #!     "inputs": [
 #!         {
@@ -43,7 +43,7 @@
 @pure
 def main(n: uint8) -> uint256:
     fact: uint256 = 1
-    for i in range(1, 100):
+    for i: uint256 in range(1, 100):
         if not i <= n:
             break
         fact *= convert(i, uint256)

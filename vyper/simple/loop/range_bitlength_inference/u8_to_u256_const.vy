@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -18,6 +18,6 @@ LIMIT: constant(uint256) = 11
 @pure
 def main() -> uint256:
     sum: uint256 = 0
-    for i in range(0, LIMIT):
+    for i: uint256 in range(0, LIMIT):
         sum += i
     return sum

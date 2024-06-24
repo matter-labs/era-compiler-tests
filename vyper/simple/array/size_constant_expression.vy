@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -20,8 +20,8 @@ SIZE_HALVED: constant(uint8) = 2
 def main(_value: uint8) -> uint8:
     value: uint8 = _value
     array: uint8[SIZE_HALVED * 2] = [0, 0, 0, 0]
-    for i in range(SIZE_HALVED * 2):
+    for i: uint256 in range(SIZE_HALVED * 2):
         array[i] = 2
-    for i in range(SIZE_HALVED * 2):
+    for i: uint256 in range(SIZE_HALVED * 2):
         value += array[i]
     return value

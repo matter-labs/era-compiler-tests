@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "zero_by_zero",
 #!     "inputs": [
 #!         {
@@ -229,5 +229,5 @@
 @pure
 def main(a: int128, b: int128) -> int128:
     c: int128 = a
-    c /= b
+    c //= b
     return c

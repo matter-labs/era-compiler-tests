@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "distancePoint1",
 #!     "inputs": [
 #!         {
@@ -74,10 +74,10 @@ def sqrt(n: uint256) -> uint256:
     # binary search
     l: uint256 = 0
     r: uint256 = n
-    for _ in range(256):
+    for _: uint256 in range(256):
         if l == r:
             break
-        m: uint256 = (l + r + 1) / 2
+        m: uint256 = (l + r + 1) // 2
         if m*m <= n:
             l = m
         else:
@@ -93,22 +93,22 @@ def sqrt(n: uint256) -> uint256:
 @pure
 def linesIntersection(a1: uint256, mb1: uint256, c1: uint256, a2: uint256, b2: uint256, mc2: uint256) -> Point:
     d: uint256 = a1 * b2 + a2 * mb1
-    return Point({x: (mb1 * mc2 - b2 * c1) * EPS / d, y: (a2 * c1 + a1 * mc2) * EPS / d})
+    return Point({x: (mb1 * mc2 - b2 * c1) * EPS // d, y: (a2 * c1 + a1 * mc2) * EPS // d})
 
 @internal
 def distancePoint(line: Line, point: Point) -> uint256:
-    return ((line.a * point.x + line.b * point.y + line.c) * EPS * EPS) / self.sqrt((line.a * line.a + line.b * line.b) * EPS * EPS)
+    return ((line.a * point.x + line.b * point.y + line.c) * EPS * EPS) // self.sqrt((line.a * line.a + line.b * line.b) * EPS * EPS)
 
 @external
 def distancePointEntry(line: Line, point: Point) -> uint256:
     # 6.077701994871213... * PRECISION
-    return self.distancePoint(line, point) * PRECISION / EPS
+    return self.distancePoint(line, point) * PRECISION // EPS
 
 @external
 def intersectionPoint(a1: uint256, mb1: uint256, c1: uint256, a2: uint256, b2: uint256, mc2: uint256) -> Point:
     point: Point = self.linesIntersection(a1, mb1, c1, a2, b2, mc2)
     point.x *= PRECISION
-    point.x /= EPS
+    point.x //= EPS
     point.y *= PRECISION
-    point.y /= EPS
+    point.y //= EPS
     return point

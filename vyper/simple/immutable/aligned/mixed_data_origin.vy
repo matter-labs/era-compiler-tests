@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -33,14 +33,14 @@ struct Data:
 a: immutable(uint256)
 b: immutable(uint256)
 
-@external
+@deploy
 def __init__(x: uint256, y: uint256):
     a = x
     b = y
 
 @internal
 def inner(data: Data, _value: uint256, literal: uint8) -> uint256:
-    return ((a + data.c + b + data.d + _value) * convert(literal, uint256) * SOMETHING - SOMETHING_ELSE) / 1000
+    return ((a + data.c + b + data.d + _value) * convert(literal, uint256) * SOMETHING - SOMETHING_ELSE) // 1000
 
 @external
 def main(_value: uint256) -> uint256:

@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "cube1",
 #!     "inputs": [
 #!         {
@@ -71,7 +71,7 @@ def cubeVolume(cube: Cube) -> uint256:
 @internal
 @pure
 def sphereVolume(sphere: Sphere, pi: uint256) -> uint256:
-    return 4 * pi * sphere.r * sphere.r * sphere.r / 3
+    return 4 * pi * sphere.r * sphere.r * sphere.r // 3
 
 @external
 def cube(cube: Cube) -> uint256:
@@ -80,4 +80,4 @@ def cube(cube: Cube) -> uint256:
 @external
 def sphere(sphere: Sphere) -> uint256:
     # volume * PRECISION
-    return self.sphereVolume(sphere, PI) * PRECISION / EPS / EPS / EPS
+    return self.sphereVolume(sphere, PI) * PRECISION // EPS // EPS // EPS

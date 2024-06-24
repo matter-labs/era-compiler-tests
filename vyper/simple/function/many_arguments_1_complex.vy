@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry",
 #!     "inputs": [
 #!         {
@@ -190,7 +190,7 @@ def entry() -> uint256:
 
     result: bool = True
 
-    for i in range(1, 39):
+    for i: uint256 in range(1, 39):
         result = result and self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == convert(i, uint256) * convert(i, uint256)
 
     result = result and self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 0

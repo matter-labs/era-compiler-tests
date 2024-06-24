@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "test1",
 #!     "inputs": [
 #!         {
@@ -55,11 +55,11 @@ def _new() -> BigUint:
 def fromUint(_n: uint256) -> BigUint:
     n: uint256 = _n
     _number: BigUint = empty(BigUint)
-    for _ in range(1000000000):
+    for _: uint256 in range(1000000000):
         if not n > 0:
             break
         _number.digits[_number._len] = n % BASE
-        n /= BASE
+        n //= BASE
         _number._len += 1
     if _number._len == 0:
         _number._len = 1
@@ -70,7 +70,7 @@ def fromUint(_n: uint256) -> BigUint:
 def asUint(_self: BigUint) -> uint256:
     n: uint256 = 0
     i: uint8 = _self._len - 1
-    for _ in range(1000000000):
+    for _: uint256 in range(1000000000):
         n = n * BASE + _self.digits[i]
         if i == 0:
             break
@@ -83,7 +83,7 @@ def less(_self: BigUint, other: BigUint) -> bool:
     if _self._len != other._len:
         return _self._len < other._len
     i: uint8 = _self._len - 1
-    for _ in range(1000000000):
+    for _: uint256 in range(1000000000):
         if _self.digits[i] != other.digits[i]:
             return _self.digits[i] < other.digits[i]
         if i == 0:
@@ -108,7 +108,7 @@ def add(_self: BigUint, other: BigUint) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = _len
     carry: uint256 = 0
-    for i in range(LEN):
+    for i: uint256 in range(LEN):
         if not i < _len:
             break
         result.digits[i] += carry
@@ -116,7 +116,7 @@ def add(_self: BigUint, other: BigUint) -> BigUint:
             result.digits[i] += _self.digits[i]
         if i < other._len:
             result.digits[i] += other.digits[i]
-        carry = result.digits[i] / BASE
+        carry = result.digits[i] // BASE
         result.digits[i] %= BASE
     if carry > 0:
         result.digits[result._len] = carry
@@ -131,7 +131,7 @@ def sub(_self: BigUint, other: BigUint) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = _self._len
     carry: uint256 = 0
-    for i in range(LEN):
+    for i: uint256 in range(LEN):
         if not i < _self._len:
             break
         d: uint256 = carry
@@ -143,7 +143,7 @@ def sub(_self: BigUint, other: BigUint) -> BigUint:
         else:
             carry = 0
             result.digits[i] = _self.digits[i] - d
-    for _ in range(LEN):
+    for _: uint256 in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break
         result._len -= 1
@@ -154,12 +154,12 @@ def sub(_self: BigUint, other: BigUint) -> BigUint:
 def mul(_self: BigUint, other: BigUint) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = _self._len + other._len
-    for i in range(LEN):
+    for i: uint256 in range(LEN):
         if not i < _self._len:
             break
         carry: uint256 = 0
         j: uint8 = 0
-        for _ in range(LEN):
+        for _: uint256 in range(LEN):
             if not (j < other._len or carry != 0):
                 break
             b: uint256 = 0
@@ -167,9 +167,9 @@ def mul(_self: BigUint, other: BigUint) -> BigUint:
                 b = other.digits[j]
             curr: uint256 = result.digits[i + j] + _self.digits[i] * b + carry
             result.digits[i + j] = curr % BASE
-            carry = curr / BASE
+            carry = curr // BASE
             j += 1
-    for _ in range(LEN):
+    for _: uint256 in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break
         result._len -= 1
@@ -182,14 +182,14 @@ def div(_self: BigUint, other: uint256) -> BigUint:
     result._len = _self._len
     carry: uint256 = 0
     i: uint8 = _self._len - 1
-    for _ in range(LEN):
+    for _: uint256 in range(LEN):
         curr: uint256 = _self.digits[i] + carry * BASE
-        result.digits[i] = curr / other
+        result.digits[i] = curr // other
         carry = curr % other
         if i == 0:
             break
         i -= 1
-    for _ in range(LEN):
+    for _: uint256 in range(LEN):
         if not (result._len > 1 and result.digits[result._len - 1] == 0):
             break
         result._len -= 1
@@ -202,13 +202,13 @@ def pow(__self: BigUint, _n: uint256) -> BigUint:
     result: BigUint = empty(BigUint)
     result._len = 1
     result.digits[0] = 1
-    for _ in range(1000000000):
+    for _: uint256 in range(1000000000):
         if not (n != 0):
             break
         if n % 2 != 0:
             result = self.mul(result, _self)
         _self = self.mul(_self, _self)
-        n = n / 2
+        n = n // 2
     return result
 
 @external

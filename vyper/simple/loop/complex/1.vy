@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry",
 #!     "inputs": [
 #!         {
@@ -18,20 +18,20 @@ def test(param: uint8) -> uint256:
     cnt: uint256 = 0
     tmp: uint8 = 0
 
-    for i in range(0, 2):
+    for i: uint256 in range(0, 2):
         if param == 1:
             return convert(param * 10, uint256) # 10
         if param == 21:
             break
         if param == 11:
             continue
-        for j in [1, 2]:
+        for j: uint256 in [1, 2]:
             p: uint8 = 0
             if param == 22:
                 break
             if param == 33 and j > 1:
                 return cnt
-            for _ in range(1000000):
+            for _: uint256 in range(1000000):
                 if param == 3:
                     return convert(param * 10, uint256) # 30
                 p += 2
@@ -41,21 +41,21 @@ def test(param: uint8) -> uint256:
                     continue
                 if param == 23:
                     break
-                for h in range(1, 5):
+                for h: uint256 in range(1, 5):
                     if param == 4:
                         return 40
                     if h > 2:
                         break
                     if param == 24:
                         break
-                    for k in range(10, 12):
+                    for k: uint256 in range(10, 12):
                         x: uint8 = 7
                         tmp = 5 * k
                         if param == 5:
                             return convert(tmp, uint256)
                         if param == 25:
                             break
-                        for __ in range(1000000):
+                        for __: uint256 in range(1000000):
                             x -= 1
                             if x == 0:
                                 break
@@ -64,7 +64,7 @@ def test(param: uint8) -> uint256:
                             y: uint8 = 10
                             if param == 26:
                                 break
-                            for ___ in range(1000000):
+                            for ___: uint256 in range(1000000):
                                 if not y < 17:
                                     break
                                 if param == 7:
@@ -80,7 +80,7 @@ def test(param: uint8) -> uint256:
                                     continue
                                 if param == 32 and y > 13:
                                     break
-                                for l in range(4):
+                                for l: uint256 in range(4):
                                     if param == 28:
                                         break
                                     if l % 2 == 0:
@@ -102,10 +102,10 @@ def test(param: uint8) -> uint256:
 def entry() -> uint256:
     result: bool = True
     # test returns
-    for i in range(1, 9):
+    for i: uint256 in range(1, 9):
         result = result and self.test(i) == convert(i * 10, uint256)
     # test break
-    for i in range(1, 9):
+    for i: uint256 in range(1, 9):
         result = result and self.test(20 + i) == 0
     # test continue
     result = result and self.test(11) == 0

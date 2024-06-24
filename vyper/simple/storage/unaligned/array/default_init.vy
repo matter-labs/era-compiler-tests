@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "f",
 #!     "inputs": [
 #!         {
@@ -17,7 +17,7 @@
 
 KEY: uint8[2] # if replace the first or second value with 0, the test will work
 
-@external
+@deploy
 def __init__():
     self.KEY = [1, 1]
 

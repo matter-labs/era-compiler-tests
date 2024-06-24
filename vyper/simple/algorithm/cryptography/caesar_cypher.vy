@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "encrypt",
 #!     "inputs": [
 #!         {
@@ -45,7 +45,7 @@ SIZE: constant(uint8) = 10
 @pure
 def encryptInternal(_data: uint8[SIZE], key: uint8) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
-    for i in range(SIZE):
+    for i: uint256 in range(SIZE):
         data[i] = convert((convert(data[i], uint256) + convert(key, uint256)) % 256, uint8)
     return data
 
@@ -64,9 +64,9 @@ def decrypt(data: uint8[SIZE], key: uint8) -> uint8[SIZE]:
 @external
 def complex(message: uint8[SIZE]) -> uint256:
     result: bool = True
-    for key in range(20):
+    for key: uint256 in range(20):
         output: uint8[SIZE] = self.decryptInternal(self.encryptInternal(message, key), key)
-        for i in range(SIZE):
+        for i: uint256 in range(SIZE):
             result = result and message[i] == output[i]
     if result:
         return 1
