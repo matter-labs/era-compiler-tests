@@ -153,14 +153,14 @@ event Complex:
 def test(number_: uint256):
     arr_u8: uint8[2] = [255, 0]
     strs: DynArray[Str, 10] = [Str({a: -1, b: 1}), Str({a: 127, b: 123456789012345678901234567890})]
-    log Empty(8923892323892398, _abi_encode(arr_u8), slice(_abi_encode(strs), 64, 128))
+    log Empty(8923892323892398, abi_encode(arr_u8), slice(abi_encode(strs), 64, 128))
     uint_arr1_ind: uint256[1] = [MAX_UINT256]
-    log OneWord(-128, CONST, 2**40-1, _abi_encode(uint_arr1_ind))
+    log OneWord(-128, CONST, 2**40-1, abi_encode(uint_arr1_ind))
     u8_arr: uint8[1] = [0]
-    log TwoWords(_abi_encode(Str({a: 1, b: 1})), -1, _abi_encode(u8_arr), Str({a: -128, b: MAX_UINT256}))
+    log TwoWords(abi_encode(Str({a: 1, b: 1})), -1, abi_encode(u8_arr), Str({a: -128, b: MAX_UINT256}))
     ints: DynArray[int200, 10] = [-1, 131231231232134, 1]
     strs_st: Str[2] = [Str({a: 0, b: 0}), Str({a: 12, b: 6789983984983434348989348934934})]
-    log ThreeWords(1, slice(_abi_encode(ints), 64, 96), Str({a: 127, b: number_}), 2, _abi_encode(strs_st))
+    log ThreeWords(1, slice(abi_encode(ints), 64, 96), Str({a: 127, b: number_}), 2, abi_encode(strs_st))
     uint8_2_dim: uint8[2][2] = [[4, 3], [2, 1]]
-    log Dynamic(0xabcd, convert(0xdeadbeef, bytes32), _abi_encode(uint8_2_dim), "abc")
+    log Dynamic(0xabcd, convert(0xdeadbeef, bytes32), abi_encode(uint8_2_dim), "abc")
     log Complex(b"\x12\x34\x56\x78\x90", b"\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x09\x87\x65\x43\x21\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", self, Str({a: -1, b: IMMUTABLE_}), self.storage_var, [0], [0, 2, 1])

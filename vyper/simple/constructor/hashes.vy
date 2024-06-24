@@ -29,6 +29,6 @@ def __init__():
 
     self.hashes.append(
         keccak256(
-            _abi_encode(self.hashes[1])
+            abi_encode(self.hashes[1])
         )
     ) # If push here number instead keccak256 - works.

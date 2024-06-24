@@ -16,6 +16,6 @@
 @pure
 def main() -> int16:
     sum: int16 = 0
-    for i: uint256 in range(-128, 128):
+    for i: int16 in range(-128, 128):
         sum += i
     return sum

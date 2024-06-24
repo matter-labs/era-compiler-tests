@@ -19,6 +19,6 @@ ARRAY_SIZE: constant(uint8) = 10
 @pure
 def main(array: uint8[ARRAY_SIZE]) -> uint8:
     sum: uint8 = 0
-    for i: uint256 in range(5, 10):
+    for i: uint8 in range(5, 10):
         sum += array[i]
     return sum

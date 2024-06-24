@@ -24,4 +24,4 @@ def f():
 @external
 @view
 def entry():
-    Self(self).f()
+    staticcall Self(self).f()

@@ -51,9 +51,9 @@ def __init__():
     VERSION_HASH = keccak256(version)
     SELF = self
 
-    ABI_ENCODED_0 = _abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self)
-    ABI_ENCODED_1 = _abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self)
+    ABI_ENCODED_0 = abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self)
+    ABI_ENCODED_1 = abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self)
 
-    DOMAIN_SEPARATOR_0 = keccak256(_abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
-    DOMAIN_SEPARATOR_0A = keccak256(_abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
-    DOMAIN_SEPARATOR_1 = keccak256(_abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self))
+    DOMAIN_SEPARATOR_0 = keccak256(abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
+    DOMAIN_SEPARATOR_0A = keccak256(abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
+    DOMAIN_SEPARATOR_1 = keccak256(abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self))

@@ -20,8 +20,8 @@
 def main(param: uint8) -> uint256:
     cnt: uint256 = 0
 
-    for j: uint256 in [1, 2]:
-        for h: uint256 in range(0, 1):
+    for j: uint8 in [1, 2]:
+        for h: uint8 in range(0, 1):
             if param == 4:
                 return 40
             cnt += 1

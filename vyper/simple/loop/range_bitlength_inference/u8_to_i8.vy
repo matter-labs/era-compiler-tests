@@ -16,6 +16,6 @@
 @pure
 def main() -> int8:
     sum: int8 = 0
-    for i: uint256 in range(-10, 10):
+    for i: int8 in range(-10, 10):
         sum += i
     return sum

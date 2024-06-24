@@ -24,8 +24,8 @@ def test(param: uint8) -> uint256:
             break
         if param == 12:
             continue
-        for k: uint256 in range(0, 2):
-            for x: uint256 in range(0, 2):
+        for k: uint8 in range(0, 2):
+            for x: uint8 in range(0, 2):
                 y: uint8 = 10
                 for __: uint256 in range(1000000):
                     if not y < 17:

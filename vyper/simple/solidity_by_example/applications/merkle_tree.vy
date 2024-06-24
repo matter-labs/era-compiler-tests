@@ -46,9 +46,9 @@ def verify(proof: bytes32[10], length: uint256, root: bytes32, leaf: bytes32, _i
         proofElement: bytes32 = proof[i]
 
         if index % 2 == 0:
-            hash = keccak256(_abi_encode(hash, proofElement))
+            hash = keccak256(abi_encode(hash, proofElement))
         else:
-            hash = keccak256(_abi_encode(proofElement, hash))
+            hash = keccak256(abi_encode(proofElement, hash))
 
         index = index // 2
 
@@ -84,7 +84,7 @@ def __init__():
                 continue
             if not i < n-1:
                 break
-            self.hashes[self.count] = keccak256(_abi_encode(self.hashes[offset + i], self.hashes[offset + i + 1]))
+            self.hashes[self.count] = keccak256(abi_encode(self.hashes[offset + i], self.hashes[offset + i + 1]))
             self.count += 1
         offset += n
         n = n // 2

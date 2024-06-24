@@ -19,7 +19,7 @@ ARRAY_SIZE: constant(uint8) = 10
 @pure
 def main(array: uint8[ARRAY_SIZE]) -> uint256:
     sum: uint256 = 0
-    for i: uint256 in range(0, ARRAY_SIZE):
-        for j: uint256 in range(0, ARRAY_SIZE):
+    for i: uint8 in range(0, ARRAY_SIZE):
+        for j: uint8 in range(0, ARRAY_SIZE):
             sum += convert(array[i] * array[j], uint256)
     return sum

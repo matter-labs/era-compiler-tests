@@ -16,6 +16,6 @@
 @pure
 def main() -> uint64:
     sum: uint64 = 0
-    for i: uint256 in range(-2147483648, -2147483638):
+    for i: int32 in range(-2147483648, -2147483638):
         sum += 1
     return sum

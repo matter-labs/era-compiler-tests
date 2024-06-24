@@ -18,6 +18,6 @@ LIMIT: constant(uint64) = 10
 @pure
 def main() -> uint64:
     sum: uint64 = 0
-    for i: uint256 in range(0, LIMIT + 1):
+    for i: uint64 in range(0, LIMIT + 1):
         sum += i
     return sum
