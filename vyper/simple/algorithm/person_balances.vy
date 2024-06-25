@@ -93,21 +93,21 @@ def main(tokenId: uint8) -> Result:
     person: Person = Person(
         id=42,
         dateOfBirth=Date(
-            year: 1994,
-            month: MonthMarch,
-            day: 16
+            year=1994,
+            month=MonthMarch,
+            day=16
         ),
         balances=[
-            _Balance(tokenId: BitcoinId, _balance=1),
-            _Balance(tokenId: EthereumId, _balance=10),
-            _Balance(tokenId: LitecoinId, _balance=50),
-            _Balance(tokenId: ZcashId, _balance=100)
+            _Balance(tokenId=BitcoinId, _balance=1),
+            _Balance(tokenId=EthereumId, _balance=10),
+            _Balance(tokenId=LitecoinId, _balance=50),
+            _Balance(tokenId=ZcashId, _balance=100)
         ]
     )
 
     result: Result = Result(id=person.id, sum=0, dateOfBirth=person.dateOfBirth)
 
-    for id: uint256 in range(TOKENS_COUNT):
+    for id: uint8 in range(TOKENS_COUNT):
         if person.balances[id].tokenId == tokenId:
             result.sum += person.balances[id]._balance
     return result

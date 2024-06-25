@@ -93,7 +93,7 @@ def sqrt(n: uint256) -> uint256:
 @pure
 def linesIntersection(a1: uint256, mb1: uint256, c1: uint256, a2: uint256, b2: uint256, mc2: uint256) -> Point:
     d: uint256 = a1 * b2 + a2 * mb1
-    return Point(x: (mb1 * mc2 - b2 * c1) * EPS // d, y: (a2 * c1 + a1 * mc2) * EPS // d)
+    return Point(x=(mb1 * mc2 - b2 * c1) * EPS // d, y=(a2 * c1 + a1 * mc2) * EPS // d)
 
 @internal
 def distancePoint(line: Line, point: Point) -> uint256:

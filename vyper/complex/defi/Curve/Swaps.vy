@@ -69,14 +69,14 @@ MAX_COINS: constant(int128) = 8
 MAX_COINS_UINT256: constant(uint256) = 8
 CALC_INPUT_SIZE: constant(uint256) = 100
 EMPTY_POOL_LIST: constant(address[8]) = [
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
-    ZERO_ADDRESS,
+    empty(address),
+    empty(address),
+    empty(address),
+    empty(address),
+    empty(address),
+    empty(address),
+    empty(address),
+    empty(address),
 ]
 
 
@@ -194,7 +194,7 @@ def _exchange(
     else:
         response: Bytes[32] = raw_call(
             _from,
-            abi_decode(
+            abi_encode(
                 _sender,
                 self,
                 _amount,
@@ -209,7 +209,7 @@ def _exchange(
     if not self.is_approved[_from][_pool]:
         response: Bytes[32] = raw_call(
             _from,
-            abi_decode(
+            abi_encode(
                 _pool,
                 max_value(uint256),
                 method_id=method_id("approve(address,uint256)"),
@@ -234,7 +234,7 @@ def _exchange(
         received_amount = ERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
-            abi_decode(
+            abi_encode(
                 _receiver,
                 received_amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -283,7 +283,7 @@ def _crypto_exchange(
     else:
         response: Bytes[32] = raw_call(
             _from,
-            abi_decode(
+            abi_encode(
                 _sender,
                 self,
                 _amount,
@@ -298,7 +298,7 @@ def _crypto_exchange(
     if not self.is_approved[_from][_pool]:
         response: Bytes[32] = raw_call(
             _from,
-            abi_decode(
+            abi_encode(
                 _pool,
                 max_value(uint256),
                 method_id=method_id("approve(address,uint256)"),
@@ -323,7 +323,7 @@ def _crypto_exchange(
         received_amount = ERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
-            abi_decode(
+            abi_encode(
                 _receiver,
                 received_amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -368,11 +368,11 @@ def exchange_with_best_rate(
         assert msg.value == 0, "Incorrect ETH amount"
 
     registry: address = self.registry
-    best_pool: address = ZERO_ADDRESS
+    best_pool: address = empty(address)
     max_dy: uint256 = 0
     for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
-        if pool == ZERO_ADDRESS:
+        if pool == empty(address):
             break
         dy: uint256 = self._get_exchange_amount(registry, pool, _from, _to, _amount)
         if dy > max_dy:
@@ -412,11 +412,11 @@ def exchange(
     else:
         assert msg.value == 0, "Incorrect ETH amount"
 
-    if Registry(self.crypto_registry).get_lp_token(_pool) != ZERO_ADDRESS:
+    if Registry(self.crypto_registry).get_lp_token(_pool) != empty(address):
         return self._crypto_exchange(_pool, _from, _to, _amount, _expected, msg.sender, _receiver)
 
     registry: address = self.registry
-    if Registry(registry).get_lp_token(_pool) == ZERO_ADDRESS:
+    if Registry(registry).get_lp_token(_pool) == empty(address):
         registry = self.factory_registry
     return self._exchange(registry, _pool, _from, _to, _amount, _expected, msg.sender, _receiver)
 
@@ -447,7 +447,7 @@ def exchange_multiple(
     """
     input_token: address = _route[0]
     amount: uint256 = _amount
-    output_token: address = ZERO_ADDRESS
+    output_token: address = empty(address)
 
     # validate // transfer initial token
     if input_token == ETH_ADDRESS:
@@ -456,7 +456,7 @@ def exchange_multiple(
         assert msg.value == 0
         response: Bytes[32] = raw_call(
             input_token,
-            abi_decode(
+            abi_encode(
                 msg.sender,
                 self,
                 amount,
@@ -477,7 +477,7 @@ def exchange_multiple(
             # approve the pool to transfer the input token
             response: Bytes[32] = raw_call(
                 input_token,
-                abi_decode(
+                abi_encode(
                     swap,
                     max_value(uint256),
                     method_id=method_id("approve(address,uint256)"),
@@ -514,7 +514,7 @@ def exchange_multiple(
         assert amount != 0, "Received nothing"
 
         # check if this was the last swap
-        if i == 4 or _route[i*2+1] == ZERO_ADDRESS:
+        if i == 4 or _route[i*2+1] == empty(address):
             break
         # if there is another swap, the output token becomes the input for the next round
         input_token = output_token
@@ -528,7 +528,7 @@ def exchange_multiple(
     else:
         response: Bytes[32] = raw_call(
             output_token,
-            abi_decode(
+            abi_encode(
                 _receiver,
                 amount,
                 method_id=method_id("transfer(address,uint256)"),
@@ -555,7 +555,7 @@ def get_best_rate(
     @param _exclude_pools A list of up to 8 addresses which shouldn't be returned
     @return Pool address, amount received
     """
-    best_pool: address = ZERO_ADDRESS
+    best_pool: address = empty(address)
     max_dy: uint256 = 0
 
     initial: address = _from
@@ -568,7 +568,7 @@ def get_best_rate(
     registry: address = self.crypto_registry
     for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(initial, target, i)
-        if pool == ZERO_ADDRESS:
+        if pool == empty(address):
             if i == 0:
                 # we only check for stableswap pools if we did not find any crypto pools
                 break
@@ -583,7 +583,7 @@ def get_best_rate(
     registry = self.registry
     for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
-        if pool == ZERO_ADDRESS:
+        if pool == empty(address):
             break
         elif pool in _exclude_pools:
             continue
@@ -595,7 +595,7 @@ def get_best_rate(
     registry = self.factory_registry
     for i: uint256 in range(65536):
         pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
-        if pool == ZERO_ADDRESS:
+        if pool == empty(address):
             break
         elif pool in _exclude_pools:
             continue
@@ -624,7 +624,7 @@ def get_exchange_amount(_pool: address, _from: address, _to: address, _amount: u
     """
 
     registry: address = self.crypto_registry
-    if Registry(registry).get_lp_token(_pool) != ZERO_ADDRESS:
+    if Registry(registry).get_lp_token(_pool) != empty(address):
         initial: address = _from
         target: address = _to
         if _from == ETH_ADDRESS:
@@ -634,7 +634,7 @@ def get_exchange_amount(_pool: address, _from: address, _to: address, _amount: u
         return self._get_crypto_exchange_amount(registry, _pool, initial, target, _amount)
 
     registry = self.registry
-    if Registry(registry).get_lp_token(_pool) == ZERO_ADDRESS:
+    if Registry(registry).get_lp_token(_pool) == empty(address):
         registry = self.factory_registry
     return self._get_exchange_amount(registry, _pool, _from, _to, _amount)
 
@@ -681,7 +681,7 @@ def get_input_amount(_pool: address, _from: address, _to: address, _amount: uint
         decimals[x] = 10 ** (18 - decimals[x])
 
     calculator: address = self.pool_calculator[_pool]
-    if calculator == ZERO_ADDRESS:
+    if calculator == empty(address):
         calculator = self.default_calculator
     return Calculator(calculator).get_dx(n_coins, balances, amp, fee, rates, decimals, i, j, _amount)
 
@@ -734,7 +734,7 @@ def get_exchange_amounts(
         decimals[x] = 10 ** (18 - decimals[x])
 
     calculator: address = self.pool_calculator[_pool]
-    if calculator == ZERO_ADDRESS:
+    if calculator == empty(address):
         calculator = self.default_calculator
     return Calculator(calculator).get_dy(n_coins, balances, amp, fee, rates, decimals, i, j, _amounts)
 
@@ -749,7 +749,7 @@ def get_calculator(_pool: address) -> address:
     @return `CurveCalc` address
     """
     calculator: address = self.pool_calculator[_pool]
-    if calculator == ZERO_ADDRESS:
+    if calculator == empty(address):
         return self.default_calculator
     else:
         return calculator

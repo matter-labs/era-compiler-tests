@@ -11,4 +11,4 @@ def __init__(_lib: address):
 
 @external
 def doSomething(_num: uint256):
-    raw_call(self.lib, abi_decode(_num, method_id=method_id("doSomething(uint256)")), is_delegate_call=True)
+    raw_call(self.lib, abi_encode(_num, method_id=method_id("doSomething(uint256)")), is_delegate_call=True)

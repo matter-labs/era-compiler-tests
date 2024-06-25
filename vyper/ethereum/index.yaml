@@ -444,8 +444,12 @@ entries:
           array_of_structs_containing_arrays_calldata_to_storage.vy:
             enabled: true
             version: '>=0.4.0'
+          array_of_structs_containing_arrays_memory_to_storage-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_of_structs_containing_arrays_memory_to_storage.vy:
             enabled: true
+            version: '>=0.4.0'
           array_storage_multi_items_per_slot.vy:
             enabled: true
           arrays_from_and_to_storage.vy:
@@ -488,9 +492,12 @@ entries:
             version: '>=0.3.9'
           calldata_dynamic_array_to_memory.vy:
             enabled: true
+          calldata_nested_array_copy_to_memory-0.3.vy:
+            enabled: true
+            version: '>=0.3.9, <=0.3.10'
           calldata_nested_array_copy_to_memory.vy:
             enabled: true
-            version: '>=0.3.9'
+            version: '>=0.4.0'
           cleanup_during_multi_element_per_slot_copy-0.3.vy:
             enabled: true
             version: '<=0.3.10'
@@ -517,8 +524,12 @@ entries:
             version: '>=0.4.0'
           storage_memory_nested.vy:
             enabled: true
+          storage_memory_nested_bytes-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           storage_memory_nested_bytes.vy:
             enabled: true
+            version: '>=0.4.0'
           storage_memory_nested_from_pointer.vy:
             enabled: true
           storage_memory_nested_struct.vy:
@@ -652,8 +663,12 @@ entries:
       inline_array_storage_to_memory_conversion_strings.vy:
         enabled: true
         version: '>=0.4.0'
+      inline_array_strings_from_document-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       inline_array_strings_from_document.vy:
         enabled: true
+        version: '>=0.4.0'
       memory-0.3.vy:
         enabled: true
         version: '<=0.3.10'
@@ -1012,8 +1027,12 @@ entries:
         enabled: true
       exp_operator_const_signed.vy:
         enabled: true
+        comment: 'ValueError: math domain error'
+        version: '<=0.3.10'
       exp_zero_literal.vy:
         enabled: true
+        comment: 'ValueError: math domain error'
+        version: '<=0.3.10'
       unary_too_long_literal.vy:
         enabled: true
   fallback:
@@ -1424,8 +1443,12 @@ entries:
       alignment.vy:
         enabled: true
         version: '>=0.4.0'
+      arrays-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       arrays.vy:
         enabled: true
+        version: '>=0.4.0'
       basic.vy:
         enabled: true
       bytes_and_strings.vy:
@@ -1444,8 +1467,12 @@ entries:
         enabled: true
       multiline_comments.vy:
         enabled: true
+      structs-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       structs.vy:
         enabled: true
+        version: '>=0.4.0'
   specialFunctions:
     enabled: true
     entries:
@@ -1648,8 +1675,12 @@ entries:
       delete_struct.vy:
         enabled: true
         version: '>=0.4.0'
+      event-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       event.vy:
         enabled: true
+        version: '>=0.4.0'
       global.vy:
         enabled: true
       lone_struct_array_type.vy:
@@ -1667,17 +1698,29 @@ entries:
         enabled: true
       msg_data_to_struct_member_copy.vy:
         enabled: true
+      multislot_struct_allocation-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       multislot_struct_allocation.vy:
         enabled: true
+        version: '>=0.4.0'
+      nested_struct_allocation-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       nested_struct_allocation.vy:
         enabled: true
+        version: '>=0.4.0'
       packed_storage_structs_delete.vy:
         enabled: true
       recursive_structs.vy:
         enabled: false
         comment: 'Recursive structures are not supported'
+      simple_struct_allocation-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       simple_struct_allocation.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_constructor_nested-0.3.vy:
         enabled: true
         version: '<=0.3.10'
@@ -1719,8 +1762,12 @@ entries:
       struct_delete_struct_in_mapping.vy:
         enabled: true
         version: '>=0.4.0'
+      struct_memory_to_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_memory_to_storage.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_named_constructor.vy:
         enabled: false
         comment: "Disabled because different order of fields is not allowed"
@@ -2002,13 +2049,15 @@ entries:
         enabled: true
         version: '<=0.3.10'
       exp_literals.vy:
-        enabled: true
+        enabled: false
+        comment: 'ValueError: math domain error'
         version: '>=0.4.0'
       exp_literals_success-0.3.vy:
         enabled: true
         version: '<=0.3.10'
       exp_literals_success.vy:
-        enabled: true
+        enabled: false
+        comment: 'ValueError: math domain error'
         version: '>=0.4.0'
       function_entry_checks.vy:
         enabled: false

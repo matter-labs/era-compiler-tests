@@ -168,14 +168,14 @@ def _unpack_decimals(_packed: uint256, _n_coins: uint256) -> uint256[MAX_COINS]:
 def _get_rates(_pool: address) -> uint256[MAX_COINS]:
     rates: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
     base_pool: address = self.pool_data[_pool].base_pool
-    if base_pool == ZERO_ADDRESS:
+    if base_pool == empty(address):
         rate_info: bytes32 = self.pool_data[_pool].rate_info
         rate_calc_addr: uint256 = convert(slice(rate_info, 8, 20), uint256)
         rate_method_id: Bytes[4] = slice(rate_info, 28, 4)
 
         for i: int128 in range(MAX_COINS):
             coin: address = self.pool_data[_pool].coins[i]
-            if coin == ZERO_ADDRESS:
+            if coin == empty(address):
                 break
             if rate_info == EMPTY_BYTES32 or coin == self.pool_data[_pool].ul_coins[i]:
                 rates[i] = 10 ** 18
@@ -203,7 +203,7 @@ def _get_balances(_pool: address) -> uint256[MAX_COINS]:
 
     balances: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
     for i: int128 in range(MAX_COINS):
-        if self.pool_data[_pool].coins[i] == ZERO_ADDRESS:
+        if self.pool_data[_pool].coins[i] == empty(address):
             assert i != 0
             break
 
@@ -224,10 +224,10 @@ def _get_underlying_balances(_pool: address) -> uint256[MAX_COINS]:
     underlying_balances: uint256[MAX_COINS] = balances
     for i: int128 in range(MAX_COINS):
         coin: address = self.pool_data[_pool].coins[i]
-        if coin == ZERO_ADDRESS:
+        if coin == empty(address):
             break
         ucoin: address = self.pool_data[_pool].ul_coins[i]
-        if ucoin == ZERO_ADDRESS:
+        if ucoin == empty(address):
             continue
         if ucoin != coin:
             underlying_balances[i] = balances[i] * rates[i] // 10**(shift(decimals, -8 * i) % 256)
@@ -249,7 +249,7 @@ def _get_meta_underlying_balances(_pool: address, _base_pool: address) -> uint25
         underlying_pct = CurvePool(_pool).balances(base_coin_idx) * 10**36 // base_total_supply
 
     for i: uint256 in range(MAX_COINS_UINT256):
-        if self.pool_data[_pool].ul_coins[i] == ZERO_ADDRESS:
+        if self.pool_data[_pool].ul_coins[i] == empty(address):
             break
         if i < base_coin_idx:
             ul_balance = CurvePool(_pool).balances(i)
@@ -283,7 +283,7 @@ def _get_coin_indices(
     # check coin markets
     for x: uint256 in range(MAX_COINS_UINT256):
         coin: address = self.pool_data[_pool].coins[x]
-        if coin == ZERO_ADDRESS:
+        if coin == empty(address):
             # if we reach the end of the coins, reset `found_market` and try again
             # with the underlying coins
             found_market = False
@@ -305,7 +305,7 @@ def _get_coin_indices(
         # check underlying coin markets
         for x: uint256 in range(MAX_COINS_UINT256):
             coin: address = self.pool_data[_pool].ul_coins[x]
-            if coin == ZERO_ADDRESS:
+            if coin == empty(address):
                 raise "No available market"
             if coin == _from:
                 result[0] = x
@@ -444,7 +444,7 @@ def get_gauges(_pool: address) -> (address[10], int128[10]):
     gauge_controller: address = self.gauge_controller
     for i: uint256 in range(10):
         gauge: address = self.liquidity_gauges[_pool][i]
-        if gauge == ZERO_ADDRESS:
+        if gauge == empty(address):
             break
         liquidity_gauges[i] = gauge
         gauge_types[i] = GaugeController(gauge_controller).gauge_types(gauge)
@@ -474,7 +474,7 @@ def get_underlying_balances(_pool: address) -> uint256[MAX_COINS]:
     @return uint256 list of underlyingbalances
     """
     base_pool: address = self.pool_data[_pool].base_pool
-    if base_pool == ZERO_ADDRESS:
+    if base_pool == empty(address):
         return self._get_underlying_balances(_pool)
     return self._get_meta_underlying_balances(_pool, base_pool)
 
@@ -585,7 +585,7 @@ def estimate_gas_used(_pool: address, _from: address, _to: address) -> uint256:
     @return Upper-bound gas estimate, in wei
     """
     estimator: address = self.gas_estimate_contracts[_pool]
-    if estimator != ZERO_ADDRESS:
+    if estimator != empty(address):
         return GasEstimator(estimator).estimate_gas_used(_pool, _from, _to)
 
     # here we call `_get_coin_indices` to find out if the exchange involves wrapped
@@ -611,7 +611,7 @@ def is_meta(_pool: address) -> bool:
     @param _pool Pool address
     @return True if `_pool` is a metapool
     """
-    return self.pool_data[_pool].base_pool != ZERO_ADDRESS
+    return self.pool_data[_pool].base_pool != empty(address)
 
 
 @view
@@ -674,9 +674,9 @@ def _add_pool(
     _name: String[64],
 ):
     assert _sender == self.address_provider.admin()  # dev: admin-only function
-    assert _lp_token != ZERO_ADDRESS
-    assert self.pool_data[_pool].coins[0] == ZERO_ADDRESS  # dev: pool exists
-    assert self.get_pool_from_lp_token[_lp_token] == ZERO_ADDRESS
+    assert _lp_token != empty(address)
+    assert self.pool_data[_pool].coins[0] == empty(address)  # dev: pool exists
+    assert self.get_pool_from_lp_token[_lp_token] == empty(address)
 
     # add pool to pool_list
     length: uint256 = self.pool_count
@@ -739,7 +739,7 @@ def _unregister_coin(_coin: address):
             self.coins[coin_b].index = location
 
         self.coins[_coin].index = 0
-        self.get_coin[coin_count] = ZERO_ADDRESS
+        self.get_coin[coin_count] = empty(address)
 
 
 @internal
@@ -771,7 +771,7 @@ def _unregister_coin_pair(_coina: address, _coinb: address, _coinb_idx: uint256)
         # set _coinb_idx in coina's array to coin_c
         self.coins[_coina].swap_for[_coinb_idx] = coin_c
 
-    self.coins[_coina].swap_for[coina_arr_last_idx] = ZERO_ADDRESS
+    self.coins[_coina].swap_for[coina_arr_last_idx] = empty(address)
 
 
 @internal
@@ -782,7 +782,7 @@ def _get_new_pool_coins(
     _is_v1: bool
 ) -> address[MAX_COINS]:
     coin_list: address[MAX_COINS] = empty(address[MAX_COINS])
-    coin: address = ZERO_ADDRESS
+    coin: address = empty(address)
     for i: uint256 in range(MAX_COINS_UINT256):
         if i == _n_coins:
             break
@@ -864,7 +864,7 @@ def _remove_market(_pool: address, _coina: address, _coinb: address):
         if self.markets[key][i] == _pool:
             if i < length:
                 self.markets[key][i] = self.markets[key][length]
-            self.markets[key][length] = ZERO_ADDRESS
+            self.markets[key][length] = empty(address)
             self.market_counts[key] = length
             break
 
@@ -982,7 +982,7 @@ def add_metapool(
     _lp_token: address,
     _decimals: uint256,
     _name: String[64],
-    _base_pool: address = ZERO_ADDRESS
+    _base_pool: address = empty(address)
 ):
     """
     @notice Add a pool to the registry
@@ -997,7 +997,7 @@ def add_metapool(
     base_coin_offset: uint256 = _n_coins - 1
 
     base_pool: address = _base_pool
-    if base_pool == ZERO_ADDRESS:
+    if base_pool == empty(address):
         base_pool = CurveMetapool(_pool).base_pool()
     base_n_coins: uint256 = shift(self.pool_data[base_pool].n_coins, -128)
     assert base_n_coins > 0  # dev: base pool unknown
@@ -1023,7 +1023,7 @@ def add_metapool(
     self.pool_data[_pool].base_pool = base_pool
 
     base_coins: address[MAX_COINS] = empty(address[MAX_COINS])
-    coin: address = ZERO_ADDRESS
+    coin: address = empty(address)
     for i: uint256 in range(MAX_COINS_UINT256):
         if i == base_n_coins + base_coin_offset:
             break
@@ -1067,11 +1067,11 @@ def remove_pool(_pool: address):
     @param _pool Pool address to remove
     """
     assert msg.sender == self.address_provider.admin()  # dev: admin-only function
-    assert self.pool_data[_pool].coins[0] != ZERO_ADDRESS  # dev: pool does not exist
+    assert self.pool_data[_pool].coins[0] != empty(address)  # dev: pool does not exist
 
 
-    self.get_pool_from_lp_token[self.get_lp_token[_pool]] = ZERO_ADDRESS
-    self.get_lp_token[_pool] = ZERO_ADDRESS
+    self.get_pool_from_lp_token[self.get_lp_token[_pool]] = empty(address)
+    self.get_lp_token[_pool] = empty(address)
 
     # remove _pool from pool_list
     location: uint256 = self.pool_data[_pool].location
@@ -1084,7 +1084,7 @@ def remove_pool(_pool: address):
         self.pool_data[addr].location = location
 
     # delete final pool_list value
-    self.pool_list[length] = ZERO_ADDRESS
+    self.pool_list[length] = empty(address)
     self.pool_count = length
 
     self.pool_data[_pool].underlying_decimals = 0
@@ -1099,34 +1099,34 @@ def remove_pool(_pool: address):
     for i: int128 in range(MAX_COINS):
         coins[i] = self.pool_data[_pool].coins[i]
         ucoins[i] = self.pool_data[_pool].ul_coins[i]
-        if ucoins[i] == ZERO_ADDRESS and coins[i] == ZERO_ADDRESS:
+        if ucoins[i] == empty(address) and coins[i] == empty(address):
             break
-        if coins[i] != ZERO_ADDRESS:
+        if coins[i] != empty(address):
             # delete coin address from pool_data
-            self.pool_data[_pool].coins[i] = ZERO_ADDRESS
+            self.pool_data[_pool].coins[i] = empty(address)
             self._unregister_coin(coins[i])
-        if ucoins[i] != ZERO_ADDRESS:
+        if ucoins[i] != empty(address):
             # delete underlying_coin from pool_data
-            self.pool_data[_pool].ul_coins[i] = ZERO_ADDRESS
+            self.pool_data[_pool].ul_coins[i] = empty(address)
             if self.coins[ucoins[i]].register_count != 0:
                 self._unregister_coin(ucoins[i])
 
-    is_meta: bool = self.pool_data[_pool].base_pool != ZERO_ADDRESS
+    is_meta: bool = self.pool_data[_pool].base_pool != empty(address)
     for i: uint256 in range(MAX_COINS_UINT256):
         coin: address = coins[i]
         ucoin: address = ucoins[i]
-        if coin == ZERO_ADDRESS:
+        if coin == empty(address):
             break
 
         # remove pool from markets
         i2: uint256 = i + 1
         for x: uint256 in range(i2, i2 + MAX_COINS_UINT256):
             ucoinx: address = ucoins[x]
-            if ucoinx == ZERO_ADDRESS:
+            if ucoinx == empty(address):
                 break
 
             coinx: address = coins[x]
-            if coinx != ZERO_ADDRESS:
+            if coinx != empty(address):
                 self._remove_market(_pool, coin, coinx)
 
             if coin != ucoin or coinx != ucoinx:
@@ -1136,7 +1136,7 @@ def remove_pool(_pool: address):
                 key: uint256 = bitwise_xor(convert(ucoin, uint256), convert(ucoinx, uint256))
                 self._register_coin_pair(ucoin, ucoinx, key)
 
-    self.pool_data[_pool].base_pool = ZERO_ADDRESS
+    self.pool_data[_pool].base_pool = empty(address)
     self.last_updated = block.timestamp
     log PoolRemoved(_pool)
 
@@ -1152,7 +1152,7 @@ def set_pool_gas_estimates(_addr: address[5], _amount: uint256[2][5]):
 
     for i: uint256 in range(5):
         _pool: address = _addr[i]
-        if _pool == ZERO_ADDRESS:
+        if _pool == empty(address):
             break
         self.gas_estimate_values[_pool] = _amount[i]
     self.last_updated = block.timestamp
@@ -1169,7 +1169,7 @@ def set_coin_gas_estimates(_addr: address[10], _amount: uint256[10]):
 
     for i: uint256 in range(10):
         _coin: address = _addr[i]
-        if _coin == ZERO_ADDRESS:
+        if _coin == empty(address):
             break
         self.gas_estimate_values[_coin][0] = _amount[i]
     self.last_updated = block.timestamp
@@ -1201,12 +1201,12 @@ def set_liquidity_gauges(_pool: address, _liquidity_gauges: address[10]):
     _gauge_controller: address = self.gauge_controller
     for i: uint256 in range(10):
         _gauge: address = _liquidity_gauges[i]
-        if _gauge != ZERO_ADDRESS:
+        if _gauge != empty(address):
             assert LiquidityGauge(_gauge).lp_token() == _lp_token  # dev: wrong token
             GaugeController(_gauge_controller).gauge_types(_gauge)
             self.liquidity_gauges[_pool][i] = _gauge
-        elif self.liquidity_gauges[_pool][i] != ZERO_ADDRESS:
-            self.liquidity_gauges[_pool][i] = ZERO_ADDRESS
+        elif self.liquidity_gauges[_pool][i] != empty(address):
+            self.liquidity_gauges[_pool][i] = empty(address)
         else:
             break
     self.last_updated = block.timestamp
@@ -1239,7 +1239,7 @@ def batch_set_pool_asset_type(_pools: address[32], _asset_types: uint256[32]):
     assert msg.sender == self.address_provider.admin()  # dev: admin-only function
 
     for i: uint256 in range(32):
-        if _pools[i] == ZERO_ADDRESS:
+        if _pools[i] == empty(address):
             break
         self.pool_data[_pools[i]].asset_type = _asset_types[i]
     self.last_updated = block.timestamp

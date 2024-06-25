@@ -52,7 +52,7 @@ def main(_array: uint8[ARRAY_SIZE], direction: uint8) -> uint8[ARRAY_SIZE]:
     swapped: bool = True
     for i: uint8 in range(ARRAY_SIZE - 1):
         swapped = False
-        for j: uint256 in range(ARRAY_SIZE - 1):
+        for j: uint8 in range(ARRAY_SIZE - 1):
             if not j < ARRAY_SIZE - i - 1:
                 break
             if (direction == DirectionAscending and array[j] > array[j + 1]) or (direction == DirectionDescending and array[j] < array[j + 1]):

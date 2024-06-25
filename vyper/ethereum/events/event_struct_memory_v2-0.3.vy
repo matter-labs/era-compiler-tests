@@ -6,7 +6,7 @@ event E:
 
 @external
 def createEvent(x: uint256):
-    log E(_=S(a=x))
+    log E({_=S({a: x})})
 
 # ====
 # compileViaYul: also

@@ -20,7 +20,7 @@ MODULO: constant(uint256) = 1000000007
 @pure
 def hash(array: uint8[ARRAY_SIZE], begin: uint8, end: uint8) -> uint256:
     h: uint256 = 0
-    for i: uint8 in range(begin, begin + ARRAY_SIZE):
+    for i: uint8 in range(begin, begin + ARRAY_SIZE, bound=ARRAY_SIZE):
         if not i < end:
             break
         h = (h * P + convert(array[i], uint256)) % MODULO

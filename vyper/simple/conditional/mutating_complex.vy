@@ -37,7 +37,7 @@ def main(_witness: Data, condition:bool) -> uint256:
     witness: Data = _witness
     if condition:
         witness = Data(
-            a: True,
+            a=True,
             b=255,
             c=1000000
         )

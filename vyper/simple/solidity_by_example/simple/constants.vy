@@ -2,7 +2,7 @@
 #!     "name": "address",
 #!     "inputs": [
 #!         {
-#!             "method": "MY_ADDRESS",
+#!             "method": "GET_MY_ADDRESS",
 #!             "calldata": [
 #!             ]
 #!         }
@@ -14,7 +14,7 @@
 #!     "name": "uint",
 #!     "inputs": [
 #!         {
-#!             "method": "MY_UINT",
+#!             "method": "GET_MY_UINT",
 #!             "calldata": [
 #!             ]
 #!         }
@@ -28,9 +28,9 @@ MY_ADDRESS: constant(address) = 0x777788889999AaAAbBbbCcccddDdeeeEfFFfCcCc
 MY_UINT: constant(uint256) = 123
 
 @external
-def MY_ADDRESS() -> address:
+def GET_MY_ADDRESS() -> address:
     return MY_ADDRESS
 
 @external
-def MY_UINT() -> uint256:
+def GET_MY_UINT() -> uint256:
     return MY_UINT

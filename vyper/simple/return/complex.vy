@@ -46,7 +46,7 @@ def main(param: uint8) -> uint256:
 @external
 def entry() -> uint256:
     result: bool = True
-    for i: uint256 in range(0, 7):
+    for i: uint8 in range(0, 7):
         result = result and self.main(i) == convert(i + 4, uint256)
     result = result and self.main(7) == 99
     result = result and self.main(11) == 99

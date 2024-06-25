@@ -132,7 +132,7 @@ def __init__(
     @param _admin_fee Admin fee
     """
     for i: uint256 in range(N_COINS):
-        assert _coins[i] != ZERO_ADDRESS
+        assert _coins[i] != empty(address)
     self.coins = _coins
     self.initial_A = _A
     self.future_A = _A

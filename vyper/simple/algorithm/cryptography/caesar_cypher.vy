@@ -64,7 +64,7 @@ def decrypt(data: uint8[SIZE], key: uint8) -> uint8[SIZE]:
 @external
 def complex(message: uint8[SIZE]) -> uint256:
     result: bool = True
-    for key: uint256 in range(20):
+    for key: uint8 in range(20):
         output: uint8[SIZE] = self.decryptInternal(self.encryptInternal(message, key), key)
         for i: uint8 in range(SIZE):
             result = result and message[i] == output[i]
