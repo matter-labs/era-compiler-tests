@@ -117,118 +117,119 @@ def uintMinD() -> bool:
 @external
 @pure
 def uintMaxA() -> bool:
-    uint8_max: uint8  = 2**8 - 1
-    assert uint8_max == 2**8 - 1
+    uint8_max: uint8  = max_value(uint8)
+    assert uint8_max == max_value(uint8)
 
-    uint16_max: uint16 = 2**16 - 1
-    assert uint16_max == 2**16 - 1
+    uint16_max: uint16 = max_value(uint16)
+    assert uint16_max == max_value(uint16)
 
-    uint24_max: uint24 = 2**24 - 1
-    assert uint24_max == 2**24 - 1
+    uint24_max: uint24 = max_value(uint24)
+    assert uint24_max == max_value(uint24)
 
-    uint32_max: uint32 = 2**32 - 1
-    assert uint32_max == 2**32 - 1
+    uint32_max: uint32 = max_value(uint32)
+    assert uint32_max == max_value(uint32)
 
-    uint40_max: uint40 = 2**40 - 1
-    assert uint40_max == 2**40 - 1
+    uint40_max: uint40 = max_value(uint40)
+    assert uint40_max == max_value(uint40)
 
-    uint48_max: uint48 = 2**48 - 1
-    assert uint48_max == 2**48 - 1
+    uint48_max: uint48 = max_value(uint48)
+    assert uint48_max == max_value(uint48)
 
-    uint56_max: uint56 = 2**56 - 1
-    assert uint56_max == 2**56 - 1
+    uint56_max: uint56 = max_value(uint56)
+    assert uint56_max == max_value(uint56)
 
-    uint64_max: uint64 = 2**64 - 1
-    assert uint64_max == 2**64 - 1
+    uint64_max: uint64 = max_value(uint64)
+    assert uint64_max == max_value(uint64)
 
     return True
 
 @external
 @pure
 def uintMaxB() -> bool:
-    uint72_max: uint72 = 2**72 - 1
-    assert uint72_max == 2**72 - 1
+    uint72_max: uint72 = max_value(uint72)
+    assert uint72_max == max_value(uint72)
 
-    uint80_max: uint80 = 2**80 - 1
-    assert uint80_max == 2**80 - 1
+    uint80_max: uint80 = max_value(uint80)
+    assert uint80_max == max_value(uint80)
 
-    uint88_max: uint88 = 2**88 - 1
-    assert uint88_max == 2**88 - 1
+    uint88_max: uint88 = max_value(uint88)
+    assert uint88_max == max_value(uint88)
 
-    uint96_max: uint96 = 2**96 - 1
-    assert uint96_max == 2**96 - 1
+    uint96_max: uint96 = max_value(uint96)
+    assert uint96_max == max_value(uint96)
 
-    uint104_max: uint104 = 2**104 - 1
-    assert uint104_max == 2**104 - 1
+    uint104_max: uint104 = max_value(uint104)
+    assert uint104_max  == max_value(uint104)
 
-    uint112_max: uint112 = 2**112 - 1
-    assert uint112_max == 2**112 - 1
+    uint112_max: uint112 = max_value(uint112)
+    assert uint112_max  == max_value(uint112)
 
-    uint120_max: uint120 = 2**120 - 1
-    assert uint120_max == 2**120 - 1
+    uint120_max: uint120 = max_value(uint120)
+    assert uint120_max  == max_value(uint120)
 
-    uint128_max: uint128 = 2**128 - 1
-    assert uint128_max == 2**128 - 1
+    uint128_max: uint128 = max_value(uint128)
+    assert uint128_max  == max_value(uint128)
 
     return True
 
 @external
 @pure
 def uintMaxC() -> bool:
-    uint136_max: uint136 = 2**136 - 1
-    assert uint136_max == 2**136 - 1
+    uint136_max: uint136 = max_value(uint136)
+    assert uint136_max  == max_value(uint136)
 
-    uint144_max: uint144 = 2**144 - 1
-    assert uint144_max == 2**144 - 1
+    uint144_max: uint144 = max_value(uint144)
+    assert uint144_max  == max_value(uint144)
 
-    uint152_max: uint152 = 2**152 - 1
-    assert uint152_max == 2**152 - 1
+    uint152_max: uint152 = max_value(uint152)
+    assert uint152_max  == max_value(uint152)
 
-    uint160_max: uint160 = 2**160 - 1
-    assert uint160_max == 2**160 - 1
+    uint160_max: uint160 = max_value(uint160)
+    assert uint160_max  == max_value(uint160)
 
-    uint168_max: uint168 = 2**168 - 1
-    assert uint168_max == 2**168 - 1
+    uint168_max: uint168 = max_value(uint168)
+    assert uint168_max  == max_value(uint168)
 
-    uint176_max: uint176 = 2**176 - 1
-    assert uint176_max == 2**176 - 1
+    uint176_max: uint176 = max_value(uint176)
+    assert uint176_max  == max_value(uint176)
 
-    uint184_max: uint184 = 2**184 - 1
-    assert uint184_max == 2**184 - 1
+    uint184_max: uint184 = max_value(uint184)
+    assert uint184_max  == max_value(uint184)
 
-    uint192_max: uint192 = 2**192 - 1
-    assert uint192_max == 2**192 - 1
+    uint192_max: uint192 = max_value(uint192)
+    assert uint192_max  == max_value(uint192)
 
     return True
 
 @external
 @pure
 def uintMaxD() -> bool:
-    uint200_max: uint200 = 2**200 - 1
-    assert uint200_max == 2**200 - 1
+    uint200_max: uint200 = max_value(uint200)
+    assert uint200_max  == max_value(uint200)
 
-    uint208_max: uint208 = 2**208 - 1
-    assert uint208_max == 2**208 - 1
+    uint208_max: uint208 = max_value(uint208)
+    assert uint208_max  == max_value(uint208)
 
-    uint216_max: uint216 = 2**216 - 1
-    assert uint216_max == 2**216 - 1
+    uint216_max: uint216 = max_value(uint216)
+    assert uint216_max  == max_value(uint216)
 
-    uint224_max: uint224 = 2**224 - 1
-    assert uint224_max == 2**224 - 1
+    uint224_max: uint224 = max_value(uint224)
+    assert uint224_max  == max_value(uint224)
 
-    uint232_max: uint232 = 2**232 - 1
-    assert uint232_max == 2**232 - 1
+    uint232_max: uint232 = max_value(uint232)
+    assert uint232_max  == max_value(uint232)
 
-    uint240_max: uint240 = 2**240 - 1
-    assert uint240_max == 2**240 - 1
+    uint240_max: uint240 = max_value(uint240)
+    assert uint240_max  == max_value(uint240)
 
-    uint248_max: uint248 = 2**248 - 1
-    assert uint248_max == 2**248 - 1
+    uint248_max: uint248 = max_value(uint248)
+    assert uint248_max  == max_value(uint248)
 
     uint256_max: uint256 = max_value(uint256)
-    assert uint256_max == 115792089237316195423570985008687907853269984665640564039457584007913129639935
+    assert uint256_max  == 115792089237316195423570985008687907853269984665640564039457584007913129639935
 
     return True
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

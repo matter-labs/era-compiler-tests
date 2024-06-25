@@ -1,7 +1,7 @@
 @external
 @pure
 def intMinA() -> bool:
-    int8_min: int8  = min_value(int8)
+    int8_min: int8   = min_value(int8)
     assert int8_min == min_value(int8)
 
     int16_min: int16  = min_value(int16)

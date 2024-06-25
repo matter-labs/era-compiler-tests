@@ -16,4 +16,4 @@ def fview(_c: address) -> uint256:
 
 @external
 def fpure(_c: address) -> uint256:
-    return (staticcall CPure(create_forwarder_to(_c))).f()
+    return staticcall (CPure(create_forwarder_to(_c))).f()

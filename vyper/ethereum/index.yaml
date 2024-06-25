@@ -1014,8 +1014,12 @@ entries:
         enabled: true
       event_string.vy:
         enabled: true
+      event_struct_memory_v2-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       event_struct_memory_v2.vy:
         enabled: true
+        version: '>=0.4.0'
       event_struct_storage_v2.vy:
         enabled: true
   expressions:

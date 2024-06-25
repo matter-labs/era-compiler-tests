@@ -1,5 +1,8 @@
 # Added custom balance functions
-import Other as Other
+
+interface Other:
+    def getAddress() -> address: nonpayable
+    def balance_() -> uint256: view
 
 other: Other
 
@@ -10,7 +13,7 @@ def __init__(_other: address):
 
 @external
 def getAddress() -> address:
-    return self.other.getAddress()
+    return extcall self.other.getAddress()
 
 @external
 @view
@@ -20,4 +23,4 @@ def balance_() -> uint256:
 @external
 @view
 def balance_other() -> uint256:
-    return self.other.balance_()
+    return staticcall self.other.balance_()

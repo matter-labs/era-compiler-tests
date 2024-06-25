@@ -42,16 +42,16 @@ def intMinB() -> bool:
     int96_min: int96  = -2**95
     assert int96_min == -2**95
 
-    int104_min: int104  = -2**103
+    int104_min: int104 = -2**103
     assert int104_min == -2**103
 
-    int112_min: int112  = -2**111
+    int112_min: int112 = -2**111
     assert int112_min == -2**111
 
-    int120_min: int120  = -2**119
+    int120_min: int120 = -2**119
     assert int120_min == -2**119
 
-    int128_min: int128  = MIN_INT128
+    int128_min: int128 = MIN_INT128
     assert int128_min == -2**127
 
     return True
@@ -59,28 +59,28 @@ def intMinB() -> bool:
 @external
 @pure
 def intMinC() -> bool:
-    int136_min: int136  = -2**135
+    int136_min: int136 = -2**135
     assert int136_min == -2**135
 
-    int144_min: int144  = -2**143
+    int144_min: int144 = -2**143
     assert int144_min == -2**143
 
-    int152_min: int152  = -2**151
+    int152_min: int152 = -2**151
     assert int152_min == -2**151
 
-    int160_min: int160  = -2**159
+    int160_min: int160 = -2**159
     assert int160_min == -2**159
 
-    int168_min: int168  = -2**167
+    int168_min: int168 = -2**167
     assert int168_min == -2**167
 
-    int176_min: int176  = -2**175
+    int176_min: int176 = -2**175
     assert int176_min == -2**175
 
-    int184_min: int184  = -2**183
+    int184_min: int184 = -2**183
     assert int184_min == -2**183
 
-    int192_min: int192  = -2**191
+    int192_min: int192 = -2**191
     assert int192_min == -2**191
 
     return True
@@ -88,28 +88,28 @@ def intMinC() -> bool:
 @external
 @pure
 def intMinD() -> bool:
-    int200_min: int200  = -2**199
+    int200_min: int200 = -2**199
     assert int200_min == -2**199
 
-    int208_min: int208  = -2**207
+    int208_min: int208 = -2**207
     assert int208_min == -2**207
 
-    int216_min: int216  = -2**215
+    int216_min: int216 = -2**215
     assert int216_min == -2**215
 
-    int224_min: int224  = -2**223
+    int224_min: int224 = -2**223
     assert int224_min == -2**223
 
-    int232_min: int232  = -2**231
+    int232_min: int232 = -2**231
     assert int232_min == -2**231
 
-    int240_min: int240  = -2**239
+    int240_min: int240 = -2**239
     assert int240_min == -2**239
 
-    int248_min: int248  = -2**247
+    int248_min: int248 = -2**247
     assert int248_min == -2**247
 
-    int256_min: int256  = -2**255
+    int256_min: int256 = -2**255
     assert int256_min == -2**255
 
     return True
@@ -117,7 +117,7 @@ def intMinD() -> bool:
 @external
 @pure
 def intMaxA() -> bool:
-    int8_max: int8  = 2**7 - 1
+    int8_max: int8   = 2**7 - 1
     assert int8_max == 2**7 - 1
 
     int16_max: int16  = 2**15 - 1
@@ -158,16 +158,16 @@ def intMaxB() -> bool:
     int96_max: int96  = 2**95 - 1
     assert int96_max == 2**95 - 1
 
-    int104_max: int104  = 2**103 - 1
+    int104_max: int104 = 2**103 - 1
     assert int104_max == 2**103 - 1
 
-    int112_max: int112  = 2**111 - 1
+    int112_max: int112 = 2**111 - 1
     assert int112_max == 2**111 - 1
 
-    int120_max: int120  = 2**119 - 1
+    int120_max: int120 = 2**119 - 1
     assert int120_max == 2**119 - 1
 
-    int128_max: int128  = MAX_INT128
+    int128_max: int128 = MAX_INT128
     assert int128_max == 2**127 - 1
 
     return True
@@ -175,28 +175,28 @@ def intMaxB() -> bool:
 @external
 @pure
 def intMaxC() -> bool:
-    int136_max: int136  = 2**135 - 1
+    int136_max: int136 = 2**135 - 1
     assert int136_max == 2**135 - 1
 
-    int144_max: int144  = 2**143 - 1
+    int144_max: int144 = 2**143 - 1
     assert int144_max == 2**143 - 1
 
-    int152_max: int152  = 2**151 - 1
+    int152_max: int152 = 2**151 - 1
     assert int152_max == 2**151 - 1
 
-    int160_max: int160  = 2**159 - 1
+    int160_max: int160 = 2**159 - 1
     assert int160_max == 2**159 - 1
 
-    int168_max: int168  = 2**167 - 1
+    int168_max: int168 = 2**167 - 1
     assert int168_max == 2**167 - 1
 
-    int176_max: int176  = 2**175 - 1
+    int176_max: int176 = 2**175 - 1
     assert int176_max == 2**175 - 1
 
-    int184_max: int184  = 2**183 - 1
+    int184_max: int184 = 2**183 - 1
     assert int184_max == 2**183 - 1
 
-    int192_max: int192  = 2**191 - 1
+    int192_max: int192 = 2**191 - 1
     assert int192_max == 2**191 - 1
 
     return True
@@ -204,28 +204,28 @@ def intMaxC() -> bool:
 @external
 @pure
 def intMaxD() -> bool:
-    int200_max: int200  = 2**199 - 1
+    int200_max: int200 = 2**199 - 1
     assert int200_max == 2**199 - 1
 
-    int208_max: int208  = 2**207 - 1
+    int208_max: int208 = 2**207 - 1
     assert int208_max == 2**207 - 1
 
-    int216_max: int216  = 2**215 - 1
+    int216_max: int216 = 2**215 - 1
     assert int216_max == 2**215 - 1
 
-    int224_max: int224  = 2**223 - 1
+    int224_max: int224 = 2**223 - 1
     assert int224_max == 2**223 - 1
 
-    int232_max: int232  = 2**231 - 1
+    int232_max: int232 = 2**231 - 1
     assert int232_max == 2**231 - 1
 
-    int240_max: int240  = 2**239 - 1
+    int240_max: int240 = 2**239 - 1
     assert int240_max == 2**239 - 1
 
-    int248_max: int248  = 2**247 - 1
+    int248_max: int248 = 2**247 - 1
     assert int248_max == 2**247 - 1
 
-    int256_max: int256  = 2**255 - 1
+    int256_max: int256 = 2**255 - 1
     assert int256_max == 2**255 - 1
 
     return True

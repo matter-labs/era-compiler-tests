@@ -9,7 +9,8 @@
 #    safe to call.
 # 4. Although Alice expected Bar.log() to be execute, Mal.log() was executed.
 
-import bar as Bar
+interface Bar:
+    def _log(): nonpayable
 
 bar: Bar
 
@@ -19,4 +20,4 @@ def __init__(_bar: address):
 
 @external
 def callBar():
-    self.bar._log()
+    extcall self.bar._log()
