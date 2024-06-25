@@ -6,7 +6,7 @@ s: public(S)
 
 @external
 def __init__():
-    self.s = S({x: True, a: 1})
+    self.s = S(x=True, a=1)
 
 # ====
 # compileToEwasm: also

@@ -161,7 +161,7 @@ def triangle(_triangle: Triangle) -> uint256:
 @external
 def polygon(_polygon: Polygon) -> uint256:
     polygon: Polygon = _polygon
-    for i: uint256 in range(DIM):
+    for i: uint8 in range(DIM):
         if not i < polygon.n:
             break
         polygon.x[i] *= EPS

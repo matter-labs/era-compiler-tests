@@ -66,9 +66,9 @@ def encrypt(_data: uint8[SIZE]) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
     for i: uint8 in range(0, SIZE):
         fl: bool = False
-        for page: uint8: uint256 in range(0, KEY_SZ):
-            for row: uint8: uint256 in range(0, KEY_SZ):
-                for col: uint8: uint256 in range(0, KEY_SZ):
+        for page: uint8 in range(0, KEY_SZ):
+            for row: uint8 in range(0, KEY_SZ):
+                for col: uint8 in range(0, KEY_SZ):
                     if self.KEY[page][row][col] == data[i]:
                         data[i] = page*KEY_SZ*KEY_SZ + row*KEY_SZ + col
                         fl = True

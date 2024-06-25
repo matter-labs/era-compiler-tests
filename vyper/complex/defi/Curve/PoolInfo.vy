@@ -75,12 +75,12 @@ def get_pool_coins(_pool: address) -> PoolCoins:
     """
     registry: address = self.address_provider.get_registry()
 
-    return PoolCoins({
-        coins: Registry(registry).get_coins(_pool),
-        underlying_coins: Registry(registry).get_underlying_coins(_pool),
-        decimals: Registry(registry).get_decimals(_pool),
-        underlying_decimals: Registry(registry).get_underlying_decimals(_pool),
-    })
+    return PoolCoins(
+        coins=Registry(registry).get_coins(_pool),
+        underlying_coins=Registry(registry).get_underlying_coins(_pool),
+        decimals=Registry(registry).get_decimals(_pool),
+        underlying_decimals=Registry(registry).get_underlying_decimals(_pool),
+    )
 
 
 @view
@@ -95,14 +95,14 @@ def get_pool_info(_pool: address) -> PoolInfo:
     """
     registry: address = self.address_provider.get_registry()
 
-    return PoolInfo({
-        balances: Registry(registry).get_balances(_pool),
-        underlying_balances: Registry(registry).get_underlying_balances(_pool),
-        decimals: Registry(registry).get_decimals(_pool),
-        underlying_decimals: Registry(registry).get_underlying_decimals(_pool),
-        rates: Registry(registry).get_rates(_pool),
-        lp_token: Registry(registry).get_lp_token(_pool),
-        params: Registry(registry).get_parameters(_pool),
-        is_meta: Registry(registry).is_meta(_pool),
-        name: Registry(registry).get_pool_name(_pool),
-    })
+    return PoolInfo(
+        balances=Registry(registry).get_balances(_pool),
+        underlying_balances=Registry(registry).get_underlying_balances(_pool),
+        decimals=Registry(registry).get_decimals(_pool),
+        underlying_decimals=Registry(registry).get_underlying_decimals(_pool),
+        rates=Registry(registry).get_rates(_pool),
+        lp_token=Registry(registry).get_lp_token(_pool),
+        params=Registry(registry).get_parameters(_pool),
+        is_meta=Registry(registry).is_meta(_pool),
+        name=Registry(registry).get_pool_name(_pool),
+    )

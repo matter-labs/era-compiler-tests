@@ -9,11 +9,11 @@ struct T:
     
 @external
 def s() -> S:
-    return S({a: 23, b: 42})
+    return S(a=23, b=42)
     
 @external
 def t() -> T:
-    return T({a: 23, b: 42, s: "any"})
+    return T(a=23, b=42, s="any")
     
 # ====
 # compileToEwasm: also

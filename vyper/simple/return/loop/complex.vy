@@ -74,7 +74,7 @@ def main(param: uint8) -> uint256:
         for _: uint256 in range(1000000):
             if param == 1:
                 return 5
-            for j: uint256 in [10, 8, 6, 4, 2]:
+            for j: uint8 in [10, 8, 6, 4, 2]:
                 if param == 2 and j == 4:
                     return convert(param + j, uint256) # 6
             break

@@ -147,7 +147,7 @@ MappingDiv: constant(uint8) = 3
 @internal
 @pure
 def fromArray(array: uint8[ARRAY_SIZE], size: uint8) -> Vector:
-    return Vector(array: array, size: size)
+    return Vector(array=array, size=size)
 
 @internal
 @pure
@@ -179,7 +179,7 @@ def unique(vector: Vector) -> Vector:
         if not i < vector.size:
             break
         fl: bool = True
-        for j: uint256 in range(0, ARRAY_SIZE):
+        for j: uint8 in range(0, ARRAY_SIZE):
             if not j < i:
                 break
             if vector.array[i] == vector.array[j]:

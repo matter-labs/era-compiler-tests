@@ -13,7 +13,7 @@ struct CoinInfo:
     index: uint256
     register_count: uint256
     swap_count: uint256
-    swap_for: address[MAX_INT128]
+    swap_for: address[max_value(int128)]
 
 struct PoolArray:
     location: uint256

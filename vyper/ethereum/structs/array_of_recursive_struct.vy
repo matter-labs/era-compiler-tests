@@ -4,7 +4,7 @@ struct RecursiveStruct:
 @external
 @pure
 def func():
-    val: RecursiveStruct[1] = [RecursiveStruct({vals: []})]
+    val: RecursiveStruct[1] = [RecursiveStruct(vals=[])]
     for _ in range(42):
         val[0].vals.append(empty(RecursiveStruct))
     assert len(val[0].vals) == 42

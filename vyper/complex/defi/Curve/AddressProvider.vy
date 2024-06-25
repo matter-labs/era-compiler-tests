@@ -92,13 +92,13 @@ def add_new_id(_address: address, _description: String[64]) -> uint256:
     assert _address.is_contract  # dev: not a contract
 
     id: uint256 = self.queue_length
-    self.get_id_info[id] = AddressInfo({
-        addr: _address,
-        is_active: True,
-        version: 1,
-        last_modified: block.timestamp,
-        description: _description
-    })
+    self.get_id_info[id] = AddressInfo(
+        addr=_address,
+        is_active=True,
+        version=1,
+        last_modified=block.timestamp,
+        description=_description
+    )
     self.queue_length = id + 1
 
     log NewAddressIdentifier(id, _address, _description)

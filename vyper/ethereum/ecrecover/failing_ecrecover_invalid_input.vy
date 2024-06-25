@@ -3,7 +3,7 @@
 # Note that the precompile does not return zero but returns nothing.
 @external
 def f() -> address:
-    return ecrecover(convert(MAX_UINT256, bytes32), 1, 2, 3)
+    return ecrecover(convert(max_value(uint256), bytes32), 1, 2, 3)
 
 # ====
 # compileViaYul: also

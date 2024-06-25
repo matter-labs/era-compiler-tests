@@ -36,9 +36,8 @@ def __init__(length: uint256, proposalNames: bytes32[10]):
     for i: uint256 in range(10):
         if not i < length:
             break
-        # `Proposal({...})` creates a temporary
-        # Proposal object
-        self.proposals[self.proposals_length] = Proposal({name: proposalNames[i], voteCount: 0})
+        # `Proposal(...)` creates a temporary Proposal object
+        self.proposals[self.proposals_length] = Proposal(name=proposalNames[i], voteCount=0)
         self.proposals_length += 1
 
 # Give `voter` the right to vote on this ballot.

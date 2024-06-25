@@ -5,7 +5,7 @@
 @notice Find pools, query exchange rates and perform swaps
 """
 
-from ethereum.ercs import ERC20
+from ethereum.ercs import IERC20
 
 
 interface AddressProvider:

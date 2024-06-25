@@ -8,7 +8,7 @@ s: S[3]
 @external
 def f() -> (uint256, uint256, uint128, uint128):
     m: S[3] = empty(S[3])
-    m[1] = S({p: 0, b: [1, 2, 3], c: empty(uint128[3])})
+    m[1] = S(p=0, b=[1, 2, 3], c=empty(uint128[3]))
     m[1].c[0] = 1
     m[1].c[1] = 2
     m[1].c[2] = 3

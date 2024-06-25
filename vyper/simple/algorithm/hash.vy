@@ -20,7 +20,7 @@ MODULO: constant(uint256) = 1000000007
 @pure
 def hash(array: uint8[ARRAY_SIZE], begin: uint8, end: uint8) -> uint256:
     h: uint256 = 0
-    for i: uint256 in range(begin, begin + ARRAY_SIZE):
+    for i: uint8 in range(begin, begin + ARRAY_SIZE):
         if not i < end:
             break
         h = (h * P + convert(array[i], uint256)) % MODULO
@@ -35,7 +35,7 @@ def complex() -> uint256:
 
     result: bool = True
     for i: uint8 in range(ARRAY_SIZE // 2):
-        result = result and self.hash(array, 0, i + 1) == self.hash(array, ARRAY_SIZE/2, ARRAY_SIZE/2 + i + 1) and self.hash(array, i, ARRAY_SIZE/2) == self.hash(array, i + ARRAY_SIZE/2, ARRAY_SIZE)
+        result = result and self.hash(array, 0, i + 1) == self.hash(array, ARRAY_SIZE // 2, ARRAY_SIZE // 2 + i + 1) and self.hash(array, i, ARRAY_SIZE // 2) == self.hash(array, i + ARRAY_SIZE // 2, ARRAY_SIZE)
     if result:
         return 1
     else:

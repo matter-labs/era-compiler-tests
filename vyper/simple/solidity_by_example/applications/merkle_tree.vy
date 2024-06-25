@@ -63,10 +63,10 @@ struct Transaction:
 @deploy
 def __init__():
     transactions: Transaction[4] = [
-        Transaction( text: "alice -> bob"),
-        Transaction( text: "bob -> dave"),
-        Transaction( text: "carol -> alice"),
-        Transaction( text: "dave -> bob")
+        Transaction(text="alice -> bob"),
+        Transaction(text="bob -> dave"),
+        Transaction(text="carol -> alice"),
+        Transaction(text="dave -> bob")
     ]
 
     for i: uint256 in range(0, 4):

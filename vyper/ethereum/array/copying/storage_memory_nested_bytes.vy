@@ -5,8 +5,8 @@ a: bytes[2]
 
 @external
 def f() -> (bytes[2]):
-    self.a[0] = bytes({inner: b"abc"})
-    self.a[1] = bytes({inner: b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXYZ"})
+    self.a[0] = bytes(inner=b"abc")
+    self.a[1] = bytes(inner=b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXYZ")
     m: bytes[2] = self.a
     return m
 

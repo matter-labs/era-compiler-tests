@@ -12,7 +12,7 @@ x: X
 
 @external
 def f() -> (uint32, uint128, uint256):
-    m: X = X({a: 12, s: S({a: 42, b: 23, c: 34})})
+    m: X = X(a=12, s=S(a=42, b=23, c=34))
     self.x = m
     return (self.x.s.a, self.x.s.b, self.x.s.c)
 

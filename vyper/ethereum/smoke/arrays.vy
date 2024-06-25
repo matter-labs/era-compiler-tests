@@ -15,7 +15,7 @@ def s() -> (uint256[2], uint256):
 
 @external
 def u() -> T[2]:
-    return [T({a: 23, b: 42, s: "any"}), T({a: 555, b: 666, s: "any"})]
+    return [T(a=23, b=42, s="any"), T(a=555, b=666, s="any")]
 
 @external
 def v() -> bool[2][1]:
@@ -26,19 +26,19 @@ struct string:
 
 @external
 def w1() -> string[1]:
-    return [string({inner: "any"})]
+    return [string(inner="any")]
 
 @external
 def w2() -> string[2]:
-    return [string({inner: "any"}), string({inner: "any"})]
+    return [string(inner="any"), string(inner="any")]
 
 @external
 def w3() -> string[3]:
-    return [string({inner: "any"}), string({inner: "any"}), string({inner: "any"})]
+    return [string(inner="any"), string(inner="any"), string(inner="any")]
 
 @external
 def x() -> (string[2], string[3]):
-    return ([string({inner: "any"}), string({inner: "any"})], [string({inner: "any"}), string({inner: "any"}), string({inner: "any"})])
+    return ([string(inner="any"), string(inner="any")], [string(inner="any"), string(inner="any"), string(inner="any")])
 
 # ====
 # compileViaYul: also

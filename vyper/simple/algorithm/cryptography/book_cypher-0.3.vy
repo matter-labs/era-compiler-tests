@@ -34,7 +34,7 @@ KEY: uint8[KEY_SZ][KEY_SZ][KEY_SZ]
 SIZE: constant(uint8) = 10
 ALPHABET: constant(uint8) = 64
 
-@deploy
+@external
 def __init__():
     self.KEY = [
         [

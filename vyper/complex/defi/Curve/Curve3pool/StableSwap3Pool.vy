@@ -1,7 +1,7 @@
 # (c) Curve.Fi, 2020
 # Pool for DAI/USDC/USDT
 
-from ethereum.ercs import ERC20
+from ethereum.ercs import IERC20
 
 interface CurveToken:
     def totalSupply() -> uint256: view

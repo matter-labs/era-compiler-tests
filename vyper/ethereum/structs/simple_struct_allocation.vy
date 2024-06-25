@@ -3,7 +3,7 @@ struct S:
 
 @external
 def f() -> uint256:
-    s: S = S({a: 1})
+    s: S = S(a=1)
     return s.a
 
 # ====

@@ -117,7 +117,7 @@ event Complex:
 def test(number_: uint256):
     log Empty()
     log OneWord(CONST)
-    log TwoWords(Str(a: -128, b: MAX_UINT256))
-    log ThreeWords(Str(a=127, b: number_), 2)
+    log TwoWords(Str(a=-128, b=max_value(uint256)))
+    log ThreeWords(Str(a=127, b=number_), 2)
     log Dynamic("abc")
-    log Complex(Str(a: -1, b: IMMUTABLE_), self.storage_var, [0], [0, 2, 1])
+    log Complex(Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])

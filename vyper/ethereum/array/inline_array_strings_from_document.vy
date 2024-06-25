@@ -1,8 +1,9 @@
 struct string:
     inner: String[100]
+
 @external
 def f(i: uint256) -> String[100]:
-    x: string[4] = [string({inner: "This"}), string({inner: "is"}), string({inner: "an"}), string({inner: "array"})]
+    x: string[4] = [string(inner="This"), string(inner="is"), string(inner="an"), string(inner="array")]
     return (x[i].inner)
 
 # ====

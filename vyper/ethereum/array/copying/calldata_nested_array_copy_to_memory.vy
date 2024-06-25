@@ -4,7 +4,8 @@ struct shouldBug:
 @external
 @pure
 def killer(weapon: DynArray[uint256, 10][2]) -> shouldBug:
-    return shouldBug({deadly: weapon})
+    return shouldBug(deadly=weapon)
+
 # ====
 # compileViaYul: also
 # ----

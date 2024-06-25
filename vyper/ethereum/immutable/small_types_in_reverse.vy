@@ -12,23 +12,23 @@ def __init__():
     self.x = [a, b, c]
 
 @external
-def a() -> uint16:
+def get_a() -> uint16:
     return a
 
 @external
-def b() -> uint16:
+def get_b() -> uint16:
     return b
 
 @external
-def c() -> uint16:
+def get_c() -> uint16:
     return c
 
 # ====
 # compileViaYul: also
 # ----
-# a() -> 4660
-# b() -> 0x0f0f
-# c() -> 0xffff
+# get_a() -> 4660
+# get_b() -> 0x0f0f
+# get_c() -> 0xffff
 # x(uint256): 0 -> 4660
 # x(uint256): 1 -> 0x0f0f
 # x(uint256): 2 -> 0xffff

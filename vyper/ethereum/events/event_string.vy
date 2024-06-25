@@ -1,8 +1,10 @@
 event E:
     r: String[100]
+
 @external
 def deposit():
     log E("HELLO WORLD")
+
 # ====
 # compileViaYul: also
 # ----

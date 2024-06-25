@@ -2,9 +2,11 @@ event Deposit:
     fixeda: uint256
     dynx: Bytes[100]
     fixedb: uint256
+
 @external
 def deposit():
     log Deposit(10, slice(msg.data, 0, 4), 15)
+
 # ====
 # compileViaYul: also
 # ----

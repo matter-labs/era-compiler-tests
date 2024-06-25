@@ -633,7 +633,7 @@ entries:
             enabled: true
           memory_arrays_dynamic_index_access_write-0.3.vy:
             enabled: true
-            version: '<=0.3.10'
+            version: '=0.3.10'
           memory_arrays_dynamic_index_access_write.vy:
             enabled: true
             version: '>=0.4.0'
@@ -1258,10 +1258,18 @@ entries:
       account.vy:
         enabled: false
         comment: "Uses unsupported isoltest"
+      balance_with_balance-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       balance_with_balance.vy:
         enabled: true
+        version: '>=0.4.0'
+      balance_with_balance2-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       balance_with_balance2.vy:
         enabled: true
+        version: '>=0.4.0'
       balance_without_balance.vy:
         enabled: true
       builtins.vy:

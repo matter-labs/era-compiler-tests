@@ -1,12 +1,16 @@
 struct S:
     a: uint256
+
 event E:
     _: S
+
 s: S
+
 @external
 def createEvent(x: uint256):
     self.s.a = x
     log E(self.s)
+
 # ====
 # compileViaYul: also
 # ----
