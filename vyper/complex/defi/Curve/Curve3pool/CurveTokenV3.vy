@@ -186,6 +186,6 @@ def set_minter(_minter: address):
 
 @external
 def set_name(_name: String[64], _symbol: String[32]):
-    assert Curve(self.minter).owner() == msg.sender
+    assert staticcall Curve(self.minter).owner() == msg.sender
     self.name = _name
     self.symbol = _symbol

@@ -1,4 +1,5 @@
-import callable as Callable
+interface Callable:
+    def f() -> uint256: payable
 
 @external
 @payable
@@ -13,6 +14,6 @@ def f(implementation: address, n: uint256) -> uint256:
     for i: uint256 in range(100):
         if i >= n:
             break
-        sum += Callable(callables[i]).f(value=i, gas=msg.gas)
+        sum += extcall Callable(callables[i]).f(value=i, gas=msg.gas)
 
     return sum

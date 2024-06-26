@@ -18,7 +18,7 @@ def __init__():
 @external
 @view
 def getTokenReserves() -> (uint256, uint256):
-    pair: address = UniswapV2Factory(self.factory).getPair(self.dai, self.weth)
+    pair: address = staticcall UniswapV2Factory(self.factory).getPair(self.dai, self.weth)
     reserve0: uint256 = 0
     reserve1: uint256 = 0
     _: uint256 = 0

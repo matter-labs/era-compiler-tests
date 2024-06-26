@@ -11,7 +11,7 @@ def setContract(_contract_re: address):
 @external
 @view
 def require_short():
-    RequireInterface(self.contract_req).require_short()
+    staticcall RequireInterface(self.contract_req).require_short()
 
 @external
 @view

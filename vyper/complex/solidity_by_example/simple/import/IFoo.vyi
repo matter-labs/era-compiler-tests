@@ -1,0 +1,4 @@
+@view
+@external
+def name() -> String[10]:
+    ...
