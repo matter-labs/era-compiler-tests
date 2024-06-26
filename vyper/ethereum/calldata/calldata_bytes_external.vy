@@ -7,7 +7,8 @@ def test(x: Bytes[100]) -> Bytes[100]:
 
 @external
 def tester(x: Bytes[100]) -> bytes32:
-    return convert(slice(Self(self).test(x), 2, 1), bytes32)
+    return convert(slice(extcall Self(self).test(x), 2, 1), bytes32)
+
 # ====
 # EVMVersion: >=byzantium
 # compileViaYul: also

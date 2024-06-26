@@ -1,10 +1,10 @@
 name: bytes32
-flag: bool
+_flag: bool
 
-@external
+@deploy
 def __init__(x: bytes32, f: bool):
     self.name = x
-    self.flag = f
+    self._flag = f
 
 @external
 def getName() -> bytes32:
@@ -12,7 +12,7 @@ def getName() -> bytes32:
 
 @external
 def getFlag() -> bool:
-    return self.flag
+    return self._flag
 
 # ====
 # compileViaYul: also

@@ -2,7 +2,7 @@ x: public(int8)
 y: public(int8)
 q: public(int16)
 
-@external
+@deploy
 def __init__():
     self.x = 2
     self.y = 127

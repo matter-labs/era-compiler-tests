@@ -4,7 +4,7 @@ struct S:
     
 @external
 def s() -> S:
-    return S({x: True, a: 8})
+    return S(x=True, a=8)
 
 # ====
 # compileToEwasm: also

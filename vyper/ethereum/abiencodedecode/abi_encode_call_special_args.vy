@@ -1,6 +1,6 @@
 sideEffectRan: bool
 
-@external
+@deploy
 def __init__():
     self.sideEffectRan = False
 
@@ -8,12 +8,12 @@ def __init__():
 @pure
 def fSignatureFromLiteralArray() -> Bytes[200]:
     x: uint256[2] = empty(uint256[2])
-    return _abi_encode(x, method_id=method_id("fArray(uint256[2])"))
+    return abi_encode(x, method_id=method_id("fArray(uint256[2])"))
 
 @external
 @pure
 def fSignatureFromLiteralUint() -> Bytes[200]:
-    return _abi_encode(convert(12, uint256), convert(13, uint256), method_id=method_id("fUint(uint256,uint256)"))
+    return abi_encode(convert(12, uint256), convert(13, uint256), method_id=method_id("fUint(uint256,uint256)"))
 
 # ====
 # compileViaYul: also

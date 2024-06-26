@@ -5,9 +5,9 @@ interface ICounter:
 
 @external
 def incrementCounter(_counter: address):
-    ICounter(_counter).increment()
+    extcall ICounter(_counter).increment()
 
 @external
 @view
 def getCount(_counter: address) -> uint256:
-    return ICounter(_counter).count()
+    return staticcall ICounter(_counter).count()

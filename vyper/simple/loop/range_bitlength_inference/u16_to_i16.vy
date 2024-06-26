@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -16,6 +16,6 @@
 @pure
 def main() -> int16:
     sum: int16 = 0
-    for i in range(-200, 200):
+    for i: int16 in range(-200, 200):
         sum += i
     return sum

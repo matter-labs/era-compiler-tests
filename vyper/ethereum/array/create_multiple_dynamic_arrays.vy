@@ -1,7 +1,7 @@
 @external
 def f() -> uint256:
     x: DynArray[DynArray[uint256, 50], 50] = []
-    for _ in range(42):
+    for _: uint256 in range(42):
         x.append([])
     x[0] = [0]
     x[0][0] = 1
@@ -12,7 +12,7 @@ def f() -> uint256:
     x[10] = [0]
     x[10][0] = 44
     y: DynArray[DynArray[uint256, 25], 25] = []
-    for _ in range(24):
+    for _: uint256 in range(24):
         y.append([])
     assert len(y[0]) == 0
     y[0] = [0]

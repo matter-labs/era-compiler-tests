@@ -1,8 +1,10 @@
-import callable as Callable
+interface Callable:
+    def get() -> uint256: view
+    def set(x: uint256): nonpayable
 
 @external
 def main(salt: bytes32, implementation: address) -> uint256:
     callee: address = create_forwarder_to(implementation, salt=salt)
 
-    Callable(callee).set(10)
-    return Callable(callee).get()
+    extcall Callable(callee).set(10)
+    return staticcall Callable(callee).get()

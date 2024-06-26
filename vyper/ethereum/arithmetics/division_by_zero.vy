@@ -1,10 +1,11 @@
 @external
 def _div(a: uint256, b: uint256) -> uint256:
-    return a / b
+    return a // b
 
 @external
 def _mod(a: uint256, b: uint256) -> uint256:
     return a % b
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

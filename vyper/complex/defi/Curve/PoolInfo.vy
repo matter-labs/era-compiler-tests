@@ -59,7 +59,7 @@ struct PoolCoins:
 address_provider: public(AddressProvider)
 
 
-@external
+@deploy
 def __init__(_provider: address):
     self.address_provider = AddressProvider(_provider)
 
@@ -73,14 +73,14 @@ def get_pool_coins(_pool: address) -> PoolCoins:
     @param _pool Pool address
     @return Coin addresses, underlying coin addresses, underlying coin decimals
     """
-    registry: address = self.address_provider.get_registry()
+    registry: address = staticcall self.address_provider.get_registry()
 
-    return PoolCoins({
-        coins: Registry(registry).get_coins(_pool),
-        underlying_coins: Registry(registry).get_underlying_coins(_pool),
-        decimals: Registry(registry).get_decimals(_pool),
-        underlying_decimals: Registry(registry).get_underlying_decimals(_pool),
-    })
+    return PoolCoins(
+        coins=staticcall Registry(registry).get_coins(_pool),
+        underlying_coins=staticcall Registry(registry).get_underlying_coins(_pool),
+        decimals=staticcall Registry(registry).get_decimals(_pool),
+        underlying_decimals=staticcall Registry(registry).get_underlying_decimals(_pool),
+    )
 
 
 @view
@@ -93,16 +93,16 @@ def get_pool_info(_pool: address) -> PoolInfo:
     @return balances, underlying balances, decimals, underlying decimals,
             lp token, amplification coefficient, fees
     """
-    registry: address = self.address_provider.get_registry()
+    registry: address = staticcall self.address_provider.get_registry()
 
-    return PoolInfo({
-        balances: Registry(registry).get_balances(_pool),
-        underlying_balances: Registry(registry).get_underlying_balances(_pool),
-        decimals: Registry(registry).get_decimals(_pool),
-        underlying_decimals: Registry(registry).get_underlying_decimals(_pool),
-        rates: Registry(registry).get_rates(_pool),
-        lp_token: Registry(registry).get_lp_token(_pool),
-        params: Registry(registry).get_parameters(_pool),
-        is_meta: Registry(registry).is_meta(_pool),
-        name: Registry(registry).get_pool_name(_pool),
-    })
+    return PoolInfo(
+        balances=staticcall Registry(registry).get_balances(_pool),
+        underlying_balances=staticcall Registry(registry).get_underlying_balances(_pool),
+        decimals=staticcall Registry(registry).get_decimals(_pool),
+        underlying_decimals=staticcall Registry(registry).get_underlying_decimals(_pool),
+        rates=staticcall Registry(registry).get_rates(_pool),
+        lp_token=staticcall Registry(registry).get_lp_token(_pool),
+        params=staticcall Registry(registry).get_parameters(_pool),
+        is_meta=staticcall Registry(registry).is_meta(_pool),
+        name=staticcall Registry(registry).get_pool_name(_pool),
+    )

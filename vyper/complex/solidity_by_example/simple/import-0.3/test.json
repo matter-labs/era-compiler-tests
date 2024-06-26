@@ -1,0 +1,22 @@
+{ "modes": [ "V 0.3.9", "V 0.3.10" ], "cases": [ {
+    "name": "entry",
+    "inputs": [
+        {
+            "instance": "Import",
+            "method": "getFooName",
+            "calldata": [
+                "Foo.address"
+            ]
+        }
+    ],
+    "expected": [
+        "32",
+        "3",
+        "0x466F6F0000000000000000000000000000000000000000000000000000000000"
+    ]
+} ],
+    "contracts": {
+        "Import": "Import.vy",
+        "Foo": "Foo.vy"
+    }
+}

@@ -2,7 +2,7 @@ b: uint8
 s: DynArray[DynArray[uint120, 3], 1]
 a: uint8
 
-@external
+@deploy
 def __init__():
     self.b = 23
     self.a = 17

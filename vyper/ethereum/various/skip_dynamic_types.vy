@@ -12,7 +12,7 @@ def g() -> (uint256, uint256):
     a: uint256 = 0
     b: uint256 = 0
     _: DynArray[uint256, 2] = empty(DynArray[uint256, 2])
-    a, _, b = Self(self).f()
+    a, _, b = extcall Self(self).f()
     return (a, b)
 
 # ----

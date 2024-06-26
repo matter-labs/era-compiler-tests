@@ -6,7 +6,7 @@ struct S:
     
 @external
 def f() -> (uint256, DynArray[bool,5][2], S[2], uint256):
-    return (5, [[False], [False, False]], [S({b: [False, False]}), S({b: [False, False]})], 6)
+    return (5, [[False], [False, False]], [S(b=[False, False]), S(b=[False, False])], 6)
 
 @external
 def g() -> (uint256, uint256):
@@ -14,7 +14,7 @@ def g() -> (uint256, uint256):
     _: DynArray[bool,2][2] = empty(DynArray[bool,2][2])
     __: S[2] = empty(S[2])
     b: uint256 = 0
-    (a, _, __, b) = Self(self).f()
+    (a, _, __, b) = extcall Self(self).f()
     return (a, b)
 
 # ----

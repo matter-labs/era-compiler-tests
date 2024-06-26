@@ -1,6 +1,6 @@
 s: Bytes[5]
 
-@external
+@deploy
 def __init__():
     self.s = b"bcdef"
 

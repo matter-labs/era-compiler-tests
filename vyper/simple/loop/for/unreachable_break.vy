@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry",
 #!     "inputs": [
 #!         {
@@ -18,7 +18,7 @@ def entry() -> uint256:
     end: bool = True
 
     sum: uint256 = 0
-    for i in range(1, 3):
+    for i: uint256 in range(1, 3):
         sum += i
 
         if not end:

@@ -1,0 +1,17 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "testIterableMap",
+    "inputs": [
+        {
+            "instance": "TestIterableMap",
+            "method": "testIterableMap",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+    ]
+} ],
+    "contracts": {
+        "TestIterableMap": "main.vy"
+    }
+}

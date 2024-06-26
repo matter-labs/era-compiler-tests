@@ -1,0 +1,86 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "zero",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "0"
+            ],
+            "value": "2000 ETH"
+        }
+    ],
+    "expected": [
+        "0"
+    ]
+}, {
+    "name": "one",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "1"
+            ]
+        }
+    ],
+    "expected": [
+        "0"
+    ]
+}, {
+    "name": "twenty",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "20"
+            ],
+            "value": "380 wei"
+        }
+    ],
+    "expected": [
+        "4940"
+    ]
+}, {
+    "name": "hundred",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "100"
+            ],
+            "value": "2000 ETH"
+        }
+    ],
+    "expected": [
+        "656700"
+    ]
+}, {
+    "name": "small_value",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "Callable.address",
+                "10"
+            ],
+            "value": "89 wei"
+        }
+    ],
+    "expected": {
+        "return_data": [],
+        "exception": true
+    }
+} ],
+    "contracts": {
+        "Main": "main.vy",
+        "Callable": "callable.vy"
+    }
+}

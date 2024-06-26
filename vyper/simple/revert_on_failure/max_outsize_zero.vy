@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -30,7 +30,7 @@ def main(a: uint256) -> bool:
     success: bool = False
     success = raw_call(
         self,
-        _abi_encode(a, method_id=method_id("a(uint256)")),
+        abi_encode(a, method_id=method_id("a(uint256)")),
         revert_on_failure=False,
         )
     return success

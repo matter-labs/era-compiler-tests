@@ -1,6 +1,11 @@
-import receiver as receiver
+interface receiver:
+    def received() -> uint256: view
 
-@external
+rec: receiver
+savedData1: Bytes[100]
+savedData2: Bytes[100]
+
+@deploy
 def __init__(_receiver: address):
     self.rec = receiver(create_forwarder_to(_receiver))
 
@@ -21,8 +26,4 @@ def forward(selector: bool) -> bool:
 
 @external
 def val() -> uint256:
-    return self.rec.received()
-
-rec: receiver
-savedData1: Bytes[100]
-savedData2: Bytes[100]
+    return staticcall self.rec.received()

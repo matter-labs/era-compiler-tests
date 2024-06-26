@@ -3,7 +3,7 @@ to_bool_map: public(HashMap[uint256, bool])
 to_uint_map: public(HashMap[uint256, uint256])
 to_multiple_map: public(HashMap[uint256, HashMap[uint256, uint256]])
 
-@external
+@deploy
 def __init__():
     self.to_string_map[42] = convert(b"24", bytes4)
     self.to_bool_map[42] = False

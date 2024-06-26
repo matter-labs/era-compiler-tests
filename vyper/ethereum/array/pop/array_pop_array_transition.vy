@@ -4,24 +4,24 @@ c: uint256
 inner: DynArray[uint16, 16]
 data: DynArray[DynArray[uint16, 20], 48]
 
-@external
+@deploy
 def __init__():
     self.inner = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
 @external
 def test() -> (uint256, uint256, uint256):
-    for i in range(1, 49):
+    for i: uint256 in range(1, 49):
         self.data.append(self.inner)
-    for j in range(1, 11):
+    for j: uint256 in range(1, 11):
         self.data.pop()
     x: uint256 = convert(self.data[len(self.data) - 1][0], uint256)
-    for k in range(1, 11):
+    for k: uint256 in range(1, 11):
         self.data.pop()
     y: uint256 = convert(self.data[len(self.data) - 1][1], uint256)
-    for l in range(1, 11):
+    for l: uint256 in range(1, 11):
         self.data.pop()
     z: uint256 = convert(self.data[len(self.data) - 1][2], uint256)
-    for m in range(1, 19):
+    for m: uint256 in range(1, 19):
         self.data.pop()
     self.inner = empty(DynArray[uint16, 16])
     return x, y, z

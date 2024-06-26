@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "address",
 #!     "inputs": [
 #!         {
@@ -10,7 +10,7 @@
 #!                 "Test.address"
 #!             ]
 #!         }, {
-#!             "method": "MY_ADDRESS",
+#!             "method": "GET_MY_ADDRESS",
 #!             "calldata": [
 #!             ]
 #!         }
@@ -30,7 +30,7 @@
 #!                 "Test.address"
 #!             ]
 #!         }, {
-#!             "method": "MY_UINT",
+#!             "method": "GET_MY_UINT",
 #!             "calldata": [
 #!             ]
 #!         }
@@ -44,15 +44,15 @@
 MY_ADDRESS: immutable(address)
 MY_UINT: immutable(uint256)
 
-@external
+@deploy
 def __init__(_myUint: uint256):
     MY_ADDRESS = msg.sender
     MY_UINT = _myUint
 
 @external
-def MY_ADDRESS() -> address:
+def GET_MY_ADDRESS() -> address:
     return MY_ADDRESS
 
 @external
-def MY_UINT() -> uint256:
+def GET_MY_UINT() -> uint256:
     return MY_UINT

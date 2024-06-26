@@ -1,7 +1,7 @@
 # This tests skipping the extcodesize check.
 
 interface I:
-    def a(): pure
+    def a() -> uint256: pure
     def b(): nonpayable
     def c(): payable
     def x() -> uint256: nonpayable
@@ -9,24 +9,24 @@ interface I:
 
 i: I
 
-@external
+@deploy
 def __init__():
     self.i = I(convert(0xcafecafe, address))
-   
+
 @external
 def f(c: uint256) -> uint256:
     if c == 0:
-        self.i.a()
+        result: uint256 = staticcall self.i.a()
     elif c == 1:
-        self.i.b()
+        extcall self.i.b()
     elif c == 2:
-        self.i.c()
+        extcall self.i.c()
     elif c == 3:
-        self.i.c()
+        extcall self.i.c()
     elif c == 4:
-        self.i.x()
+        extcall self.i.x()
     elif c == 5:
-        self.i.y()
+        extcall self.i.y()
     return 1 + c
 
 # ====

@@ -1,6 +1,6 @@
 a: public(uint256)
 
-@external
+@deploy
 def __init__():
     self.a = 42
 

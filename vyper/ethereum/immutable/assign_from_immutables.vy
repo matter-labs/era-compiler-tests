@@ -3,7 +3,7 @@ b: immutable(uint256)
 c: immutable(uint256)
 d: immutable(uint256)
 
-@external
+@deploy
 def __init__():
     a = 1
     b = a
@@ -11,25 +11,25 @@ def __init__():
     d = c
 
 @external
-def a() -> uint256:
+def get_a() -> uint256:
     return a
 
 @external
-def b() -> uint256:
+def get_b() -> uint256:
     return b
 
 @external
-def c() -> uint256:
+def get_c() -> uint256:
     return c
 
 @external
-def d() -> uint256:
+def get_d() -> uint256:
     return d
 
 # ====
 # compileViaYul: also
 # ----
-# a() -> 1
-# b() -> 1
-# c() -> 1
-# d() -> 1
+# get_a() -> 1
+# get_b() -> 1
+# get_c() -> 1
+# get_d() -> 1

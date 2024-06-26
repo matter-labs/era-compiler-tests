@@ -55,7 +55,7 @@ def testIterableMap():
     self.set(convert(2, address), 200) # update
     self.set(convert(3, address), 300)
 
-    for i in range(10):
+    for i: uint256 in range(10):
         if not i < self.size():
             break
         key: address = self.getKeyAtIndex(i)

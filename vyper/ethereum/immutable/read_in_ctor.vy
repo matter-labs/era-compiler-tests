@@ -1,7 +1,7 @@
 a: immutable(uint8)
 x: uint8
 
-@external
+@deploy
 def __init__():
     a = 3
     self.x = a

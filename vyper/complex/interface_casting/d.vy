@@ -5,4 +5,4 @@ interface CView:
 
 @external
 def fview(c: address) -> uint256:
-    return CView(c).f()
+    return staticcall CView(c).f()

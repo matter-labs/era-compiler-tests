@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -82,7 +82,7 @@ CONST: constant(uint256) = 3735928559 # 0xdeadbeef
 IMMUTABLE_: immutable(uint256)
 storage_var: Bytes[100]
 
-@external
+@deploy
 def __init__():
     IMMUTABLE_ = convert(0x0deadbeef3, uint256)
     self.storage_var = b"\x0d\xea\xdb\xee\xf4"
@@ -117,7 +117,7 @@ event Complex:
 def test(number_: uint256):
     log Empty()
     log OneWord(CONST)
-    log TwoWords(Str({a: -128, b: MAX_UINT256}))
-    log ThreeWords(Str({a: 127, b: number_}), 2)
+    log TwoWords(Str(a=-128, b=max_value(uint256)))
+    log ThreeWords(Str(a=127, b=number_), 2)
     log Dynamic("abc")
-    log Complex(Str({a: -1, b: IMMUTABLE_}), self.storage_var, [0], [0, 2, 1])
+    log Complex(Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])

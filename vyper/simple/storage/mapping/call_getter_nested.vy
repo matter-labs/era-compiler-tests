@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -24,8 +24,8 @@ def h() -> uint256:
 
 @external
 def f() -> uint256:
-    return Self(self).h()
+    return extcall Self(self).h()
 
 @external
 def g() -> uint256:
-    return Self(self).f()
+    return extcall Self(self).f()

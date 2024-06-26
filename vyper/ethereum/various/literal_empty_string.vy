@@ -11,7 +11,7 @@ def f(_x: bytes32, _a: uint256):
     
 @external
 def g():
-    Self(self).f(convert(b"", bytes32), 2)
+    extcall Self(self).f(convert(b"", bytes32), 2)
 
 # ====
 # compileViaYul: also

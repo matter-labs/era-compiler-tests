@@ -6,7 +6,7 @@ struct s:
 
 p: public(s[2])
 
-@external
+@deploy
 def __init__():
     m: s = empty(s)
     m.x = convert(0xbbbb, uint256)
@@ -14,6 +14,7 @@ def __init__():
     m.a = "hello"
     m.b = "world"
     self.p[0] = m
+
 # ====
 # compileViaYul: also
 # compileToEwasm: also

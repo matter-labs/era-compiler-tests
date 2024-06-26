@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "ok",
 #!     "inputs": [
 #!         {
@@ -26,7 +26,7 @@
 #!     "name": "MAX_UINT",
 #!     "inputs": [
 #!         {
-#!             "method": "MAX_UINT",
+#!             "method": "GET_MAX_UINT",
 #!             "calldata": [
 #!             ]
 #!         }
@@ -82,10 +82,10 @@
 #! } ] }
 
 balance_: public(uint256)
-MAX_UINT: constant(uint256) = (2**255 - 1) * 2 + 1
+MAX_UINT: constant(uint256) = max_value(uint256)
 
 @external
-def MAX_UINT() -> uint256:
+def GET_MAX_UINT() -> uint256:
     return MAX_UINT
 
 @external

@@ -1,0 +1,50 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "testInternalFunc",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "testInternalFunc",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "24",
+        "0x696e7465726e616c2066756e6374696f6e2063616c6c65640000000000000000"
+    ]
+}, {
+    "name": "externalFunc",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "externalFunc",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "24",
+        "0x65787465726e616c2066756e6374696f6e2063616c6c65640000000000000000"
+    ]
+}, {
+    "name": "publicVar",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "publicVar",
+            "calldata": [
+            ]
+        }
+    ],
+    "expected": [
+        "0x20",
+        "18",
+        "0x6d79207075626c6963207661726961626c650000000000000000000000000000"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.vy"
+    }
+}

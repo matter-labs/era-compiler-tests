@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "success",
 #!     "inputs": [
 #!         {
@@ -37,7 +37,7 @@
 
 c: uint256
 
-@external
+@deploy
 def __init__(a: uint256, b: uint256, shouldRevert: bool):
     self.c = a * b
     assert not shouldRevert

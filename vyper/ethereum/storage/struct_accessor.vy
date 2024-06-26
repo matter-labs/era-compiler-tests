@@ -5,7 +5,7 @@ struct Data:
 
 data: public(HashMap[uint256, Data])
 
-@external
+@deploy
 def __init__():
     self.data[7].a = 1
     self.data[7].b = 2

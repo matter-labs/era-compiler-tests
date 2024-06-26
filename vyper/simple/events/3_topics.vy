@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -16,7 +16,7 @@
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
 #!                     "0x0c5b4f36f8745c9db21282c9894b75174f0a8eedb32b243986263bfc37423006",
-#!                     "8923892323892398",
+#!                     "0x000000000000000000000000000000000000000000000000001fb43b97fabcae",
 #!                     "0x58ae9129f801e721b1bbf220c77ba8c48badd9b887f33def390a8120ed73c9cc"
 #!                 ],
 #!                 "values": []
@@ -94,7 +94,7 @@ CONST: constant(uint256) = 3735928559 # 0xdeadbeef
 IMMUTABLE_: immutable(uint256)
 storage_var: Bytes[100]
 
-@external
+@deploy
 def __init__():
     IMMUTABLE_ = convert(0x0deadbeef3, uint256)
     self.storage_var = b"\x0d\xea\xdb\xee\xf4"
@@ -139,10 +139,10 @@ event Complex:
 @external
 def test(number_: uint256):
     arr_u8: uint8[2] = [255, 0]
-    log Empty(8923892323892398, _abi_encode(arr_u8))
-    log OneWord(-128, CONST, 2**40-1)
-    log TwoWords(_abi_encode(Str({a: 1, b: 1})), -1, Str({a: -128, b: MAX_UINT256}))
+    log Empty(8923892323892398, abi_encode(arr_u8))
+    log OneWord(-128, CONST, max_value(uint40))
+    log TwoWords(abi_encode(Str(a=1, b=1)), -1, Str(a=-128, b=max_value(uint256)))
     ints: DynArray[int200, 10] = [-1, 131231231232134, 1]
-    log ThreeWords(1, slice(_abi_encode(ints), 64, 96), Str({a: 127, b: number_}), 2)
+    log ThreeWords(1, slice(abi_encode(ints), 64, 96), Str(a=127, b=number_), 2)
     log Dynamic(0xabcd, convert(0xdeadbeef, bytes32), "abc")
-    log Complex(b"\x12\x34\x56\x78\x90", b"\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x09\x87\x65\x43\x21\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", Str({a: -1, b: IMMUTABLE_}), self.storage_var, [0], [0, 2, 1])
+    log Complex(b"\x12\x34\x56\x78\x90", b"\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x09\x87\x65\x43\x21\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])

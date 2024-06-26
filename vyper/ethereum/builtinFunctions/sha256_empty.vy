@@ -1,6 +1,7 @@
 @external
 def f() -> bytes32:
     return sha256("")
+
 # ====
 # compileViaYul: also
 # ----

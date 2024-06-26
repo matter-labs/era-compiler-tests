@@ -25,7 +25,7 @@ def test() -> (uint256, uint256, uint256, uint256, uint256, uint256, uint256):
     c[1] = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
     c[1][1][1] = convert(0x85, uint256)
 
-    return Self(self).f(12, b, c, 13)
+    return staticcall Self(self).f(12, b, c, 13)
 
 # ----
 # test() -> 12, 3, 4, 0x66, 5, 0x85, 13

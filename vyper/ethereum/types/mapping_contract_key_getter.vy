@@ -12,7 +12,7 @@ def set(k: A, v: uint8):
     
 @external
 def get(k: A) -> uint8:
-    return Self(self).table(k)
+    return extcall Self(self).table(k)
 
 # ====
 # compileViaYul: also

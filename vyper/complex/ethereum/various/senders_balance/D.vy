@@ -1,8 +1,9 @@
-import C as C
+interface C:
+    def f() -> uint256: view
 
 c: C
 
-@external
+@deploy
 @payable
 def __init__(_c: address):
     self.c = C(create_forwarder_to(_c))
@@ -10,4 +11,4 @@ def __init__(_c: address):
 @external
 @view
 def f() -> uint256:
-    return self.c.f()
+    return staticcall self.c.f()

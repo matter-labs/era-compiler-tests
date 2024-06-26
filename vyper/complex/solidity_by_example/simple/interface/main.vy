@@ -9,7 +9,7 @@ factory: address
 dai: address
 weth: address
 
-@external
+@deploy
 def __init__():
     self.factory = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f
     self.dai = 0x6B175474E89094C44Da98b954EedeAC495271d0F
@@ -18,9 +18,9 @@ def __init__():
 @external
 @view
 def getTokenReserves() -> (uint256, uint256):
-    pair: address = UniswapV2Factory(self.factory).getPair(self.dai, self.weth)
+    pair: address = staticcall UniswapV2Factory(self.factory).getPair(self.dai, self.weth)
     reserve0: uint256 = 0
     reserve1: uint256 = 0
     _: uint256 = 0
-    reserve0, reserve1, _ = UniswapV2Pair(pair).getReserves()
+    reserve0, reserve1, _ = staticcall UniswapV2Pair(pair).getReserves()
     return (reserve0, reserve1)

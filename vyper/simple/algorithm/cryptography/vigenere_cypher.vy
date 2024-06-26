@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "complex1",
 #!     "inputs": [
 #!         {
@@ -47,14 +47,14 @@ KEY_SIZE: constant(uint8) = 4
 @internal
 def encrypt(_data: uint8[SIZE], key: uint8[KEY_SIZE]) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
-    for i in range(SIZE):
+    for i: uint8 in range(SIZE):
         data[i] = self.encryptSym(data[i], key[i % KEY_SIZE])
     return data
 
 @internal
 def decrypt(_data: uint8[SIZE], key: uint8[KEY_SIZE]) -> uint8[SIZE]:
     data: uint8[SIZE] = _data
-    for i in range(SIZE):
+    for i: uint8 in range(SIZE):
         data[i] = self.decryptSym(data[i], key[i % KEY_SIZE])
     return data
 

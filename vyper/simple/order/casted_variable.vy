@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "remainder_zero",
 #!     "inputs": [
 #!         {
@@ -43,4 +43,4 @@
 @pure
 def main(witness: uint256) -> uint256:
     variable: uint8 = 3
-    return witness / convert(variable, uint256)
+    return witness // convert(variable, uint256)

@@ -11,7 +11,7 @@ def test() -> (uint256, uint256):
     self.data2 = self.data1
     x: uint256 = self.data2[8].x
     y: uint256 = self.data2[8].y
-    for i in range(9):
+    for i: uint256 in range(9):
         self.data1[i] = empty(Data)
     self.data2 = self.data1
     return x, y

@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "boo",
 #!     "inputs": [
 #!         {
@@ -174,13 +174,13 @@ defaultUint: public(uint256) # 0
 defaultInt: public(int256) # 0
 defaultAddr: public(address) # 0x0000000000000000000000000000000000000000
 
-@external
+@deploy
 def __init__():
     self.boo = True
     self.u8 = 1
     self.u256 = 456
     self.i128 = -1
     self.i256 = 456
-    self.minInt128 = MIN_INT128
-    self.maxInt128 = MAX_INT128
+    self.minInt128 = min_value(int128)
+    self.maxInt128 = max_value(int128)
     self.addr = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c

@@ -1,4 +1,4 @@
-@external
+@deploy
 def __init__():
     raw_call(self, convert("123", Bytes[3]))
 

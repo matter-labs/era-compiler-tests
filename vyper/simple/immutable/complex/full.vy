@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -39,7 +39,7 @@ SELF: public(immutable(address))
 ABI_ENCODED_0: public(immutable(Bytes[4096]))
 ABI_ENCODED_1: public(immutable(Bytes[4096]))
 
-@external
+@deploy
 def __init__():
     name: String[64] = "Test"
     version: String[8] = "v1.0.0"
@@ -51,9 +51,9 @@ def __init__():
     VERSION_HASH = keccak256(version)
     SELF = self
 
-    ABI_ENCODED_0 = _abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self)
-    ABI_ENCODED_1 = _abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self)
+    ABI_ENCODED_0 = abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self)
+    ABI_ENCODED_1 = abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self)
 
-    DOMAIN_SEPARATOR_0 = keccak256(_abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
-    DOMAIN_SEPARATOR_0A = keccak256(_abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
-    DOMAIN_SEPARATOR_1 = keccak256(_abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self))
+    DOMAIN_SEPARATOR_0 = keccak256(abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
+    DOMAIN_SEPARATOR_0A = keccak256(abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), chain.id, self))
+    DOMAIN_SEPARATOR_1 = keccak256(abi_encode(EIP712_TYPEHASH, keccak256(name), keccak256(version), convert(280, uint256), self))

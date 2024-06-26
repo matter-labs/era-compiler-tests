@@ -1,4 +1,4 @@
-@external
+@deploy
 @payable
 def __init__():
     pass

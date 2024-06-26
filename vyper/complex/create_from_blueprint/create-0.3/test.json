@@ -1,0 +1,30 @@
+{ "modes": [ "V 0.3.9", "V 0.3.10" ], "cases": [ {
+    "name": "entry",
+    "inputs": [
+        {
+            "instance": "Callable",
+            "method": "#deployer",
+            "calldata": [
+                "0x0"
+            ],
+            "expected": [
+                "Callable.address"
+            ]
+        },
+        {
+            "instance": "Main",
+            "method": "main",
+            "calldata": [
+                "Callable.address"
+            ]
+        }
+    ],
+    "expected": [
+        "10"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.vy",
+        "Callable": "callable.vy"
+    }
+}

@@ -1,6 +1,6 @@
 b: public(Bytes[10])
 
-@external
+@deploy
 def __init__():
     self.b = b"abc"
     

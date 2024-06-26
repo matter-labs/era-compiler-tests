@@ -7,7 +7,7 @@ emptyBytes: Bytes[200]
 event EmptyEvent:
     _: String[100]
 
-@external
+@deploy
 def __init__():
     self.emptyString = ""
     self.nonEmptyString = "This is a non empty string"
@@ -41,11 +41,11 @@ def k() -> String[100]:
 
 @external
 def l(_s: String[100]) -> Bytes[192]:
-    return _abi_encode(_s)
+    return abi_encode(_s)
 
 @external
 def m() -> String[192]:
-    b: Bytes[192] = _abi_encode(self.emptyString)
+    b: Bytes[192] = abi_encode(self.emptyString)
     return convert(b, String[192])
 
 @external
@@ -62,12 +62,12 @@ def q() -> Bytes[100]:
     
 @external
 def r() -> Bytes[200]:
-    self.emptyBytes = _abi_encode("")
+    self.emptyBytes = abi_encode("")
     return self.emptyBytes
 
 @external
 def s() -> Bytes[200]:
-    self.emptyBytes = _abi_encode(self.uninitializedString)
+    self.emptyBytes = abi_encode(self.uninitializedString)
     return self.emptyBytes
 
 @external

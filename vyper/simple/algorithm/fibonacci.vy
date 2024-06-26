@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "one",
 #!     "inputs": [
 #!         {
@@ -46,7 +46,7 @@ def main(n: uint8) -> uint256:
     value2: uint256 = 1
     fibo: uint256 = value1
 
-    for i in range(1, 100):
+    for i: uint8 in range(1, 100):
         if not i <= n - 2:
             break
         fibo = value1 + value2

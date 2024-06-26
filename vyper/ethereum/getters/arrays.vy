@@ -1,6 +1,6 @@
 a: public(uint8[2][2])
 
-@external
+@deploy
 def __init__():
     self.a[1][0] = 3
     self.a[1][1] = 4

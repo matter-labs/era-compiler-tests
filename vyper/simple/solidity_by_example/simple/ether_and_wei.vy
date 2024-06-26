@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "oneWei",
 #!     "inputs": [
 #!         {
@@ -56,7 +56,7 @@ oneEther: public(uint256)
 # 1 ether is equal to 10^18 wei
 isOneEther: public(bool)
 
-@external
+@deploy
 def __init__():
     self.oneWei = as_wei_value(1, "wei")
     self.isOneWei = as_wei_value(1, "wei") == 1

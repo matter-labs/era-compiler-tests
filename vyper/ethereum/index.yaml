@@ -4,12 +4,25 @@ entries:
   abiencodedecode:
     enabled: true
     entries:
+      abi_encode_call_is_consistent-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_call_is_consistent.vy:
         enabled: true
+        version: '>=0.4.0'
+      abi_encode_call_special_args-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_call_special_args.vy:
         enabled: true
-      abi_encode_call_uint_bytes.vy:
+        version: '>=0.4.0'
+      abi_encode_call_uint_bytes-0.3.vy:
         enabled: true
+        version: '<=0.3.10'
+      abi_encode_call_uint_bytes.vy:
+        enabled: false
+        comment: 'vyper.exceptions.CompilerPanic: risky overlap'
+        version: '>=0.4.0'
       abi_encode_empty_string_v1.vy:
         enabled: true
       abi_encode_with_selector.vy:
@@ -29,8 +42,12 @@ entries:
         enabled: true
       abi_encode_call.vy:
         enabled: true
+      abi_encode_calldata_slice-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_calldata_slice.vy:
         enabled: true
+        version: '>=0.4.0'
       abi_encode_empty_string.vy:
         enabled: true
       abi_encode_rational.vy:
@@ -42,13 +59,24 @@ entries:
         version: '=0.3.3'
       dynamic_arrays.vy:
         enabled: true
+      memory_params_in_external_function-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       memory_params_in_external_function.vy:
         enabled: true
+        version: '>=0.4.0'
+      return_dynamic_types_cross_call_advanced-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       return_dynamic_types_cross_call_advanced.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      return_dynamic_types_cross_call_simple-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       return_dynamic_types_cross_call_simple.vy:
         enabled: true
+        version: '>=0.4.0'
       struct:
         enabled: true
         entries:
@@ -58,8 +86,12 @@ entries:
   abiEncoderV2:
     enabled: true
     entries:
+      abi_encode_calldata_slice-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       abi_encode_calldata_slice.vy:
         enabled: true
+        version: '>=0.4.0'
       abi_encode_empty_string_v2.vy:
         enabled: true
       abi_encode_rational_v2.vy:
@@ -70,58 +102,116 @@ entries:
         enabled: true
       byte_arrays.vy:
         enabled: true
+      calldata_array-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_array.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      calldata_array_dynamic-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_dynamic.vy:
         enabled: true
+        version: '>=0.4.0'
       calldata_array_dynamic_index_access.vy:
         enabled: false
         comment: 'Arrays of arrays are not allowed'
+      calldata_array_dynamic_static_dynamic-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_array_dynamic_static_dynamic.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      calldata_array_dynamic_static_short_reencode-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_array_dynamic_static_short_reencode.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      calldata_array_multi_dynamic-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_array_multi_dynamic.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
       calldata_array_short_no_revert_string.vy:
         enabled: false
         comment: "Other behavior on EraVM"
+      calldata_array_static-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_static.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_array_static_dynamic_static-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_array_static_dynamic_static.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      calldata_array_static_index_access-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_static_index_access.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_array_struct_dynamic-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_struct_dynamic.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_array_two_dynamic-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_two_dynamic.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_array_two_static-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_two_static.vy:
         enabled: true
+        version: '>=0.4.0'
       calldata_nested_array_reencode.vy:
         enabled: false
         comment: "Other behavior on EraVM"
+      calldata_nested_array_static_reencode-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_nested_array_static_reencode.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      calldata_struct_dynamic-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_struct_dynamic.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_struct_member_offset-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_struct_member_offset.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_struct_simple-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_struct_simple.vy:
         enabled: true
+        version: '>=0.4.0'
       cleanup:
         enabled: true
         entries:
           address.vy:
             enabled: true
+          bool-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bool.vy:
             enabled: true
+            version: '>=0.4.0'
           bytesx.vy:
             enabled: true
           cleanup.vy:
@@ -138,11 +228,18 @@ entries:
             enabled: true
       dynamic_arrays.vy:
         enabled: true
+      dynamic_nested_arrays-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       dynamic_nested_arrays.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      memory_params_in_external_function-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       memory_params_in_external_function.vy:
         enabled: true
+        version: '>=0.4.0'
       storage_array_encoding.vy:
         enabled: true
       struct:
@@ -161,8 +258,12 @@ entries:
   accessor:
     enabled: true
     entries:
+      accessor_for_state_variable-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       accessor_for_state_variable.vy:
         enabled: true
+        version: '>=0.4.0'
   arithmetics:
     enabled: true
     entries:
@@ -172,25 +273,49 @@ entries:
         enabled: true
       checked_add_v2.vy:
         enabled: true
-      divisiod_by_zero.vy:
+      division_by_zero-0.3.vy:
         enabled: true
+        version: '<=0.3.10'
+      division_by_zero.vy:
+        enabled: true
+        version: '>=0.4.0'
+      signed_mod-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       signed_mod.vy:
         enabled: true
+        version: '>=0.4.0'
   array:
     enabled: true
     entries:
       arrays_complex_from_and_to_storage.vy:
         enabled: true
+      byte_array_transitional_2-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       byte_array_transitional_2.vy:
         enabled: true
+        version: '>=0.4.0'
       bytes_length_member.vy:
         enabled: true
+      bytes_to_fixed_bytes_cleanup-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       bytes_to_fixed_bytes_cleanup.vy:
         enabled: true
+        version: '>=0.4.0'
+      bytes_to_fixed_bytes_simple-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       bytes_to_fixed_bytes_simple.vy:
         enabled: true
+        version: '>=0.4.0'
+      bytes_to_fixed_bytes_too_long-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       bytes_to_fixed_bytes_too_long.vy:
         enabled: true
+        version: '>=0.4.0'
       calldata_array.vy:
         enabled: true
       calldata_array_as_argument_internal_function.vy:
@@ -203,10 +328,18 @@ entries:
         version: '>=0.3.9'
       calldata_array_of_struct.vy:
         enabled: true
+      calldata_array_two_dimensional-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_two_dimensional.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_array_two_dimensional_1-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_array_two_dimensional_1.vy:
         enabled: true
+        version: '>=0.4.0'
       calldata_bytes_array_bounds.vy:
         enabled: true
       concat:
@@ -218,14 +351,22 @@ entries:
             enabled: true
           bytes_concat_as_argument.vy:
             enabled: true
+          bytes_concat_different_types-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bytes_concat_different_types.vy:
             enabled: true
+            version: '>=0.4.0'
           bytes_concat_empty_strings.vy:
             enabled: true
           bytes_concat_nested.vy:
             enabled: true
+      constant_var_as_array_length-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       constant_var_as_array_length.vy:
         enabled: true
+        version: '>=0.4.0'
       copying:
         enabled: true
         entries:
@@ -239,25 +380,42 @@ entries:
             enabled: true
           array_copy_clear_storage_packed.vy:
             enabled: true
+          array_copy_including_array-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_copy_including_array.vy:
             enabled: true
+            version: '>=0.4.0'
           array_copy_memory_to_storage.vy:
             enabled: true
           array_copy_nested_array.vy:
             enabled: true
           array_copy_storage_abi_signed.vy:
             enabled: true
+          array_copy_storage_storage_dyn_dyn-0.3.vy:
+            enabled: true
+            comment: "Without storageEmpty check"
+            version: '<=0.3.10'
           array_copy_storage_storage_dyn_dyn.vy:
             enabled: true
             comment: "Without storageEmpty check"
+            version: '>=0.4.0'
           array_copy_storage_storage_dynamic_dynamic.vy:
             enabled: true
+          array_copy_storage_storage_static_simple-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_copy_storage_storage_static_simple.vy:
             enabled: true
+            version: '>=0.4.0'
           array_copy_storage_storage_static_static.vy:
             enabled: true
+          array_copy_storage_storage_struct-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_copy_storage_storage_struct.vy:
             enabled: true
+            version: '>=0.4.0'
           array_copy_storage_to_memory.vy:
             enabled: true
           array_copy_storage_to_memory_nested.vy:
@@ -274,12 +432,24 @@ entries:
             enabled: true
           array_of_struct_memory_to_storage.vy:
             enabled: true
+          array_of_structs_containing_arrays_calldata_to_memory-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_of_structs_containing_arrays_calldata_to_memory.vy:
             enabled: true
+            version: '>=0.4.0'
+          array_of_structs_containing_arrays_calldata_to_storage-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_of_structs_containing_arrays_calldata_to_storage.vy:
             enabled: true
+            version: '>=0.4.0'
+          array_of_structs_containing_arrays_memory_to_storage-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_of_structs_containing_arrays_memory_to_storage.vy:
             enabled: true
+            version: '>=0.4.0'
           array_storage_multi_items_per_slot.vy:
             enabled: true
           arrays_from_and_to_storage.vy:
@@ -291,10 +461,18 @@ entries:
             comment: "Without storageEmpty check"
           bytes_memory_to_storage.vy:
             enabled: true
+          bytes_storage_to_memory-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bytes_storage_to_memory.vy:
             enabled: true
+            version: '>=0.4.0'
+          bytes_storage_to_storage-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bytes_storage_to_storage.vy:
             enabled: true
+            version: '>=0.4.0'
           calldata_2d_bytes_to_memory.vy:
             enabled: true
           calldata_2d_bytes_to_memory_2.vy:
@@ -314,34 +492,56 @@ entries:
             version: '>=0.3.9'
           calldata_dynamic_array_to_memory.vy:
             enabled: true
+          calldata_nested_array_copy_to_memory-0.3.vy:
+            enabled: true
+            version: '>=0.3.9, <=0.3.10'
           calldata_nested_array_copy_to_memory.vy:
             enabled: true
-            version: '>=0.3.9'
+            version: '>=0.4.0'
+          cleanup_during_multi_element_per_slot_copy-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           cleanup_during_multi_element_per_slot_copy.vy:
             enabled: true
+            version: '>=0.4.0'
           copy_byte_array_in_struct_to_storage.vy:
             enabled: true
             comment: "Without storageEmpty check"
           copy_removes_bytes_data.vy:
             enabled: true
             comment: "Without storageEmpty check"
+          empty_bytes_copy-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           empty_bytes_copy.vy:
             enabled: true
+            version: '>=0.4.0'
+          memory_dyn_2d_bytes_to_storage-0.3.vy:
+            enabled: true
+            version: '>=0.3.9, <=0.3.10'
           memory_dyn_2d_bytes_to_storage.vy:
             enabled: true
-            version: '>=0.3.9'
+            version: '>=0.4.0'
           storage_memory_nested.vy:
             enabled: true
+          storage_memory_nested_bytes-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           storage_memory_nested_bytes.vy:
             enabled: true
+            version: '>=0.4.0'
           storage_memory_nested_from_pointer.vy:
             enabled: true
           storage_memory_nested_struct.vy:
             enabled: true
           storage_memory_packed.vy:
             enabled: true
+          storage_memory_packed_dyn-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           storage_memory_packed_dyn.vy:
             enabled: true
+            version: '>=0.4.0'
           string_calldata_to_bytes_calldata.vy:
             enabled: true
       create_dynamic_array_with_zero_length.vy:
@@ -353,18 +553,40 @@ entries:
         comment: "Other behavior on EraVM"
       create_memory_byte_array.vy:
         enabled: true
+      create_multiple_dynamic_arrays-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       create_multiple_dynamic_arrays.vy:
         enabled: true
+        version: '>=0.4.0'
+      dynamic_array_cleanup-0.3.vy:
+        enabled: true
+        comment: "Without storageEmpty check"
+        version: '<=0.3.10'
       dynamic_array_cleanup.vy:
         enabled: true
         comment: "Without storageEmpty check"
+        version: '>=0.4.0'
+      dynamic_arrays_in_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       dynamic_arrays_in_storage.vy:
         enabled: true
+        version: '>=0.4.0'
+      dynamic_multi_array_cleanup-0.3.vy:
+        enabled: true
+        comment: "Without storageEmpty check"
+        version: '<=0.3.10'
       dynamic_multi_array_cleanup.vy:
         enabled: true
         comment: "Without storageEmpty check"
+        version: '>=0.4.0'
+      dynamic_out_of_bounds_array_access-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       dynamic_out_of_bounds_array_access.vy:
         enabled: true
+        version: '>=0.4.0'
       delete:
         enabled: true
         entries:
@@ -381,16 +603,32 @@ entries:
             enabled: true
           delete_storage_array_packed.vy:
             enabled: true
+          memory_arrays_delete-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           memory_arrays_delete.vy:
             enabled: true
+            version: '>=0.4.0'
+      evm_exceptions_out_of_band_access-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       evm_exceptions_out_of_band_access.vy:
         enabled: true
+        version: '>=0.4.0'
       external_array_args.vy:
         enabled: true
+      fixed_array_cleanup-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       fixed_array_cleanup.vy:
         enabled: true
+        version: '>=0.4.0'
+      fixed_arrays_in_constructors-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       fixed_arrays_in_constructors.vy:
         enabled: true
+        version: '>=0.4.0'
       fixed_arrays_in_storage.vy:
         enabled: true
       fixed_out_of_bounds_array_access.vy:
@@ -404,9 +642,12 @@ entries:
             enabled: true
           inline_array_index_access_strings.vy:
             enabled: true
+          memory_arrays_dynamic_index_access_write-0.3.vy:
+            enabled: true
+            version: '=0.3.10'
           memory_arrays_dynamic_index_access_write.vy:
             enabled: true
-            version: '>=0.3.10'
+            version: '>=0.4.0'
           memory_arrays_index_access_write.vy:
             enabled: true
             version: '>=0.3.10'
@@ -416,21 +657,41 @@ entries:
         enabled: true
       inline_array_storage_to_memory_conversion_ints.vy:
         enabled: true
+      inline_array_storage_to_memory_conversion_strings-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       inline_array_storage_to_memory_conversion_strings.vy:
         enabled: true
+        version: '>=0.4.0'
+      inline_array_strings_from_document-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       inline_array_strings_from_document.vy:
         enabled: true
+        version: '>=0.4.0'
+      memory-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       memory.vy:
         enabled: true
+        version: '>=0.4.0'
+      memory_arrays_of_various_sizes-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       memory_arrays_of_various_sizes.vy:
         enabled: true
+        version: '>=0.4.0'
       pop:
         enabled: true
         entries:
           array_pop.vy:
             enabled: true
+          array_pop_array_transition-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_pop_array_transition.vy:
             enabled: true
+            version: '>=0.4.0'
           array_pop_empty_exception.vy:
             enabled: true
           array_pop_isolated.vy:
@@ -438,10 +699,18 @@ entries:
             comment: "Expressions without assignment are disallowed"
           array_pop_storage_empty.vy:
             enabled: true
+          array_pop_uint16_transition-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_pop_uint16_transition.vy:
             enabled: true
+            version: '>=0.4.0'
+          array_pop_uint24_transition-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_pop_uint24_transition.vy:
             enabled: true
+            version: '>=0.4.0'
           parenthesized.vy:
             enabled: true
       push:
@@ -449,35 +718,71 @@ entries:
         entries:
           array_push.vy:
             enabled: true
+          array_push_nested-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_push_nested.vy:
             enabled: true
+            version: '>=0.4.0'
+          array_push_nested_from_calldata-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_push_nested_from_calldata.vy:
             enabled: true
+            version: '>=0.4.0'
+          array_push_nested_from_memory-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_push_nested_from_memory.vy:
             enabled: true
+            version: '>=0.4.0'
           array_push_packed_array.vy:
             enabled: true
           array_push_struct.vy:
             enabled: true
           array_push_struct_from_calldata.vy:
             enabled: true
+      short_fixed_array_cleanup-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       short_fixed_array_cleanup.vy:
         enabled: true
+        version: '>=0.4.0'
       slices:
         enabled: true
         entries:
+          array_slice_calldata_as_argument_of_external_calls-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_slice_calldata_as_argument_of_external_calls.vy:
             enabled: true
+            version: '>=0.4.0'
+      storage_array_ref-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       storage_array_ref.vy:
         enabled: true
+        version: '>=0.4.0'
+      string_allocation_bug-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       string_allocation_bug.vy:
         enabled: true
+        version: '>=0.4.0'
       string_bytes_conversion.vy:
         enabled: true
+      string_literal_assign_to_storage_bytes-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       string_literal_assign_to_storage_bytes.vy:
         enabled: true
+        version: '>=0.4.0'
+      strings_in_struct-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       strings_in_struct.vy:
         enabled: true
+        version: '>=0.4.0'
   builtinFunctions:
     enabled: true
     entries:
@@ -522,21 +827,36 @@ entries:
       calldata_bound_struct.vy:
         enabled: true
         comment: "Without bound"
+      calldata_bytes_external-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_bytes_external.vy:
         enabled: true
+        version: '>=0.4.0'
       calldata_bytes_internal.vy:
         enabled: true
       calldata_bytes_to_memory.vy:
         enabled: true
       calldata_bytes_to_memory_encode.vy:
         enabled: true
+      calldata_internal_multi_array-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       calldata_internal_multi_array.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      calldata_internal_multi_fixed_array-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_internal_multi_fixed_array.vy:
         enabled: true
+        version: '>=0.4.0'
+      calldata_memory_mixed-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calldata_memory_mixed.vy:
         enabled: true
+        version: '>=0.4.0'
       calldata_string_array.vy:
         enabled: false
         comment: "Unsupported, but can be supported in the future"
@@ -562,8 +882,12 @@ entries:
     entries:
       negative_fractional_mod.vy:
         enabled: true
+      rounding-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       rounding.vy:
         enabled: true
+        version: '>=0.4.0'
   constants:
     enabled: true
     entries:
@@ -573,26 +897,53 @@ entries:
         enabled: true
       constant_variables.vy:
         enabled: true
+      consteval_array_length-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       consteval_array_length.vy:
         enabled: true
+        version: '>=0.4.0'
       simple_constant_variables_test.vy:
         enabled: true
   constructor:
     enabled: true
     entries:
+      bytes_in_constructors_unpacker-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       bytes_in_constructors_unpacker.vy:
         enabled: true
+        version: '>=0.4.0'
+      constructor_arguments_external-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       constructor_arguments_external.vy:
         enabled: true
+        version: '>=0.4.0'
+      constructor_static_array_argument-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       constructor_static_array_argument.vy:
         enabled: true
+        version: '>=0.4.0'
+      functions_called_by_constructor-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       functions_called_by_constructor.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      payable_constructor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       payable_constructor.vy:
         enabled: true
+        version: '>=0.4.0'
+  constructor_with_params-0.3.vy:
+    enabled: true
+    version: '<=0.3.10'
   constructor_with_params.vy:
     enabled: true
+    version: '>=0.4.0'
   conversions:
     enabled: true
     entries:
@@ -625,12 +976,20 @@ entries:
     entries:
       event.vy:
         enabled: true
+      event_constructor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       event_constructor.vy:
         enabled: true
+        version: '>=0.4.0'
       event_dynamic_array_memory.vy:
         enabled: true
+      event_dynamic_array_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       event_dynamic_array_storage.vy:
         enabled: true
+        version: '>=0.4.0'
       event_dynamic_nested_array_memory_v2.vy:
         enabled: true
         version: '>=0.3.9'
@@ -655,8 +1014,12 @@ entries:
         enabled: true
       event_string.vy:
         enabled: true
+      event_struct_memory_v2-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       event_struct_memory_v2.vy:
         enabled: true
+        version: '>=0.4.0'
       event_struct_storage_v2.vy:
         enabled: true
   expressions:
@@ -668,8 +1031,12 @@ entries:
         enabled: true
       exp_operator_const_signed.vy:
         enabled: true
+        comment: 'ValueError: math domain error'
+        version: '<=0.3.10'
       exp_zero_literal.vy:
         enabled: true
+        comment: 'ValueError: math domain error'
+        version: '<=0.3.10'
       unary_too_long_literal.vy:
         enabled: true
   fallback:
@@ -684,30 +1051,62 @@ entries:
   functionCall:
     enabled: true
     entries:
+      array_multiple_local_vars-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       array_multiple_local_vars.vy:
         enabled: true
+        version: '>=0.4.0'
       call_internal_function_via_expression.vy:
         enabled: true
+      calling_nonexisting_contract_throws-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calling_nonexisting_contract_throws.vy:
         enabled: true
+        version: '>=0.4.0'
+      calling_other_functions-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       calling_other_functions.vy:
         enabled: true
+        version: '>=0.4.0'
       delegatecall_return_value.vy:
         enabled: true
       delegatecall_return_value_pre_byzantium.vy:
         enabled: true
+      external_call-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       external_call.vy:
         enabled: true
+        version: '>=0.4.0'
+      external_call_dynamic_returndata-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       external_call_dynamic_returndata.vy:
         enabled: true
+        version: '>=0.4.0'
+      external_call_to_nonexisting-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       external_call_to_nonexisting.vy:
         enabled: true
+        version: '>=0.4.0'
+      external_call_value-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       external_call_value.vy:
         enabled: true
+        version: '>=0.4.0'
       external_function.vy:
         enabled: true
+      member_accessors-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       member_accessors.vy:
         enabled: true
+        version: '>=0.4.0'
       multiple_functions.vy:
         enabled: true
       multiple_return_values.vy:
@@ -719,69 +1118,161 @@ entries:
   getters:
     enabled: true
     entries:
+      array_mapping_struct-0.3.vy:
+        enabled: false
+        comment: "Unsupported, but can be supported in the future"
+        version: '<=0.3.10'
       array_mapping_struct.vy:
         enabled: false
         comment: "Unsupported, but can be supported in the future"
+        version: '>=0.4.0'
+      arrays-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       arrays.vy:
         enabled: true
+        version: '>=0.4.0'
+      bytes-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       bytes.vy:
         enabled: true
+        version: '>=0.4.0'
+      mapping-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       mapping.vy:
         enabled: true
+        version: '>=0.4.0'
+      mapping_array_struct-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       mapping_array_struct.vy:
         enabled: true
+        version: '>=0.4.0'
+      mapping_of_string-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       mapping_of_string.vy:
         enabled: true
+        version: '>=0.4.0'
+      mapping_to_struct-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       mapping_to_struct.vy:
         enabled: true
+        version: '>=0.4.0'
+      string_and_bytes-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       string_and_bytes.vy:
         enabled: true
+        version: '>=0.4.0'
+      struct_with_bytes-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_with_bytes.vy:
         enabled: true
+        version: '>=0.4.0'
+      struct_with_bytes_simple-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_with_bytes_simple.vy:
         enabled: true
+        version: '>=0.4.0'
+      value_types-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       value_types.vy:
         enabled: true
+        version: '>=0.4.0'
   immutable:
     enabled: true
     entries:
+      assign_at_declaration-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       assign_at_declaration.vy:
         enabled: true
+        version: '>=0.4.0'
+      assign_from_immutables-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       assign_from_immutables.vy:
         enabled: true
+        version: '>=0.4.0'
+      fun_read_in_ctor-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       fun_read_in_ctor.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      immutable_signed-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       immutable_signed.vy:
         enabled: true
+        version: '>=0.4.0'
+      read_in_ctor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       read_in_ctor.vy:
         enabled: true
+        version: '>=0.4.0'
+      small_types_in_reverse-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       small_types_in_reverse.vy:
         enabled: true
+        version: '>=0.4.0'
+      stub-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       stub.vy:
         enabled: true
+        version: '>=0.4.0'
+      use_scratch-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       use_scratch.vy:
         enabled: true
+        version: '>=0.4.0'
   integer:
     enabled: true
     entries:
+      basic-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       basic.vy:
         enabled: true
+        version: '>=0.4.0'
+      int-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       int.vy:
         enabled: true
+        version: '>=0.4.0'
       many_local_variables.vy:
         enabled: true
       small_signed_types.vy:
         enabled: true
+      uint-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       uint.vy:
         enabled: true
+        version: '>=0.4.0'
   interfaceID:
     enabled: true
     entries:
       homer.vy:
         enabled: true
+      lisa-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       lisa.vy:
         enabled: true
+        version: '>=0.4.0'
   isoltestFormatting.vy:
     enabled: true
   isoltestTesting:
@@ -790,10 +1281,18 @@ entries:
       account.vy:
         enabled: false
         comment: "Uses unsupported isoltest"
+      balance_with_balance-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       balance_with_balance.vy:
         enabled: true
+        version: '>=0.4.0'
+      balance_with_balance2-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       balance_with_balance2.vy:
         enabled: true
+        version: '>=0.4.0'
       balance_without_balance.vy:
         enabled: true
       builtins.vy:
@@ -840,20 +1339,40 @@ entries:
       shifts:
         enabled: true
         entries:
+          bitwise_shifting_constantinople-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bitwise_shifting_constantinople.vy:
             enabled: true
+            version: '>=0.4.0'
+          bitwise_shifting_constantinople_combined-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bitwise_shifting_constantinople_combined.vy:
             enabled: true
+            version: '>=0.4.0'
+          bitwise_shifting_constants_constantinople-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           bitwise_shifting_constants_constantinople.vy:
             enabled: true
+            version: '>=0.4.0'
           shift_cleanup.vy:
             enabled: true
           shift_cleanup_garbled.vy:
             enabled: true
+          shift_constant_left-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_constant_left.vy:
             enabled: true
+            version: '>=0.4.0'
+          shift_constant_right-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_constant_right.vy:
             enabled: true
+            version: '>=0.4.0'
           shift_left.vy:
             enabled: true
           shift_overflow.vy:
@@ -874,8 +1393,12 @@ entries:
     entries:
       assert_require.vy:
         enabled: true
+      revert-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       revert.vy:
         enabled: true
+        version: '>=0.4.0'
       simple_throw.vy:
         enabled: true
   revertStrings:
@@ -893,8 +1416,12 @@ entries:
       calldata_tail_short.vy:
         enabled: false
         comment: "Other behavior on EraVM"
+      called_contract_has_code-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       called_contract_has_code.vy:
         enabled: true
+        version: '>=0.4.0'
       empty_v1.vy:
         enabled: true
         comment: "Without empty reason string"
@@ -914,16 +1441,28 @@ entries:
   smoke:
     enabled: true
     entries:
+      alignment-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       alignment.vy:
         enabled: true
+        version: '>=0.4.0'
+      arrays-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       arrays.vy:
         enabled: true
+        version: '>=0.4.0'
       basic.vy:
         enabled: true
       bytes_and_strings.vy:
         enabled: true
+      constructor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       constructor.vy:
         enabled: true
+        version: '>=0.4.0'
       failure.vy:
         enabled: true
       fallback.vy:
@@ -932,8 +1471,12 @@ entries:
         enabled: true
       multiline_comments.vy:
         enabled: true
+      structs-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       structs.vy:
         enabled: true
+        version: '>=0.4.0'
   specialFunctions:
     enabled: true
     entries:
@@ -950,19 +1493,39 @@ entries:
         enabled: true
       msg_value.vy:
         enabled: true
+  state_var_initialization-0.3.vy:
+    enabled: true
+    version: '<=0.3.10'
   state_var_initialization.vy:
     enabled: true
+    version: '>=0.4.0'
   storage:
     enabled: true
     entries:
+      accessors_mapping_for_array-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       accessors_mapping_for_array.vy:
         enabled: true
+        version: '>=0.4.0'
+      array_accessor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       array_accessor.vy:
         enabled: true
+        version: '>=0.4.0'
+      chop_sign_bits-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       chop_sign_bits.vy:
         enabled: true
+        version: '>=0.4.0'
+      complex_accessors-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       complex_accessors.vy:
         enabled: true
+        version: '>=0.4.0'
       empty_nonempty_empty.vy:
         enabled: true
         comment: "Without storageEmpty checks"
@@ -982,12 +1545,20 @@ entries:
         enabled: true
       packed_storage_structs_uint.vy:
         enabled: true
+      simple_accessor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       simple_accessor.vy:
         enabled: true
+        version: '>=0.4.0'
       state_smoke_test.vy:
         enabled: true
+      struct_accessor-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_accessor.vy:
         enabled: true
+        version: '>=0.4.0'
   strings:
     enabled: true
     entries:
@@ -996,18 +1567,32 @@ entries:
         entries:
           string_concat_2_args.vy:
             enabled: true
+          string_concat_different_types-0.3.vy:
+            enabled: true
+            comment: "Without storage reference and slice"
+            version: '<=0.3.10'
           string_concat_different_types.vy:
             enabled: true
             comment: "Without storage reference and slice"
+            version: '>=0.4.0'
           string_concat_empty_strings.vy:
             enabled: true
           string_concat_nested.vy:
             enabled: true
+      constant_string_literal-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       constant_string_literal.vy:
         enabled: true
+        version: '>=0.4.0'
+      empty_storage_string-0.3.vy:
+        enabled: true
+        comment: "Without error"
+        version: '<=0.3.10'
       empty_storage_string.vy:
         enabled: true
         comment: "Without error"
+        version: '>=0.4.0'
       empty_string.vy:
         enabled: true
       empty_string_input.vy:
@@ -1076,15 +1661,30 @@ entries:
           recursive_storage_memory_complex.vy:
             enabled: false
             comments: 'Recursive structures are not supported'
+      copy_from_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       copy_from_storage.vy:
         enabled: true
+        version: '>=0.4.0'
+      copy_struct_array_from_storage-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       copy_struct_array_from_storage.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      delete_struct-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       delete_struct.vy:
         enabled: true
+        version: '>=0.4.0'
+      event-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       event.vy:
         enabled: true
+        version: '>=0.4.0'
       global.vy:
         enabled: true
       lone_struct_array_type.vy:
@@ -1102,19 +1702,35 @@ entries:
         enabled: true
       msg_data_to_struct_member_copy.vy:
         enabled: true
+      multislot_struct_allocation-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       multislot_struct_allocation.vy:
         enabled: true
+        version: '>=0.4.0'
+      nested_struct_allocation-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       nested_struct_allocation.vy:
         enabled: true
+        version: '>=0.4.0'
       packed_storage_structs_delete.vy:
         enabled: true
       recursive_structs.vy:
         enabled: false
         comment: 'Recursive structures are not supported'
+      simple_struct_allocation-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       simple_struct_allocation.vy:
         enabled: true
+        version: '>=0.4.0'
+      struct_constructor_nested-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_constructor_nested.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_containing_bytes_copy_and_delete.vy:
         enabled: true
         comment: "Without storageEmpty checks"
@@ -1122,10 +1738,18 @@ entries:
         enabled: true
       struct_copy_via_local.vy:
         enabled: true
+      struct_delete_member-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_delete_member.vy:
         enabled: true
+        version: '>=0.4.0'
+      struct_delete_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_delete_storage.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_delete_storage_nested_small.vy:
         enabled: false
         comment: 'Recursive structures are not supported'
@@ -1136,19 +1760,35 @@ entries:
         comment: 'Recursive structures are not supported'
       struct_delete_storage_with_arrays_small.vy:
         enabled: true
+      struct_delete_struct_in_mapping-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_delete_struct_in_mapping.vy:
         enabled: true
+        version: '>=0.4.0'
+      struct_memory_to_storage-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_memory_to_storage.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_named_constructor.vy:
         enabled: false
         comment: "Disabled because different order of fields is not allowed"
+      struct_storage_push_zero_value-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_storage_push_zero_value.vy:
         enabled: true
+        version: '>=0.4.0'
       struct_storage_to_mapping.vy:
         enabled: true
+      struct_storage_to_memory-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_storage_to_memory.vy:
         enabled: true
+        version: '>=0.4.0'
       structs.vy:
         enabled: false
         comment: 'Recursive structures are not supported'
@@ -1180,8 +1820,12 @@ entries:
         enabled: true
       mapping_contract_key.vy:
         enabled: true
+      mapping_contract_key_getter-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       mapping_contract_key_getter.vy:
         enabled: true
+        version: '>=0.4.0'
       mapping_simple.vy:
         enabled: true
       packing_signed_types.vy:
@@ -1207,29 +1851,48 @@ entries:
     entries:
       assignment_to_const_var_involving_expression.vy:
         enabled: true
+      balance-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       balance.vy:
         enabled: true
+        version: '>=0.4.0'
       byte_optimization_bug.vy:
         enabled: true
       decayed_tuple.vy:
         enabled: true
       empty_name_return_parameter.vy:
         enabled: true
+      erc20-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       erc20.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      flipping_sign_tests-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       flipping_sign_tests.vy:
         enabled: true
+        version: '>=0.4.0'
       gasleft_decrease.vy:
         enabled: true
+      inline_member_init-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       inline_member_init.vy:
         enabled: true
+        version: '>=0.4.0'
       inline_tuple_with_rational_numbers.vy:
         enabled: true
       iszero_bnot_correct.vy:
         enabled: true
+      literal_empty_string-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       literal_empty_string.vy:
         enabled: true
+        version: '>=0.4.0'
       memory_overwrite.vy:
         enabled: true
       negative_stack_height.vy:
@@ -1238,15 +1901,30 @@ entries:
         enabled: true
       nested_calldata_struct_to_memory.vy:
         enabled: true
+      positive_integers_to_signed-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       positive_integers_to_signed.vy:
         enabled: true
+        version: '>=0.4.0'
+      skip_dynamic_types-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       skip_dynamic_types.vy:
         enabled: true
+        version: '>=0.4.0'
+      skip_dynamic_types_for_static_arrays_with_dynamic_elements-0.3.vy:
+        enabled: true
+        version: '>=0.3.9, <=0.3.10'
       skip_dynamic_types_for_static_arrays_with_dynamic_elements.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.0'
+      state_variable_local_variable_mixture-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       state_variable_local_variable_mixture.vy:
         enabled: true
+        version: '>=0.4.0'
       storage_string_as_mapping_key_without_variable.vy:
         enabled: true
       store_bytes.vy:
@@ -1255,9 +1933,13 @@ entries:
         enabled: true
       swap_in_storage_overwrite.vy:
         enabled: true
-      tuples.vy:
+      tuples-0.3.vy:
         enabled: true
         comment: "Without tuples as rvalues"
+        version: '<=0.3.10'
+      tuples.vy:
+        enabled: true
+        version: '>=0.4.0'
   viaYul:
     enabled: true
     entries:
@@ -1272,8 +1954,12 @@ entries:
       array_memory_allocation:
         enabled: true
         entries:
+          array_2d_zeroed_memory_index_access-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           array_2d_zeroed_memory_index_access.vy:
             enabled: true
+            version: '>=0.4.0'
           array_array_static.vy:
             enabled: true
           array_static_return_param_zeroed_memory_index_access.vy:
@@ -1287,12 +1973,20 @@ entries:
         comment: "https://github.com/vyperlang/vyper/issues/2145"
       array_memory_create.vy:
         enabled: true
+      array_memory_index_access-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       array_memory_index_access.vy:
         enabled: true
+        version: '>=0.4.0'
       array_push_with_arg.vy:
         enabled: true
+      array_storage_index_access-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       array_storage_index_access.vy:
         enabled: true
+        version: '>=0.4.0'
       array_storage_index_boundary_test.vy:
         enabled: true
       array_storage_length_access.vy:
@@ -1355,15 +2049,29 @@ entries:
       detect_sub_overflow_signed.vy:
         enabled: false
         comment: "Unsupported, but can be supported in the future"
+      exp_literals-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       exp_literals.vy:
+        enabled: false
+        comment: 'ValueError: math domain error'
+        version: '>=0.4.0'
+      exp_literals_success-0.3.vy:
         enabled: true
+        version: '<=0.3.10'
       exp_literals_success.vy:
-        enabled: true
+        enabled: false
+        comment: 'ValueError: math domain error'
+        version: '>=0.4.0'
       function_entry_checks.vy:
         enabled: false
         comment: "Other behavior on EraVM"
+      if-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       if.vy:
         enabled: true
+        version: '>=0.4.0'
       keccak.vy:
         enabled: true
       local_address_assignment.vy:
@@ -1377,14 +2085,30 @@ entries:
       loops:
         enabled: true
         entries:
+          break-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           break.vy:
             enabled: true
+            version: '>=0.4.0'
+          continue-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           continue.vy:
             enabled: true
+            version: '>=0.4.0'
+          return-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           return.vy:
             enabled: true
+            version: '>=0.4.0'
+          simple-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           simple.vy:
             enabled: true
+            version: '>=0.4.0'
       mapping_getters.vy:
         enabled: true
       mapping_string_key.vy:
@@ -1412,8 +2136,12 @@ entries:
         entries:
           dirty_storage_bytes_long.vy:
             enabled: true
+          mappings-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           mappings.vy:
             enabled: true
+            version: '>=0.4.0'
           packed_storage.vy:
             enabled: false
             comment: "Unsupported, but can be supported in the future"
@@ -1423,8 +2151,12 @@ entries:
         enabled: true
       string_literals.vy:
         enabled: true
+      struct_member_access-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       struct_member_access.vy:
         enabled: true
+        version: '>=0.4.0'
       tuple_evaluation_order.vy:
         enabled: false
         comment: "Disabled because different order of fields is not allowed"

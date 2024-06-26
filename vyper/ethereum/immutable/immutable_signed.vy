@@ -1,7 +1,7 @@
 a: immutable(int8)
 b: immutable(bytes2)
 
-@external
+@deploy
 def __init__():
     a = -2
     b = convert(b"ab", bytes2)

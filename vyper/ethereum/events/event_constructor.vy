@@ -3,7 +3,7 @@ event Deposit:
     _id: indexed(bytes32)
     _value: uint256
 
-@external
+@deploy
 def __init__():
     log Deposit(msg.sender, extract32(convert("abcdefghijklmnopqrstuvwxyz220322", Bytes[32]), 0), 7)
 

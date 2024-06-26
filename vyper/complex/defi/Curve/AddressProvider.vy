@@ -39,7 +39,7 @@ queue_length: uint256
 get_id_info: public(HashMap[uint256, AddressInfo])
 
 
-@external
+@deploy
 def __init__(_admin: address):
     self.admin = _admin
     self.queue_length = 1
@@ -72,7 +72,7 @@ def max_id() -> uint256:
 def get_address(_id: uint256) -> address:
     """
     @notice Fetch the address associated with `_id`
-    @dev Returns ZERO_ADDRESS if `_id` has not been defined, or has been unset
+    @dev Returns empty(address) if `_id` has not been defined, or has been unset
     @param _id Identifier to fetch an address for
     @return Current address associated to `_id`
     """
@@ -92,13 +92,13 @@ def add_new_id(_address: address, _description: String[64]) -> uint256:
     assert _address.is_contract  # dev: not a contract
 
     id: uint256 = self.queue_length
-    self.get_id_info[id] = AddressInfo({
-        addr: _address,
-        is_active: True,
-        version: 1,
-        last_modified: block.timestamp,
-        description: _description
-    })
+    self.get_id_info[id] = AddressInfo(
+        addr=_address,
+        is_active=True,
+        version=1,
+        last_modified=block.timestamp,
+        description=_description
+    )
     self.queue_length = id + 1
 
     log NewAddressIdentifier(id, _address, _description)
@@ -138,7 +138,7 @@ def unset_address(_id: uint256) -> bool:
     """
     @notice Unset an existing identifier
     @dev An identifier cannot ever be removed, it can only have the
-         address unset so that it returns ZERO_ADDRESS
+         address unset so that it returns empty(address)
     @param _id Identifier to unset
     @return bool success
     """
@@ -146,13 +146,13 @@ def unset_address(_id: uint256) -> bool:
     assert self.get_id_info[_id].is_active  # dev: not active
 
     self.get_id_info[_id].is_active = False
-    self.get_id_info[_id].addr = ZERO_ADDRESS
+    self.get_id_info[_id].addr = empty(address)
     self.get_id_info[_id].last_modified = block.timestamp
 
     if _id == 0:
-        self.registry = ZERO_ADDRESS
+        self.registry = empty(address)
 
-    log AddressModified(_id, ZERO_ADDRESS, self.get_id_info[_id].version)
+    log AddressModified(_id, empty(address), self.get_id_info[_id].version)
 
     return True
 

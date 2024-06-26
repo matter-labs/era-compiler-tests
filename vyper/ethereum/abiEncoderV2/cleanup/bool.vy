@@ -11,7 +11,7 @@ def gggg(x: bool) -> bool:
 def f(a: uint256) -> bool:
     x: bool = False
     x = convert(a, bool)
-    return Self(self).gggg(x)
+    return staticcall Self(self).gggg(x)
     
 # ====
 # compileViaYul: also

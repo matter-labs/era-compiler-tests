@@ -3,7 +3,7 @@ struct testStruct:
     
 data1: testStruct
 
-@external
+@deploy
 def __init__():
     self.data1.m_value = 2
     

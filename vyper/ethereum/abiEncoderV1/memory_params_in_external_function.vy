@@ -10,7 +10,7 @@ def f(a: Bytes[100], b: Bytes[100], c: uint256[4]) -> (uint256, bytes1, uint256,
 def g() -> (uint256, bytes1, uint256, bytes1, uint256, uint256):
     x: uint256[4] = empty(uint256[4])
     x[3] = 7
-    return Self(self).f(convert("abc", Bytes[100]), convert("def", Bytes[100]), x)
+    return staticcall Self(self).f(convert("abc", Bytes[100]), convert("def", Bytes[100]), x)
 
 # ====
 # compileViaYul: also

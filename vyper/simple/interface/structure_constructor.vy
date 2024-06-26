@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "first",
 #!     "inputs": [
 #!         {
@@ -45,7 +45,7 @@ struct Data:
 @internal
 @pure
 def _new(a: uint256) -> Data:
-    return Data({a: a})
+    return Data(a=a)
 
 @external
 def main(witness: uint256) -> uint256:

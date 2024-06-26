@@ -1,7 +1,7 @@
 LEN: constant(uint256) = 3
 a: public(uint256[LEN])
 
-@external
+@deploy
 def __init__(_a: uint256[LEN]):
     self.a = _a
 

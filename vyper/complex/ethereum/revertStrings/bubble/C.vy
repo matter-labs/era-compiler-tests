@@ -1,11 +1,12 @@
-import A as A
+interface A:
+    def g(): nonpayable
 
 a: A
 
-@external
+@deploy
 def __init__(_a: address):
     self.a = A(create_forwarder_to(_a))
 
 @external
 def f():
-    self.a.g()
+    extcall self.a.g()

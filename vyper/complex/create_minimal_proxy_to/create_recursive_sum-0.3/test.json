@@ -1,0 +1,64 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "one",
+    "inputs": [
+        {
+            "comment": "Created the forwarder to the main",
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "1"
+            ]
+        }
+    ],
+    "expected": [
+        "1"
+    ]
+}, {
+    "name": "two",
+    "inputs": [
+        {
+            "instance": "Main",
+            "comment": "Called the forwarder to main and created forwarder to forwarder",
+            "method": "f",
+            "calldata": [
+                "2"
+            ]
+        }
+    ],
+    "expected": [
+        "3"
+    ]
+},{
+    "name": "three",
+    "inputs": [
+        {
+            "instance": "Main",
+            "comment": "Called the forwarder to forwarder and the second forwarder tried to make a call on address 0",
+            "method": "f",
+            "calldata": [
+                "3"
+            ]
+        }
+    ],
+    "expected": [
+        "6"
+    ]
+}, {
+    "name": "five",
+    "inputs": [
+        {
+            "instance": "Main",
+            "method": "f",
+            "calldata": [
+                "5"
+            ]
+        }
+    ],
+    "expected": [
+        "15"
+    ]
+} ],
+    "contracts": {
+        "Main": "main.vy"
+    }
+}

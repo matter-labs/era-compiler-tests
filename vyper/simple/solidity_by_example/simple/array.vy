@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "first",
 #!     "inputs": [
 #!         {
@@ -153,7 +153,7 @@
 # Several ways to initialize an array
 arr: public(DynArray[uint256, 10])
 arr2: public(DynArray[uint256, 10])
-@external
+@deploy
 def __init__():
     self.arr2 = [1, 2, 3]
 # Fixed sized array, all elements initialize to 0
@@ -166,7 +166,7 @@ def get(i: uint256) -> uint256:
 
 # Solidity can return the entire array.
 # But this function should be avoided for
-# arrays that can grow indefinitely in length.
+# arrays that can grow indefinitely: uint256 in length.
 @external
 @view
 def getArr() -> DynArray[uint256, 10]:
@@ -193,10 +193,10 @@ def getLength() -> uint256:
 def remove(index: uint256):
     # Delete does not change the array length.
     # It resets the value at index to it's default value,
-    # in this case 0
+    #: uint256 in this case 0
     self.arr[index] = empty(uint256)
 
 @external
 def examples():
-    # create array in memory, only fixed size can be created
+    # create array: uint256 in memory, only fixed size can be created
     a: DynArray[uint256, 10] = [0, 0, 0, 0, 0]

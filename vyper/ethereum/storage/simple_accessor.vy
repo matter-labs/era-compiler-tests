@@ -1,6 +1,6 @@
 data: public(uint256)
 
-@external
+@deploy
 def __init__():
     self.data = 8
     

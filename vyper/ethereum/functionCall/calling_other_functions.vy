@@ -1,6 +1,6 @@
 @internal
 def evenStep(x: uint256) -> uint256:
-    return x / 2
+    return x // 2
 
 @internal
 def oddStep(x: uint256) -> uint256:
@@ -10,7 +10,7 @@ def oddStep(x: uint256) -> uint256:
 def run(_x: uint256) -> uint256:
     x: uint256 = _x
     y: uint256 = 0
-    for _ in range(1000):
+    for _: uint256 in range(1000):
         y = x
         if not y > 1:
             break

@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -22,5 +22,5 @@ struct Test:
 @external
 @pure
 def main(witness: uint8) -> uint8:
-    data: Test = Test({inner: Inner({value: witness * 5})})
+    data: Test = Test(inner=Inner(value=witness * 5))
     return data.inner.value

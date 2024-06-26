@@ -1,11 +1,10 @@
 name: bytes32
-flag: bool
 
 @internal
 def setName(_name: bytes32):
     self.name = _name
 
-@external
+@deploy
 def __init__():
     self.setName(convert(convert("abc", Bytes[32]), bytes32))
 

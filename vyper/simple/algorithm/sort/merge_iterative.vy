@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "none",
 #!     "inputs": [
 #!         {
@@ -54,11 +54,11 @@ def mergeSort(_array: uint8[ARRAY_SIZE], direction: uint8) -> uint8[ARRAY_SIZE]:
     size: uint8 = 1
     tmp: uint8[ARRAY_SIZE] = empty(uint8[ARRAY_SIZE])
 
-    for _ in range(ARRAY_SIZE):
+    for _: uint8 in range(ARRAY_SIZE):
         if not size < ARRAY_SIZE:
             break
         ptr: uint8 = 0
-        for __ in range(ARRAY_SIZE):
+        for __: uint8 in range(ARRAY_SIZE):
             if not ptr < ARRAY_SIZE:
                 break
             mid: uint8 = ptr + size
@@ -72,7 +72,7 @@ def mergeSort(_array: uint8[ARRAY_SIZE], direction: uint8) -> uint8[ARRAY_SIZE]:
             ptr1: uint8 = ptr
             ptr2: uint8 = ptr + size
 
-            for ___ in range(ARRAY_SIZE):
+            for ___: uint8 in range(ARRAY_SIZE):
                 if not (ptr1 < mid and ptr2 < last):
                     break
                 if direction == DirectionNone or (direction == DirectionAscending and array[ptr1] < array[ptr2]) or (direction == DirectionDescending and array[ptr1] > array[ptr2]):
@@ -83,20 +83,20 @@ def mergeSort(_array: uint8[ARRAY_SIZE], direction: uint8) -> uint8[ARRAY_SIZE]:
                    ptr2 += 1
                 ptr += 1
 
-            for ___ in range(ARRAY_SIZE):
+            for ___: uint8 in range(ARRAY_SIZE):
                 if not ptr1 < mid:
                     break
                 tmp[ptr] = array[ptr1]
                 ptr += 1
                 ptr1 += 1
 
-            for ___ in range(ARRAY_SIZE):
+            for ___: uint8 in range(ARRAY_SIZE):
                 if not ptr2 < last:
                     break
                 tmp[ptr] = array[ptr2]
                 ptr += 1
                 ptr2 += 1
-        for i in range(ARRAY_SIZE):
+        for i: uint8 in range(ARRAY_SIZE):
             array[i] = tmp[i]
         size *= 2
     return array

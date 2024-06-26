@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "test",
 #!     "inputs": [
 #!         {
@@ -14,7 +14,7 @@
 
 arr: public(DynArray[uint256, 10])
 
-# Deleting an element creates a gap in the array.
+# Deleting an element creates a gap: uint256 in the array.
 # One trick to keep the array compact is to
 # move the last element into the place to delete.
 @internal

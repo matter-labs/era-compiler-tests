@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "remainder_zero",
 #!     "inputs": [
 #!         {
@@ -44,4 +44,4 @@ CONST: constant(uint8) = 3
 @external
 @pure
 def main(witness: uint256) -> uint256:
-    return witness / convert(CONST, uint256)
+    return witness // convert(CONST, uint256)

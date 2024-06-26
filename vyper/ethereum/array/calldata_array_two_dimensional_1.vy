@@ -15,7 +15,7 @@ def test(a: DynArray[DynArray[uint256, 4], 2], i: uint256, j: uint256) -> uint25
 
 @external
 def reenc(a: DynArray[DynArray[uint256, 4], 2], i: uint256, j: uint256) -> uint256:
-    return Self(self).test(a, i, j)
+    return extcall Self(self).test(a, i, j)
     
 # ----
 # test1(uint256[][]): 0x20, 2, 0x40, 0xC0, 3, 0x0A01, 0x0A02, 0x0A03, 4, 0x0B01, 0x0B02, 0x0B03, 0x0B04 -> 2

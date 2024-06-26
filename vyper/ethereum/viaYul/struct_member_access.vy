@@ -5,7 +5,7 @@ struct S:
 
 s: S
 
-@external
+@deploy
 def __init__():
     self.s.a = 42
     self.s.b[0] = 1

@@ -1,30 +1,34 @@
 @external
 def exp_2(y: uint256) -> uint256:
-    return 2**y
+    return 2 ** y
+
 @external
 def exp_minus_2(y: uint256) -> int256:
-    return (-2)**convert(y, int256)
+    return (-2) ** convert(y, int256)
 
 @external
 def exp_uint_max(y: uint256) -> uint256:
-    return MAX_UINT256**y
+    return max_value(uint256) ** y
+
 @external
 def exp_int_max(y: uint256) -> int256:
-    return ((-2)**255)**convert(y, int256)
+    return ((-2) ** 255) ** convert(y, int256)
 
 @external
 def exp_5(y: uint256) -> uint256:
-    return 5**y
+    return 5 ** y
+
 @external
 def exp_minus_5(y: uint256) -> int256:
-    return (-5)**convert(y, int256)
+    return (-5) ** convert(y, int256)
 
 @external
 def exp_256(y: uint256) -> uint256:
-    return 256**y
+    return 256 ** y
+
 @external
 def exp_minus_256(y: uint256) -> int256:
-    return (-256)**convert(y, int256)
+    return (-256) ** convert(y, int256)
 
 # ====
 # compileToEwasm: also

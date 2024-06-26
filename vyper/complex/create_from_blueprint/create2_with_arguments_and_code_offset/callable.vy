@@ -2,7 +2,7 @@ a: uint256
 b: uint256
 c: uint256
 
-@external
+@deploy
 def __init__(x: uint256, y: uint256, z: uint256):
     self.a = x
     self.b = y

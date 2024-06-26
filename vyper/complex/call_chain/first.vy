@@ -1,6 +1,7 @@
-import second as Second
+interface Second:
+    def f(p: uint256, third_implementation: address) -> uint256: pure
 
 @external
 @pure
 def f(p: uint256, second: address, third: address) -> uint256:
-    return Second(second).f(p, third)
+    return staticcall Second(second).f(p, third)

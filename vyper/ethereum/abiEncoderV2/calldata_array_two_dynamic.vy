@@ -5,14 +5,14 @@ interface Self:
 @pure
 def f(s1: DynArray[uint256, 5], s2: DynArray[uint256, 5], which: bool) -> Bytes[300]:
     if which:
-        return _abi_encode(s1)
+        return abi_encode(s1)
     else:
-        return _abi_encode(s2)
+        return abi_encode(s2)
 
 @external
 @view
 def g(s1: DynArray[uint256, 5], s2: DynArray[uint256, 5], which: bool) -> Bytes[300]:
-    return Self(self).f(s1, s2, which)
+    return staticcall Self(self).f(s1, s2, which)
     
 # ====
 # EVMVersion: >homestead

@@ -1,4 +1,4 @@
-{ "cases": [ {
+{ "modes": [ "V >=0.4.0" ], "cases": [ {
     "name": "first",
     "comment": "The complex Curve StableSwap3Pool test with adding liquidity and token exchange",
     "inputs": [

@@ -2,7 +2,7 @@ data: DynArray[uint256, 10]
 
 @external
 def enlarge(amount: uint256) -> uint256:
-    for _ in range(10):
+    for _: uint256 in range(10):
         if not len(self.data) < amount:
             break
         self.data.append(0)

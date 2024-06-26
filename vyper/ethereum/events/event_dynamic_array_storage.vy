@@ -5,7 +5,7 @@ arr: DynArray[uint256, 5]
 
 @external
 def createEvent(x: uint256):
-    for _ in range(3):
+    for _: uint256 in range(3):
         if not len(self.arr) < 3:
             break
         self.arr.append(0)

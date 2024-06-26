@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry",
 #!     "inputs": [
 #!         {
@@ -18,16 +18,16 @@ def test(param: uint8) -> uint256:
     cnt: uint256 = 0
 
     p: uint8 = 0
-    for _ in range(1000000):
+    for _: uint256 in range(1000000):
         p += 2
         if p % 8 == 0:
             break
         if param == 12:
             continue
-        for k in range(0, 2):
-            for x in range(0, 2):
+        for k: uint8 in range(0, 2):
+            for x: uint8 in range(0, 2):
                 y: uint8 = 10
-                for __ in range(1000000):
+                for __: uint256 in range(1000000):
                     if not y < 17:
                         break
                     y += 1

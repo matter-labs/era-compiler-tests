@@ -4,7 +4,7 @@ data2: DynArray[uint256, 10]
 @external
 def setData1(length: uint256, index: uint256, value_: uint256):
     self.data1 = []
-    for i in range(10):
+    for i: uint256 in range(10):
         if not i < length:
             break
         self.data1.append(0)

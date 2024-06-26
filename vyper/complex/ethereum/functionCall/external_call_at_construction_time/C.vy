@@ -1,7 +1,5 @@
 # Constructors are replaced with functions, so the result is other
 # This tests skipping the extcodesize check.
-import T as T
-import U as U
 
 @external
 def f(c: uint256, _t: address, _u: address) -> uint256:

@@ -1,5 +1,3 @@
-import B as B
-
 @external
 def different_salt(_b: address) -> bool:
     x: address = create_forwarder_to(_b, salt = convert(convert("abc", Bytes[3]), bytes32))

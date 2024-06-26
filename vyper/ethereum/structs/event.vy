@@ -2,11 +2,11 @@ struct Item:
     x: uint256
 
 event Ev:
-    _: Item
+    i: Item
 
 @internal
 def o():
-    log Ev(Item({x: 1}))
+    log Ev(Item(x=1))
     
 @external
 def f():

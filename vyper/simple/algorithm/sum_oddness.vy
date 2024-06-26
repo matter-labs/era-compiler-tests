@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "first",
 #!     "inputs": [
 #!         {
@@ -28,7 +28,7 @@
 @pure
 def main(a: uint256, is_odd: bool) -> uint256:
     result: uint256 = 0
-    for i in range(1, 1000000000):
+    for i: uint256 in range(1, 1000000000):
         if not i <= a:
             break
         if is_odd:

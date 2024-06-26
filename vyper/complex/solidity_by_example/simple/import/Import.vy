@@ -1,7 +1,7 @@
-import Foo as Foo
+import IFoo as Foo
 
 # Test Foo.sol by getting it's name.
 @external
 @view
 def getFooName(foo: address) -> String[10]:
-    return Foo(foo).name()
+    return staticcall Foo(foo).name()

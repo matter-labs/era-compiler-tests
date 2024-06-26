@@ -6,11 +6,12 @@ interface Self:
 
 @external
 def f(s: S) -> Bytes[100]:
-    return _abi_encode(s)
+    return abi_encode(s)
 
 @external
 def g(s: S) -> Bytes[100]:
-    return Self(self).f(s)
+    return extcall Self(self).f(s)
+
 # ====
 # EVMVersion: >homestead
 # compileViaYul: also

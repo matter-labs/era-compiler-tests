@@ -3,4 +3,4 @@ interface ICallable:
 
 @external
 def main(callable: address) -> uint256:
-    return ICallable(callable).f(5, False)
+    return staticcall ICallable(callable).f(5, False)

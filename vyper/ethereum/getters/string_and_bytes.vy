@@ -3,7 +3,7 @@ b: public(String[100])
 c: public(Bytes[100])
 d: public(String[100])
 
-@external
+@deploy
 def __init__():
     self.d = "abcd"
     self.a = "hello world"

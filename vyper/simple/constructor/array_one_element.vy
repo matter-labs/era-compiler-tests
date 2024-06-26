@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -16,7 +16,7 @@
 
 inner: DynArray[uint256, 1]
 
-@external
+@deploy
 def __init__():
     self.inner = [0]
 

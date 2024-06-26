@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry",
 #!     "inputs": [
 #!         {
@@ -112,8 +112,8 @@ def main(
 @external
 @view
 def entry() -> bool:
-    p1: Str1 = Str1({a: 1})
-    p2: Str2[2] = [Str2({a: [Str1({a: 4}), Str1({a: 9})], b: 16}), Str2({a: [Str1({a: 25}), Str1({a: 36})], b: 49})]
+    p1: Str1 = Str1(a=1)
+    p2: Str2[2] = [Str2(a=[Str1(a=4), Str1(a=9)], b=16), Str2(a=[Str1(a=25), Str1(a=36)], b=49)]
     p3: uint208 = 64
     p4: int8 = 81
     p5: bytes1 = 0x64
@@ -125,15 +125,15 @@ def entry() -> bool:
     p11: uint72[2] = [256, 289]
     p12: uint256 = 324
     p13: int128[1] = [361]
-    p14: Str1[1] = [Str1({a: 400})]
+    p14: Str1[1] = [Str1(a=400)]
     p15: bytes5 = 0x00000001B9
     p16: bytes2 = 0x01E4
     p17: int256 = 529
-    p18: string[2] = [string({inner: "ab"}), string({inner: "cd"})]
+    p18: string[2] = [string(inner= "ab"), string(inner="cd")]
     p19: Bytes[100] = b"\x01\x02"
     p20: uint8 = 1
     result: bool = True
-    for i in range(1, 24):
+    for i: uint8 in range(1, 24):
         result = result and self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20) == convert(i, uint256) * convert(i, uint256)
 
     result = result and self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20) == 4522

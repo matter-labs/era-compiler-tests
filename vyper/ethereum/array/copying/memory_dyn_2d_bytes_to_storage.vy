@@ -9,11 +9,11 @@ def f() -> uint256:
     self.s = m
     assert len(self.s) == len(m)
     
-    for i in range(3):
+    for i: uint256 in range(3):
         if not i < len(self.s):
             break
         assert len(self.s[i]) == len(m[i])
-        for j in range(5):
+        for j: uint256 in range(5):
             if not i < len(self.s[i]):
                 break
             assert convert(slice(self.s[i], j, 1), bytes1) == convert(slice(m[i], j, 1), bytes1)

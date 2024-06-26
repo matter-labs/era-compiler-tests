@@ -1,7 +1,7 @@
 y: public(int16[2])
 z: int16
 
-@external
+@deploy
 def __init__():
     self.y = [-5, -6]
     

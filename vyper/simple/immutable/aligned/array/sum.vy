@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -24,13 +24,13 @@
 
 data: immutable(uint256[4])
 
-@external
+@deploy
 def __init__(input: uint256[4]):
     data = input
 
 @external
 def main(argument: uint8) -> uint8:
     sum: uint8 = 0
-    for i in range(0, 4):
+    for i: uint256 in range(0, 4):
         sum += convert(data[i], uint8)
     return sum

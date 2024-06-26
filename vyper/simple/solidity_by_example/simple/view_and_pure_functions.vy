@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "addToXFirst",
 #!     "inputs": [
 #!         {
@@ -54,7 +54,7 @@
 
 x: public(uint256)
 
-@external
+@deploy
 def __init__():
     self.x = 1
 

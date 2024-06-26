@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -31,7 +31,7 @@ X: public(immutable(bytes32))
 Y: public(immutable(bytes32))
 Z: public(immutable(String[64]))
 
-@external
+@deploy
 def __init__():
     X = convert(42, bytes32)
     Y = convert(43, bytes32)

@@ -3,7 +3,7 @@ name: public(bytes6)
 a_hash: public(bytes32)
 an_address: public(address)
 
-@external
+@deploy
 def __init__():
     self.data = 8
     self.name = convert(b"Celina", bytes6)

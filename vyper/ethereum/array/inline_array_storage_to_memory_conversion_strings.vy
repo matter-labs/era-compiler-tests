@@ -1,6 +1,6 @@
 s: String[100]
 
-@external
+@deploy
 def __init__():
     self.s = "doh"
 
@@ -10,7 +10,7 @@ struct _string:
 @external
 def f() -> (String[100], String[100]):
     t: String[100] = "ray"
-    x: _string[3] = [_string({inner: self.s}), _string({inner: t}), _string({inner: "mi"})]
+    x: _string[3] = [_string(inner=self.s), _string(inner=t), _string(inner="mi")]
     return (x[1].inner, x[2].inner)
 
 # ====

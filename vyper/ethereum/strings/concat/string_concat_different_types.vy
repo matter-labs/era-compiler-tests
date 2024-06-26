@@ -1,6 +1,6 @@
 s: String[100]
 
-@external
+@deploy
 def __init__():
     self.s = "bcdef"
 

@@ -1,7 +1,7 @@
 x: uint256
 y: uint256
 
-@external
+@deploy
 def __init__():
     self.x = 1
     self.y = 2

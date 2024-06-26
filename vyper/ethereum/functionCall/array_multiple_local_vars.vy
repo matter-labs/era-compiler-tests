@@ -3,7 +3,7 @@
 def f(length: uint256, seq: uint256[11]) -> uint256:
     i: uint256 = 0
     sum: uint256 = 0
-    for _ in range(11):
+    for _: uint256 in range(11):
         if not i < length:
             break
         idx: uint256 = i

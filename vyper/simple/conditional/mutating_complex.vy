@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "conditionTrue",
 #!     "inputs": [
 #!         {
@@ -36,11 +36,11 @@ struct Data:
 def main(_witness: Data, condition:bool) -> uint256:
     witness: Data = _witness
     if condition:
-        witness = Data({
-            a: True,
-            b: 255,
-            c: 1000000
-        })
+        witness = Data(
+            a=True,
+            b=255,
+            c=1000000
+        )
 
     if witness.a:
         return 1 + convert(witness.b, uint256) + witness.c

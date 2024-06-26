@@ -1,6 +1,6 @@
 state: public(uint256)
 
-@external
+@deploy
 @payable
 def __init__(_state: uint256):
     self.state = _state

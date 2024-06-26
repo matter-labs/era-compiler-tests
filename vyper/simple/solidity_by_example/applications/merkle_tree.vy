@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "test",
 #!     "inputs": [
 #!         {
@@ -40,17 +40,17 @@ def verify(proof: bytes32[10], length: uint256, root: bytes32, leaf: bytes32, _i
     index: uint256 = _index
     hash: bytes32 = leaf
 
-    for i in range(10):
+    for i: uint256 in range(10):
         if not i < length:
             break
         proofElement: bytes32 = proof[i]
 
         if index % 2 == 0:
-            hash = keccak256(_abi_encode(hash, proofElement))
+            hash = keccak256(abi_encode(hash, proofElement))
         else:
-            hash = keccak256(_abi_encode(proofElement, hash))
+            hash = keccak256(abi_encode(proofElement, hash))
 
-        index = index / 2
+        index = index // 2
 
     return hash == root
 
@@ -60,34 +60,34 @@ count: public(uint256)
 struct Transaction:
     text: String[100]
 
-@external
+@deploy
 def __init__():
     transactions: Transaction[4] = [
-        Transaction({ text: "alice -> bob"}),
-        Transaction({ text: "bob -> dave"}),
-        Transaction({ text: "carol -> alice"}),
-        Transaction({ text: "dave -> bob"})
+        Transaction(text="alice -> bob"),
+        Transaction(text="bob -> dave"),
+        Transaction(text="carol -> alice"),
+        Transaction(text="dave -> bob")
     ]
 
-    for i in range(0, 4):
+    for i: uint256 in range(0, 4):
         self.hashes[self.count] = keccak256(transactions[i].text)
         self.count += 1
 
     n: uint256 = 4
     offset: uint256 = 0
 
-    for _ in range(10):
+    for _: uint256 in range(10):
         if not n > 0:
             break
-        for i in range(10):
+        for i: uint256 in range(10):
             if i % 2 == 1:
                 continue
             if not i < n-1:
                 break
-            self.hashes[self.count] = keccak256(_abi_encode(self.hashes[offset + i], self.hashes[offset + i + 1]))
+            self.hashes[self.count] = keccak256(abi_encode(self.hashes[offset + i], self.hashes[offset + i + 1]))
             self.count += 1
         offset += n
-        n = n / 2
+        n = n // 2
 
 @external
 @view

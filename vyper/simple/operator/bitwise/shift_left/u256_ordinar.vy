@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -16,4 +16,4 @@
 @external
 @pure
 def main(a: uint256) -> uint256:
-    return shift(a, 2)
+    return a << 2

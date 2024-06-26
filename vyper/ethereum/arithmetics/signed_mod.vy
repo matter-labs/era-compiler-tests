@@ -6,8 +6,9 @@ def f(a: int256, b: int256) -> int256:
 @external
 @pure
 def g() -> int256:
-    x: int256 = -(2**255)
-    return x / -1
+    x: int256 = min_value(int256)
+    return x // -1
+
 # ====
 # compileToEwasm: also
 # ----

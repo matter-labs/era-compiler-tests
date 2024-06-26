@@ -4,18 +4,18 @@ interface Self:
 @external
 @view
 def g(_: DynArray[uint256, 10]) -> Bytes[400]:
-    # Replaced with _abi_encode
+    # Replaced with abi_encode
     # return msg.data
-    return _abi_encode(_)
+    return abi_encode(_)
     
 @external
 @view
 def f(s: DynArray[uint256, 10][1]) -> bool:
-    a: Bytes[400] = Self(self).g(s[0])
+    a: Bytes[400] = staticcall Self(self).g(s[0])
     m: DynArray[uint256, 10] = s[0]
-    b: Bytes[400] = Self(self).g(m)
+    b: Bytes[400] = staticcall Self(self).g(m)
     assert len(a) == len(b)
-    for i in range(400):
+    for i: uint256 in range(400):
         if not i < len(a):
             break
         assert slice(a, i, 1) == slice(b, i, 1)

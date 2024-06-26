@@ -1,6 +1,6 @@
 s: DynArray[uint32, 10]
 
-@external
+@deploy
 def __init__():
     self.s.append(0)
     self.s.append(0)

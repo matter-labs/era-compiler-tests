@@ -1,6 +1,7 @@
-import third as Third
+interface Third:
+    def f(p: uint256) -> uint256: pure
 
 @external
 def f(p: uint256, third_implementation: address) -> uint256:
     third: address = create_from_blueprint(third_implementation)
-    return Third(third).f(p) * 2
+    return staticcall Third(third).f(p) * 2

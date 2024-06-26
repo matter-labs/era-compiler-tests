@@ -6,9 +6,9 @@ struct Buggy:
 
 bug: public(Buggy)
 
-@external
+@deploy
 def __init__():
-    self.bug = Buggy({first: 10, second: 20, third: 30, last: "asdfghjkl"})
+    self.bug = Buggy(first=10, second=20, third=30, last="asdfghjkl")
 
 @external
 def getFirst() -> uint256:
@@ -25,6 +25,7 @@ def getThird() -> uint256:
 @external
 def getLast() -> String[100]:
     return self.bug.last
+
 # ====
 # compileViaYul: also
 # compileToEwasm: also

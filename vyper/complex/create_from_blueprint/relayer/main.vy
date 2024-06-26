@@ -19,7 +19,7 @@ EMERGENCY_AGENT: public(immutable(address))
 agent: HashMap[Agent, address]
 
 
-@external
+@deploy
 def __init__(_agent_blueprint: address):
     OWNERSHIP_AGENT = create_from_blueprint(_agent_blueprint, code_offset=CODE_OFFSET)
     PARAMETER_AGENT = create_from_blueprint(_agent_blueprint, code_offset=CODE_OFFSET)

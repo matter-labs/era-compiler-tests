@@ -1,0 +1,25 @@
+{ "modes": [ "V <=0.3.10" ], "cases": [ {
+    "name": "default",
+    "inputs": [
+        {
+            "instance": "A",
+            "method": "f",
+            "calldata": [
+                "B1.address",
+                "B2.address",
+                "B3.address"
+            ],
+            "value": "10 ETH"
+        }
+    ],
+    "expected": [
+        "3007", "3008", "3009"
+    ]
+} ],
+    "contracts": {
+        "A": "A.vy",
+        "B1": "B.vy",
+        "B2": "B.vy",
+        "B3": "B.vy"
+    }
+}

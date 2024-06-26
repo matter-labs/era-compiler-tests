@@ -5,7 +5,7 @@ otherData: Bytes[100]
 def fromMemory() -> bytes1:
     t: Bytes[100] = empty(Bytes[100])
     x: uint256[2] = empty(uint256[2])
-    x[0] = MAX_UINT256
+    x[0] = max_value(uint256)
     self.data = t
     self.data = b"\x00"
     return convert(slice(self.data, 0, 1), bytes1)

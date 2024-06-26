@@ -1,6 +1,6 @@
 a: immutable(uint8)
 
-@external
+@deploy
 def __init__():
     a = 2
 

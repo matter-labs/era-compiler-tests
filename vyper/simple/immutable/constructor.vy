@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -12,17 +12,17 @@
 #!             ]
 #!         },
 #!         {
-#!             "method": "a",
+#!             "method": "get_a",
 #!             "calldata": [],
 #!             "expected": [ "25" ]
 #!         },
 #!         {
-#!             "method": "b",
+#!             "method": "get_b",
 #!             "calldata": [],
 #!             "expected": [ "0x99" ]
 #!         },
 #!         {
-#!             "method": "c",
+#!             "method": "get_c",
 #!             "calldata": [],
 #!             "expected": [ "42" ]
 #!         }
@@ -36,20 +36,20 @@ a: immutable(uint256)
 b: immutable(address)
 c: immutable(uint8)
 
-@external
+@deploy
 def __init__(x: uint256, y: uint8):
     a = x
     b = msg.sender
     c = y
 
 @external
-def a() -> uint256:
+def get_a() -> uint256:
     return a
 
 @external
-def b() -> address:
+def get_b() -> address:
     return b
 
 @external
-def c() -> uint8:
+def get_c() -> uint8:
     return c

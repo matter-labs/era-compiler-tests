@@ -4,7 +4,7 @@ interface Self:
 @external
 def dyn() -> (Bytes[100], uint256, DynArray[bytes20, 10], uint256):
 	a: Bytes[100] = b"1234567890123456789012345678901234567890"
-	b: uint256 = MAX_UINT256
+	b: uint256 = max_value(uint256)
 	c: DynArray[bytes20, 10] = [empty(bytes20), empty(bytes20), empty(bytes20), empty(bytes20)]
 	c[0] = convert(convert(1234, uint160), bytes20)
 	c[3] = convert(convert(6789, uint160), bytes20)
@@ -13,7 +13,7 @@ def dyn() -> (Bytes[100], uint256, DynArray[bytes20, 10], uint256):
 
 @external
 def f() -> (Bytes[100], uint256, DynArray[bytes20, 10], uint256):
-    return Self(self).dyn()
+    return extcall Self(self).dyn()
 
 # ====
 # EVMVersion: >homestead

@@ -1,11 +1,11 @@
 x: immutable(uint256)
 y: immutable(uint256)
 
-@external
+@deploy
 def __init__():
     x = 42
     y = 23
-    
+
 @external
 @view
 def f() -> (uint256, uint256):

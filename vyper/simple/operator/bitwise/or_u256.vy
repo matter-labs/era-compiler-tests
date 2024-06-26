@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "zero_zero",
 #!     "inputs": [
 #!         {
@@ -42,4 +42,4 @@
 @external
 @pure
 def main(a: uint256, b: uint256) -> uint256:
-    return bitwise_or(a, b)
+    return a | b

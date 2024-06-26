@@ -1,5 +1,6 @@
-import callable as Callable
+interface Callable:
+    def f(a: uint256) -> uint256: pure
 
 @external
 def main(callable: address) -> uint256:
-    return Callable(callable).f(5)
+    return staticcall Callable(callable).f(5)

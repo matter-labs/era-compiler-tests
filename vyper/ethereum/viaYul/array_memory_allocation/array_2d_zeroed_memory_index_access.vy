@@ -11,7 +11,7 @@ map: HashMap[String[100], uint256]
 def set(s: String[100], a: uint256, b: uint256) -> uint256:
     self.map[s] = 0
     x: uint256[4][2] = empty(uint256[4][2])
-    for i in range(2):
+    for i: uint256 in range(2):
         x[i] = empty(uint256[4])
     return x[a][b]
     

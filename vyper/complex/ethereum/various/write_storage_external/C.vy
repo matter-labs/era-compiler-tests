@@ -1,4 +1,5 @@
-import C as C
+interface Self:
+    def g(y: uint256): nonpayable
 
 x: public(uint256)
 
@@ -13,4 +14,4 @@ def g(y: uint256):
 
 @external
 def h():
-    C(self).g(12)
+    extcall Self(self).g(12)

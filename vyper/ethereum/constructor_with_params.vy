@@ -1,10 +1,11 @@
 i: public(uint256)
 k: public(uint256)
 
-@external
+@deploy
 def __init__(newI: uint256, newK: uint256):
-        self.i = newI
-        self.k = newK
+    self.i = newI
+    self.k = newK
+
 # ====
 # compileViaYul: also
 # ----

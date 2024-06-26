@@ -7,4 +7,4 @@ def f():
 
 @external
 def init_():
-    Self(self).f()
+    extcall Self(self).f()

@@ -1,9 +1,9 @@
 a: public(uint256)
 
-@external
+@deploy
 def __init__():
-    self.a = shift(convert(0x4200, uint256), -8)
-    
+    self.a = convert(0x4200, uint256) >> 8
+
 # ====
 # compileToEwasm: also
 # compileViaYul: also

@@ -28,7 +28,7 @@ def externalFunc() -> String[100]:
 privateVar: String[100]
 publicVar: public(String[100])
 
-@external
+@deploy
 def __init__():
     self.privateVar = "my private variable"
     self.publicVar = "my public variable"

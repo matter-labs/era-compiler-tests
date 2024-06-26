@@ -21,7 +21,7 @@ def get_D(n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256) -> uint256:
     @return The value of invariant
     """
     S: uint256 = 0
-    for _x in xp:
+    for _x: uint256 in xp:
         if _x == 0:
             break
         S += _x
@@ -31,14 +31,14 @@ def get_D(n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256) -> uint256:
     Dprev: uint256 = 0
     D: uint256 = S
     Ann: uint256 = amp * n_coins
-    for _i in range(255):
+    for _i: uint256 in range(255):
         D_P: uint256 = D
-        for _x in xp:
+        for _x: uint256 in xp:
             if _x == 0:
                 break
-            D_P = D_P * D / (_x * n_coins)  # If division by 0, this will be borked: only withdrawal will work. And that is good
+            D_P = D_P * D // (_x * n_coins)  # If division by 0, this will be borked: only withdrawal will work. And that is good
         Dprev = D
-        D = (Ann * S + D_P * n_coins) * D / ((Ann - 1) * D + (n_coins + 1) * D_P)
+        D = (Ann * S + D_P * n_coins) * D // ((Ann - 1) * D + (n_coins + 1) * D_P)
         # Equality with the precision of 1
         if D > Dprev:
             if D - Dprev <= 1:
@@ -72,7 +72,7 @@ def get_y(D: uint256, n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256,
     _x: uint256 = 0
     S_: uint256 = 0
     c: uint256 = D
-    for _i in range(MAX_COINS):
+    for _i: int128 in range(MAX_COINS):
         if _i == n_coins_int:
             break
         if _i == i:
@@ -82,14 +82,14 @@ def get_y(D: uint256, n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256,
         else:
             continue
         S_ += _x
-        c = c * D / (_x * n_coins)
-    c = c * D / (Ann * n_coins)
-    b: uint256 = S_ + D / Ann  # - D
+        c = c * D // (_x * n_coins)
+    c = c * D // (Ann * n_coins)
+    b: uint256 = S_ + D // Ann  # - D
     y_prev: uint256 = 0
     y: uint256 = D
-    for _i in range(255):
+    for _i: uint256 in range(255):
         y_prev = y
-        y = (y*y + c) / (2 * y + b - D)
+        y = (y*y + c) // (2 * y + b - D)
         # Equality with the precision of 1
         if y > y_prev:
             if y - y_prev <= 1:
@@ -122,20 +122,20 @@ def get_dy(n_coins: uint256, balances: uint256[MAX_COINS], amp: uint256, fee: ui
 
     xp: uint256[MAX_COINS] = balances
     ratesp: uint256[MAX_COINS] = precisions
-    for k in range(MAX_COINS):
-        xp[k] = xp[k] * rates[k] * precisions[k] / 10 ** 18
+    for k: int128 in range(MAX_COINS):
+        xp[k] = xp[k] * rates[k] * precisions[k] // 10 ** 18
         ratesp[k] *= rates[k]
     D: uint256 = self.get_D(n_coins, xp, amp)
 
     dy: uint256[INPUT_SIZE] = dx
-    for k in range(INPUT_SIZE):
+    for k: int128 in range(INPUT_SIZE):
         if dx[k] == 0:
             break
         else:
-            x_after_trade: uint256 = dx[k] * ratesp[i] / 10 ** 18 + xp[i]
+            x_after_trade: uint256 = dx[k] * ratesp[i] // 10 ** 18 + xp[i]
             dy[k] = self.get_y(D, n_coins, xp, amp, i, j, x_after_trade)
-            dy[k] = (xp[j] - dy[k] - 1) * 10 ** 18 / ratesp[j]
-            dy[k] -= dy[k] * fee / FEE_DENOMINATOR
+            dy[k] = (xp[j] - dy[k] - 1) * 10 ** 18 // ratesp[j]
+            dy[k] -= dy[k] * fee // FEE_DENOMINATOR
 
     return dy
 
@@ -161,13 +161,13 @@ def get_dx(n_coins: uint256, balances: uint256[MAX_COINS], amp: uint256, fee: ui
 
     xp: uint256[MAX_COINS] = balances
     ratesp: uint256[MAX_COINS] = precisions
-    for k in range(MAX_COINS):
-        xp[k] = xp[k] * rates[k] * precisions[k] / 10 ** 18
+    for k: int128 in range(MAX_COINS):
+        xp[k] = xp[k] * rates[k] * precisions[k] // 10 ** 18
         ratesp[k] *= rates[k]
     D: uint256 = self.get_D(n_coins, xp, amp)
 
-    y_after_trade: uint256 = xp[j] - dy * ratesp[j] / 10 ** 18 * FEE_DENOMINATOR / (FEE_DENOMINATOR - fee)
+    y_after_trade: uint256 = xp[j] - dy * ratesp[j] // 10 ** 18 * FEE_DENOMINATOR // (FEE_DENOMINATOR - fee)
     x: uint256 = self.get_y(D, n_coins, xp, amp, j, i, y_after_trade)
-    dx: uint256 = (x - xp[i]) * 10 ** 18 / ratesp[i]
+    dx: uint256 = (x - xp[i]) * 10 ** 18 // ratesp[i]
 
     return dx

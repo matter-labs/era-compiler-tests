@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.3.9" ], "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "success",
 #!     "inputs": [
 #!         {
@@ -28,7 +28,7 @@ y: uint256
 def set(b: uint256):
     self.y = b
 
-@external
+@deploy
 def __init__(a: uint256, b: uint256):
     self.x = a
     self.set(b)

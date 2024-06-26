@@ -1,6 +1,6 @@
 s: Bytes[32]
 
-@external
+@deploy
 def __init__():
     self.s = b"abcdefghabcdefghabcdefghabcdefg"
 

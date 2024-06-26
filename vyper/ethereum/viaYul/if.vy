@@ -44,7 +44,7 @@ def j(a: uint256, b: uint256) -> (uint256, uint256):
 def k(a: uint256, b: uint256) -> (uint256, uint256):
     x: uint256 = 42
     y: uint256 = 0
-    for _ in range(10000000):
+    for _: uint256 in range(10000000):
         if a + b < 10:
             if a == b:
                 x = 99

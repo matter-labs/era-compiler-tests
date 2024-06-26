@@ -4,7 +4,7 @@ struct Y:
     
 n: public(HashMap[uint256, Y[3]])
 
-@external
+@deploy
 def __init__():
     self.n[1][0].a = 7
     self.n[1][0].b = 8

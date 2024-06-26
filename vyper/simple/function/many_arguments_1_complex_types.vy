@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "entry",
 #!     "inputs": [
 #!         {
@@ -141,41 +141,41 @@ def main(
 
 @external
 def entry() -> uint256:
-    p1: Str1 = Str1({a: 1, b: [4, 9]})
+    p1: Str1 = Str1(a=1, b=[4, 9])
 
     p2: Str2[2] = [
-        Str2({
-            a: Str1({a: 16, b: [25, 36]}),
-            b: 49,
-            c: 0
-        }),
-        Str2({
-            a: Str1({a: 81, b: [100, 121]}),
-            b: 144,
-            c: 1
-        })
+        Str2(
+            a=Str1(a=16, b=[25, 36]),
+            b=49,
+            c=0
+        ),
+        Str2(
+            a=Str1(a=81, b=[100, 121]),
+            b=144,
+            c=1
+        )
         ]
 
     p3: uint216 = 196
 
     p4: Str1[3] = [
-        Str1({a: 225, b: [256, 289]}),
-        Str1({a: 324, b: [361, 400]}),
-        Str1({a: 441, b: [484, 529]})
+        Str1(a=225, b=[256, 289]),
+        Str1(a=324, b=[361, 400]),
+        Str1(a=441, b=[484, 529])
         ]
 
-    p5: Str2 = Str2({
-        a: Str1({a: 576, b: [625, 676]}),
-        b: 729,
-        c: 2
-    })
+    p5: Str2 = Str2(
+        a=Str1(a=576, b=[625, 676]),
+        b=729,
+        c=2
+    )
 
     p6: uint176 = 841
 
     p7: uint8 = 3
 
     p8: Str1[1] = [
-        Str1({a: 961, b: [1024, 1089]})
+        Str1(a=961, b=[1024, 1089])
         ]
 
     p9: uint120 = 1156
@@ -190,7 +190,7 @@ def entry() -> uint256:
 
     result: bool = True
 
-    for i in range(1, 39):
+    for i: uint8 in range(1, 39):
         result = result and self.main(i, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == convert(i, uint256) * convert(i, uint256)
 
     result = result and self.main(0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) == 0

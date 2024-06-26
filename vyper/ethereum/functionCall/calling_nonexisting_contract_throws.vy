@@ -3,18 +3,18 @@ interface D:
 
 d: D
 
-@external
+@deploy
 def __init__():
     self.d = D(convert(0x1212, address))
 
 @external
 def f() -> uint256:
-    self.d.g()
+    extcall self.d.g()
     return 7
 
 @external
 def g() -> uint256:
-    self.d.g(gas=200)
+    extcall self.d.g(gas=200)
     return 7
 
 @external

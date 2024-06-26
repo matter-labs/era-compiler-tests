@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -19,6 +19,6 @@ ARRAY_SIZE: constant(uint8) = 10
 @pure
 def main(array: uint8[ARRAY_SIZE]) -> uint8:
     sum: uint8 = 0
-    for i in range(3, 8):
+    for i: uint8 in range(3, 8):
         sum += array[i]
     return sum

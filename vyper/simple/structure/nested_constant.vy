@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "main",
 #!     "inputs": [
 #!         {
@@ -19,7 +19,7 @@ struct Inner:
 struct Data:
     inner: Inner
 
-DATA: constant(Data) = Data({inner: Inner({value: 5})})
+DATA: constant(Data) = Data(inner=Inner(value=5))
 
 @external
 @pure

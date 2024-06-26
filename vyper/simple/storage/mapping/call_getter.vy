@@ -1,4 +1,4 @@
-#! { "cases": [ {
+#! { "modes": [ "V >=0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -21,4 +21,4 @@ table: public(HashMap[uint8, uint8])
 
 @external
 def get() -> uint8:
-    return Self(self).table(0)
+    return extcall Self(self).table(0)

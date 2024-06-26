@@ -6,11 +6,11 @@ struct S:
 
 @external
 def f(s: S) -> Bytes[600]:
-    return _abi_encode(s)
+    return abi_encode(s)
 
 @external
 def g(s: S) -> Bytes[600]:
-    return Self(self).f(s)
+    return extcall Self(self).f(s)
 
 # ====
 # EVMVersion: >homestead

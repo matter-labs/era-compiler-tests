@@ -20,11 +20,9 @@
 # Therefore HackMe's storage was updated to msg.sender where msg.sender is the
 # caller of HackMe, in this case Attack.
 
-
-
 hackMe: public(address)
 
-@external
+@deploy
 def __init__(_hackMe: address):
     self.hackMe = _hackMe
 

@@ -1,7 +1,7 @@
 m_x: public(uint256)
 m_s: public(Bytes[100])
 
-@external
+@deploy
 def __init__(x: uint256, s: Bytes[100]):
     self.m_x = x
     self.m_s = s

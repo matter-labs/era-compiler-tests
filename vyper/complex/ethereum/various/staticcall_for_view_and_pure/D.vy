@@ -1,4 +1,5 @@
-import C as C
+interface C:
+    def f() -> uint256: nonpayable
 
 interface CView:
     def f() -> uint256: view
@@ -8,12 +9,12 @@ interface CPure:
 
 @external
 def f(_c: address) -> uint256:
-    return C(create_forwarder_to(_c)).f()
+    return extcall C(create_forwarder_to(_c)).f()
 
 @external
 def fview(_c: address) -> uint256:
-    return (CView(create_forwarder_to(_c))).f()
+    return staticcall (CView(create_forwarder_to(_c))).f()
 
 @external
 def fpure(_c: address) -> uint256:
-    return (CPure(create_forwarder_to(_c))).f()
+    return staticcall (CPure(create_forwarder_to(_c))).f()
