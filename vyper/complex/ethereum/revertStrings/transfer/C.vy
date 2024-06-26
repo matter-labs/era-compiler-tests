@@ -1,10 +1,8 @@
-import A as A
-
-a: A
+a: address
 
 @deploy
 def __init__(_a: address):
-    self.a = A(create_forwarder_to(_a))
+    self.a = create_forwarder_to(_a)
 
 @external
 @payable
@@ -13,11 +11,11 @@ def __default__():
 
 @external
 def f():
-    send(self.a.address, as_wei_value(1, "wei"))
+    send(self.a, as_wei_value(1, "wei"))
 
 @external
 def h():
-    send(self.a.address, as_wei_value(100, "ether"))
+    send(self.a, as_wei_value(100, "ether"))
 
 @external
 @view

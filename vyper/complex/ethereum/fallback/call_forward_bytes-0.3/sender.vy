@@ -1,5 +1,8 @@
 import receiver as receiver
 
+rec: receiver
+savedData: Bytes[36]
+
 @external
 def __init__(_receiver: address):
     self.rec = receiver(create_forwarder_to(_receiver))
@@ -21,6 +24,3 @@ def clear() -> bool:
 @external
 def val() -> uint256:
     return self.rec.received()
-
-rec: receiver
-savedData: Bytes[36]

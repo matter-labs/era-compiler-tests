@@ -1,4 +1,8 @@
-import receiver as receiver
+interface receiver:
+    def received() -> uint256: view
+
+rec: receiver
+savedData: Bytes[36]
 
 @deploy
 def __init__(_receiver: address):
@@ -20,7 +24,4 @@ def clear() -> bool:
 
 @external
 def val() -> uint256:
-    return self.rec.received()
-
-rec: receiver
-savedData: Bytes[36]
+    return staticcall self.rec.received()

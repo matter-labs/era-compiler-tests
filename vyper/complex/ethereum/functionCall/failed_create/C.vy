@@ -1,4 +1,5 @@
-import D as D
+interface D:
+    def init_(): payable
 
 interface Self:
     def stack(depth: uint256, _d: address) -> address: payable
@@ -14,7 +15,7 @@ def __init__():
 def _f(amount: uint256, _d: address) -> address:
     self.x += 1
     d: address = create_forwarder_to(_d)
-    D(d).init_(value=amount)
+    extcall D(d).init_(value=amount)
     return d
 
 @external

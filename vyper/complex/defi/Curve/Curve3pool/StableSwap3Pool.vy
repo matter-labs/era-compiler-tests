@@ -193,7 +193,7 @@ def _xp_mem(_balances: uint256[N_COINS]) -> uint256[N_COINS]:
 @internal
 def get_D(xp: uint256[N_COINS], amp: uint256) -> uint256:
     S: uint256 = 0
-    for _x in xp:
+    for _x: uint256 in xp:
         S += _x
     if S == 0:
         return 0
@@ -203,7 +203,7 @@ def get_D(xp: uint256[N_COINS], amp: uint256) -> uint256:
     Ann: uint256 = amp * convert(N_COINS, uint256)
     for _i: uint256 in range(255):
         D_P: uint256 = D
-        for _x in xp:
+        for _x: uint256 in xp:
             D_P = D_P * D // (_x * convert(N_COINS, uint256))  # If division by 0, this will be borked: only withdrawal will work. And that is good
         Dprev = D
         D = (Ann * S + D_P * convert(N_COINS, uint256)) * D // ((Ann - 1) * D + (N_COINS + 1) * D_P)

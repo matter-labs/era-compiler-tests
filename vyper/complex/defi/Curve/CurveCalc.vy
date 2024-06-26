@@ -21,7 +21,7 @@ def get_D(n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256) -> uint256:
     @return The value of invariant
     """
     S: uint256 = 0
-    for _x in xp:
+    for _x: uint256 in xp:
         if _x == 0:
             break
         S += _x
@@ -33,7 +33,7 @@ def get_D(n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256) -> uint256:
     Ann: uint256 = amp * n_coins
     for _i: uint256 in range(255):
         D_P: uint256 = D
-        for _x in xp:
+        for _x: uint256 in xp:
             if _x == 0:
                 break
             D_P = D_P * D // (_x * n_coins)  # If division by 0, this will be borked: only withdrawal will work. And that is good

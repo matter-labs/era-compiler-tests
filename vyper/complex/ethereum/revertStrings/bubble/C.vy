@@ -1,4 +1,5 @@
-import A as A
+interface A:
+    def g(): nonpayable
 
 a: A
 
@@ -8,4 +9,4 @@ def __init__(_a: address):
 
 @external
 def f():
-    self.a.g()
+    extcall self.a.g()

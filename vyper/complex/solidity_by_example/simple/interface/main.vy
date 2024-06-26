@@ -22,5 +22,5 @@ def getTokenReserves() -> (uint256, uint256):
     reserve0: uint256 = 0
     reserve1: uint256 = 0
     _: uint256 = 0
-    reserve0, reserve1, _ = UniswapV2Pair(pair).getReserves()
+    reserve0, reserve1, _ = staticcall UniswapV2Pair(pair).getReserves()
     return (reserve0, reserve1)

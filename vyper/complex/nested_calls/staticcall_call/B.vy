@@ -1,5 +1,6 @@
-import C as C
+interface C:
+    def main(): nonpayable
 
 @external
 def main(c: address):
-    C(c).main()
+    extcall C(c).main()

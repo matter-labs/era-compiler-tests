@@ -1,4 +1,5 @@
-import D as D
+interface D:
+    def deposit(_id: bytes32): payable
 
 d: D
 
@@ -9,4 +10,4 @@ def __init__(_d: address):
 @external
 @payable
 def deposit(_id: bytes32):
-    self.d.deposit(_id)
+    extcall self.d.deposit(_id)

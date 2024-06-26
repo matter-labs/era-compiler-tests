@@ -7,4 +7,4 @@ def f() -> uint256:
 
 @external
 def init_():
-    Self(self).f()
+    extcall Self(self).f()

@@ -82,7 +82,7 @@
 #! } ] }
 
 balance_: public(uint256)
-MAX_UINT: constant(uint256) = max_value(MAX_UINT256)
+MAX_UINT: constant(uint256) = max_value(uint256)
 
 @external
 def GET_MAX_UINT() -> uint256:
