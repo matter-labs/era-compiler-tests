@@ -131,7 +131,7 @@ def __init__(
     @param _fee Fee to charge for exchanges
     @param _admin_fee Admin fee
     """
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         assert _coins[i] != empty(address)
     self.coins = _coins
     self.initial_A = _A
@@ -175,7 +175,7 @@ def A() -> uint256:
 @internal
 def _xp() -> uint256[N_COINS]:
     result: uint256[N_COINS] = RATES
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         result[i] = result[i] * self.balances[i] // LENDING_PRECISION
     return result
 
@@ -184,7 +184,7 @@ def _xp() -> uint256[N_COINS]:
 @internal
 def _xp_mem(_balances: uint256[N_COINS]) -> uint256[N_COINS]:
     result: uint256[N_COINS] = RATES
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         result[i] = result[i] * _balances[i] // PRECISION
     return result
 
@@ -206,7 +206,7 @@ def get_D(xp: uint256[N_COINS], amp: uint256) -> uint256:
         for _x: uint256 in xp:
             D_P = D_P * D // (_x * convert(N_COINS, uint256))  # If division by 0, this will be borked: only withdrawal will work. And that is good
         Dprev = D
-        D = (Ann * S + D_P * convert(N_COINS, uint256)) * D // ((Ann - 1) * D + (N_COINS + 1) * D_P)
+        D = (Ann * S + D_P * convert(N_COINS, uint256)) * D // ((Ann - 1) * D + convert(N_COINS + 1, uint256) * D_P)
         # Equality with the precision of 1
         if D > Dprev:
             if D - Dprev <= 1:
@@ -233,7 +233,7 @@ def get_virtual_price() -> uint256:
     D: uint256 = self.get_D(self._xp(), self._A())
     # D is in the units similar to DAI (e.g. converted to precision 1e18)
     # When balanced, D = n * x_u - total virtual value of the portfolio
-    token_supply: uint256 = self.token.totalSupply()
+    token_supply: uint256 = staticcall self.token.totalSupply()
     return D * PRECISION // token_supply
 
 
@@ -249,13 +249,13 @@ def calc_token_amount(amounts: uint256[N_COINS], deposit: bool) -> uint256:
     _balances: uint256[N_COINS] = self.balances
     amp: uint256 = self._A()
     D0: uint256 = self.get_D_mem(_balances, amp)
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         if deposit:
             _balances[i] += amounts[i]
         else:
             _balances[i] -= amounts[i]
     D1: uint256 = self.get_D_mem(_balances, amp)
-    token_amount: uint256 = self.token.totalSupply()
+    token_amount: uint256 = staticcall self.token.totalSupply()
     diff: uint256 = 0
     if deposit:
         diff = D1 - D0
@@ -270,11 +270,11 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
     assert not self.is_killed  # dev: is killed
 
     fees: uint256[N_COINS] = empty(uint256[N_COINS])
-    _fee: uint256 = self.fee * convert(N_COINS, uint256) // (4 * (N_COINS - 1))
+    _fee: uint256 = self.fee * convert(N_COINS, uint256) // convert(4 * (N_COINS - 1), uint256)
     _admin_fee: uint256 = self.admin_fee
     amp: uint256 = self._A()
 
-    token_supply: uint256 = self.token.totalSupply()
+    token_supply: uint256 = staticcall self.token.totalSupply()
     # Initial invariant
     D0: uint256 = 0
     old_balances: uint256[N_COINS] = self.balances
@@ -282,7 +282,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
         D0 = self.get_D_mem(old_balances, amp)
     new_balances: uint256[N_COINS] = old_balances
 
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         in_amount: uint256 = amounts[i]
         if token_supply == 0:
             assert in_amount > 0  # dev: initial deposit requires all coins
@@ -291,7 +291,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
         # Take coins from the sender
         if in_amount > 0:
             if i == FEE_INDEX:
-                in_amount = ERC20(in_coin).balanceOf(self)
+                in_amount = staticcall IERC20(in_coin).balanceOf(self)
 
             # "safeTransferFrom" which works for ERC20s which return bool or not
             _response: Bytes[32] = raw_call(
@@ -308,7 +308,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
                 assert convert(_response, bool)  # dev: failed transfer
 
             if i == FEE_INDEX:
-                in_amount = ERC20(in_coin).balanceOf(self) - in_amount
+                in_amount = staticcall IERC20(in_coin).balanceOf(self) - in_amount
 
         new_balances[i] = old_balances[i] + in_amount
 
@@ -321,7 +321,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
     D2: uint256 = D1
     if token_supply > 0:
         # Only account for fees if we are not the first to deposit
-        for i: uint256 in range(N_COINS):
+        for i: int128 in range(N_COINS):
             ideal_balance: uint256 = D1 * old_balances[i] // D0
             difference: uint256 = 0
             if ideal_balance > new_balances[i]:
@@ -345,7 +345,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
     assert mint_amount >= min_mint_amount, "Slippage screwed you"
 
     # Mint pool tokens
-    self.token.mint(msg.sender, mint_amount)
+    extcall self.token.mint(msg.sender, mint_amount)
 
     log AddLiquidity(msg.sender, amounts, fees, D1, token_supply + mint_amount)
 
@@ -370,7 +370,7 @@ def get_y(i: int128, j: int128, x: uint256, xp_: uint256[N_COINS]) -> uint256:
     Ann: uint256 = amp * convert(N_COINS, uint256)
 
     _x: uint256 = 0
-    for _i: uint256 in range(N_COINS):
+    for _i: int128 in range(N_COINS):
         if _i == i:
             _x = x
         elif _i != j:
@@ -439,7 +439,7 @@ def exchange(i: int128, j: int128, dx: uint256, min_dy: uint256):
     input_coin: address = self.coins[i]
 
     if i == FEE_INDEX:
-        dx_w_fee = ERC20(input_coin).balanceOf(self)
+        dx_w_fee = staticcall IERC20(input_coin).balanceOf(self)
 
     # "safeTransferFrom" which works for ERC20s which return bool or not
     _response: Bytes[32] = raw_call(
@@ -456,7 +456,7 @@ def exchange(i: int128, j: int128, dx: uint256, min_dy: uint256):
         assert convert(_response, bool)  # dev: failed transfer
 
     if i == FEE_INDEX:
-        dx_w_fee = ERC20(input_coin).balanceOf(self) - dx_w_fee
+        dx_w_fee = staticcall IERC20(input_coin).balanceOf(self) - dx_w_fee
 
     x: uint256 = xp[i] + dx_w_fee * rates[i] // PRECISION
     y: uint256 = self.get_y(i, j, x, xp)
@@ -495,11 +495,11 @@ def exchange(i: int128, j: int128, dx: uint256, min_dy: uint256):
 @external
 @nonreentrant
 def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]):
-    total_supply: uint256 = self.token.totalSupply()
+    total_supply: uint256 = staticcall self.token.totalSupply()
     amounts: uint256[N_COINS] = empty(uint256[N_COINS])
     fees: uint256[N_COINS] = empty(uint256[N_COINS])  # Fees are unused but we've got them historically in event
 
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         value: uint256 = self.balances[i] * _amount // total_supply
         assert value >= min_amounts[i], "Withdrawal resulted in fewer coins than expected"
         self.balances[i] -= value
@@ -518,7 +518,7 @@ def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]):
         if len(_response) > 0:
             assert convert(_response, bool)  # dev: failed transfer
 
-    self.token.burnFrom(msg.sender, _amount)  # dev: insufficient funds
+    extcall self.token.burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
     log RemoveLiquidity(msg.sender, amounts, fees, total_supply - _amount)
 
@@ -528,20 +528,20 @@ def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]):
 def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint256):
     assert not self.is_killed  # dev: is killed
 
-    token_supply: uint256 = self.token.totalSupply()
+    token_supply: uint256 = staticcall self.token.totalSupply()
     assert token_supply != 0  # dev: zero total supply
-    _fee: uint256 = self.fee * convert(N_COINS, uint256) // (4 * (N_COINS - 1))
+    _fee: uint256 = self.fee * convert(N_COINS, uint256) // convert(4 * (N_COINS - 1), uint256)
     _admin_fee: uint256 = self.admin_fee
     amp: uint256 = self._A()
 
     old_balances: uint256[N_COINS] = self.balances
     new_balances: uint256[N_COINS] = old_balances
     D0: uint256 = self.get_D_mem(old_balances, amp)
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         new_balances[i] -= amounts[i]
     D1: uint256 = self.get_D_mem(new_balances, amp)
     fees: uint256[N_COINS] = empty(uint256[N_COINS])
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         ideal_balance: uint256 = D1 * old_balances[i] // D0
         difference: uint256 = 0
         if ideal_balance > new_balances[i]:
@@ -558,8 +558,8 @@ def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint2
     token_amount += 1  # In case of rounding errors - make it unfavorable for the "attacker"
     assert token_amount <= max_burn_amount, "Slippage screwed you"
 
-    self.token.burnFrom(msg.sender, token_amount)  # dev: insufficient funds
-    for i: uint256 in range(N_COINS):
+    extcall self.token.burnFrom(msg.sender, token_amount)  # dev: insufficient funds
+    for i: int128 in range(N_COINS):
         if amounts[i] != 0:
 
             # "safeTransfer" which works for ERC20s which return bool or not
@@ -598,7 +598,7 @@ def get_y_D(A_: uint256, i: int128, xp: uint256[N_COINS], D: uint256) -> uint256
     Ann: uint256 = A_ * convert(N_COINS, uint256)
 
     _x: uint256 = 0
-    for _i: uint256 in range(N_COINS):
+    for _i: int128 in range(N_COINS):
         if _i != i:
             _x = xp[_i]
         else:
@@ -629,9 +629,9 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128) -> (uint256, uint
     # * Get current D
     # * Solve Eqn against y_i for D - _token_amount
     amp: uint256 = self._A()
-    _fee: uint256 = self.fee * convert(N_COINS, uint256) // (4 * (N_COINS - 1))
+    _fee: uint256 = self.fee * convert(N_COINS, uint256) // convert(4 * (N_COINS - 1), uint256)
     precisions: uint256[N_COINS] = PRECISION_MUL
-    total_supply: uint256 = self.token.totalSupply()
+    total_supply: uint256 = staticcall self.token.totalSupply()
 
     xp: uint256[N_COINS] = self._xp()
 
@@ -642,7 +642,7 @@ def _calc_withdraw_one_coin(_token_amount: uint256, i: int128) -> (uint256, uint
     new_y: uint256 = self.get_y_D(amp, i, xp, D1)
     dy_0: uint256 = (xp[i] - new_y) // precisions[i]  # w/o fees
 
-    for j: uint256 in range(N_COINS):
+    for j: int128 in range(N_COINS):
         dx_expected: uint256 = 0
         if j == i:
             dx_expected = xp[j] * D1 // D0 - new_y
@@ -676,7 +676,7 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, min_amount: uin
     assert dy >= min_amount, "Not enough coins removed"
 
     self.balances[i] -= (dy + dy_fee * self.admin_fee // FEE_DENOMINATOR)
-    self.token.burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
+    extcall self.token.burnFrom(msg.sender, _token_amount)  # dev: insufficient funds
 
     # "safeTransfer" which works for ERC20s which return bool or not
     _response: Bytes[32] = raw_call(
@@ -799,16 +799,16 @@ def revert_transfer_ownership():
 @view
 @external
 def admin_balances(i: uint256) -> uint256:
-    return ERC20(self.coins[i]).balanceOf(self) - self.balances[i]
+    return staticcall IERC20(self.coins[i]).balanceOf(self) - self.balances[i]
 
 
 @external
 def withdraw_admin_fees():
     assert msg.sender == self.owner  # dev: only owner
 
-    for i: uint256 in range(N_COINS):
+    for i: int128 in range(N_COINS):
         c: address = self.coins[i]
-        value: uint256 = ERC20(c).balanceOf(self) - self.balances[i]
+        value: uint256 = staticcall IERC20(c).balanceOf(self) - self.balances[i]
         if value > 0:
             # "safeTransfer" which works for ERC20s which return bool or not
             _response: Bytes[32] = raw_call(
@@ -827,8 +827,8 @@ def withdraw_admin_fees():
 @external
 def donate_admin_fees():
     assert msg.sender == self.owner  # dev: only owner
-    for i: uint256 in range(N_COINS):
-        self.balances[i] = ERC20(self.coins[i]).balanceOf(self)
+    for i: int128 in range(N_COINS):
+        self.balances[i] = staticcall IERC20(self.coins[i]).balanceOf(self)
 
 
 @external

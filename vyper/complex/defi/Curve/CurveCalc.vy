@@ -72,7 +72,7 @@ def get_y(D: uint256, n_coins: uint256, xp: uint256[MAX_COINS], amp: uint256,
     _x: uint256 = 0
     S_: uint256 = 0
     c: uint256 = D
-    for _i: uint256 in range(MAX_COINS):
+    for _i: int128 in range(MAX_COINS):
         if _i == n_coins_int:
             break
         if _i == i:
@@ -122,13 +122,13 @@ def get_dy(n_coins: uint256, balances: uint256[MAX_COINS], amp: uint256, fee: ui
 
     xp: uint256[MAX_COINS] = balances
     ratesp: uint256[MAX_COINS] = precisions
-    for k: uint256 in range(MAX_COINS):
+    for k: int128 in range(MAX_COINS):
         xp[k] = xp[k] * rates[k] * precisions[k] // 10 ** 18
         ratesp[k] *= rates[k]
     D: uint256 = self.get_D(n_coins, xp, amp)
 
     dy: uint256[INPUT_SIZE] = dx
-    for k: uint256 in range(INPUT_SIZE):
+    for k: int128 in range(INPUT_SIZE):
         if dx[k] == 0:
             break
         else:
@@ -161,7 +161,7 @@ def get_dx(n_coins: uint256, balances: uint256[MAX_COINS], amp: uint256, fee: ui
 
     xp: uint256[MAX_COINS] = balances
     ratesp: uint256[MAX_COINS] = precisions
-    for k: uint256 in range(MAX_COINS):
+    for k: int128 in range(MAX_COINS):
         xp[k] = xp[k] * rates[k] * precisions[k] // 10 ** 18
         ratesp[k] *= rates[k]
     D: uint256 = self.get_D(n_coins, xp, amp)

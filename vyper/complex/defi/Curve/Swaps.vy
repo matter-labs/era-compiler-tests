@@ -98,9 +98,9 @@ def __init__(_address_provider: address, _calculator: address):
     @notice Constructor function
     """
     self.address_provider = AddressProvider(_address_provider)
-    self.registry = AddressProvider(_address_provider).get_registry()
-    self.factory_registry = AddressProvider(_address_provider).get_address(3)
-    self.crypto_registry = AddressProvider(_address_provider).get_address(5)
+    self.registry = staticcall AddressProvider(_address_provider).get_registry()
+    self.factory_registry = staticcall AddressProvider(_address_provider).get_address(3)
+    self.crypto_registry = staticcall AddressProvider(_address_provider).get_address(5)
     self.default_calculator = _calculator
 
 
@@ -131,12 +131,12 @@ def _get_exchange_amount(
     i: int128 = 0
     j: int128 = 0
     is_underlying: bool = False
-    i, j, is_underlying = Registry(_registry).get_coin_indices(_pool, _from, _to) # dev: no market
+    i, j, is_underlying = staticcall Registry(_registry).get_coin_indices(_pool, _from, _to) # dev: no market
 
-    if is_underlying and (_registry == self.registry or Registry(_registry).is_meta(_pool)):
-        return CurvePool(_pool).get_dy_underlying(i, j, _amount)
+    if is_underlying and (_registry == self.registry or staticcall Registry(_registry).is_meta(_pool)):
+        return staticcall CurvePool(_pool).get_dy_underlying(i, j, _amount)
 
-    return CurvePool(_pool).get_dy(i, j, _amount)
+    return staticcall CurvePool(_pool).get_dy(i, j, _amount)
 
 
 @view
@@ -159,9 +159,9 @@ def _get_crypto_exchange_amount(
     """
     i: uint256 = 0
     j: uint256 = 0
-    i, j = CryptoRegistry(_registry).get_coin_indices(_pool, _from, _to) # dev: no market
+    i, j = staticcall CryptoRegistry(_registry).get_coin_indices(_pool, _from, _to) # dev: no market
 
-    return CryptoPool(_pool).get_dy(i, j, _amount)
+    return staticcall CryptoPool(_pool).get_dy(i, j, _amount)
 
 
 @internal
@@ -184,8 +184,8 @@ def _exchange(
     i: int128 = 0
     j: int128 = 0
     is_underlying: bool = False
-    i, j, is_underlying = Registry(_registry).get_coin_indices(_pool, _from, _to)  # dev: no market
-    if is_underlying and _registry == self.factory_registry and Registry(_registry).is_meta(_pool):
+    i, j, is_underlying = staticcall Registry(_registry).get_coin_indices(_pool, _from, _to)  # dev: no market
+    if is_underlying and _registry == self.factory_registry and staticcall Registry(_registry).is_meta(_pool):
         is_underlying = False
 
     # perform // verify input transfer
@@ -222,16 +222,16 @@ def _exchange(
 
     # perform coin exchange
     if is_underlying:
-        CurvePool(_pool).exchange_underlying(i, j, _amount, _expected, value=eth_amount)
+        extcall CurvePool(_pool).exchange_underlying(i, j, _amount, _expected, value=eth_amount)
     else:
-        CurvePool(_pool).exchange(i, j, _amount, _expected, value=eth_amount)
+        extcall CurvePool(_pool).exchange(i, j, _amount, _expected, value=eth_amount)
 
     # perform output transfer
     if _to == ETH_ADDRESS:
         received_amount = self.balance
         raw_call(_receiver, b"", value=self.balance)
     else:
-        received_amount = ERC20(_to).balanceOf(self)
+        received_amount = staticcall IERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
             abi_encode(
@@ -275,7 +275,7 @@ def _crypto_exchange(
 
     i: uint256 = 0
     j: uint256 = 0
-    i, j = CryptoRegistry(self.crypto_registry).get_coin_indices(_pool, initial, target)  # dev: no market
+    i, j = staticcall CryptoRegistry(self.crypto_registry).get_coin_indices(_pool, initial, target)  # dev: no market
 
     # perform // verify input transfer
     if _from == ETH_ADDRESS:
@@ -311,16 +311,16 @@ def _crypto_exchange(
 
     # perform coin exchange
     if ETH_ADDRESS in [_from, _to]:
-        CryptoPoolETH(_pool).exchange(i, j, _amount, _expected, True, value=eth_amount)
+        extcall CryptoPoolETH(_pool).exchange(i, j, _amount, _expected, True, value=eth_amount)
     else:
-        CryptoPool(_pool).exchange(i, j, _amount, _expected)
+        extcall CryptoPool(_pool).exchange(i, j, _amount, _expected)
 
     # perform output transfer
     if _to == ETH_ADDRESS:
         received_amount = self.balance
         raw_call(_receiver, b"", value=self.balance)
     else:
-        received_amount = ERC20(_to).balanceOf(self)
+        received_amount = staticcall IERC20(_to).balanceOf(self)
         response: Bytes[32] = raw_call(
             _to,
             abi_encode(
@@ -341,7 +341,7 @@ def _crypto_exchange(
 
 @payable
 @external
-@nonreentrant("lock")
+@nonreentrant
 def exchange_with_best_rate(
     _from: address,
     _to: address,
@@ -371,7 +371,7 @@ def exchange_with_best_rate(
     best_pool: address = empty(address)
     max_dy: uint256 = 0
     for i: uint256 in range(65536):
-        pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
+        pool: address = staticcall Registry(registry).find_pool_for_coins(_from, _to, i)
         if pool == empty(address):
             break
         dy: uint256 = self._get_exchange_amount(registry, pool, _from, _to, _amount)
@@ -384,7 +384,7 @@ def exchange_with_best_rate(
 
 @payable
 @external
-@nonreentrant("lock")
+@nonreentrant
 def exchange(
     _pool: address,
     _from: address,
@@ -412,11 +412,11 @@ def exchange(
     else:
         assert msg.value == 0, "Incorrect ETH amount"
 
-    if Registry(self.crypto_registry).get_lp_token(_pool) != empty(address):
+    if staticcall Registry(self.crypto_registry).get_lp_token(_pool) != empty(address):
         return self._crypto_exchange(_pool, _from, _to, _amount, _expected, msg.sender, _receiver)
 
     registry: address = self.registry
-    if Registry(registry).get_lp_token(_pool) == empty(address):
+    if staticcall Registry(registry).get_lp_token(_pool) == empty(address):
         registry = self.factory_registry
     return self._exchange(registry, _pool, _from, _to, _amount, _expected, msg.sender, _receiver)
 
@@ -493,14 +493,14 @@ def exchange_multiple(
             eth_amount: uint256 = 0
             if input_token == ETH_ADDRESS:
                 eth_amount = amount
-            CurvePool(swap).exchange(convert(params[0], int128), convert(params[1], int128), amount, 0, value=eth_amount)
+            extcall CurvePool(swap).exchange(convert(params[0], int128), convert(params[1], int128), amount, 0, value=eth_amount)
         elif params[2] == 2:
-            CurvePool(swap).exchange_underlying(convert(params[0], int128), convert(params[1], int128), amount, 0)
+            extcall CurvePool(swap).exchange_underlying(convert(params[0], int128), convert(params[1], int128), amount, 0)
         elif params[2] == 3:
             if input_token == ETH_ADDRESS:
-                CryptoPoolETH(swap).exchange(params[0], params[1], amount, 0, True, value=amount)
+                extcall CryptoPoolETH(swap).exchange(params[0], params[1], amount, 0, True, value=amount)
             else:
-                CryptoPool(swap).exchange(params[0], params[1], amount, 0)
+                extcall CryptoPool(swap).exchange(params[0], params[1], amount, 0)
         else:
             raise "Bad swap type"
 
@@ -508,7 +508,7 @@ def exchange_multiple(
         if output_token == ETH_ADDRESS:
             amount = self.balance
         else:
-            amount = ERC20(output_token).balanceOf(self)
+            amount = staticcall IERC20(output_token).balanceOf(self)
 
         # sanity check, if the routing data is incorrect we will have a 0 balance and that is bad
         assert amount != 0, "Received nothing"
@@ -567,7 +567,7 @@ def get_best_rate(
 
     registry: address = self.crypto_registry
     for i: uint256 in range(65536):
-        pool: address = Registry(registry).find_pool_for_coins(initial, target, i)
+        pool: address = staticcall Registry(registry).find_pool_for_coins(initial, target, i)
         if pool == empty(address):
             if i == 0:
                 # we only check for stableswap pools if we did not find any crypto pools
@@ -582,7 +582,7 @@ def get_best_rate(
 
     registry = self.registry
     for i: uint256 in range(65536):
-        pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
+        pool: address = staticcall Registry(registry).find_pool_for_coins(_from, _to, i)
         if pool == empty(address):
             break
         elif pool in _exclude_pools:
@@ -594,12 +594,12 @@ def get_best_rate(
 
     registry = self.factory_registry
     for i: uint256 in range(65536):
-        pool: address = Registry(registry).find_pool_for_coins(_from, _to, i)
+        pool: address = staticcall Registry(registry).find_pool_for_coins(_from, _to, i)
         if pool == empty(address):
             break
         elif pool in _exclude_pools:
             continue
-        if ERC20(pool).totalSupply() == 0:
+        if staticcall IERC20(pool).totalSupply() == 0:
             # ignore pools without TVL as the call to `get_dy` will revert
             continue
         dy: uint256 = self._get_exchange_amount(registry, pool, _from, _to, _amount)
@@ -624,7 +624,7 @@ def get_exchange_amount(_pool: address, _from: address, _to: address, _amount: u
     """
 
     registry: address = self.crypto_registry
-    if Registry(registry).get_lp_token(_pool) != empty(address):
+    if staticcall Registry(registry).get_lp_token(_pool) != empty(address):
         initial: address = _from
         target: address = _to
         if _from == ETH_ADDRESS:
@@ -634,7 +634,7 @@ def get_exchange_amount(_pool: address, _from: address, _to: address, _amount: u
         return self._get_crypto_exchange_amount(registry, _pool, initial, target, _amount)
 
     registry = self.registry
-    if Registry(registry).get_lp_token(_pool) == empty(address):
+    if staticcall Registry(registry).get_lp_token(_pool) == empty(address):
         registry = self.factory_registry
     return self._get_exchange_amount(registry, _pool, _from, _to, _amount)
 
@@ -655,25 +655,25 @@ def get_input_amount(_pool: address, _from: address, _to: address, _amount: uint
     i: int128 = 0
     j: int128 = 0
     is_underlying: bool = False
-    i, j, is_underlying = Registry(registry).get_coin_indices(_pool, _from, _to)
-    amp: uint256 = Registry(registry).get_A(_pool)
-    fee: uint256 = Registry(registry).get_fees(_pool)[0]
+    i, j, is_underlying = staticcall Registry(registry).get_coin_indices(_pool, _from, _to)
+    amp: uint256 = staticcall Registry(registry).get_A(_pool)
+    fee: uint256 = (staticcall Registry(registry).get_fees(_pool))[0]
 
     balances: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
     rates: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
     decimals: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
-    n_coins: uint256 = Registry(registry).get_n_coins(_pool)[convert(is_underlying, uint256)]
+    n_coins: uint256 = (staticcall Registry(registry).get_n_coins(_pool))[convert(is_underlying, uint256)]
     if is_underlying:
-        balances = Registry(registry).get_underlying_balances(_pool)
-        decimals = Registry(registry).get_underlying_decimals(_pool)
+        balances = staticcall Registry(registry).get_underlying_balances(_pool)
+        decimals = staticcall Registry(registry).get_underlying_decimals(_pool)
         for x: uint256 in range(MAX_COINS_UINT256):
             if x == n_coins:
                 break
             rates[x] = 10**18
     else:
-        balances = Registry(registry).get_balances(_pool)
-        decimals = Registry(registry).get_decimals(_pool)
-        rates = Registry(registry).get_rates(_pool)
+        balances = staticcall Registry(registry).get_balances(_pool)
+        decimals = staticcall Registry(registry).get_decimals(_pool)
+        rates = staticcall Registry(registry).get_rates(_pool)
 
     for x: uint256 in range(MAX_COINS_UINT256):
         if x == n_coins:
@@ -683,7 +683,7 @@ def get_input_amount(_pool: address, _from: address, _to: address, _amount: uint
     calculator: address = self.pool_calculator[_pool]
     if calculator == empty(address):
         calculator = self.default_calculator
-    return Calculator(calculator).get_dx(n_coins, balances, amp, fee, rates, decimals, i, j, _amount)
+    return staticcall Calculator(calculator).get_dx(n_coins, balances, amp, fee, rates, decimals, i, j, _amount)
 
 
 @view
@@ -711,22 +711,22 @@ def get_exchange_amounts(
     rates: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
     decimals: uint256[MAX_COINS] = empty(uint256[MAX_COINS])
 
-    amp: uint256 = Registry(registry).get_A(_pool)
-    fee: uint256 = Registry(registry).get_fees(_pool)[0]
-    i, j, is_underlying = Registry(registry).get_coin_indices(_pool, _from, _to)
-    n_coins: uint256 = Registry(registry).get_n_coins(_pool)[convert(is_underlying, uint256)]
+    amp: uint256 = staticcall Registry(registry).get_A(_pool)
+    fee: uint256 = (staticcall Registry(registry).get_fees(_pool))[0]
+    i, j, is_underlying = staticcall Registry(registry).get_coin_indices(_pool, _from, _to)
+    n_coins: uint256 = (staticcall Registry(registry).get_n_coins(_pool))[convert(is_underlying, uint256)]
 
     if is_underlying:
-        balances = Registry(registry).get_underlying_balances(_pool)
-        decimals = Registry(registry).get_underlying_decimals(_pool)
+        balances = staticcall Registry(registry).get_underlying_balances(_pool)
+        decimals = staticcall Registry(registry).get_underlying_decimals(_pool)
         for x: uint256 in range(MAX_COINS_UINT256):
             if x == n_coins:
                 break
             rates[x] = 10**18
     else:
-        balances = Registry(registry).get_balances(_pool)
-        decimals = Registry(registry).get_decimals(_pool)
-        rates = Registry(registry).get_rates(_pool)
+        balances = staticcall Registry(registry).get_balances(_pool)
+        decimals = staticcall Registry(registry).get_decimals(_pool)
+        rates = staticcall Registry(registry).get_rates(_pool)
 
     for x: uint256 in range(MAX_COINS_UINT256):
         if x == n_coins:
@@ -736,7 +736,7 @@ def get_exchange_amounts(
     calculator: address = self.pool_calculator[_pool]
     if calculator == empty(address):
         calculator = self.default_calculator
-    return Calculator(calculator).get_dy(n_coins, balances, amp, fee, rates, decimals, i, j, _amounts)
+    return staticcall Calculator(calculator).get_dy(n_coins, balances, amp, fee, rates, decimals, i, j, _amounts)
 
 
 @view
@@ -765,9 +765,9 @@ def update_registry_address() -> bool:
     @return bool success
     """
     address_provider: address = self.address_provider.address
-    self.registry = AddressProvider(address_provider).get_registry()
-    self.factory_registry = AddressProvider(address_provider).get_address(3)
-    self.crypto_registry = AddressProvider(address_provider).get_address(5)
+    self.registry = staticcall AddressProvider(address_provider).get_registry()
+    self.factory_registry = staticcall AddressProvider(address_provider).get_address(3)
+    self.crypto_registry = staticcall AddressProvider(address_provider).get_address(5)
 
     return True
 
@@ -781,7 +781,7 @@ def set_calculator(_pool: address, _calculator: address) -> bool:
     @param _calculator `CurveCalc` address
     @return bool success
     """
-    assert msg.sender == self.address_provider.admin()  # dev: admin-only function
+    assert msg.sender == staticcall self.address_provider.admin()  # dev: admin-only function
 
     self.pool_calculator[_pool] = _calculator
 
@@ -796,7 +796,7 @@ def set_default_calculator(_calculator: address) -> bool:
     @param _calculator `CurveCalc` address
     @return bool success
     """
-    assert msg.sender == self.address_provider.admin()  # dev: admin-only function
+    assert msg.sender == staticcall self.address_provider.admin()  # dev: admin-only function
 
     self.default_calculator = _calculator
 
@@ -811,12 +811,12 @@ def claim_balance(_token: address) -> bool:
     @param _token Token address
     @return bool success
     """
-    assert msg.sender == self.address_provider.admin()  # dev: admin-only function
+    assert msg.sender == staticcall self.address_provider.admin()  # dev: admin-only function
 
     if _token == ETH_ADDRESS:
         raw_call(msg.sender, b"", value=self.balance)
     else:
-        amount: uint256 = ERC20(_token).balanceOf(self)
+        amount: uint256 = staticcall IERC20(_token).balanceOf(self)
         response: Bytes[32] = raw_call(
             _token,
             concat(
@@ -839,7 +839,7 @@ def set_killed(_is_killed: bool) -> bool:
     @param _is_killed Killed status of the contract
     @return bool success
     """
-    assert msg.sender == self.address_provider.admin()  # dev: admin-only function
+    assert msg.sender == staticcall self.address_provider.admin()  # dev: admin-only function
     self.is_killed = _is_killed
 
     return True

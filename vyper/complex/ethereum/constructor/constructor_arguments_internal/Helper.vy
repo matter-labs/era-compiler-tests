@@ -6,10 +6,10 @@ def init_(x: bytes3, f: bool):
     self.name = x
     self._flag = f
 
-@view
+@external
 def getName() -> bytes3:
     return self.name
 
-@view
+@external
 def getFlag() -> bool:
     return self._flag
