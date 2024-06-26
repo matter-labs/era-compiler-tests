@@ -12,5 +12,5 @@ def g(a: uint256) -> uint256:
 def f(x: uint256, _helper: address) -> uint256:
     self.map[x] = x
     helper: address = create_forwarder_to(_helper)
-    extcall Helper(helper).init_(convert(keccak256(abi_decode(self.g(self.map[x]))), uint256))
-    return staticcall Helper(helper).flag()
+    extcall Helper(helper).init_(convert(keccak256(abi_encode(self.g(self.map[x]))), uint256))
+    return staticcall Helper(helper)._flag()

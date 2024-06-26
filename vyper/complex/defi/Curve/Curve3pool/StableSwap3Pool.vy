@@ -265,7 +265,7 @@ def calc_token_amount(amounts: uint256[N_COINS], deposit: bool) -> uint256:
 
 
 @external
-@nonreentrant('lock')
+@nonreentrant
 def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
     assert not self.is_killed  # dev: is killed
 
@@ -426,7 +426,7 @@ def get_dy_underlying(i: int128, j: int128, dx: uint256) -> uint256:
 
 
 @external
-@nonreentrant('lock')
+@nonreentrant
 def exchange(i: int128, j: int128, dx: uint256, min_dy: uint256):
     assert not self.is_killed  # dev: is killed
     rates: uint256[N_COINS] = RATES
@@ -493,7 +493,7 @@ def exchange(i: int128, j: int128, dx: uint256, min_dy: uint256):
 
 
 @external
-@nonreentrant('lock')
+@nonreentrant
 def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]):
     total_supply: uint256 = self.token.totalSupply()
     amounts: uint256[N_COINS] = empty(uint256[N_COINS])
@@ -524,7 +524,7 @@ def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]):
 
 
 @external
-@nonreentrant('lock')
+@nonreentrant
 def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint256):
     assert not self.is_killed  # dev: is killed
 
@@ -663,7 +663,7 @@ def calc_withdraw_one_coin(_token_amount: uint256, i: int128) -> uint256:
 
 
 @external
-@nonreentrant('lock')
+@nonreentrant
 def remove_liquidity_one_coin(_token_amount: uint256, i: int128, min_amount: uint256):
     """
     Remove _amount of liquidity all in a form of coin i

@@ -1,5 +1,5 @@
 interface RequireInterface:
-    def require_short(): view
+    def require_short(): nonpayable
     def wrong_number_of_params(one: uint256, two: uint256, three: Bytes[100]) -> uint256: view
 
 contract_req: address
@@ -9,9 +9,8 @@ def setContract(_contract_re: address):
     self.contract_req = _contract_re
 
 @external
-@view
 def require_short():
-    staticcall RequireInterface(self.contract_req).require_short()
+    extcall RequireInterface(self.contract_req).require_short()
 
 @external
 @view
