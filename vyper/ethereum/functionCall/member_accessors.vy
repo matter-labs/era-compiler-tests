@@ -13,10 +13,6 @@ def __init__():
     
 super_secret_data: uint256
 
-# ====
-# allowNonExistingFunctions: true
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # data() -> 8
 # name() -> "Celina"

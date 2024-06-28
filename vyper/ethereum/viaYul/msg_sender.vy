@@ -5,8 +5,5 @@ def test() -> bool:
     x = msg.sender
     return x == msg.sender
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> true

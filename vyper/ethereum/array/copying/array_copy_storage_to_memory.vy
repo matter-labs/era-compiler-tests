@@ -8,7 +8,5 @@ def f() -> (uint256, uint256):
     b: uint256[3] = self.a
     return (b[0], 3)
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 1, 3

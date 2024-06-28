@@ -230,9 +230,6 @@ def uintMaxD() -> bool:
 
     return True
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # uintMinA() -> true
 # uintMinB() -> true

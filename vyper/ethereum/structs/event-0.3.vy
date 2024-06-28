@@ -12,8 +12,6 @@ def o():
 def f():
     self.o()
 
-# ====
-# compileViaYul: also
 # ----
 # f() ->
 # ~ emit Ev((uint256)): 0x01

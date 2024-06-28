@@ -32,8 +32,6 @@ def _add(v: uint256):
 def find(v: uint256) -> uint256:
     return self._find(self.data, self.length, v)
 
-# ====
-# compileViaYul: also
 # ----
 # find(uint256): 7 -> -1
 # _add(uint256): 7 ->

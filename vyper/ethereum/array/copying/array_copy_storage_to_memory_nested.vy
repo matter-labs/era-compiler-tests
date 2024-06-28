@@ -9,8 +9,6 @@ def f() -> uint256[2][2]:
     m: uint256[2][2] = self.a
     return m
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0, 1, 2, 3
 # gas irOptimized: 161780

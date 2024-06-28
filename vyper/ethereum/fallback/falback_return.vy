@@ -5,9 +5,6 @@ def __default__():
     if self.x == 2:
         return
     self.x += 1
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # ()
 # x() -> 1

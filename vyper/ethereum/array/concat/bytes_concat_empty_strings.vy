@@ -11,9 +11,6 @@ def g() -> Bytes[500]:
 def h() -> Bytes[500]:
     b: Bytes[100] = convert("", Bytes[100])
     return concat(b, convert("abc", Bytes[100]), b, convert("abc", Bytes[100]), b)
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x20, 0
 # g() -> 0x20, 6, "abcabc"

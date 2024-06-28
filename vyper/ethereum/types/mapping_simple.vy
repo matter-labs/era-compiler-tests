@@ -8,8 +8,6 @@ def get(k: uint8) -> uint8:
 def set(k: uint8, v: uint8):
     self.table[k] = v
     
-# ====
-# compileViaYul: also
 # ----
 # get(uint8): 0 -> 0
 # get(uint8): 0x01 -> 0

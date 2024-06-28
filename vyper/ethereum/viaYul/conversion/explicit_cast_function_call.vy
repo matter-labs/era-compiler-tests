@@ -8,8 +8,5 @@ def f(b: bytes32) -> bytes32:
 def g() -> bytes32:
     return self.f(convert(convert(convert(0x12345678, uint32), bytes4), bytes32))
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # g() -> 0x1234567800000000000000000000000000000000000000000000000000000000

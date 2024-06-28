@@ -13,8 +13,6 @@ def test() -> uint256:
             return i
     return 0
 
-# ====
-# compileViaYul: also
 # ----
 # test() -> 0
 # gas irOptimized: 158143

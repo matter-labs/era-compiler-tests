@@ -16,8 +16,6 @@ def test() -> (uint256, uint256):
     self.data2 = self.data1
     return x, y
 
-# ====
-# compileViaYul: also
 # ----
 # test() -> 4, 5
 # gas irOptimized: 238826

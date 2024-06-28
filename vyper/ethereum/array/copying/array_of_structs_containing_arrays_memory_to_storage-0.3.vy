@@ -17,8 +17,6 @@ def f() -> (uint256, uint256, uint128, uint128):
     assert self.s[1].c[0] == m[1].c[0]
     return (3, 3, self.s[1].b[2], self.s[1].c[0])
     
-# ====
-# compileViaYul: true
 # ----
 # f() -> 3, 3, 3, 1
 # gas irOptimized: 183316

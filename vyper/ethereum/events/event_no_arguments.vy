@@ -5,8 +5,6 @@ event Deposit:
 def deposit():
     log Deposit()
 
-# ====
-# compileViaYul: also
 # ----
 # deposit() ->
 # ~ emit Deposit()

@@ -44,8 +44,6 @@ def j() -> Bytes[300]:
     m: DynArray[uint256[2], 1][2] = [[[convert(0x000042, uint256), convert(0x000142, uint256)]],[[convert(0x010042, uint256), convert(0x010142, uint256)]]]
     return Self(self).reenc_f2(m)
 
-# ====
-# EVMVersion: >homestead
 # ----
 # g() -> 32, 132, hex"15cfcc01", 32, 32, 1, 42, hex"00000000000000000000000000000000000000000000000000000000"
 # h() -> 32, 132, hex"15cfcc01", 32, 32, 1, 42, hex"00000000000000000000000000000000000000000000000000000000"

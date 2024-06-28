@@ -8,8 +8,5 @@ def __init__():
 def f() -> bytes32:
     data: Bytes[100] = self.s
     return convert(slice(data, 0, 1), bytes32)
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> "a"

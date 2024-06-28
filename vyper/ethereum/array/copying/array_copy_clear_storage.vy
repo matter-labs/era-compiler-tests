@@ -13,8 +13,6 @@ def f() -> uint256:
     assert self.x[2] == 0
     return self.x[3]
     
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0
 # gas irOptimized: 135098

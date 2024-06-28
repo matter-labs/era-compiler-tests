@@ -10,9 +10,6 @@ def f(x: uint256, y: uint256) -> uint256:
     self.value2 += 7
     return self.value2
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint256,uint256): 0, 6 -> 7
 # f(uint256,uint256): 1, 3 -> 0x23

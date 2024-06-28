@@ -5,8 +5,6 @@ a: public(uint256[LEN])
 def __init__(_a: uint256[LEN]):
     self.a = _a
 
-# ====
-# compileViaYul: also
 # ----
 # constructor(): 1, 2, 3 ->
 # gas irOptimized: 143598

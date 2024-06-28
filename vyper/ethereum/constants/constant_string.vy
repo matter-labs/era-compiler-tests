@@ -9,9 +9,6 @@ def f() -> Bytes[100]:
 def h() -> Bytes[100]:
     return convert(b, Bytes[100])
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x20, 3, "\x03\x01\x02"
 # h() -> 0x20, 5, "hello"

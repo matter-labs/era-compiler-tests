@@ -23,8 +23,6 @@ def gg8(x: bytes8) -> bytes32:
 def g16(x: bytes16) -> bytes32:
     return convert(x, bytes32)
     
-# ====
-# compileViaYul: also
 # ----
 # gg1(bytes1): left(0) -> left(0) # test validation as well as sanity check #
 # gg1(bytes1): left(1) -> left(1)

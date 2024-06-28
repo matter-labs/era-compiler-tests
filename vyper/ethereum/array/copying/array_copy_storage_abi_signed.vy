@@ -14,7 +14,5 @@ def test() -> int16[8]:
     self.x[7] = -1
     return self.x
 
-# ====
-# compileViaYul: also
 # ----
 # test() -> -1, -1, 8, -16, -2, 6, 8, -1

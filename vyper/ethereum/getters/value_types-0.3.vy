@@ -20,9 +20,6 @@ def __init__():
     self.h = True
     self.i = convert((2**160 - 1) / 3, address)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # a() -> 3
 # b() -> 4

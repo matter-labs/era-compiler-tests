@@ -11,7 +11,5 @@ def __init__():
 def readX() -> uint8:
     return self.x
     
-# ====
-# compileViaYul: also
 # ----
 # readX() -> 3

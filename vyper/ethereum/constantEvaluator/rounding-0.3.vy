@@ -10,8 +10,5 @@ def f() -> (uint256, int128, uint256, int128):
     y: uint256[-d] = empty(uint256[-d])
     return (convert(c, uint256), c, convert(-d, uint256), -d)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 2, 2, 2, 2

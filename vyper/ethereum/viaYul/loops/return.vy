@@ -6,8 +6,5 @@ def f() -> uint256:
     x = x + 10
     return x
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 1

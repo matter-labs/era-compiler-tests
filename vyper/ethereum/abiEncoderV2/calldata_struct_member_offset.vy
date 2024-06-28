@@ -23,7 +23,5 @@ def f() -> (uint256, uint256):
     b: B = B(a=A(a=420, b=arr), b=11)
     return (b.b, staticcall Self(self).g(b))
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 11, 11

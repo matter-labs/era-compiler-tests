@@ -15,8 +15,6 @@ def f3(c1: Bytes[100], s: uint256, e: uint256, c2: Bytes[100]) -> bool:
             return False
     return True
 
-# ====
-# compileViaYul: also
 # ----
 # f1(bytes,uint256,uint256,bytes): 0x80, 1, 5, 0xC0, 8, "abcdefgh", 4, "bcde" -> true
 # f1(bytes,uint256,uint256,bytes): 0x80, 1, 5, 0xC0, 8, "abcdefgh", 4, "bcdf" -> false

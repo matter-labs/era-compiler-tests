@@ -11,8 +11,6 @@ def __init__():
     self.n[1][1].a = 9
     self.n[1][1].b = 10
     
-# ====
-# compileViaYul: also
 # ----
 # n(uint256,uint256): 0, 0 -> 0x00, 0x00
 # n(uint256,uint256): 1, 0 -> 7, 8

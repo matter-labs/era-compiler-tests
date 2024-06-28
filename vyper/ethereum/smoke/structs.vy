@@ -15,9 +15,6 @@ def s() -> S:
 def t() -> T:
     return T(a=23, b=42, s="any")
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # s() -> 23, 42
 # t() -> 0x20, 23, 42, 0x60, 3, "any"

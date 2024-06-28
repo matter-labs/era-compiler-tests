@@ -7,7 +7,5 @@ def f(n: uint256) -> uint256:
     c: uint256[4] = b[1]
     return c[1]
     
-# ====
-# compileViaYul: also
 # ----
 # f(uint256): 42 -> 42

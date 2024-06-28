@@ -5,8 +5,5 @@ def f() -> (uint256, uint256):
     z: uint256[2] = [x, y]
     return (z[0], z[1])
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 3, 6

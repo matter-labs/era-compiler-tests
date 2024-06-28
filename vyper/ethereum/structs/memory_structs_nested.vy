@@ -32,8 +32,5 @@ def test() -> (uint256, uint256, uint256, uint256):
     d: X = self.combine(1, 2, 3, 4)
     return self.extract(d, 0), self.extract(d, 1), self.extract(d, 2), self.extract(d, 3)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> 1, 2, 3, 4

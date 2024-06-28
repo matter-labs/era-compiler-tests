@@ -22,9 +22,6 @@ def h(s: uint8[3]) -> Bytes[100]:
 def i(s: uint8[3][2], which: uint256) -> Bytes[100]:
     return staticcall Self(self).h(s[which])
 
-# ====
-# EVMVersion: >homestead
-# compileViaYul: also
 # ----
 # f(uint256[3]): 23, 42, 87 -> 32, 96, 23, 42, 87
 # g(uint256[3][2],uint256): 23, 42, 87, 123, 142, 187, 0 -> 32, 96, 23, 42, 87

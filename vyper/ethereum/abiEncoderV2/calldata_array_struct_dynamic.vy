@@ -14,8 +14,6 @@ def f(s: DynArray[S, 1]) -> Bytes[300]:
 def g(s: DynArray[S, 1]) -> Bytes[300]:
     return staticcall Self(self).f(s)
     
-# ====
-# EVMVersion: >homestead
 # ----
 # f((uint256[])[]): 32, 1, 32, 32, 3, 17, 42, 23 -> 32, 256, 32, 1, 32, 32, 3, 17, 42, 23
 # g((uint256[])[]): 32, 1, 32, 32, 3, 17, 42, 23 -> 32, 256, 32, 1, 32, 32, 3, 17, 42, 23

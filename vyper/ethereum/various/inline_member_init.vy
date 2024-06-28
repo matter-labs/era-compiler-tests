@@ -13,8 +13,5 @@ m_c: uint256
 def get() -> (uint256, uint256, uint256):
     return self.m_a, self.m_b, self.m_c
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # get() -> 5, 6, 8

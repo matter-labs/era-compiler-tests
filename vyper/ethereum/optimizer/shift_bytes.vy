@@ -25,9 +25,6 @@ def g(a: uint256) -> (uint256, uint256, uint256):
     z = convert(convert(slice(convert(z, bytes32), 7, 1), bytes1), uint256)
     return (x, y, z)
 
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # f(uint256): 0x0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f -> 0x1f, 0x1f, 3
 # g(uint256): 0x0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f -> 1, 3, 5

@@ -15,8 +15,6 @@ def testIt() -> bool:
     self.test = True
     return True
 
-# ====
-# compileViaYul: also
 # ----
 # test() -> false
 # testIt() -> FAILURE

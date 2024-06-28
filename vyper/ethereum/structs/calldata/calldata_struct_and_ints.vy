@@ -7,7 +7,5 @@ struct S:
 def f(a: uint256, s: S, b: uint256) -> (uint256, uint256, uint256, uint256):
     return (a, s.a, s.b, b)
     
-# ====
-# compileViaYul: also
 # ----
 # f(uint256,(uint256,uint256),uint256): 1, 2, 3, 4 -> 1, 2, 3, 4

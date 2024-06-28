@@ -7,7 +7,5 @@ def test() -> uint256:
     self.data.pop
     x = 3
     
-# ====
-# compileToEwasm: also
 # ----
 # test() -> 3

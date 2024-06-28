@@ -11,8 +11,6 @@ def f(c: S[3]) -> (uint256, uint256):
             assert self.s[i].a[j] == c[i].a[j]
     return (3, self.s[1].a[0])
 
-# ====
-# compileViaYul: true
 # ----
 # f((uint256[3])[3]): 1, 2, 3, 1, 2, 3, 1, 2, 3 -> 3, 1
 # gas irOptimized: 328592

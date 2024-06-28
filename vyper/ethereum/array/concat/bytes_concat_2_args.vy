@@ -1,8 +1,6 @@
 @external
 def f(a: Bytes[100], b: Bytes[100]) -> Bytes[200]:
     return concat(a, b)
-# ====
-# compileViaYul: also
 # ----
 # f(bytes,bytes): 0x40, 0x80, 32, "abcdabcdabcdabcdabcdabcdabcdabcd", 5, "bcdef" -> 0x20, 37, "abcdabcdabcdabcdabcdabcdabcdabcd", "bcdef"
 #

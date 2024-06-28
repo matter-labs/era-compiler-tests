@@ -29,8 +29,6 @@ def f(c: uint256) -> uint256:
         extcall self.i.y()
     return 1 + c
 
-# ====
-# compileViaYul: also
 # ----
 # constructor() ->
 # gas irOptimized: 308423

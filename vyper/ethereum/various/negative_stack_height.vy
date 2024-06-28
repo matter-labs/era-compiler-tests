@@ -45,8 +45,6 @@ def return500PaymentsByDates(begindate: uint256, enddate: uint256, startindex: u
 
 # via yul disabled because of stack issues.
 
-# ====
-# compileViaYul: false
 # ----
 # constructor() ->
 # gas legacy: 588138

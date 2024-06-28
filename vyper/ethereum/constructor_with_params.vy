@@ -6,8 +6,6 @@ def __init__(newI: uint256, newK: uint256):
     self.i = newI
     self.k = newK
 
-# ====
-# compileViaYul: also
 # ----
 # constructor(): 2, 0 ->
 # gas irOptimized: 104227

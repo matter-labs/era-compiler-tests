@@ -18,9 +18,6 @@ def succeed() -> bool:
     assert True
     return x
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(bool): true -> true
 # f(bool): false -> FAILURE

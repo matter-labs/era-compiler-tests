@@ -12,7 +12,5 @@ def f() -> uint256:
     self.sstorage = empty(S)
     return 1
 
-# ====
-# compileToEwasm: also
 # ----
 # f() -> 1

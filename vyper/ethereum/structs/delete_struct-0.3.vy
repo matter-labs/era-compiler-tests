@@ -29,8 +29,6 @@ def getTopValue() -> uint256:
 def getNestedValue() -> uint256:
     return self.str.nstr.nestedValue  
 
-# ====
-# compileViaYul: also
 # ----
 # getToDelete() -> 0
 # getTopValue() -> 0

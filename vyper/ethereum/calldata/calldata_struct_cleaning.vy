@@ -9,9 +9,6 @@ def f(s: S) -> (uint256, bytes32):
     tmp2: bytes1 = s.b
     return (convert(tmp1, uint256), convert(tmp2, bytes32))
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f((uint8,bytes1)): 0x12, hex"3400000000000000000000000000000000000000000000000000000000000000" -> 0x12, hex"3400000000000000000000000000000000000000000000000000000000000000" # double check that the valid case goes through #
 # f((uint8,bytes1)): 0x1234, hex"5678000000000000000000000000000000000000000000000000000000000000" -> FAILURE

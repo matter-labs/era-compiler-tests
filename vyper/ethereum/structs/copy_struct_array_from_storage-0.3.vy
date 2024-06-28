@@ -80,8 +80,6 @@ def test4() -> bool:
     
     return True
 
-# ====
-# EVMVersion: >homestead
 # ----
 # test1() -> true
 # gas irOptimized: 150163

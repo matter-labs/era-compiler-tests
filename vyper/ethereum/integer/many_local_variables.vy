@@ -7,8 +7,5 @@ def run(x1: uint256, x2: uint256, x3: uint256) -> uint256:
     y += convert(b, uint256) + x2
     return y
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # run(uint256,uint256,uint256): 0x1000, 0x10000, 0x100000 -> 0x121121

@@ -34,9 +34,6 @@ def g2(c1: S, c2: S) -> (uint256, uint256, uint256, uint256, uint256, uint256):
 def h() -> (uint256, uint256, uint256, uint256, uint256, uint256):
     return (self.s.a, 3, self.s.c, self.s.b[0], self.s.b[1], self.s.b[2])
 
-# ====
-# EVMVersion: >homestead
-# compileViaYul: also
 # ----
 # f((uint256,uint256[3],uint256)): 42, 1, 2, 3, 21  -> 42, 1, 2, 3, 21
 # g((uint256,uint256[3],uint256)): 42, 1, 2, 3, 21  -> 42, 3, 21, 1, 2, 3

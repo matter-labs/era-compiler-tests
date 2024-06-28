@@ -6,9 +6,6 @@ def f(x: uint256) -> uint256:
 def g(x: uint256) -> uint256:
     return convert(slice(convert(x, bytes32), 31, 1), uint256)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint256): 2 -> 0
 # g(uint256): 2 -> 2

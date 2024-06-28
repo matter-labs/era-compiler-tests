@@ -21,8 +21,6 @@ def fromStorage() -> bytes32:
 def fromSlice(c: Bytes[100]) -> bytes8:
     return convert(slice(c, 0, 6), bytes8)
 
-# ====
-# compileViaYul: true
 # ----
 # fromMemory(bytes): 0x20, 14, "abcdefghabcdefgh" -> "abcdefghabcdef\0\0"
 # fromCalldata(bytes): 0x20, 15, "abcdefghabcdefgh" -> "abcdefghabcdefg\0"

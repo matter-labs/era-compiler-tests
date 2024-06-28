@@ -15,8 +15,6 @@ def update(_bool: bool, _decimal: uint256, _bytes: bytes32) -> (bool, uint256, b
     self.stateBytes = _bytes
     return (self.stateBool, self.stateDecimal, self.stateBytes)
 
-# ====
-# compileViaYul: also
 # ----
 # stateBool() -> true
 # stateBool() -> right(true)

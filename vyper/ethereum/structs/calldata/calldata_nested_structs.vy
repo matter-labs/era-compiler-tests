@@ -35,8 +35,6 @@ def h(c: S1, p: uint32) -> (uint32, uint128, uint256, uint256, uint32):
     assert m.a[1][1] == c.s.a[1][1]
     return (p, m.p1, m.a[0][0], m.a[1][1], m.p2)
 
-# ====
-# compileViaYul: also
 # ----
 # f((uint128,(uint128,uint256[2][2],uint32)),uint32): 11, 22, 1, 2, 1, 2, 33, 44 -> 44, 22, 1, 2, 33
 # g(((uint128,uint256[2][2],uint32)[2])): 22, 1, 2, 1, 2, 33, 22, 1, 2, 1, 2, 33 -> 22, 1, 2, 33

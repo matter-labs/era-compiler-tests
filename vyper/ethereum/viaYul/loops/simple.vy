@@ -10,9 +10,6 @@ def j():
     for _: uint256 in range(10000000):
         break
         
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 1024
 # j() ->

@@ -12,7 +12,5 @@ def val() -> uint256:
     
     return self.data[0]
 
-# ====
-# compileViaYul: also
 # ----
 # val() -> 0

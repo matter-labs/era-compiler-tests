@@ -18,8 +18,6 @@ def f() -> uint256:
     assert self.s.b[1] == 0
     return convert(self.s.a, uint256)*2**160 + convert(self.s.b[0], uint256)**2*128 + convert(self.s.b[1], uint256)**2*96 + convert(self.s.b[2], uint256)**2*64 + convert(self.s.x[0], uint256)**2*32 + convert(self.s.x[1], uint256)
 
-# ====
-# compileViaYul: true
 # ----
 # f() -> 0
 # gas irOptimized: 111896

@@ -22,9 +22,6 @@ def j() -> int256:
 def k() -> int256:
     return convert(-2.5e1, int256)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 20000000000
 # g() -> 2

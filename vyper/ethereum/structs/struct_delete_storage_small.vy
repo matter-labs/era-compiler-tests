@@ -13,8 +13,5 @@ def f() -> uint256:
     assert self.s.z == 0
     return convert(self.s.y, uint256) * 2**64 + convert(self.s.z, uint256)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: true
 # ----
 # f() -> 0

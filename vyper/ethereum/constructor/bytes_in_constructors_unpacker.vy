@@ -6,8 +6,6 @@ def __init__(x: uint256, s: Bytes[100]):
     self.m_x = x
     self.m_s = s
 
-# ====
-# compileViaYul: also
 # ----
 # constructor(): 7, 0x40, 78, "abcdefghijklmnopqrstuvwxyzabcdef", "ghijklmnopqrstuvwxyzabcdefghijkl", "mnopqrstuvwxyz" ->
 # gas irOptimized: 291443

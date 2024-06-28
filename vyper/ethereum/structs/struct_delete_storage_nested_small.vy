@@ -15,8 +15,6 @@ def f() -> (uint256, uint256, uint256):
     assert len(self.s.x) == 0
     return self.s.a, len(self.s.x[0]), len(self.s.x[1])
 
-# ====
-# compileViaYul: true
 # ----
 # f() -> 0, 0, 0
 # gas irOptimized: 117101

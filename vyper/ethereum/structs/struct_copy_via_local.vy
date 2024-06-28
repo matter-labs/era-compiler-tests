@@ -14,9 +14,6 @@ def test() -> bool:
     self.data2 = x
     return self.data2.a == self.data1.a and self.data2.b == self.data1.b
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> true
 # gas irOptimized: 110186

@@ -27,8 +27,6 @@ def del_() -> bool:
 def test(i: uint256) -> bytes1:
     return convert(slice(self.data1.data, i, 1), bytes1)
 
-# ====
-# compileViaYul: also
 # ----
 # storageEmpty -> 1
 # set(uint256,bytes,uint256): 12, 0x60, 13, 33, "12345678901234567890123456789012", "3" -> true

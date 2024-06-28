@@ -23,9 +23,6 @@ def f4() -> Bytes[192]:
     x: bytes4 = convert(convert("abcd", Bytes[4]), bytes4)
     return _abi_encode(convert(x, bytes2))
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f1() -> 0x20, 0x40, 0x1, 0x2
 # f2() -> 0x20, 0xa0, 0x1, 0x60, 0x2, 0x3, "abc"

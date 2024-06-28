@@ -21,8 +21,6 @@ def f(s: DynArray[uint256, 10][1]) -> bool:
         assert slice(a, i, 1) == slice(b, i, 1)
     return True
     
-# ====
-# EVMVersion: >homestead
 # ----
 # f(uint256[][1]): 32, 32, 0 -> true
 # f(uint256[][1]): 32, 32, 1, 42 -> true

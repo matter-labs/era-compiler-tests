@@ -58,9 +58,6 @@ def eq_(a: uint256, b: uint256) -> bool:
 def neq(a: uint256, b: uint256) -> bool:
     return a != b    
     
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # f(address): 0x1234 -> false
 # f(address): 0x00 -> true

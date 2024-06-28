@@ -14,7 +14,5 @@ def f() -> address:
         0x000000000000000000000000ca35b7d915458ef540ade6068dfe2f44e8fa733c
     )
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0

@@ -28,9 +28,6 @@ def test_bytes():
                 break
             self.compare(Self(self).enc_bytes(test, i, j), Self(self).enc_bytes_reference(test, i, j))
 
-# ====
-# EVMVersion: >homestead
-# compileViaYul: also
 # ----
 # test_bytes() ->
 # gas irOptimized: 373483

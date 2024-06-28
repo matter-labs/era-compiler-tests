@@ -13,8 +13,6 @@ def g() -> bool:
     assert startGas > msg.gas
     return True
 
-# ====
-# compileToEwasm: also
 # ----
 # f() -> true
 # g() -> true

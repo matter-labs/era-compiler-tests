@@ -13,8 +13,6 @@ event E:
 def deposit():
     log E(1, 2, 3, convert("def", Bytes[100]))
 
-# ====
-# compileViaYul: also
 # ----
 # deposit() ->
 # ~ emit E(uint256,uint256,uint256,bytes): #0x02, 0x01, 0x03, 0x60, 0x03, "def"

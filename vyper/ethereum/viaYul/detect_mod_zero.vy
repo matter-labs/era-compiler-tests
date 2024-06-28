@@ -8,9 +8,6 @@ def f(a: uint256, b: uint256) -> uint256:
 def g(a: uint8, b: uint8) -> uint8:
     return a % b
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint256,uint256): 10, 3 -> 1
 # f(uint256,uint256): 10, 2 -> 0

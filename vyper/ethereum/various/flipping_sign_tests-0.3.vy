@@ -4,7 +4,5 @@ def f() -> bool:
     assert -x == x
     return True
 
-# ====
-# compileToEwasm: also
 # ----
 # f() -> FAILURE

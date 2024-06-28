@@ -20,8 +20,6 @@ def test_twodim() -> (uint256, uint256):
     self.twodim[2][3] = 3
     return self.twodim[3][2], self.twodim[2][3]
 
-# ====
-# compileViaYul: also
 # ----
 # test_simple(uint256): 0 -> 3, 4, 5
 # test_simple(uint256): 1 -> 3, 4, 5

@@ -12,7 +12,5 @@ def deleteIt() -> uint256:
     self.campaigns[0] = empty(testStruct)
     return self.campaigns[0].m_value
 
-# ====
-# compileViaYul: also
 # ----
 # deleteIt() -> 0

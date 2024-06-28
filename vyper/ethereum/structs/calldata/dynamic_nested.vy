@@ -10,7 +10,5 @@ struct S:
 def f(s: S) -> (uint256, uint256, uint256, uint256):
     return (len(s.children), s.a, s.children[0].b, s.children[1].b)
 
-# ====
-# compileToEwasm: also
 # ----
 # f((uint256,(uint256)[])): 32, 17, 64, 2, 23, 42 -> 2, 17, 23, 42

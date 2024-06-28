@@ -2,8 +2,6 @@
 def a(h: bytes32, v: uint8, r: bytes32, s: bytes32) -> address:
     return ecrecover(h, convert(v, uint256), convert(r, uint256), convert(s, uint256))
 
-# ====
-# compileViaYul: also
 # ----
 # a(bytes32,uint8,bytes32,bytes32):
 # 0x18c547e4f7b0f325ad1e56f57e26c745b09a3e503d86e00e5255ff7f715d3d1c,

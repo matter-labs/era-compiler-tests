@@ -22,8 +22,6 @@ def g() -> uint256:
     y[0] = 23
     return convert(x[2], uint256)
 
-# ====
-# compileToEwasm: also
 # ----
 # f() -> FAILURE
 # g() -> FAILURE

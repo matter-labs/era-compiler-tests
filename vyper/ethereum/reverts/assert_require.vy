@@ -12,9 +12,6 @@ def h(val: bool) -> bool:
     assert val
     return True
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(): false -> FAILURE
 # g(bool): false -> FAILURE

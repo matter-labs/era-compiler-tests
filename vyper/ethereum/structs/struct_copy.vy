@@ -26,8 +26,6 @@ def copy(_from: uint256, to: uint256) -> bool:
 def retrieve(k: uint256) -> (uint256, uint256, uint256, uint256):
     return self.data[k].a, self.data[k].nested.x, self.data[k].nested.y, self.data[k].c
 
-# ====
-# compileViaYul: also
 # ----
 # set(uint256): 7 -> true
 # gas irOptimized: 110119

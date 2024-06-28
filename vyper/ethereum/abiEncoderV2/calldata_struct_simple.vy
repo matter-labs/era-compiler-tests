@@ -12,9 +12,6 @@ def f(s: S) -> Bytes[100]:
 def g(s: S) -> Bytes[100]:
     return extcall Self(self).f(s)
 
-# ====
-# EVMVersion: >homestead
-# compileViaYul: also
 # ----
 # f((uint256)): 3 -> 32, 32, 3
 # g((uint256)): 3 -> 32, 32, 3

@@ -15,9 +15,6 @@ def h() -> Bytes[100]:
 def i() -> (uint256, uint8, bytes32):
     return (x, 1, st)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x20, 3, "\x03\x01\x02"
 # h() -> 0x20, 5, "hello"

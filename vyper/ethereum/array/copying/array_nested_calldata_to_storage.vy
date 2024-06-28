@@ -7,8 +7,6 @@ def test4(c: uint256[2][2]) -> uint256:
     assert self.a4[0][1] == c[0][1]
     return (self.a4[0][0] + self.a4[1][1])
 
-# ====
-# compileViaYul: true
 # ----
 # test4(uint256[2][2]): 23, 42, 23, 42 -> 65
 # gas irOptimized: 111428

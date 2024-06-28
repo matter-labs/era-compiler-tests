@@ -5,8 +5,5 @@ def f() -> uint256:
     x = shift(x, -256)
     return x
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x0

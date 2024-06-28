@@ -10,9 +10,6 @@ def f():
     raise
 
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> FAILURE
 # a() -> 42

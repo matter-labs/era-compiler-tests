@@ -10,9 +10,6 @@ def test() -> (uint256, uint256):
     self.data1 = self.data2
     return self.data1[3], self.data1[30] # should be cleared
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> 8, 0
 # gas irOptimized: 236090

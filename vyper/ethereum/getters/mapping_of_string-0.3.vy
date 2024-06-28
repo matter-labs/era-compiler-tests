@@ -7,8 +7,6 @@ def __init__():
     self.x["abc"][1] = 2
     self.x["def"][1] = 9
     
-# ====
-# compileViaYul: also
 # ----
 # x(string,uint256): 0x40, 0, 3, "abc" -> 1
 # x(string,uint256): 0x40, 1, 3, "abc" -> 2

@@ -19,8 +19,5 @@ def f() -> (uint32, uint128, uint256):
     m: X = self.x
     return (m.s.a, m.s.b, m.s.c)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 42, 23, 34

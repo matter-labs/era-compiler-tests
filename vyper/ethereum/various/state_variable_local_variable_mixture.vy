@@ -11,8 +11,5 @@ def a() -> uint256:
     x: uint256 = self.y
     return x
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # a() -> 2

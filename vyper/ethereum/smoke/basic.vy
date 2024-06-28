@@ -42,8 +42,6 @@ def k() -> uint256:
 def l(a: uint256) -> uint256:
     return a * 7
 
-# ====
-# compileToEwasm: also
 # ----
 # d() ->
 # e(), 1 wei -> 1

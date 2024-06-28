@@ -16,7 +16,5 @@ def f() -> bool:
     raw_call(self, _abi_encode(a, b, method_id=method_id("c(uint256,uint256[2])")))
     return self.x
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> true

@@ -8,9 +8,6 @@ def __init__():
     self.y = 127
     self.q = 250
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # x() -> 2
 # y() -> 127

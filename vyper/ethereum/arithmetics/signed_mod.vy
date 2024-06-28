@@ -9,8 +9,6 @@ def g() -> int256:
     x: int256 = min_value(int256)
     return x // -1
 
-# ====
-# compileToEwasm: also
 # ----
 # f(int256,int256): 7, 5 -> 2
 # f(int256,int256): 7, -5 -> 2

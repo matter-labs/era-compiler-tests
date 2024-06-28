@@ -26,8 +26,6 @@ def get_c() -> uint256:
 def get_d() -> uint256:
     return d
 
-# ====
-# compileViaYul: also
 # ----
 # get_a() -> 1
 # get_b() -> 1

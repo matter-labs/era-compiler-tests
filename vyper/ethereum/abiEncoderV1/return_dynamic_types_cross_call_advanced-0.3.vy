@@ -15,7 +15,5 @@ def dyn() -> (Bytes[100], uint256, DynArray[bytes20, 10], uint256):
 def f() -> (Bytes[100], uint256, DynArray[bytes20, 10], uint256):
     return Self(self).dyn()
 
-# ====
-# EVMVersion: >homestead
 # ----
 # f() -> 0x80, -1, 0xe0, 0x1234, 40, "12345678901234567890123456789012", "34567890", 4, 97767552542602192590433234714624, 0, 0, 537879995309340587922569878831104

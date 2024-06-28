@@ -11,7 +11,5 @@ def __init__():
     self.data[7].b = 2
     self.data[7].d = True
 
-# ====
-# compileViaYul: also
 # ----
 # data(uint256): 7 -> 1, 2, true

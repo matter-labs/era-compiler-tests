@@ -19,8 +19,6 @@ def f(c: Bytes[100]) -> Bytes[100]:
     self.s = slice(concat(self.s, b"\x00"), 0, 34)
     return self.s
     
-# ====
-# compileViaYul: also
 # ----
 # constructor() ->
 # gas irOptimized: 521983

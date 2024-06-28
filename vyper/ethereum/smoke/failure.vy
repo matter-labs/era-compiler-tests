@@ -19,11 +19,6 @@ def g(_value: bool):
 def h() -> uint256:
     raise
     
-# ====
-# EVMVersion: >homestead
-# allowNonExistingFunctions: true
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # _() -> FAILURE
 # e() -> FAILURE, hex"08c379a0", 0x20, 0x13, "Transaction failed."

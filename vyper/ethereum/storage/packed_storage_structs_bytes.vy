@@ -29,9 +29,6 @@ def test() -> bool:
     self.y = 0x07
     return self.x == 0x01 and self.data.a == 0x02 and self.data.inner.a == 0x03 and self.data.inner.b == 0x04 and self.data.inner.c == convert(b"1234567890", bytes10) and self.data.inner.d == convert(b"123456789", bytes9) and self.data.inner.e == convert(b"abcdefghij", bytes10) and self.data.b == 0x05 and self.data.c == 0x06 and self.y == 0x07
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> true
 # gas irOptimized: 134587

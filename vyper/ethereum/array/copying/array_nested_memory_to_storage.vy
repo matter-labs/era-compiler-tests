@@ -13,8 +13,6 @@ def test3() -> uint256:
     self.a = m
     return self.a[0][0] + self.a[1][0] + self.a[2][1]
     
-# ====
-# compileViaYul: also
 # ----
 # test3() -> 24
 # gas irOptimized: 133621

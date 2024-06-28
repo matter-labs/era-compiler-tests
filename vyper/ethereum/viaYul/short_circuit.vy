@@ -14,9 +14,6 @@ def and_(x: uint256) -> (bool, uint256):
     y: uint256 = x
     return t, y
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # or_(uint256): 0 -> true, 0
 # and_(uint256): 0 -> true, 8

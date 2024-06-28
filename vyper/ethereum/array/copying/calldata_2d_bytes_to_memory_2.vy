@@ -12,8 +12,6 @@ def g(_m: _Bytes[2]):
 @external
 def f(c: _Bytes[2]):
     self.g(c)
-# ====
-# compileViaYul: also
 # ----
 # f((bytes)[2]): 0x20, 0x40, 0x60, 0x40, 0x20, 2, "ab" ->
 # f((bytes)[2]): 0x20, 0x40, 0x60, 0x40, 0x20, 1, "a" -> FAILURE

@@ -13,8 +13,6 @@ def f(a: uint256) -> bool:
     x = convert(a, bool)
     return staticcall Self(self).gggg(x)
     
-# ====
-# compileViaYul: also
 # ----
 # f(uint256): 0 -> false
 # gggg(bool): 0 -> false # test validation as well as sanity check #

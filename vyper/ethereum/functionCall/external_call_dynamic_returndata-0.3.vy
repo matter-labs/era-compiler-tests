@@ -18,8 +18,5 @@ def dt(n: uint256) -> uint256:
         sum += convert(convert(slice(data, i, 1), uint8), uint256)
     return sum
 
-# ====
-# EVMVersion: >=byzantium
-# compileViaYul: also
 # ----
 # dt(uint256): 4 -> 6

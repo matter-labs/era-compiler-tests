@@ -12,8 +12,6 @@ def h(n: uint256[4]) -> uint256:
 def i(n: uint256[4]) -> uint256:
     return staticcall C(self).h(n) * 2
 
-# ====
-# compileViaYul: also
 # ----
 # h(uint256[4]): 1, 2, 3, 4 -> 10
 # i(uint256[4]): 1, 2, 3, 4 -> 20

@@ -22,9 +22,6 @@ def swap():
     self.y = self.x
     self.x = self.y
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # x() -> 0, 0
 # y() -> 0, 0

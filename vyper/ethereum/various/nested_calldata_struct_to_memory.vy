@@ -14,7 +14,5 @@ def f(s: S2) -> (uint256, uint256, uint256, uint256, uint256):
     m: S2 = s
     return (m.a, m.b, m.s.a, m.s.b, m.c)
 
-# ====
-# compileViaYul: also
 # ----
 # f((uint256,uint256,(uint256,uint256),uint256)): 1, 2, 3, 4, 5 -> 1, 2, 3, 4, 5

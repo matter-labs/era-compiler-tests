@@ -28,9 +28,6 @@ def is2D() -> bool:
 def skinColor() -> String[100]:
     return "yellow"
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # supportsInterface(bytes4): left(0x01ffc9a0) -> false
 # supportsInterface(bytes4): left(0x01ffc9a7) -> true

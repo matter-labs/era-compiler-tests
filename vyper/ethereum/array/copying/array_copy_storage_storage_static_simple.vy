@@ -8,9 +8,6 @@ def test() -> (bytes32, bytes32):
     self.data2 = self.data1
     return (self.data2[0], self.data2[1])
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> left(0x01), left(0x02)
 # gas legacy: 90001

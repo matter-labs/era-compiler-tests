@@ -2,8 +2,6 @@
 def who_am_i() -> address:
     return msg.sender
 
-# ====
-# compileViaYul: also
 # ----
 # constructor()
 # account: 0 -> 0x1212121212121212121212121212120000000012
