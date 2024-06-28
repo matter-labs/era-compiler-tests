@@ -19,8 +19,6 @@ def tuple() -> (Bytes[100], Bytes[100]):
 def g():
     (self.s, self.s1) = self.tuple()
 
-# ====
-# compileViaYul: also
 # ----
 # s() -> 0x20, 3, "abc"
 # s1() -> 0x20, 4, "abcd"

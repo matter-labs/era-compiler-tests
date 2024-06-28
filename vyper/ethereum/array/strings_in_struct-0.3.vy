@@ -25,9 +25,6 @@ def getThird() -> uint256:
 @external
 def getLast() -> String[100]:
     return self.bug.last
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # getFirst() -> 0x0a
 # getSecond() -> 0x14

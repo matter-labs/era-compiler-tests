@@ -9,7 +9,5 @@ def func():
         val[0].vals.append(empty(RecursiveStruct))
     assert len(val[0].vals) == 42
     
-# ====
-# compileToEwasm: also
 # ----
 # func() ->

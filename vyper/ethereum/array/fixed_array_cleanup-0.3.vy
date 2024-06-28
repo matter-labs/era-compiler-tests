@@ -9,9 +9,6 @@ def fill():
 @external
 def clear():
     self.data = empty(uint256[20])
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # storageEmpty -> 1
 # fill() ->

@@ -36,8 +36,6 @@ def clear() -> (uint256, uint256):
         sl += self.large[i][89][2]
     return (ss, sl)
 
-# ====
-# compileViaYul: also
 # ----
 # test() -> 0x02000202
 # gas irOptimized: 4652092

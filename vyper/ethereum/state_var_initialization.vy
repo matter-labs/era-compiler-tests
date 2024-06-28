@@ -8,9 +8,6 @@ def __init__():
     self.i = self.i + self.i
     self.k = self.k - self.i
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # i() -> 2
 # k() -> 0

@@ -6,8 +6,5 @@ def test() -> uint256:
         return 2
     return 0
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> 0

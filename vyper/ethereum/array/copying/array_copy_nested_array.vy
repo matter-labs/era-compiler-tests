@@ -9,8 +9,6 @@ def test(d: uint256[2][3]) -> uint256:
     self.c = self.b
     return self.c[1][1]
 
-# ====
-# compileViaYul: also
 # ----
 # test(uint256[2][3]): 7, 8, 9, 10, 11, 12 -> 10
 # gas irOptimized: 690205

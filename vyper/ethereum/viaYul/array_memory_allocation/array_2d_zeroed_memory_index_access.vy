@@ -15,8 +15,6 @@ def set(s: String[100], a: uint256, b: uint256) -> uint256:
         x[i] = empty(uint256[4])
     return x[a][b]
     
-# ====
-# compileViaYul: also
 # ----
 # set(string,uint256,uint256): 0x60, 0, 0, 32, "01234567890123456789012345678901" -> 0
 # set(string,uint256,uint256): 0x60, 1, 3, 32, "01234567890123456789012345678901" -> 0

@@ -27,7 +27,5 @@ def f() -> uint256:
         return 7
     return 0
 
-# ====
-# compileToEwasm: also
 # ----
 # f() -> 7

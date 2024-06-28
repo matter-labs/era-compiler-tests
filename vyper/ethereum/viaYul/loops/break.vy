@@ -6,8 +6,5 @@ def f() -> uint256:
         break
     return x
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 2

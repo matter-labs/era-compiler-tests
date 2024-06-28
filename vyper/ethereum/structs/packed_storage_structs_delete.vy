@@ -24,8 +24,6 @@ def test() -> uint256:
     self.data = empty(str)
     return 1
     
-# ====
-# compileViaYul: also
 # ----
 # test() -> 1
 # storageEmpty -> 1

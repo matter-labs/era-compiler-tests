@@ -13,8 +13,6 @@ def f(_x: bytes32, _a: uint256):
 def g():
     extcall Self(self).f(convert(b"", bytes32), 2)
 
-# ====
-# compileViaYul: also
 # ----
 # x() -> 0
 # a() -> 0

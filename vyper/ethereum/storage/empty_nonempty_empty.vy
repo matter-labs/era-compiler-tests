@@ -4,8 +4,6 @@ x: Bytes[100]
 def set(_a: Bytes[100]):
     self.x = _a
     
-# ====
-# compileViaYul: also
 # ----
 # set(bytes): 0x20, 3, "abc"
 # storageEmpty -> 0

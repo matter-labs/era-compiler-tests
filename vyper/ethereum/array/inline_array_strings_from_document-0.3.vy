@@ -6,9 +6,6 @@ def f(i: uint256) -> String[100]:
     x: string[4] = [string({inner: "This"}), string({inner: "is"}), string({inner: "an"}), string({inner: "array"})]
     return (x[i].inner)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint256): 0 -> 0x20, 0x4, "This"
 # f(uint256): 1 -> 0x20, 0x2, "is"

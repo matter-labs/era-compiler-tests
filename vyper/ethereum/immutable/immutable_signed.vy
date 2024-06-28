@@ -13,7 +13,5 @@ def viaasm() -> (bytes32, bytes32):
     _b: bytes2 = b
     return convert(a, bytes32), convert(b, bytes32)
     
-# ====
-# compileViaYul: also
 # ----
 # viaasm() -> 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe, 0x6162000000000000000000000000000000000000000000000000000000000000

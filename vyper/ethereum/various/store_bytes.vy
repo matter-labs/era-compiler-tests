@@ -8,8 +8,6 @@ def save() -> uint256:
     
 savedData: Bytes[100]
 
-# ====
-# compileViaYul: also
 # ----
 # save() -> 24 # empty copy loop #
 # save(): "abcdefg" -> 24

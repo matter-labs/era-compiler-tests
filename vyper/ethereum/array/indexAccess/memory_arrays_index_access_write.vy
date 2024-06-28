@@ -9,8 +9,5 @@ def f() -> uint8[3][4]:
     data: uint8[3][4] = empty(uint8[3][4])
     data = self.set(data)
     return data
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x07

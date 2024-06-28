@@ -10,8 +10,5 @@ def f(a: uint8) -> uint256:
     self.x = self.z + 1
     return convert(self.x, uint256)
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint8): 6 -> 9

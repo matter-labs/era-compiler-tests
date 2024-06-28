@@ -5,7 +5,5 @@ def f():
     # Used to incorrectly use the checked unary negation function and revert.
     __: int16 = (-(-128))
     
-# ====
-# compileViaYul: also
 # ----
 # f() ->

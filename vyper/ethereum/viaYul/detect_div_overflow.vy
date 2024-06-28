@@ -13,9 +13,6 @@ def g(a: int8, b: int8) -> int8:
 def h(a: uint256, b: uint256) -> uint256:
     return a / b
 
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # f(uint256,uint256): 10, 3 -> 3
 # f(uint256,uint256): 1, 0 -> FAILURE

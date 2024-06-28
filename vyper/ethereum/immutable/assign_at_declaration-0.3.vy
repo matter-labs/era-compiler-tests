@@ -9,7 +9,5 @@ def __init__():
 def f() -> uint256:
     return convert(a, uint256)
     
-# ====
-# compileViaYul: also
 # ----
 # f() -> 2

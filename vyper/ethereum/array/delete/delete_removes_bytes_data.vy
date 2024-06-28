@@ -6,8 +6,6 @@ def _del() -> bool:
     self.data = empty(Bytes[100])
     return True
 data: Bytes[100]
-# ====
-# compileViaYul: also
 # ----
 # (): 7 ->
 # storageEmpty -> 0

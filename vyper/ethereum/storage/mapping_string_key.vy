@@ -17,8 +17,6 @@ def setFixed(_value: uint256):
 def getFixed() -> uint256:
     return self.m_nameToRecord["fixed"]
     
-# ====
-# compileViaYul: also
 # ----
 # set(string,uint256): 0x40, 8, 3, "abc" ->
 # get(string): 0x20, 3, "abc" -> 8

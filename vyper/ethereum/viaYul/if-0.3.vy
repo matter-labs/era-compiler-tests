@@ -64,9 +64,6 @@ def k(a: uint256, b: uint256) -> (uint256, uint256):
             break
     return x, y
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(bool): 0 -> 23
 # f(bool): 1 -> 42

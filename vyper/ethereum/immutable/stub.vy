@@ -11,7 +11,5 @@ def __init__():
 def f() -> (uint256, uint256):
     return (x+x,y)
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 84, 23

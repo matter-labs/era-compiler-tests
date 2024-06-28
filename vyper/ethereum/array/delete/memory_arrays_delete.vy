@@ -8,7 +8,5 @@ def _del() -> uint8[3][4]:
     x[3][2] = empty(uint8)
     return x
 
-# ====
-# compileViaYul: also
 # ----
 # _del() -> 0, 1, 2, 0, 0, 0, 0x20, 0x21, 0x22, 0x30, 0x31, 0

@@ -5,7 +5,5 @@ def test() -> bool:
     self.data.pop()
     return True
     
-# ====
-# compileToEwasm: also
 # ----
 # test() -> FAILURE

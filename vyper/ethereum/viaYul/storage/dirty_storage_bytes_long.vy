@@ -7,7 +7,5 @@ def f() -> bool:
     r: uint256 = convert(convert(s, bytes32), uint256)
     return r == shift(convert(0x66, uint256), 248)
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> true

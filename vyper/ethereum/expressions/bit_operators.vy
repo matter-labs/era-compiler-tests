@@ -10,8 +10,5 @@ def f() -> (uint256, uint256, uint256):
         bitwise_xor(convert(a, uint256), convert(b, uint256)),
     )
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 3855, 268374015, 268370160

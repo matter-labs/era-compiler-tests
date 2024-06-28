@@ -6,8 +6,5 @@ def f(c: uint256[4]) -> (uint256, uint256):
 def g(c: uint256[4]) -> (uint256, uint256):
     return self.f(c)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # g(uint256[4]): 1, 2, 3, 4 -> 4, 1

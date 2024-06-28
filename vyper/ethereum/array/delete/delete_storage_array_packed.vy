@@ -8,8 +8,6 @@ def f() -> (uint120, uint120, uint120):
     self.data = empty(uint120[3])
     return (self.data[0], self.data[1], self.data[2])
     
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0, 0, 0
 # gas irOptimized: 91098

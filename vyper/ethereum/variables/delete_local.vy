@@ -4,8 +4,5 @@ def delLocal() -> uint256:
     v = empty(uint256)
     return v
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # delLocal() -> 0

@@ -6,8 +6,6 @@ def __init__(_a: uint256, _b: uint256[3]):
     self.a = _a
     self.b = _b
 
-# ====
-# compileViaYul: also
 # ----
 # constructor(): 1, 2, 3, 4 ->
 # gas irOptimized: 180731

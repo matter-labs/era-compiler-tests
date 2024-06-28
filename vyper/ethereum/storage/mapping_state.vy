@@ -18,8 +18,6 @@ def vote(voter: address, vote: address) -> bool:
     self.voteCount[vote] = self.voteCount[vote] + 1
     return True
     
-# ====
-# compileViaYul: also
 # ----
 # getVoteCount(address): 0 -> 0
 # getVoteCount(address): 1 -> 0

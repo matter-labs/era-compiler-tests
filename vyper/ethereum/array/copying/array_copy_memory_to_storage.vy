@@ -13,7 +13,5 @@ def g() -> (uint32, uint32, uint32):
     assert self.a[0] == self.b[0] and self.a[1] == self.b[1] and self.a[2] == self.b[2]
     return (self.a[0], self.b[1], self.a[2])
 
-# ====
-# compileViaYul: also
 # ----
 # g() -> 1, 2, 3

@@ -12,9 +12,6 @@ def pipeThrough(small: bytes2, one: bool) -> (bytes16, bool):
     large: bytes16 = convert(small, bytes16)
     return large, one
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # fixedBytesHex() -> "\xaa\xbb\x00\xff"
 # fixedBytes() -> "abc\x00\xff__"

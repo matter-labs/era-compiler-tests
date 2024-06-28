@@ -10,8 +10,6 @@ def __default__():
     if len(msg.data) != 0:
         self.externalData = slice(msg.data, 0, 2)
 
-# ====
-# compileToEwasm: also
 # ----
 # data() -> 0
 # ()

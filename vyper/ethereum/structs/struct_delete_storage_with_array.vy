@@ -42,8 +42,6 @@ def g():
     assert self.s.a == 1
     assert self.s.b == 2
 
-# ====
-# compileViaYul: also
 # ----
 # f() ->
 # gas irOptimized: 121618

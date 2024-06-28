@@ -44,8 +44,6 @@ def h() -> uint120:
     assert self.x2[3] == 0
     return self.x2[1]
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0
 # gas irOptimized: 92800

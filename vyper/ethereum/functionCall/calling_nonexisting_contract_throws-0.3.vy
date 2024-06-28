@@ -22,9 +22,6 @@ def h() -> uint256:
     raw_call(self.d.address, b"")
     return 7
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> FAILURE
 # g() -> FAILURE

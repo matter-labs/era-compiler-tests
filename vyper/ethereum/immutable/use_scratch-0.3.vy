@@ -15,8 +15,6 @@ def __init__(_a: uint256):
 def f() -> (uint256, uint256):
     return (x+x,y)
 
-# ====
-# compileViaYul: also
 # ----
 # constructor(): 3 ->
 # gas irOptimized: 137184

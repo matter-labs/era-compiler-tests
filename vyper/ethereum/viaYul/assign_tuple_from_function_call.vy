@@ -13,8 +13,5 @@ def g() -> (uint256, uint256, uint256):
     return a,b,c
 
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # g() -> 3, 2, 1

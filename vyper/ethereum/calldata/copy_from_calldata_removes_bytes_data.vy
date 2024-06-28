@@ -18,10 +18,6 @@ def __default__():
 
 data: Bytes[10]
 
-# ====
-# EVMVersion: >=byzantium
-# compileToEwasm: false
-# compileViaYul: also
 # ----
 # set() -> true
 # length() -> 4

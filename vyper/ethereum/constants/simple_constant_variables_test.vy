@@ -4,8 +4,5 @@ def getX() -> uint256:
 
 x: constant(uint256) = 56
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # getX() -> 56

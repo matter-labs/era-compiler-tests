@@ -22,9 +22,6 @@ def f(length: uint256, seq: uint256[11]) -> uint256:
         i += 1
     return sum
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint256,uint256[11]): 3, 1000, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0 -> 3
 # f(uint256,uint256[11]): 3, 100, 500, 300, 0, 0, 0, 0, 0, 0, 0, 0 -> 600

@@ -6,8 +6,5 @@ struct S:
 def s() -> S:
     return S(x=True, a=8)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # s() -> 8, true

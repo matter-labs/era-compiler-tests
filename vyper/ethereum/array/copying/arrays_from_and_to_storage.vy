@@ -9,8 +9,6 @@ def set(_data: uint24[18]) -> uint256:
 def get() -> uint24[18]:
     return self.data
     
-# ====
-# compileViaYul: also
 # ----
 # set(uint24[18]): 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 -> 18
 # gas irOptimized: 99616

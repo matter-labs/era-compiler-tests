@@ -7,8 +7,6 @@ struct S:
 def f(a: S):
     _: Bytes[600] = _abi_encode(a)
 
-# ====
-# revertStrings: debug
 # ----
 # h(uint256[][]): 0x20, 1, 0x20, 0 ->
 # h(uint256[][]): 0x20, 1, 0x20, 1 -> FAILURE

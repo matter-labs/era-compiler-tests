@@ -78,8 +78,6 @@ def set(_s: String[100]):
 def get() -> String[100]:
     return self.nonEmptyString
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0x20, 0
 # g() -> 0x40, 0x60, 0, 0

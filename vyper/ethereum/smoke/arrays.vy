@@ -40,8 +40,6 @@ def w3() -> string[3]:
 def x() -> (string[2], string[3]):
     return ([string(inner="any"), string(inner="any")], [string(inner="any"), string(inner="any"), string(inner="any")])
 
-# ====
-# compileViaYul: also
 # ----
 # r() -> true, false, true
 # s() -> 123, 456, 789

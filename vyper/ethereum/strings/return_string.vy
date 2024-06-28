@@ -13,9 +13,6 @@ def get2() -> String[100]:
     r: String[100] = self.s
     return r
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # set(string): 0x20, 5, "Julia" ->
 # get1() -> 0x20, 5, "Julia"

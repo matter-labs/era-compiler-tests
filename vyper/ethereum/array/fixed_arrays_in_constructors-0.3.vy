@@ -5,8 +5,6 @@ ch: public(address)
 def __init__(s: address[3], x: uint256):
     self.r = x
     self.ch = s[2]
-# ====
-# compileViaYul: also
 # ----
 # constructor(): 1, 2, 3, 4 ->
 # gas irOptimized: 132278

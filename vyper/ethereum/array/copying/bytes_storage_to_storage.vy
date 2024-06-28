@@ -15,8 +15,6 @@ def f(_len: uint256) -> Bytes[200]:
         assert slice(self.b, i, 1) == slice(x, i, 1)
     return self.b
 
-# ====
-# compileViaYul: also
 # ----
 # f(uint256): 0 -> 0x20, 0x00
 # f(uint256): 12 -> 0x20, 0x0c, 0x0102030405060708090a0b0000000000000000000000000000000000000000

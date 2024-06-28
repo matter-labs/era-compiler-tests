@@ -13,9 +13,6 @@ def __() -> uint256:
 def g() -> uint256:
     return self.__()
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # _() -> 88
 # g() -> 88

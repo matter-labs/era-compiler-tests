@@ -5,7 +5,5 @@
 def f() -> address:
     return ecrecover(convert(max_value(uint256), bytes32), 1, 2, 3)
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0

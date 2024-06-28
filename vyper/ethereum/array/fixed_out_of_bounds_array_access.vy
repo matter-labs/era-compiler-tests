@@ -13,9 +13,6 @@ def get(index: uint256) -> uint256:
 def length() -> uint256:
     return 4
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # length() -> 4
 # set(uint256,uint256): 3, 4 -> true

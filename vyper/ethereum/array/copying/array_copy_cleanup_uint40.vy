@@ -59,8 +59,6 @@ def f() -> bool:
     
     return True
     
-# ====
-# compileViaYul: also
 # ----
 # f() -> true
 # gas irOptimized: 153260

@@ -14,7 +14,5 @@ def f() -> bool:
     self.data = empty(S[2])
     return True 
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> true # This code interprets x as an array length and thus will go out of gas. neither of the two should throw due to out-of-bounds access #

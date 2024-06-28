@@ -20,9 +20,6 @@ def run(_x: uint256) -> uint256:
             x = self.oddStep(x)
     return y
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # run(uint256): 0 -> 0
 # run(uint256): 1 -> 1

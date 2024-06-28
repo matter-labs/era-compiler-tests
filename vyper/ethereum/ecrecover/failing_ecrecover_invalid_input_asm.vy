@@ -7,7 +7,5 @@ def f() -> address:
         convert(0xef4f06ba4f78319baafd0424365777241af4dfd3da840471b4b4b087b7750d0d, uint256)
     )
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0

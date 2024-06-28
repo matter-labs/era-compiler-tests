@@ -12,8 +12,6 @@ def f() -> (uint128, uint64, uint128):
     m[0].c = 12
     self.s = m
     return (self.s[2].a, self.s[1].b, self.s[0].c)
-# ====
-# compileViaYul: true
 # ----
 # f() -> 10, 11, 12
 # gas irOptimized: 119149

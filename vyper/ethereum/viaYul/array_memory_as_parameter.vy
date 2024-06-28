@@ -15,8 +15,6 @@ def test(idx: uint256) -> uint256:
         
     return result
 
-# ====
-# compileViaYul: also
 # ----
 # test(uint256,uint256): 10, 5 -> 6
 # test(uint256,uint256): 10, 50 -> FAILURE

@@ -10,9 +10,6 @@ def __init__():
     self.b = "\x41\x42\x43\x44"
     self.c = b"\xff\x07\x7f\xff"
     
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # a() -> 0x20, 11, "hello world"
 # b() -> 0x20, 4, "ABCD"

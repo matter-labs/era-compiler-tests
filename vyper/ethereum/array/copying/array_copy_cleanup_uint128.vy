@@ -21,8 +21,6 @@ def f() -> bool:
     assert self.x[3] == 0
 
     return True
-# ====
-# compileViaYul: also
 # ----
 # f() -> true
 # gas irOptimized: 92740

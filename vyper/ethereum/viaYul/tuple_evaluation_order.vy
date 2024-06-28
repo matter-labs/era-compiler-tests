@@ -14,8 +14,5 @@ def f() -> (uint256, uint256):
     assert self.y == 1 and self.x == 3
     return (self.x, self.y)
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 3, 1

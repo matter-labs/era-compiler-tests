@@ -3,8 +3,6 @@
 def g(x: address) -> uint256:
     return convert(x, uint256)
 
-# ====
-# compileViaYul: also
 # ----
 # g(address): 0 -> 0 # test validation as well as sanity check #
 # g(address): 1 -> 1

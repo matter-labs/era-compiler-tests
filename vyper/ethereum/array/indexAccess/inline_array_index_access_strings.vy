@@ -8,9 +8,6 @@ def f() -> String[100]:
 def test():
     self.tester = self.f()
 
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # test() ->
 # tester() -> 0x20, 0x3, "abc"

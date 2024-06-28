@@ -5,8 +5,5 @@ def f() -> (int128, int128):
     t: int128 = 5
     return (x, (-(-t % 3)) * 5)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 11, 10

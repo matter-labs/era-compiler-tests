@@ -230,9 +230,6 @@ def intMaxD() -> bool:
 
     return True
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # intMinA() -> true
 # intMinB() -> true

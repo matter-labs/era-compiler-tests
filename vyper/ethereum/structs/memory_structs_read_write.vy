@@ -29,9 +29,6 @@ def testAssign() -> (uint8, uint16, uint256, uint8):
     s.a[1] = 4
     return s.x, s.y, s.z,s.a[1]
 
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # testInit() -> 0, 0, 0, 0, true
 # testCopyRead() -> 1, 2, 3, 4

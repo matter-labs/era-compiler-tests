@@ -14,10 +14,6 @@ def c() -> uint256:
 def f() -> uint256:
     return 3
     
-# ====
-# allowNonExistingFunctions: true
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # a() -> 0
 # b() -> 1

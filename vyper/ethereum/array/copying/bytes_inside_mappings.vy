@@ -9,8 +9,6 @@ def set(key: uint256) -> bool:
 def copy(_from: uint256, to: uint256) -> bool:
     self.data[to] = self.data[_from]
     return True
-# ====
-# compileViaYul: also
 # ----
 # set(uint256): 1, 2 -> true
 # gas irOptimized: 110699

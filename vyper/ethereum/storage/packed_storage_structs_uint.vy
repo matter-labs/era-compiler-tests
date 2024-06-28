@@ -33,8 +33,5 @@ def test() -> uint256:
         return 10
     return 1
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # test() -> 1

@@ -15,9 +15,6 @@ def set(which: uint8, _value: uint256):
     else:
         self.value2 = _value
         
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # get(uint8): 0x00 -> 0
 # get(uint8): 0x01 -> 0

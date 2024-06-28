@@ -8,9 +8,6 @@ def f(a: int256, b: int256) -> int256:
 def g(a: int8, b: int8) -> int8:
     return a + b
 
-# ====
-# compileViaYul: also
-# compileToEwasm: also
 # ----
 # f(int256,int256): 5, 6 -> 11
 # f(int256,int256): -2, 1 -> -1

@@ -9,7 +9,5 @@ def f(c: S[3]) -> (uint256, uint256):
             assert s[i].a[j] == c[i].a[j]
     return (3, s[1].a[0])
 
-# ====
-# compileViaYul: also
 # ----
 # f((uint256[3])[3]): 1, 2, 3, 1, 2, 3, 1, 2, 3 -> 3, 1

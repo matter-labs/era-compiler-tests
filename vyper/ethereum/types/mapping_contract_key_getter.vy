@@ -14,8 +14,6 @@ def set(k: A, v: uint8):
 def get(k: A) -> uint8:
     return extcall Self(self).table(k)
 
-# ====
-# compileViaYul: also
 # ----
 # table(address): 0 -> 0
 # table(address): 0x01 -> 0

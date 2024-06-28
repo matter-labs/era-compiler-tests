@@ -33,9 +33,6 @@ def store() -> (uint256, uint256, uint256, uint256, uint256, uint256):
     self.m_x = d
     return convert(self.m_x.x, uint256), convert(self.m_x.s.x, uint256), convert(self.m_x.s.y, uint256), self.m_x.s.z, convert(self.m_x.a[0], uint256), convert(self.m_x.a[1], uint256)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # load() -> 0x01, 0x02, 0x03, 0x04, 0x05, 0x06
 # gas irOptimized: 111179

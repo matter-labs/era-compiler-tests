@@ -22,8 +22,6 @@ def f() -> (uint8, uint8, uint256, uint8, uint8, uint256):
         m[1][2].x, m[1][2].y, m[1][2].z[0]
     )
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 11, 0x0c, 1, 0x15, 22, 4
 # gas irOptimized: 291850

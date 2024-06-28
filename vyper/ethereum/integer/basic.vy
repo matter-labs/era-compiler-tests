@@ -17,8 +17,5 @@ def basic() -> bool:
     
     return True
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # basic() -> true

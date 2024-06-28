@@ -19,8 +19,6 @@ def accessIndex(idx: int256) -> uint256:
         
     return array[convert(idx, uint256)]
     
-# ====
-# compileViaYul: also
 # ----
 # index(): 10 -> true
 # accessIndex(int256): 1 -> 2

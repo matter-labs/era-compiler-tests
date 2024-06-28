@@ -2,8 +2,5 @@
 @external
 def f() -> uint256:
     return [4][0]
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 4

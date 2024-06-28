@@ -12,7 +12,5 @@ def set(s: String[100]) -> uint256:
     x: uint256[3] = empty(uint256[3])
     return x[2]
     
-# ====
-# compileViaYul: also
 # ----
 # set(string): 0x20, 32, "01234567890123456789012345678901" -> 0

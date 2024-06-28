@@ -29,9 +29,6 @@ def getData(index: uint256) -> (uint256, uint256):
 @external
 def getLengths() -> (uint256, uint256):
     return (2**10, 2**10 + 3)
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # setIDStatic(uint256): 0xb ->
 # getID(uint256): 0x2 -> 0xb

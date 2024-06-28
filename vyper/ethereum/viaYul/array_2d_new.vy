@@ -5,7 +5,5 @@ def f(n: uint256) -> uint256:
     a[0][0] = n
     return a[0][0]
 
-# ====
-# compileViaYul: also
 # ----
 # f(uint256): 42 -> 42

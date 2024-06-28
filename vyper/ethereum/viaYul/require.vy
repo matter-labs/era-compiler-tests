@@ -42,10 +42,6 @@ def f4(a: bool) -> bool:
     assert a, message
     return x
     
-# ====
-# EVMVersion: >=byzantium
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(bool): true -> true
 # f(bool): false -> FAILURE

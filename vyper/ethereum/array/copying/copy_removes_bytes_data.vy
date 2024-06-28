@@ -8,8 +8,6 @@ def reset() -> bool:
     return True
 data1: Bytes[200]
 data2: Bytes[200]
-# ====
-# compileViaYul: also
 # ----
 # set(): 1, 2, 3, 4, 5 -> true
 # gas irOptimized: 177417

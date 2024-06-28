@@ -30,8 +30,6 @@ def f() -> (uint256, uint256, uint256, uint256, uint256, uint256):
     a, b, c, d = self._f(self.r, self.s)
     return (self.r[2], self.s.x, a, b, c, d)
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 8, 7, 1, 2, 7, 12
 # gas irOptimized: 167446

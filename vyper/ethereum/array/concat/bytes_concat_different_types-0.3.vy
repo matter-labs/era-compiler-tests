@@ -42,9 +42,6 @@ def fixedBytesParam(b1: bytes16, b2: bytes15, b3: bytes31) -> (Bytes[100], Bytes
 def fixedBytesParam2(c: Bytes[100], b1: bytes6, b2: bytes6) -> (Bytes[200], Bytes[200]):
     return (concat(self.s, b1, c), concat(b1, c, b2))
 
-# ====
-# compileViaYul: also
-# revertStrings: debug
 # ----
 # f(bytes): 0x20, 32, "abcdabcdabcdabcdabcdabcdabcdabcd" -> 0x20, 37, "abcdabcdabcdabcdabcdabcdabcdabcd", "bcdef"
 # g(bytes): 0x20, 32, "abcdabcdabcdabcdabcdabcdabcdabcd" -> 0x20, 66, "abcdabcdabcdabcdabcdabcdabcdabcd", "abcdefghabcdefghabcdefghabcdefgh", "ab"

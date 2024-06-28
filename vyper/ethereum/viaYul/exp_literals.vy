@@ -30,9 +30,6 @@ def exp_256(y: uint256) -> uint256:
 def exp_minus_256(y: uint256) -> int256:
     return (-256) ** convert(y, int256)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: true
 # ----
 # exp_2(uint256): 255 -> 57896044618658097711785492504343953926634992332820282019728792003956564819968
 # exp_2(uint256): 256 -> FAILURE

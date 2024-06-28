@@ -17,7 +17,5 @@ def g() -> (uint256, uint256):
     x[0][1] = 7
     x[1][0] = 8
     return Self(self).f(4, x, 5)
-# ====
-# compileViaYul: also
 # ----
 # g() -> 7, 8

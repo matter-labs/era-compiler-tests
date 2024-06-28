@@ -13,8 +13,5 @@ def deleteMember() -> uint256:
     self.data1.m_value = empty(uint256)
     return self.data1.m_value
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # deleteMember() -> 0

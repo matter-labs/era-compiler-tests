@@ -14,9 +14,6 @@ def h1() -> Bytes[100]:
 def h2(_msg: String[100]) -> Bytes[196]:
     return _abi_encode(_msg, method_id=0x00000001)
 
-# ====
-# ABIEncoderV1Only: true
-# compileViaYul: false
 # ----
 # f1() -> 0x20, 0x40, 0x20, 0
 # f2(string): 0x20, 0 -> 0x20, 0x40, 0x20, 0

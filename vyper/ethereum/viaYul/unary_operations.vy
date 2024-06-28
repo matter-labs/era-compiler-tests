@@ -23,9 +23,6 @@ def negate_s8(a: int8) -> int8:
 def negate_s16(a: int16) -> int16:
     return -a
       
-# ====
-# compileViaYul: true
-# compileToEwasm: also
 # ----
 # not_(bool): true -> false
 # not_(bool): false -> true

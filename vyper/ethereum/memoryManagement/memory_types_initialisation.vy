@@ -15,8 +15,6 @@ def nestedStat() -> uint256[3][7]:
     self._stat()
     return empty(uint256[3][7])
     
-# ====
-# compileViaYul: also
 # ----
 # stat() -> 0, 0, 0, 0, 0
 # nestedStat() -> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0

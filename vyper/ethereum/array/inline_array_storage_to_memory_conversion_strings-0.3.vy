@@ -13,8 +13,5 @@ def f() -> (String[100], String[100]):
     x: _string[3] = [_string({inner: self.s}), _string({inner: t}), _string({inner: "mi"})]
     return (x[1].inner, x[2].inner)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x40, 0x80, 0x3, "ray", 0x2, "mi"

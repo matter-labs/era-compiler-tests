@@ -23,8 +23,6 @@ def get_b() -> uint16:
 def get_c() -> uint16:
     return c
 
-# ====
-# compileViaYul: also
 # ----
 # get_a() -> 4660
 # get_b() -> 0x0f0f

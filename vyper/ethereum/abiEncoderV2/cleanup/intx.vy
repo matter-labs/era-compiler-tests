@@ -18,8 +18,6 @@ def gg64(x: int64) -> int256:
 def g128(x: int128) -> int256:
     return convert(x, int256)
 
-# ====
-# compileViaYul: also
 # ----
 # ggg8(int8): 0 -> 0 # test validation as well as sanity check #
 # ggg8(int8): 1 -> 1

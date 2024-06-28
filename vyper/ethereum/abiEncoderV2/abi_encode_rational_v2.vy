@@ -6,8 +6,5 @@ def f() -> Bytes[100]:
     tmp2: int128 = -2
     return _abi_encode(tmp1, tmp2)
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 0x20, 0x40, 0x1, -2

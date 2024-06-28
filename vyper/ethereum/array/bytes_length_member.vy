@@ -8,8 +8,6 @@ def getLength() -> uint256:
     return len(self.data)
 
 data: Bytes[100]
-# ====
-# compileViaYul: also
 # ----
 # getLength() -> 0
 # set(): 1, 2 -> true

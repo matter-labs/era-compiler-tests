@@ -9,8 +9,6 @@ def test(a: uint256[4][2], i: uint256, j: uint256) -> uint256:
 def reenc(a: uint256[4][2], i: uint256, j: uint256) -> uint256:
     return Self(self).test(a, i, j)
     
-# ====
-# compileViaYul: also
 # ----
 # test(uint256[4][2],uint256,uint256): 0x0A01, 0x0A02, 0x0A03, 0, 0x0B01, 0x0B02, 0x0B03, 0x0B04, 0, 0 -> 0x0A01
 # reenc(uint256[4][2],uint256,uint256): 0x0A01, 0x0A02, 0x0A03, 0, 0x0B01, 0x0B02, 0x0B03, 0x0B04, 0, 0 -> 0x0A01

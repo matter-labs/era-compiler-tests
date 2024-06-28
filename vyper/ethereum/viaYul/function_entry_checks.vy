@@ -32,8 +32,6 @@ def s() -> DynArray[uint256, 10]:
 def t(_: uint256):
     pass
 
-# ====
-# compileToEwasm: also
 # ----
 # f() -> 0
 # g(uint256,uint256): 1, -2 -> 0

@@ -10,9 +10,6 @@ def g():
 def h(_flag: bool):
     assert _flag
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() ->
 # g() -> FAILURE

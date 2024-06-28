@@ -33,8 +33,6 @@ def j(s: Bytes[3]) -> Bytes[200]:
 def k(s: Bytes[3]) -> Bytes[200]:
     return staticcall Self(self).j(s)
 
-# ====
-# EVMVersion: >homestead
 # ----
 # f(uint256[]): 32, 3, 23, 42, 87 -> 32, 160, 32, 3, 23, 42, 87
 # g(uint256[]): 32, 3, 23, 42, 87 -> 32, 160, 32, 3, 23, 42, 87

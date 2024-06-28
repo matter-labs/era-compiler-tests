@@ -9,8 +9,6 @@ def set(k: uint256, v: uint256):
 def set_(k1: uint256, k2: uint256, v: uint256):
     self.m2[k1][k2] = v
     
-# ====
-# compileViaYul: also
 # ----
 # m1(uint256): 0 -> 0
 # m1(uint256): 0x01 -> 0

@@ -8,8 +8,5 @@ def f(a: bytes2, x: uint16) -> uint256:
     if convert(convert(x, uint24), bytes3) != 0x000102:
         return 3
     return 0
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(bytes2,uint16): "abc", 0x40102 -> FAILURE # We input longer data on purpose. #

@@ -21,8 +21,6 @@ def readX() -> uint8:
 def readA() -> uint8:
     return a
     
-# ====
-# compileViaYul: also
 # ----
 # readX() -> 3
 # readA() -> 3

@@ -14,8 +14,6 @@ def getName() -> bytes32:
 def getFlag() -> bool:
     return self.flag
 
-# ====
-# compileViaYul: also
 # ----
 # constructor(): "abc", true
 # gas irOptimized: 112563

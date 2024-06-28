@@ -5,8 +5,5 @@ def f() -> uint256:
     b = convert(0xff, uint8)
     return convert(b, uint256)
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> 255

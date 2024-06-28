@@ -5,8 +5,5 @@ def f(a: uint256, b: uint256) -> (uint256, uint256):
     y: uint256 = b
     return x, y
     
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f(uint256,uint256): 5, 6 -> 5, 6

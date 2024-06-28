@@ -6,7 +6,5 @@ def f() -> uint256:
     self.data = empty(Bytes[100])
     return len(self.data)
 
-# ====
-# compileViaYul: also
 # ----
 # f() -> 0

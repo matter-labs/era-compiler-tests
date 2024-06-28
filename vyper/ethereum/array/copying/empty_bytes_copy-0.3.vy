@@ -23,8 +23,6 @@ def fromStorage() -> bytes1:
     self.data = b"\x00"
     return convert(slice(self.data, 0, 1), bytes1)
     
-# ====
-# compileViaYul: also
 # ----
 # fromMemory() -> 0x00
 # fromCalldata(bytes): 0x40, 0x60, 0x00, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff -> 0x00

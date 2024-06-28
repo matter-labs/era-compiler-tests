@@ -1,4 +1,4 @@
-//! { "modes": [ "Y" ], "cases": [ {
+//! { "modes": [ "Y", "E" ], "cases": [ {
 //!     "name": "gcd_15_6",
 //!     "inputs": [
 //!         {

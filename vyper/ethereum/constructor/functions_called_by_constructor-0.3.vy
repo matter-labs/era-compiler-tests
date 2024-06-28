@@ -13,8 +13,5 @@ def __init__():
 def getName() -> bytes32:
     return self.name
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # getName() -> "abc"

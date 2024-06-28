@@ -24,9 +24,6 @@ def assert0_delegated() -> bool:
     _: Bytes[100] = raw_call(self, method_id("assert0()"), max_outsize=100, is_delegate_call=True)
     return True
     
-# ====
-# compileViaYul: also
-# EVMVersion: <byzantium
 # ----
 # get() -> 0x00
 # assert0_delegated() -> true

@@ -11,8 +11,5 @@ def f() -> bool:
         return False
     return True
 
-# ====
-# compileToEwasm: also
-# compileViaYul: also
 # ----
 # f() -> true

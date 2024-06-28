@@ -17,8 +17,6 @@ def h(t: int8) -> int16:
     self.z = convert(t, int16)
     return self.z
     
-# ====
-# compileViaYul: also
 # ----
 # y(uint256): 0 -> -5
 # y(uint256): 1 -> -6
