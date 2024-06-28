@@ -1,4 +1,4 @@
-//! { "modes": [ "Y" ], "cases": [ {
+//! { "modes": [ "Y", "E" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {
@@ -24,7 +24,8 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16;
+pragma solidity >=0.5.0;
+pragma experimental ABIEncoderV2;
 
 contract Test {
     struct Node {

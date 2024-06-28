@@ -1,7 +1,4 @@
-//! { "modes": [
-//!     "Y"
-//! ], "comment": "The test case is in the separate test to run via the yul pipeline only(uses recursion)",
-//! "cases": [ {
+//! { "modes": [ "Y", "E" ], "cases": [ {
 //!     "name": "recursive_function",
 //!     "inputs": [
 //!         {
