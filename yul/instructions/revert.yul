@@ -16,13 +16,15 @@
 //!     }
 //! } ] }
 
-object "Test_16" {
+object "Test" {
     code {
         {
-            return(0, 0)
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
         }
     }
-    object "Test_16_deployed" {
+    object "Test_deployed" {
         code {
             {
                 mstore(0, shl(224, 0x4E487B71))

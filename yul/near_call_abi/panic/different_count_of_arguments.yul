@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "EraVM" ], "cases": [ {
 //!     "name": "without_args_failure",
 //!     "inputs": [
 //!         {
@@ -161,7 +161,9 @@
 object "Test" {
     code {
         {
-            return(0, 0)
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
         }
     }
     object "Test_deployed" {
