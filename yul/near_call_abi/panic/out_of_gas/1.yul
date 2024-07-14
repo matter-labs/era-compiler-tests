@@ -61,7 +61,7 @@
 //! } ] }
 
 // A really basic test that only sets one memory cell to 1.
-object "Bootloader" {
+object "Test" {
     code {
         {
             let size := datasize("Test_deployed")
@@ -69,7 +69,7 @@ object "Bootloader" {
             return(0, size)
         }
     }
-    object "Bootloader_deployed" {
+    object "Test_deployed" {
         code {
             let gas_to_pass := calldataload(0)
 

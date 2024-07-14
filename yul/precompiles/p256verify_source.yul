@@ -260,7 +260,7 @@
 //!     }
 //! } ] }
 
-object "P256VERIFY" {
+object "Test" {
     code {
         {
             let size := datasize("Test_deployed")
@@ -268,7 +268,7 @@ object "P256VERIFY" {
             return(0, size)
         }
     }
-    object "P256VERIFY_deployed" {
+    object "Test_deployed" {
         code {
             // Constants
 

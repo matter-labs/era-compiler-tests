@@ -508,11 +508,11 @@
 //!     "expected": [ "0xc400000000000000000000000000000000000000000000000000000000000000" ]
 //! } ] }
 
-object "ModExp" {
+object "Test" {
 	code {
 		return(0, 0)
 	}
-	object "ModExp_deployed" {
+	object "Test_deployed" {
 		code {
 
             // CONSTANTS

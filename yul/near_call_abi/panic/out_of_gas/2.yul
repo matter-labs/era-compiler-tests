@@ -55,7 +55,7 @@
 //!     ]
 //! } ] }
 
-object "Bootloader" {
+object "Test" {
     code {
         {
             let size := datasize("Test_deployed")
@@ -63,7 +63,7 @@ object "Bootloader" {
             return(0, size)
         }
     }
-    object "Bootloader_deployed" {
+    object "Test_deployed" {
         code {
             function ZKSYNC_NEAR_CALL_getBalance(abi) -> ret {
                 ret := balance(0)
