@@ -290,7 +290,7 @@
 //!     }
 //! } ] }
 
-object "EcMul" {
+object "Test" {
     code {
         {
             let size := datasize("Test_deployed")
@@ -298,7 +298,7 @@ object "EcMul" {
             return(0, size)
         }
     }
-    object "EcMul_deployed" {
+    object "Test_deployed" {
         code {
             ////////////////////////////////////////////////////////////////
             //                      CONSTANTS

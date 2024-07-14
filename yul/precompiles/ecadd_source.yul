@@ -155,7 +155,7 @@
 //!     ]
 //! } ] }
 
-object "EcAdd" {
+object "Test" {
     code {
         {
             let size := datasize("Test_deployed")
@@ -163,7 +163,7 @@ object "EcAdd" {
             return(0, size)
         }
     }
-    object "EcAdd_deployed" {
+    object "Test_deployed" {
         code {
             ////////////////////////////////////////////////////////////////
             //                      CONSTANTS
