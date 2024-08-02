@@ -121,7 +121,7 @@ runtime:
   %stack = alloca [10 x i256], align 32
 
   ; use functions so that the operations will not being folded easily
-  call void @store_value([10 x i256]* %stack, i256 %cell_1, i256 %cell_2)
+  call void @store_value([10 x i256]* %stack, i256 %cell_2, i256 %cell_1)
   %result = call i256 @load_value([10 x i256]* %stack, i256 %cell_2)
 
   ; store the values to the stack
