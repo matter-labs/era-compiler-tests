@@ -8,7 +8,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "0xdeadbeef"
+//!         "$BLOCK_TIMESTAMP"
 //!     ]
 //! } ] }
 
