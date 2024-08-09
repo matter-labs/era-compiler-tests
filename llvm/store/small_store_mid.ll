@@ -1,4 +1,4 @@
-;! { "cases": [ {
+;! { "targets": [ "EraVM" ], "cases": [ {
 ;!     "name": "0",
 ;!     "inputs": [
 ;!         {

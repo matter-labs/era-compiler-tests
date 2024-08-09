@@ -66,8 +66,11 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": [
+//!     "expected_eravm": [
 //!         "2415"
+//!     ],
+//!     "expected_evm": [
+//!         "2432"
 //!     ]
 //! }, {
 //!     "name": "ordinar_words",
