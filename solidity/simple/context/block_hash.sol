@@ -8,7 +8,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "$BLOCK_HASH"
+//!         "$BLOCK_HASH:1"
 //!     ]
 //! } ] }
 
