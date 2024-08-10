@@ -1,4 +1,4 @@
-{ "targets": [ "EraVM" ], "modes": [ "E+", "I", "Y" ],
+{ "targets": [ "EVM" ], "modes": [ "E+", "I", "Y" ],
 "comment": "E- solc error: too deep into the stack",
 "cases": [ {
     "name": "default",
@@ -134,7 +134,7 @@
                 "3000"
             ],
             "expected": {
-                "return_data": ["0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a"],
+                "return_data": ["0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f"],
                 "exception": false,
                 "events": [
                     {
@@ -147,7 +147,7 @@
                         ],
                         "values": [
                             "60",
-                            "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a"
+                            "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f"
                         ]
                     }
                 ]
@@ -157,7 +157,7 @@
             "instance": "_InitWrapper",
             "method": "initialize",
             "calldata": [
-                "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a",
+                "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f",
                 "0x00000000000000000000000000000000003acb29cd50f2a2f7b103ddae851344"
             ],
             "expected": {
@@ -165,7 +165,7 @@
                 "exception": false,
                 "events": [
                     {
-                        "address": "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a",
+                        "address": "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f",
                         "topics": [
                             "0x98636036cb66a9c19a37435efc1e90142190214e8abeb821bdba3f2990dd4c95"
                         ],
@@ -261,7 +261,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000069",
-                            "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a"
+                            "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f"
                         ],
                         "values": [
                             "99999999999999999998943496"
@@ -279,7 +279,7 @@
                         ]
                     },
                     {
-                        "address": "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a",
+                        "address": "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f",
                         "topics": [
                             "0x7a53080ba414158be7ec69b987b5fb7d07dee101fe85488f0853ae16239d0bde",
                             "NonfungiblePositionManager.address",
@@ -396,7 +396,7 @@
                         "address": "Token2.address",
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
-                            "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a",
+                            "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f",
                             "0xdeadbeef00000000000000000000000000000074"
                         ],
                         "values": [
@@ -408,7 +408,7 @@
                         "topics": [
                             "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
                             "0xdeadbeef00000000000000000000000000000074",
-                            "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a"
+                            "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f"
                         ],
                         "values": [
                             "157064251"
@@ -426,7 +426,7 @@
                         ]
                     },
                     {
-                        "address": "0x4ac6f8bda3f86e73f9ea68d50326dbe3cc9ea00a",
+                        "address": "0x911021afcc4ed882dcbcb76bbd00fcb8d061e12f",
                         "topics": [
                             "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67",
                             "SwapRouter.address",
