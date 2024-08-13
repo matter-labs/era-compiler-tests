@@ -14,7 +14,7 @@
                 "0"
             ],
             "expected": [
-                "Token1.address"
+                "0x3a9fc460c833f26413e25ceb8105cd04c5aaee6c"
             ]
         },
         {
@@ -28,7 +28,7 @@
                 "0"
             ],
             "expected": [
-                "Token2.address"
+                "0xa7d88645ce7c923297a3edd0f59bdda46657bd0a"
             ]
         },
         {
@@ -374,6 +374,7 @@
         {
             "instance": "SwapRouter",
             "method": "exactInput",
+            "comment": "The last argument is: Token1.address + 3 bytes + Token2.address; Token1.address < Token2.address",
             "caller": "0xdeadbeef00000000000000000000000000000074",
             "calldata": [
                 "0x20",
@@ -383,8 +384,8 @@
                 "157064251",
                 "1556399762425946795663",
                 "43",
-                "0x69d66a02dbf660c50bf654ed13f6d0393637037b000bb89dd65202d2519ec0ab",
-                "0x90189ff0170f938b7cc086000000000000000000000000000000000000000000"
+                "0x3a9fc460c833f26413e25ceb8105cd04c5aaee6c000bb8a7d88645ce7c923297",
+                "0xa3edd0f59bdda46657bd0a000000000000000000000000000000000000000000"
             ],
             "expected": {
                 "return_data": [
