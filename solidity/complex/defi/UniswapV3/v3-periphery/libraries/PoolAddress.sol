@@ -32,6 +32,12 @@ library PoolAddress {
     /// @param key The PoolKey
     /// @return pool The contract address of the V3 pool
     function computeAddress(address factory, PoolKey memory key) internal pure returns (address pool) {
-        return 0x4ac6f8Bda3F86e73f9Ea68D50326Dbe3cC9ea00a;
+        if (key.token0 == 0x69d66a02DBF660c50BF654eD13F6D0393637037b && key.token1 == 0x9DD65202d2519Ec0aB90189ff0170F938B7Cc086) {
+            return 0x4ac6f8Bda3F86e73f9Ea68D50326Dbe3cC9ea00a;
+        } else if (key.token0 == 0x3A9Fc460C833f26413E25ceb8105Cd04c5aAeE6C && key.token1 == 0xA7D88645CE7c923297A3eDd0F59bdDa46657BD0A) {
+            return 0x911021aFcc4eD882DcBCb76bbd00FCb8D061E12F;
+        } else {
+            return address(0);
+        }
     }
 }
