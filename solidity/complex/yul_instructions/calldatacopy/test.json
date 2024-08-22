@@ -1,5 +1,5 @@
 {
-    "targets": [ "EraVM" ], "cases": [
+    "targets": [ "eravm" ], "cases": [
         {
             "name": "zero_to_runtime",
             "inputs": [

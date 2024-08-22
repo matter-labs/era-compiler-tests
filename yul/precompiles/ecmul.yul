@@ -1,6 +1,6 @@
 //! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
-//!   "targets": [ "EraVM" ], "cases": [ {
+//!   "targets": [ "eravm" ], "cases": [ {
 //!     "name": "(0, 0) * 0",
 //!     "inputs": [
 //!         {

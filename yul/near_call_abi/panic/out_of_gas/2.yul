@@ -1,4 +1,4 @@
-//! { "enable_eravm_extensions": true, "targets": [ "EraVM" ], "cases": [ {
+//! { "enable_eravm_extensions": true, "targets": [ "eravm" ], "cases": [ {
 //!     "name": "500_gas",
 //!     "inputs": [
 //!         {

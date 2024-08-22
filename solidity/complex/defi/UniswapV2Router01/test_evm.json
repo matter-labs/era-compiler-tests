@@ -1,4 +1,4 @@
-{ "cases": [ {
+{ "targets": [ "evm" ], "cases": [ {
     "name": "default",
     "inputs": [
         {

@@ -1,4 +1,4 @@
-//! { "targets": [ "EraVM" ], "cases": [ {
+//! { "targets": [ "eravm" ], "cases": [ {
 //!     "name": "without_args_failure",
 //!     "inputs": [
 //!         {

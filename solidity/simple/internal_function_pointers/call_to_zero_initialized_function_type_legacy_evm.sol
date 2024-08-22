@@ -1,4 +1,4 @@
-//! { "targets": [ "EVM" ], "modes": [ "I", "Y" ], "cases": [ {
+//! { "targets": [ "evm" ], "modes": [ "I", "Y" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {

@@ -1,4 +1,4 @@
-//! { "targets": [ "EraVM" ], "cases": [ {
+//! { "targets": [ "eravm" ], "cases": [ {
 //!     "name": "init",
 //!     "inputs": [
 //!         {
