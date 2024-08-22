@@ -125,6 +125,11 @@ Additional notes:
 - `InstanceName.address` can be used instead of numbers (in the expected, calldata, storage) to insert the contract instance address
 - If the deployer call is not specified for some instance, it will be generated automatically with empty calldata.
 
+
+## Ethereum Solidity semantic tests format
+
+The format of these test files is that of the Ethereum Solidity semantic [tests](https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests).  
+
 ## License
 
 The Test Collection is distributed under the terms of either
