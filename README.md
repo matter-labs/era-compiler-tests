@@ -129,7 +129,7 @@ Additional notes:
 ## Ethereum Solidity semantic tests format
 
 The format of these test files is that of the Ethereum Solidity  [semantic tests](https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests).
-Test descriptions and expected results are embedded in the test file, beginning with “`//!`” for Solidity files, and “`#`” for Vyper.
+Test descriptions and expected results are embedded as comments in the test file; lines begin with “`//`” for Solidity files, and “`#`” for Vyper. The beginning of the test description is indicated by a comment line containing “`----`”.
 
 For a new test file to be run by the `era-compiler-tester` integration test framework, its name must be added to the index file for its superdirectory, either `solidity/ethereum/index.yaml` or `vyper/ethereum/index.yaml`, followed by a colon and an `enabled: true` line.  `hash:` and `version:` fields are optional.
 
