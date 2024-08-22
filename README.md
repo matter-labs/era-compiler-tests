@@ -26,7 +26,7 @@ Each test comprises source code files and metadata.
 Simple tests have only one source file, and their metadata is written in comments that start with `!`, for example, `//!` for Solidity.
 Complex tests use the `test.json` file to describe their metadata and refer to source code files.
 
-## Metadata
+### Metadata
 
 Metadata is a JSON file that contains the following fields:
 
@@ -59,7 +59,7 @@ In simple tests, only one `Test` contract instance is deployed.
 - `system_mode` - an optional system mode compiler flag (`false` by default). Set it to true if you need to enable the EraVM extensions.
 - `group` - an optional string field that specifies a test group. Currently, it is only used for benchmarking.
 
-## Case
+###  Cases
 
 All test cases are executed in a clean context, making them independent of each other.
 
@@ -71,7 +71,7 @@ Each test case contains the following fields:
 - `expected` - the expected return data for the last input (the format is described below in the input section).
 - `ignore`, `modes` - the same as in the test metadata.
 
-## Input
+### Input
 
 Inputs are utilized to specify the contract calls in the test case. The input fields are as follows:
 
