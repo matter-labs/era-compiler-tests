@@ -1,4 +1,4 @@
-//! { "enable_eravm_extensions": true, "cases": [ {
+//! { "enable_eravm_extensions": true, "targets": [ "eravm" ], "cases": [ {
 //!     "name": "500_gas",
 //!     "inputs": [
 //!         {
@@ -61,11 +61,15 @@
 //! } ] }
 
 // A really basic test that only sets one memory cell to 1.
-object "Bootloader" {
+object "Test" {
     code {
-        return(0, 0)
+        {
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
+        }
     }
-    object "Bootloader_deployed" {
+    object "Test_deployed" {
         code {
             let gas_to_pass := calldataload(0)
 

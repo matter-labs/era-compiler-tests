@@ -298,7 +298,9 @@
 object "Test" {
     code {
         {
-            return(0, 0)
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
         }
     }
 
@@ -430,6 +432,7 @@ object "Test" {
                         revert(0, 32)
                     }
                     switch f()
+                        case 0 {}
                         default {
                             mstore(0, 0xdeadbeef)
                         }
@@ -504,6 +507,7 @@ object "Test" {
                 // only_default_case
                 case 15 {
                     switch "a"
+                        case 0 {}
                         default {
                             mstore(0, 0xdeadbeef0f)
                         }
@@ -551,6 +555,7 @@ object "Test" {
                         mstore(0, 0xdeadbeef12)
                     }
                     switch f()
+                        case 0 {}
                         default {}
                     return(0, 32)
                 }

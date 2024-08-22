@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "eravm" ], "cases": [ {
 //!     "name": "zero",
 //!     "inputs": [
 //!         {

@@ -1,4 +1,4 @@
-{ "cases": [ {
+{ "targets": [ "eravm" ], "cases": [ {
     "name": "default",
     "inputs": [],
     "expected": []

@@ -1,4 +1,4 @@
-{ "modes": [ "E+", "I", "Y" ],
+{ "targets": [ "eravm" ], "modes": [ "E+", "I", "Y" ],
 "comment": "E- solc error: too deep into the stack",
 "cases": [ {
     "name": "default",
@@ -374,6 +374,7 @@
         {
             "instance": "SwapRouter",
             "method": "exactInput",
+            "comment": "The last argument is: Token1.address + 3 bytes + Token2.address; Token1.address < Token2.address",
             "caller": "0xdeadbeef00000000000000000000000000000074",
             "calldata": [
                 "0x20",

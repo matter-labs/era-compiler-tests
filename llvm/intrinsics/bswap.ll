@@ -1,4 +1,4 @@
-;! { "cases": [ {
+;! { "targets": [ "eravm" ], "cases": [ {
 ;!     "name": "0",
 ;!     "inputs": [
 ;!         {
@@ -22,7 +22,7 @@
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0xefcdab8967452301efcdab8967452301efcdab8967452301efcdab8967452301"
+;!         "0xefcdab8967452301efcdab8967452301efcdab8967452301efcdab8967452301"
 ;!     ]
 ;! }, {
 ;!     "name": "ffff",

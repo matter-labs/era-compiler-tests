@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "eravm" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {
@@ -12,6 +12,7 @@
 //!         "return_data": ["*"],
 //!         "events": [
 //!             {
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": [
 //!                     "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"

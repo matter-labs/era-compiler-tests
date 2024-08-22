@@ -1,4 +1,4 @@
-//! { "targets": [ "eravm" ], "modes": [ "E", "I" ], "cases": [ {
+//! { "targets": [ "evm" ], "modes": [ "I", "Y" ], "cases": [ {
 //!     "name": "default",
 //!     "inputs": [
 //!         {

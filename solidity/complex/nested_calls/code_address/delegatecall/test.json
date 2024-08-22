@@ -1,5 +1,5 @@
 {
-    "modes": [ "Y" ], "cases": [
+    "targets": [ "eravm" ], "modes": [ "Y" ], "cases": [
         {
             "name": "default",
             "inputs": [

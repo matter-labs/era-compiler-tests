@@ -1,6 +1,6 @@
 //! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
-//!   "cases": [ {
+//!   "targets": [ "eravm" ], "cases": [ {
 //!     "name": "modexp_one_limb_0_0_0",
 //!     "inputs": [
 //!         {
@@ -508,11 +508,11 @@
 //!     "expected": [ "0xc400000000000000000000000000000000000000000000000000000000000000" ]
 //! } ] }
 
-object "ModExp" {
+object "Test" {
 	code {
 		return(0, 0)
 	}
-	object "ModExp_deployed" {
+	object "Test_deployed" {
 		code {
 
             // CONSTANTS

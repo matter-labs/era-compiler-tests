@@ -1,5 +1,5 @@
 {
-    "cases": [ {
+    "targets": [ "eravm" ], "cases": [ {
         "name": "default",
         "inputs": [ {
                 "comment": "zero gas (2 index)",

@@ -1,6 +1,6 @@
 //! { "enable_eravm_extensions" : true,
 //!   "group": "Precompiles",
-//!   "cases": [ {
+//!   "targets": [ "eravm" ], "cases": [ {
 //!     "name": "(0, 0) * 0",
 //!     "inputs": [
 //!         {
@@ -290,11 +290,15 @@
 //!     }
 //! } ] }
 
-object "EcMul" {
+object "Test" {
     code {
-        return(0, 0)
+        {
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
+        }
     }
-    object "EcMul_deployed" {
+    object "Test_deployed" {
         code {
             ////////////////////////////////////////////////////////////////
             //                      CONSTANTS

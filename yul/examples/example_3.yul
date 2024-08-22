@@ -14,11 +14,15 @@
 
 // Report https://linear.app/matterlabs/issue/CPR-215/solidity-dynamic-array-length-bug
 
-object "Test_32" {
+object "Test" {
     code {
-        return (0, 0)
+        {
+            let size := datasize("Test_deployed")
+            codecopy(0, dataoffset("Test_deployed"), size)
+            return(0, size)
+        }
     }
-    object "Test_32_deployed" {
+    object "Test_deployed" {
         code {
             mstore(64, 128)
 
