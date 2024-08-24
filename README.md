@@ -26,7 +26,7 @@ Each test comprises source code files and metadata.
 Simple tests have only one source file, and their metadata is written in comments that start with `!`, for example, `//!` for Solidity.
 Complex tests use the `test.json` file to describe their metadata and refer to source code files.
 
-## Metadata
+### Metadata
 
 Metadata is a JSON file that contains the following fields:
 
@@ -59,7 +59,7 @@ In simple tests, only one `Test` contract instance is deployed.
 - `system_mode` - an optional system mode compiler flag (`false` by default). Set it to true if you need to enable the EraVM extensions.
 - `group` - an optional string field that specifies a test group. Currently, it is only used for benchmarking.
 
-## Case
+###  Cases
 
 All test cases are executed in a clean context, making them independent of each other.
 
@@ -71,7 +71,7 @@ Each test case contains the following fields:
 - `expected` - the expected return data for the last input (the format is described below in the input section).
 - `ignore`, `modes` - the same as in the test metadata.
 
-## Input
+### Input
 
 Inputs are utilized to specify the contract calls in the test case. The input fields are as follows:
 
@@ -124,6 +124,20 @@ Additional notes:
 
 - `InstanceName.address` can be used instead of numbers (in the expected, calldata, storage) to insert the contract instance address
 - If the deployer call is not specified for some instance, it will be generated automatically with empty calldata.
+
+
+## Ethereum Solidity semantic tests format
+
+The format of these test files is that of the Ethereum Solidity  [semantic tests](https://github.com/ethereum/solidity/tree/develop/test/libsolidity/semanticTests).
+Test descriptions and expected results are embedded as comments in the test file; lines begin with “`//`” for Solidity files, and “`#`” for Vyper. The beginning of the test description is indicated by a comment line containing “`----`”.
+
+For a new test file to be added manually and run by the `era-compiler-tester` integration test framework, its name must be added to the index file for its superdirectory, either `solidity/ethereum/index.yaml` or `vyper/ethereum/index.yaml`, followed by a colon and an `enabled: true` line.  `hash:` and `version:` fields are optional for manual additions.
+
+The `tests-updater` utility may instead be used for updating or adding multiple test files; for details, see the help: 
+
+```
+target/release/tests-updater --help
+```
 
 ## License
 
