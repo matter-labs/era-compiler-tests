@@ -1,4 +1,5 @@
 {
+    "targets": [ "eravm" ],
     "cases": [
         {
             "name": "zero_runtime",
