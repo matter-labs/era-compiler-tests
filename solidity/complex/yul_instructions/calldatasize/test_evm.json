@@ -198,7 +198,7 @@
                     "instance": "Main",
                     "method": "deploy",
                     "calldata": [
-                        "0xF100"
+                        "49020"
                     ]
                 }
             ],
