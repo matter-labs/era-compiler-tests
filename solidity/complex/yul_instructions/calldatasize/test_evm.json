@@ -1,4 +1,5 @@
 {
+    "targets": [ "evm" ],
     "cases": [
         {
             "name": "zero_runtime",
