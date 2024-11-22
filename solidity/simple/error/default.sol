@@ -1,5 +1,4 @@
-//! {
-//!   "cases": [ {
+//! { "cases": [ {
 //!     "name": "require_short",
 //!     "inputs": [
 //!         {
