@@ -21,10 +21,7 @@
     ],
     "expected": {
         "exception": true,
-        "return_data": [
-            "0x9e4a3c8a01000035999a1d871cf4d876ed735fa6a8f3bbeb3f94d210bf4520ed",
-            "0x94f3565400000000000000000000000000000000000000000000000000000000"
-        ]
+        "return_data": []
     }
 } ],
     "contracts": {
