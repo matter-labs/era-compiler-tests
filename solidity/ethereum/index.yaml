@@ -3497,8 +3497,7 @@ entries:
       precompile_extcodesize_check.sol:
         hash: '0x8bde8f1038d88fc0890b453cf9e801ee'
         enabled: true
-        comment: Expected replaced with failures
-        version: '>=0.6.2'
+        version: '>=0.8.0'
       return_size_bigger_than_expected.sol:
         hash: '0x6fae6783c4ac99fb6983790b67a5ffc4'
         enabled: true

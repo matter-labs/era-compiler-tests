@@ -28,6 +28,6 @@ contract C {
 // ====
 // EVMVersion: >=constantinople
 // ----
-// testHighLevel() -> FAILURE
-// testLowLevel() -> FAILURE
+// testHighLevel() -> 1
+// testLowLevel() -> 0xc76596d400000000000000000000000000000000000000000000000000000000
 // testHighLevel2() -> FAILURE
