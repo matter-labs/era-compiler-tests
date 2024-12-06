@@ -1,10 +1,10 @@
-//! { "cases": [] }
+//! { "ignore": true, "cases": [] }
 
 // SPDX-License-Identifier: MIT OR Apache-2.0
 
 pragma solidity >=0.8.0;
 
-contract Test {
+contract Forwarder {
     address immutable _target;
 
     constructor(address target) payable {
