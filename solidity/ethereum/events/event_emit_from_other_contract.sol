@@ -1,3 +1,5 @@
+// TODO: Implement this test for EOF. Now it's not possible because deployed contract address depends on contract bytecode.
+// This means that the address changes when optimisations are applied.
 contract D {
     event Deposit(address indexed _from, bytes32 indexed _id, uint _value);
     function deposit(bytes32 _id) public payable {
@@ -13,6 +15,8 @@ contract C {
         d.deposit(_id);
     }
 }
+// ====
+// bytecodeFormat: legacy
 // ----
 // constructor() ->
 // gas irOptimized: 113970

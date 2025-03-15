@@ -10,26 +10,21 @@ interface SubB is Parent {
     function subBFun() external returns (uint256);
 }
 
-contract Impl is SubA, SubB {
+contract C is SubA, SubB {
     function parentFun() override external returns (uint256) { return 1; }
     function subAFun() override external returns (uint256) { return 2; }
     function subBFun() override external returns (uint256) { return 3; }
-}
 
-contract C {
     function convertParent() public returns (uint256) {
-        Parent p = new Impl();
-        return p.parentFun();
+        return this.parentFun();
     }
 
     function convertSubA() public returns (uint256, uint256) {
-        SubA sa = new Impl();
-        return (sa.parentFun(), sa.subAFun());
+        return (this.parentFun(), this.subAFun());
     }
 
     function convertSubB() public returns (uint256, uint256) {
-        SubB sb = new Impl();
-        return (sb.parentFun(), sb.subBFun());
+        return (this.parentFun(), this.subBFun());
     }
 }
 // ----

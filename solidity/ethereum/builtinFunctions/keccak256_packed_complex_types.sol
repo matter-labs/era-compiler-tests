@@ -7,8 +7,8 @@ contract C {
         x[2] = y[2] = uint120(type(uint).max - 3);
         hash1 = keccak256(abi.encodePacked(x));
         hash2 = keccak256(abi.encodePacked(y));
-        hash3 = keccak256(abi.encodePacked(this.f));
+        hash3 = keccak256(abi.encodePacked(C(address(0x1234))));
     }
 }
 // ----
-// f() -> 0xba4f20407251e4607cd66b90bfea19ec6971699c03e4a4f3ea737d5818ac27ae, 0xba4f20407251e4607cd66b90bfea19ec6971699c03e4a4f3ea737d5818ac27ae, 0xd8eec2c612f03c4c90e0cc60bfb82f849607cd5fc1bd4ca21fb78d44082c09ac
+// f() -> 0xba4f20407251e4607cd66b90bfea19ec6971699c03e4a4f3ea737d5818ac27ae, 0xba4f20407251e4607cd66b90bfea19ec6971699c03e4a4f3ea737d5818ac27ae, 0xe7490fade3a8e31113ecb6c0d2635e28a6f5ca8359a57afe914827f41ddf0848
