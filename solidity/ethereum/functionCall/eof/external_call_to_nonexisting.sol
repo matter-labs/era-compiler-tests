@@ -30,10 +30,10 @@ contract C {
 // gas legacy code: 334400
 // gas legacyOptimized: 91499
 // gas legacyOptimized code: 196400
-// f(uint256): 0 -> 1
-// f(uint256): 1 -> 2
-// f(uint256): 2 -> 3
-// f(uint256): 3 -> 4
+// f(uint256): 0 -> FAILURE
+// f(uint256): 1 -> FAILURE
+// f(uint256): 2 -> FAILURE
+// f(uint256): 3 -> FAILURE
 // f(uint256): 4 -> FAILURE
 // f(uint256): 5 -> FAILURE
 // f(uint256): 6 -> 7

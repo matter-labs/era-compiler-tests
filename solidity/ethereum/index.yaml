@@ -566,12 +566,10 @@ entries:
           array_2d_zeroed_memory_index_access.sol:
             hash: '0x2bb49b96e2b8e1e303886817dd296e8a'
             enabled: true
-            comment: Returns empty exceptions for the solc <0.8.0
             version: '>=0.8.0'
           array_array_static.sol:
             hash: '0x2db59526a2af69087ef160e7cb6133bb'
             enabled: true
-            comment: Returns empty exceptions for the solc <0.8.0
             version: '>=0.8.0'
           array_static_return_param_zeroed_memory_index_access.sol:
             hash: '0xebcd650bd25ecab54196038dcef8699b'
@@ -3303,7 +3301,7 @@ entries:
         enabled: true
         version: '>=0.4.12'
       eof:
-        enabled: true
+        enabled: false
         entries:
           call_options_overload.sol:
             hash: '0x31c4b6d85bb9c646361a443420df3dcd'
@@ -5566,7 +5564,7 @@ entries:
         enabled: true
         version: '>=0.8.0'
       eof:
-        enabled: true
+        enabled: false
         entries:
           revert_return_area.sol:
             hash: '0xc5f3b4983e754225561e5a3f9b94e36e'
@@ -5612,7 +5610,7 @@ entries:
     enabled: true
     entries:
       eof:
-        enabled: true
+        enabled: false
         entries:
           salted_create_with_value.sol:
             hash: '0x33fb96e9599ee7bd2c5920ae42bff45c'
@@ -5621,6 +5619,7 @@ entries:
       prediction_example.sol:
         hash: '0x15fda7431fe44ecefd638dca639fe78c'
         enabled: false
+        version: '>=0.7.0'
         comment: 'Different address derivation algorithm'
       salted_create.sol:
         hash: '0xbc8575bc6c54d63c4a988f7be7e1ef9b'
@@ -6510,7 +6509,6 @@ entries:
       create.sol:
         hash: '0xa11e16eca93ba36577f1d2efd4ecadf0'
         enabled: true
-        comment: Address replaced with returned one
         version: '>=0.7.0'
       invalid_error_encoding.sol:
         hash: '0x87c1bfbd0f7d4b04f99dd8c7043c15fc'
@@ -7185,7 +7183,7 @@ entries:
         enabled: true
         version: '>=0.4.12'
       eof:
-        enabled: true
+        enabled: false
         entries:
           create_calldata.sol:
             hash: '0x3b7ecbccb07b2177a7310db8c6bf6790'

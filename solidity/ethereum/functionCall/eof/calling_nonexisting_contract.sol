@@ -4,7 +4,7 @@ abstract contract D {
 
 
 contract C {
-    D d = D(address(0x1212));
+    D d = D(address(0x12121212));
 
     function f() public returns (uint256) {
         // This call throws on legacy bytecode because of calling nonexisting contract. Legacy checks that there is
