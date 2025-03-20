@@ -1,5 +1,5 @@
 contract C {
-    function g(bool x) external pure {
+    function g(bool x) public pure {
         require(x);
     }
     function f(bool x) public returns (uint) {

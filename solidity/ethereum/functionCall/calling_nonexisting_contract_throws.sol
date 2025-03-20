@@ -4,7 +4,7 @@ abstract contract D {
 
 
 contract C {
-    D d = D(address(0x1212));
+    D d = D(address(0x12121212));
 
     function f() public returns (uint256) {
         d.g();
@@ -12,7 +12,7 @@ contract C {
     }
 
     function g() public returns (uint256) {
-        d.g{gas: 1}();
+        d.g{gas: 200}();
         return 7;
     }
 
@@ -21,6 +21,8 @@ contract C {
         return 7;
     }
 }
+// ====
+// bytecodeFormat: legacy
 // ----
 // f() -> FAILURE
 // g() -> FAILURE

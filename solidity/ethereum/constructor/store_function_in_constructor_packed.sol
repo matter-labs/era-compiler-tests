@@ -3,7 +3,7 @@ contract C {
     function(uint16) returns (uint16) internal x;
     uint16 public other = 0x1fff;
 
-    constructor() public {
+    constructor() {
         x = doubleInv;
         result_in_constructor = use(2);
     }
@@ -16,6 +16,8 @@ contract C {
         return x(_arg);
     }
 }
+// ====
+// bytecodeFormat: legacy,>=EOFv1
 // ----
 // use(uint16): 3 -> 0xfff9
 // result_in_constructor() -> 0xfffb

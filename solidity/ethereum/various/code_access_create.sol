@@ -1,3 +1,4 @@
+// TODO: Recreate this test when eofcreate will be allowed in inline assembly.
 contract D {
     uint256 x;
 
@@ -21,6 +22,8 @@ contract C {
         return d.f();
     }
 }
+// ====
+// bytecodeFormat: legacy
 // ----
 // test() -> 7
 // gas legacy: 76647

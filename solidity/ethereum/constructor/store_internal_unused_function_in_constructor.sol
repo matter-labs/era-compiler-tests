@@ -1,7 +1,7 @@
 contract C {
     function() returns (uint256) internal x;
 
-    constructor() public {
+    constructor() {
         x = unused;
     }
 
@@ -13,5 +13,7 @@ contract C {
         return x();
     }
 }
+// ====
+// bytecodeFormat: legacy,>=EOFv1
 // ----
 // t() -> 7

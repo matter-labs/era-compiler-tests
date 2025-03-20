@@ -8,5 +8,6 @@ contract C {
 // ====
 // EVMVersion: >=byzantium
 // revertStrings: debug
+// bytecodeFormat: legacy
 // ----
 // g() -> FAILURE
