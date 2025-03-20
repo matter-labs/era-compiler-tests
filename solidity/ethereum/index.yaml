@@ -2173,15 +2173,15 @@ entries:
       store_function_in_constructor.sol:
         hash: '0x3651e94ee8bb708d3416d4eeb650f811'
         enabled: true
-        version: '>=0.4.22'
+        version: '>=0.7.0'
       store_function_in_constructor_packed.sol:
         hash: '0xc40c133a1f8ac70f561718e5e0cc366a'
         enabled: true
-        version: '>=0.4.22'
+        version: '>=0.7.0'
       store_internal_unused_function_in_constructor.sol:
         hash: '0x7c5c3afc2fb75f8a3a5ddcc0eb400f0e'
         enabled: true
-        version: '>=0.4.22'
+        version: '>=0.7.0'
       store_internal_unused_library_function_in_constructor.sol:
         hash: '0x970e32c54e6b8ce1405b8a447681269a'
         enabled: true
@@ -3516,11 +3516,7 @@ entries:
       function_external_delete_storage.sol:
         hash: '0x5c417d52a0db6291195f5cd46ca97cdc'
         enabled: true
-        modes:
-        - Y >=0.8.2
-        - E
-        - I
-        version: '>=0.4.22'
+        version: '>=0.8.12'
       function_type_library_internal.sol:
         hash: '0x9e6abfc513cb2151f834285493d68eee'
         enabled: true
@@ -3775,7 +3771,7 @@ entries:
       address_overload_resolution.sol:
         hash: '0x1a20236344eb113cbaba2589d073fc7f'
         enabled: true
-        version: '>=0.4.18'
+        version: '>=0.6.0'
       base_access_to_function_type_variables.sol:
         hash: '0xd7c16886991cf1ceecb9670a881f4f9f'
         enabled: true
@@ -7236,7 +7232,7 @@ entries:
       many_subassemblies.sol:
         hash: '0xc5d103863882053c7dd35f1750af4ca5'
         enabled: true
-        version: '>=0.4.12'
+        version: '>=0.6.0'
       memory_overwrite.sol:
         hash: '0x67eee555de4607e6eca8f5778c8697d8'
         enabled: true
