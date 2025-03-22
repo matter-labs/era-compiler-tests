@@ -1,11 +1,11 @@
-//! { "cases": [ {
+//! { "targets": [ "evm" ], "cases": [ {
 //!     "name": "main",
 //!     "inputs": [
 //!         {
 //!             "method": "#deployer",
 //!             "calldata": [
 //!                 "0x05",
-//!                 "0x07"
+//!                 "0x0b"
 //!             ],
 //!             "expected": [
 //!                 "Test.address"
@@ -19,23 +19,15 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "148"
+//!         "1024"
 //!     ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.5;
+pragma solidity >=0.8.0;
 
 contract Test {
-    uint256 constant SOMETHING = 42;
-    uint256 constant SOMETHING_ELSE = 88;
-
-    struct Data {
-        uint256 c;
-        uint256 d;
-    }
-
     uint256 immutable a;
     uint256 immutable b;
 
@@ -44,13 +36,19 @@ contract Test {
         b = y;
     }
 
-    function inner(Data memory data, uint256 _value, uint8 literal) internal returns(uint256) {
-        return ((a + data.c + b + data.d + _value) * literal * SOMETHING - SOMETHING_ELSE) / 1000;
+    function double(uint256 _value) internal returns(uint256) {
+        return _value * 2;
+    }
+
+    function triple(uint256 _value) internal returns(uint256) {
+        return 3 * _value;
+    }
+
+    function quadruple(uint256 _value) internal returns(uint256) {
+        return _value * 4;
     }
 
     function main(uint256 _value) external returns(uint256) {
-        Data memory data = Data({c: 10, d: 20});
-
-        return inner(data, _value, 42);
+        return a + quadruple(triple(double(_value))) + b;
     }
 }

@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "eravm" ], "cases": [ {
 //!     "name": "test",
 //!     "inputs": [
 //!         {
@@ -8,7 +8,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "7", "6", "7"
+//!         "5", "0", "7"
 //!     ]
 //! } ] }
 
@@ -31,8 +31,8 @@ contract TestC {
 contract TestB is TestC {
     uint256 immutable y;
 
-    constructor() {
-        y = 6;
+    constructor(uint _val) {
+        y = _val;
     }
 
     function fB() public returns (uint256) {
@@ -43,8 +43,8 @@ contract TestB is TestC {
 contract Test is TestC, TestB {
     uint256 immutable x;
 
-    constructor() {
-        x = fC();
+    constructor() TestB(fC()) {
+        x = 5;
     }
 
     function f() public returns (uint256, uint256, uint256) {

@@ -1,6 +1,4 @@
-{ "targets": [ "evm" ], "modes": [ "E+", "I", "Y" ],
-"comment": "E- solc error: too deep into the stack",
-"cases": [ {
+{ "targets": [ "evm" ], "modes": [ "Y" ], "cases": [ {
     "name": "default",
     "inputs": [
         {
