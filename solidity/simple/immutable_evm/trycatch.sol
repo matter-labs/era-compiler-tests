@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "evm" ], "cases": [ {
 //!     "name": "trycatch",
 //!     "inputs": [
 //!         {
@@ -12,7 +12,7 @@
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.5 <=0.8.19;
+pragma solidity >=0.8.0 <=0.8.19;
 
 contract Test {
     uint256 public immutable Temp;

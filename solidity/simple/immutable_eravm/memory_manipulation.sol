@@ -1,6 +1,6 @@
 //! { "modes": [
 //!     "Y", "E+ <=0.8.12", "E+ >=0.8.15", "E-", "I"
-//! ], "cases": [
+//! ], "targets": [ "eravm" ], "cases": [
 //!         {
 //!             "name": "main",
 //!             "inputs": [

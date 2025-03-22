@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "eravm" ], "cases": [ {
 //!     "name": "main",
 //!     "inputs": [
 //!         {
@@ -29,17 +29,17 @@
 pragma solidity >=0.6.5;
 
 contract Test {
-    uint8 immutable field_1;
-    uint8 immutable field_2;
-    uint8 immutable field_3;
+    uint256 immutable field_1;
+    uint256 immutable field_2;
+    uint256 immutable field_3;
 
-    constructor(uint8 a, uint8 b, uint8 c) public {
+    constructor(uint256 a, uint256 b, uint256 c) public {
         field_1 = a;
         field_2 = b;
         field_3 = c;
     }
 
     function main(uint8 witness) external returns(uint8) {
-        return witness + field_1 * field_2 * field_3;
+        return witness + uint8(field_1) * uint8(field_2) * uint8(field_3);
     }
 }

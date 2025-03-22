@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "evm" ], "cases": [ {
 //!     "name": "main",
 //!     "inputs": [
 //!         {
@@ -15,31 +15,31 @@
 //!         {
 //!             "method": "main",
 //!             "calldata": [
-//!                 "16"
+//!                 "12"
 //!             ]
 //!         }
 //!     ],
 //!     "expected": [
-//!         "81"
+//!         "42"
 //!     ]
 //! } ] }
 
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.5;
+pragma solidity >=0.8.0;
 
 contract Test {
-    uint256 immutable field_1;
-    uint256 immutable field_2;
-    uint256 immutable field_3;
+    uint8 immutable field_1;
+    uint8 immutable field_2;
+    uint8 immutable field_3;
 
-    constructor(uint256 a, uint256 b, uint256 c) public {
+    constructor(uint8 a, uint8 b, uint8 c) public {
         field_1 = a;
         field_2 = b;
         field_3 = c;
     }
 
     function main(uint8 witness) external returns(uint8) {
-        return 19 * 3 - 8 / uint8(field_1) + (witness / (uint8(field_2) - 3) + 5) * (8 / uint8(field_3) / 2);
+        return witness + field_1 * field_2 * field_3;
     }
 }
