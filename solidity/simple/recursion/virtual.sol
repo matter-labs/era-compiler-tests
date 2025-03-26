@@ -27,7 +27,7 @@
 //!   }
 //! ] }
 
-// `virtual` and `override` was added in v0.6.0.
+// `virtual` and `override` were added in v0.6.0.
 pragma solidity >=0.6.0;
 
 contract P2 {
