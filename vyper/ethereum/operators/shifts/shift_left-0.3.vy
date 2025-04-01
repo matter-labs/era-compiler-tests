@@ -1,6 +1,6 @@
 @external
 def f(a: uint256, b: uint256) -> uint256:
-    return a << b
+    return shift(a, convert(b, int256))
     
 # ----
 # f(uint256,uint256): 0x4266, 0x0 -> 0x4266

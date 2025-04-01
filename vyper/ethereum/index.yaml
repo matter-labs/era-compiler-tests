@@ -949,8 +949,12 @@ entries:
     entries:
       string_to_bytes.vy:
         enabled: true
+  dirty_calldata_bytes-0.3.vy:
+    enabled: true
+    version: '<=0.3.10'
   dirty_calldata_bytes.vy:
     enabled: true
+    version: '>=0.4.0'
   dirty_calldata_dynamic_array.vy:
     enabled: true
   ecrecover:
@@ -1357,10 +1361,18 @@ entries:
           bitwise_shifting_constants_constantinople.vy:
             enabled: true
             version: '>=0.4.0'
+          shift_cleanup-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_cleanup.vy:
             enabled: true
+            version: '>=0.4.0'
+          shift_cleanup_garbled-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_cleanup_garbled.vy:
             enabled: true
+            version: '>=0.4.0'
           shift_constant_left-0.3.vy:
             enabled: true
             version: '<=0.3.10'
@@ -1373,21 +1385,45 @@ entries:
           shift_constant_right.vy:
             enabled: true
             version: '>=0.4.0'
+          shift_left-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_left.vy:
             enabled: true
+            version: '>=0.4.0'
+          shift_overflow-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_overflow.vy:
             enabled: true
+            version: '>=0.4.0'
+          shift_right-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_right.vy:
             enabled: true
+            version: '>=0.4.0'
+          shift_underflow_negative_rvalue-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shift_underflow_negative_rvalue.vy:
             enabled: true
+            version: '>=0.4.0'
+          shifts-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           shifts.vy:
             enabled: true
+            version: '>=0.4.0'
   optimizer:
     enabled: true
     entries:
+      shift_bytes-0.3.vy:
+        enabled: true
+        version: '<=0.3.10'
       shift_bytes.vy:
         enabled: true
+        version: '>=0.4.0'
   reverts:
     enabled: true
     entries:
@@ -2134,8 +2170,12 @@ entries:
       storage:
         enabled: true
         entries:
+          dirty_storage_bytes_long-0.3.vy:
+            enabled: true
+            version: '<=0.3.10'
           dirty_storage_bytes_long.vy:
             enabled: true
+            version: '>=0.4.0'
           mappings-0.3.vy:
             enabled: true
             version: '<=0.3.10'
