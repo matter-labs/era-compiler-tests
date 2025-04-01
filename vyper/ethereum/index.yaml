@@ -807,9 +807,14 @@ entries:
         enabled: true
       sha256_empty.vy:
         enabled: true
+  byte_array_to_storage_cleanup-0.4.vy:
+    enabled: true
+    comment: "Without function g(with memory access from assembly)"
+    version: '<=0.4.0'
   byte_array_to_storage_cleanup.vy:
     enabled: true
     comment: "Without function g(with memory access from assembly)"
+    version: '>=0.4.1'
   calldata:
     enabled: true
     entries:
@@ -978,54 +983,110 @@ entries:
   events:
     enabled: true
     entries:
+      event-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event.vy:
         enabled: true
+        version: '>=0.4.1'
       event_constructor-0.3.vy:
         enabled: true
         version: '<=0.3.10'
+      event_constructor-0.4.0.vy:
+        enabled: true
+        version: '=0.4.0'
       event_constructor.vy:
         enabled: true
-        version: '>=0.4.0'
+        version: '>=0.4.1'
+      event_dynamic_array_memory-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_dynamic_array_memory.vy:
         enabled: true
+        version: '>=0.4.1'
       event_dynamic_array_storage-0.3.vy:
         enabled: true
         version: '<=0.3.10'
+      event_dynamic_array_storage-0.4.0.vy:
+        enabled: true
+        version: '=0.4.0'
       event_dynamic_array_storage.vy:
         enabled: true
-        version: '>=0.4.0'
+        version: '>=0.4.1'
+      event_dynamic_nested_array_memory_v2-0.4.vy:
+        enabled: true
+        version: '>=0.3.9, <0.4.1'
       event_dynamic_nested_array_memory_v2.vy:
         enabled: true
-        version: '>=0.3.9'
+        version: '>=0.4.1'
+      event_dynamic_nested_array_storage_v2-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_dynamic_nested_array_storage_v2.vy:
         enabled: true
+        version: '>=0.4.1'
+      event_emit-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_emit.vy:
         enabled: true
+        version: '>=0.4.1'
+      event_indexed_mixed-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_indexed_mixed.vy:
         enabled: true
+        version: '>=0.4.1'
       event_indexed_string.vy:
         enabled: false
         comment: "Disabled because event indexes may only be value types"
+      event_lots_of_data-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_lots_of_data.vy:
         enabled: true
+        version: '>=0.4.1'
       event_no_arguments.vy:
         enabled: true
+      event_really_lots_of_data-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_really_lots_of_data.vy:
         enabled: true
+        version: '>=0.4.1'
+      event_really_lots_of_data_from_storage-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_really_lots_of_data_from_storage.vy:
         enabled: true
+        version: '>=0.4.1'
+      event_really_really_lots_of_data_from_storage-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_really_really_lots_of_data_from_storage.vy:
         enabled: true
+        version: '>=0.4.1'
+      event_string-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_string.vy:
         enabled: true
+        version: '>=0.4.1'
       event_struct_memory_v2-0.3.vy:
         enabled: true
         version: '<=0.3.10'
+      event_struct_memory_v2-0.4.0.vy:
+        enabled: true
+        version: '=0.4.0'
       event_struct_memory_v2.vy:
         enabled: true
-        version: '>=0.4.0'
+        version: '>=0.4.1'
+      event_struct_storage_v2-0.4.vy:
+        enabled: true
+        version: '<=0.4.0'
       event_struct_storage_v2.vy:
         enabled: true
+        version: '>=0.4.1'
   expressions:
     enabled: true
     entries:
@@ -1625,10 +1686,14 @@ entries:
         enabled: true
         comment: "Without error"
         version: '<=0.3.10'
+      empty_storage_string-0.4.0.vy:
+        enabled: true
+        comment: "Without error"
+        version: '=0.4.0'
       empty_storage_string.vy:
         enabled: true
         comment: "Without error"
-        version: '>=0.4.0'
+        version: '>=0.4.1'
       empty_string.vy:
         enabled: true
       empty_string_input.vy:
@@ -1718,9 +1783,12 @@ entries:
       event-0.3.vy:
         enabled: true
         version: '<=0.3.10'
+      event-0.4.0.vy:
+        enabled: true
+        version: '=0.4.0'
       event.vy:
         enabled: true
-        version: '>=0.4.0'
+        version: '>=0.4.1'
       global.vy:
         enabled: true
       lone_struct_array_type.vy:
@@ -1902,9 +1970,12 @@ entries:
       erc20-0.3.vy:
         enabled: true
         version: '>=0.3.9, <=0.3.10'
+      erc20-0.4.0.vy:
+        enabled: true
+        version: '=0.4.0'
       erc20.vy:
         enabled: true
-        version: '>=0.4.0'
+        version: '>=0.4.1'
       flipping_sign_tests-0.3.vy:
         enabled: true
         version: '<=0.3.10'

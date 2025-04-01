@@ -20,7 +20,7 @@ def _transfer(from_: address, to: address, value_: uint256):
     # The subtraction and addition here will revert on overflow.
     self._balances[from_] = self._balances[from_] - value_
     self._balances[to] = self._balances[to] + value_
-    log Transfer(from_=from_, to=to, value=value_)
+    log Transfer(from_, to, value_)
 
 @internal
 def _mint(account: address, value_: uint256):
@@ -29,7 +29,7 @@ def _mint(account: address, value_: uint256):
     # The additions here will revert on overflow.
     self._totalSupply = self._totalSupply + value_
     self._balances[account] = self._balances[account] + value_
-    log Transfer(from_=convert(0, address), to=account, value=value_)
+    log Transfer(convert(0, address), account, value_)
 
 @internal
 def _burn(account: address, value_: uint256):
@@ -38,7 +38,7 @@ def _burn(account: address, value_: uint256):
     # The subtractions here will revert on overflow.
     self._totalSupply = self._totalSupply - value_
     self._balances[account] = self._balances[account] - value_
-    log Transfer(from_=account, to=convert(0, address), value=value_)
+    log Transfer(account, convert(0, address), value_)
 
 @internal
 def _approve(owner: address, spender: address, value_: uint256):
@@ -46,7 +46,7 @@ def _approve(owner: address, spender: address, value_: uint256):
     assert spender != convert(0, address), "ERC20: approve to the zero address"
 
     self._allowances[owner][spender] = value_
-    log Approval(owner=owner, spender=spender, value=value_)
+    log Approval(owner, spender, value_)
 
 @internal
 def _burnFrom(account: address, value_: uint256):

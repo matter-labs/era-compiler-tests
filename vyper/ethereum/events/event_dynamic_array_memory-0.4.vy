@@ -7,7 +7,7 @@ def createEvent(x: uint256):
     arr[0] = x
     arr[1] = x + 1
     arr[2] = x + 2
-    log E(_=arr)
+    log E(arr)
 
 # ----
 # createEvent(uint256): 42 ->

@@ -50,11 +50,11 @@ def m() -> String[192]:
 
 @external
 def o():
-    log EmptyEvent(_=self.emptyString)
+    log EmptyEvent(self.emptyString)
     
 @external
 def p():
-    log EmptyEvent(_="")
+    log EmptyEvent("")
      
 @external
 def q() -> Bytes[100]:

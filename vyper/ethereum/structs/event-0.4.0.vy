@@ -6,7 +6,7 @@ event Ev:
 
 @internal
 def o():
-    log Ev(i=Item(x=1))
+    log Ev(Item(x=1))
     
 @external
 def f():

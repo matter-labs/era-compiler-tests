@@ -5,10 +5,7 @@ event Deposit:
 
 @deploy
 def __init__():
-    log Deposit(
-        _from=msg.sender,
-        _id=extract32(convert("abcdefghijklmnopqrstuvwxyz220322", Bytes[32]), 0),
-        _value=7)
+    log Deposit(msg.sender, extract32(convert("abcdefghijklmnopqrstuvwxyz220322", Bytes[32]), 0), 7)
 
 # ----
 # constructor()

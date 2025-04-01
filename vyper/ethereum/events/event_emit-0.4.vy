@@ -6,7 +6,7 @@ event Deposit:
 @external
 @payable
 def deposit(_id: bytes32):
-    log Deposit(_from=msg.sender, _id=_id, _value=msg.value)
+    log Deposit(msg.sender, _id, msg.value)
 
 # ----
 # deposit(bytes32), 18 wei: 0x1234 ->

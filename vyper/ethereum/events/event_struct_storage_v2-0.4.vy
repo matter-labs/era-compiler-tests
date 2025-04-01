@@ -2,11 +2,14 @@ struct S:
     a: uint256
 
 event E:
-    s: S
+    _: S
+
+s: S
 
 @external
 def createEvent(x: uint256):
-    log E(s=S(a=x))
+    self.s.a = x
+    log E(self.s)
 
 # ----
 # createEvent(uint256): 42 ->

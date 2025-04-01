@@ -11,7 +11,7 @@ event E:
 
 @external
 def deposit():
-    log E(a=1, r=2, b=3, c=convert("def", Bytes[100]))
+    log E(1, 2, 3, convert("def", Bytes[100]))
 
 # ----
 # deposit() ->

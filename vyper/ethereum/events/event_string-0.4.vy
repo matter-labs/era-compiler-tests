@@ -3,7 +3,7 @@ event E:
 
 @external
 def deposit():
-    log E(r="HELLO WORLD")
+    log E("HELLO WORLD")
 
 # ----
 # deposit() ->
