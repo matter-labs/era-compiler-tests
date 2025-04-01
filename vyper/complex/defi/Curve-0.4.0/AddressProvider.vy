@@ -101,7 +101,7 @@ def add_new_id(_address: address, _description: String[64]) -> uint256:
     )
     self.queue_length = id + 1
 
-    log NewAddressIdentifier(id=id, addr=_address, description=_description)
+    log NewAddressIdentifier(id, _address, _description)
 
     return id
 
@@ -128,7 +128,7 @@ def set_address(_id: uint256, _address: address) -> bool:
     if _id == 0:
         self.registry = _address
 
-    log AddressModified(id=_id, new_address=_address, version=version)
+    log AddressModified(_id, _address, version)
 
     return True
 
@@ -152,7 +152,7 @@ def unset_address(_id: uint256) -> bool:
     if _id == 0:
         self.registry = empty(address)
 
-    log AddressModified(id=_id, new_address=empty(address), version=self.get_id_info[_id].version)
+    log AddressModified(_id, empty(address), self.get_id_info[_id].version)
 
     return True
 
@@ -172,7 +172,7 @@ def commit_transfer_ownership(_new_admin: address) -> bool:
     self.transfer_ownership_deadline = deadline
     self.future_admin = _new_admin
 
-    log CommitNewAdmin(deadline=deadline, admin=_new_admin)
+    log CommitNewAdmin(deadline, _new_admin)
 
     return True
 
@@ -193,7 +193,7 @@ def apply_transfer_ownership() -> bool:
     self.admin = new_admin
     self.transfer_ownership_deadline = 0
 
-    log NewAdmin(admin=new_admin)
+    log NewAdmin(new_admin)
 
     return True
 

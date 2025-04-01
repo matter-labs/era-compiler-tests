@@ -41,7 +41,7 @@ def __init__(_name: String[64], _symbol: String[32]):
     self.name = _name
     self.symbol = _symbol
     self.minter = msg.sender
-    log Transfer(_from=empty(address), _to=msg.sender, _value=0)
+    log Transfer(empty(address), msg.sender, 0)
 
 
 @view
@@ -67,7 +67,7 @@ def transfer(_to : address, _value : uint256) -> bool:
     self.balanceOf[msg.sender] -= _value
     self.balanceOf[_to] += _value
 
-    log Transfer(_from=msg.sender, _to=_to, _value=_value)
+    log Transfer(msg.sender, _to, _value)
     return True
 
 
@@ -86,7 +86,7 @@ def transferFrom(_from : address, _to : address, _value : uint256) -> bool:
     if _allowance != max_value(uint256):
         self.allowance[_from][msg.sender] = _allowance - _value
 
-    log Transfer(_from=_from, _to=_to, _value=_value)
+    log Transfer(_from, _to, _value)
     return True
 
 
@@ -106,7 +106,7 @@ def approve(_spender : address, _value : uint256) -> bool:
     """
     self.allowance[msg.sender][_spender] = _value
 
-    log Approval(_owner=msg.sender, _spender=_spender, _value=_value)
+    log Approval(msg.sender, _spender, _value)
     return True
 
 
@@ -123,7 +123,7 @@ def increaseAllowance(_spender: address, _added_value: uint256) -> bool:
     allowance: uint256 = self.allowance[msg.sender][_spender] + _added_value
     self.allowance[msg.sender][_spender] = allowance
 
-    log Approval(_owner=msg.sender, _spender=_spender, _value=allowance)
+    log Approval(msg.sender, _spender, allowance)
     return True
 
 
@@ -140,7 +140,7 @@ def decreaseAllowance(_spender: address, _subtracted_value: uint256) -> bool:
     allowance: uint256 = self.allowance[msg.sender][_spender] - _subtracted_value
     self.allowance[msg.sender][_spender] = allowance
 
-    log Approval(_owner=msg.sender, _spender=_spender, _value=allowance)
+    log Approval(msg.sender, _spender, allowance)
     return True
 
 
@@ -158,7 +158,7 @@ def mint(_to: address, _value: uint256) -> bool:
     self.totalSupply += _value
     self.balanceOf[_to] += _value
 
-    log Transfer(_from=empty(address), _to=_to, _value=_value)
+    log Transfer(empty(address), _to, _value)
     return True
 
 
@@ -174,7 +174,7 @@ def burnFrom(_to: address, _value: uint256) -> bool:
     self.totalSupply -= _value
     self.balanceOf[_to] -= _value
 
-    log Transfer(_from=_to, _to=empty(address), _value=_value)
+    log Transfer(_to, empty(address), _value)
     return True
 
 

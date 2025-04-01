@@ -694,7 +694,7 @@ def _add_pool(
     self.get_lp_token[_pool] = _lp_token
     self.last_updated = block.timestamp
 
-    log PoolAdded(pool=_pool, rate_method_id=slice(_rate_info, 28, 4))
+    log PoolAdded(_pool, slice(_rate_info, 28, 4))
 
 
 @internal
@@ -840,7 +840,7 @@ def _get_new_pool_decimals(_coins: address[MAX_COINS], _n_coins: uint256) -> uin
             value = staticcall ERC20(coin).decimals()
             assert value < 256  # dev: decimal overflow
 
-        packed += value << convert(i * 8, uint128)
+        packed += shift(value, i * 8)
 
     return packed
 
@@ -853,9 +853,9 @@ def _remove_market(_pool: address, _coina: address, _coinb: address):
         indexes: uint256 = self.coin_swap_indexes[key]
         if convert(_coina, uint256) < convert(_coinb, uint256):
             self._unregister_coin_pair(_coina, _coinb, indexes % 2 ** 128)
-            self._unregister_coin_pair(_coinb, _coina, indexes >> 128)
+            self._unregister_coin_pair(_coinb, _coina, shift(indexes, -128))
         else:
-            self._unregister_coin_pair(_coina, _coinb, indexes >> 128)
+            self._unregister_coin_pair(_coina, _coinb, shift(indexes, -128))
             self._unregister_coin_pair(_coinb, _coina, indexes % 2 ** 128)
         self.coin_swap_indexes[key] = 0
     for i: uint256 in range(65536):
@@ -899,7 +899,7 @@ def add_pool(
     self._add_pool(
         msg.sender,
         _pool,
-        _n_coins + (_n_coins << 128),
+        _n_coins + shift(_n_coins, 128),
         _lp_token,
         _rate_info,
         _has_initial_A,
@@ -948,7 +948,7 @@ def add_pool_without_underlying(
     self._add_pool(
         msg.sender,
         _pool,
-        _n_coins + (_n_coins << 128),
+        _n_coins + shift(_n_coins, 128),
         _lp_token,
         _rate_info,
         _has_initial_A,
@@ -967,10 +967,10 @@ def add_pool_without_underlying(
     for i: uint256 in range(MAX_COINS_UINT256):
         if i == _n_coins:
             break
-        offset: uint128 = convert(8 * convert(i, int128), uint128)
-        if (_use_rates >> offset) % 256 == 0:
+        offset: int128 = -8 * convert(i, int128)
+        if shift(_use_rates, offset) % 256 == 0:
             self.pool_data[_pool].ul_coins[i] = coins[i]
-            udecimals += ((decimals >> offset) % 256 << offset)
+            udecimals += shift(shift(decimals, offset) % 256, -offset)
 
     self.pool_data[_pool].underlying_decimals = udecimals
 
@@ -999,13 +999,13 @@ def add_metapool(
     base_pool: address = _base_pool
     if base_pool == empty(address):
         base_pool = staticcall CurveMetapool(_pool).base_pool()
-    base_n_coins: uint256 = self.pool_data[base_pool].n_coins >> 128
+    base_n_coins: uint256 = shift(self.pool_data[base_pool].n_coins, -128)
     assert base_n_coins > 0  # dev: base pool unknown
 
     self._add_pool(
         msg.sender,
         _pool,
-        base_n_coins + base_coin_offset + (_n_coins << 128),
+        base_n_coins + base_coin_offset + shift(_n_coins, 128),
         _lp_token,
         empty(bytes32),
         True,
@@ -1036,8 +1036,8 @@ def add_metapool(
             self._register_coin(base_coins[x])
         self.pool_data[_pool].ul_coins[i] = coin
 
-    underlying_decimals: uint256 = (
-        self.pool_data[base_pool].decimals << convert(8 * convert(base_coin_offset, int128), uint128)
+    underlying_decimals: uint256 = shift(
+        self.pool_data[base_pool].decimals, 8 * convert(base_coin_offset, int128)
     )
     underlying_decimals += decimals % 256 ** base_coin_offset
 
@@ -1138,7 +1138,7 @@ def remove_pool(_pool: address):
 
     self.pool_data[_pool].base_pool = empty(address)
     self.last_updated = block.timestamp
-    log PoolRemoved(pool=_pool)
+    log PoolRemoved(_pool)
 
 
 @external

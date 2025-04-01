@@ -347,12 +347,7 @@ def add_liquidity(amounts: uint256[N_COINS], min_mint_amount: uint256):
     # Mint pool tokens
     extcall self.token.mint(msg.sender, mint_amount)
 
-    log AddLiquidity(
-        provider=msg.sender,
-        token_amounts=amounts,
-        fees=fees, invariant=D1,
-        token_supply=token_supply + mint_amount
-    )
+    log AddLiquidity(msg.sender, amounts, fees, D1, token_supply + mint_amount)
 
 
 @view
@@ -494,13 +489,7 @@ def exchange(i: int128, j: int128, dx: uint256, min_dy: uint256):
     if len(_response) > 0:
         assert convert(_response, bool)  # dev: failed transfer
 
-    log TokenExchange(
-        buyer=msg.sender,
-        sold_id=i,
-        tokens_sold=dx,
-        bought_id=j,
-        tokens_bought=dy
-    )
+    log TokenExchange(msg.sender, i, dx, j, dy)
 
 
 @external
@@ -531,12 +520,7 @@ def remove_liquidity(_amount: uint256, min_amounts: uint256[N_COINS]):
 
     extcall self.token.burnFrom(msg.sender, _amount)  # dev: insufficient funds
 
-    log RemoveLiquidity(
-        provider=msg.sender,
-        token_amounts=amounts,
-        fees=fees,
-        token_supply=total_supply - _amount
-    )
+    log RemoveLiquidity(msg.sender, amounts, fees, total_supply - _amount)
 
 
 @external
@@ -591,13 +575,7 @@ def remove_liquidity_imbalance(amounts: uint256[N_COINS], max_burn_amount: uint2
             if len(_response) > 0:
                 assert convert(_response, bool)  # dev: failed transfer
 
-    log RemoveLiquidityImbalance(
-        provider=msg.sender,
-        token_amounts=amounts,
-        fees=fees,
-        invariant=D1,
-        token_supply=token_supply - token_amount
-    )
+    log RemoveLiquidityImbalance(msg.sender, amounts, fees, D1, token_supply - token_amount)
 
 
 @view
@@ -713,11 +691,7 @@ def remove_liquidity_one_coin(_token_amount: uint256, i: int128, min_amount: uin
     if len(_response) > 0:
         assert convert(_response, bool)  # dev: failed transfer
 
-    log RemoveLiquidityOne(
-        provider=msg.sender,
-        token_amount=_token_amount,
-        coin_amount=dy
-    )
+    log RemoveLiquidityOne(msg.sender, _token_amount, dy)
 
 
 ### Admin functions ###
@@ -736,12 +710,7 @@ def ramp_A(_future_A: uint256, _future_time: uint256):
     self.initial_A_time = block.timestamp
     self.future_A_time = _future_time
 
-    log RampA(
-        old_A=_initial_A,
-        new_A=_future_A,
-        initial_time=block.timestamp,
-        future_time=_future_time
-    )
+    log RampA(_initial_A, _future_A, block.timestamp, _future_time)
 
 
 @external
@@ -755,7 +724,7 @@ def stop_ramp_A():
     self.future_A_time = block.timestamp
     # now (block.timestamp < t1) is always False, so we return saved A
 
-    log StopRampA(A=current_A, t=block.timestamp)
+    log StopRampA(current_A, block.timestamp)
 
 
 @external
@@ -770,7 +739,7 @@ def commit_new_fee(new_fee: uint256, new_admin_fee: uint256):
     self.future_fee = new_fee
     self.future_admin_fee = new_admin_fee
 
-    log CommitNewFee(deadline=_deadline, fee=new_fee, admin_fee=new_admin_fee)
+    log CommitNewFee(_deadline, new_fee, new_admin_fee)
 
 
 @external
@@ -785,7 +754,7 @@ def apply_new_fee():
     self.fee = _fee
     self.admin_fee = _admin_fee
 
-    log NewFee(fee=_fee, admin_fee=_admin_fee)
+    log NewFee(_fee, _admin_fee)
 
 
 @external
@@ -804,7 +773,7 @@ def commit_transfer_ownership(_owner: address):
     self.transfer_ownership_deadline = _deadline
     self.future_owner = _owner
 
-    log CommitNewAdmin(deadline=_deadline, admin=_owner)
+    log CommitNewAdmin(_deadline, _owner)
 
 
 @external
@@ -817,7 +786,7 @@ def apply_transfer_ownership():
     _owner: address = self.future_owner
     self.owner = _owner
 
-    log NewAdmin(admin=_owner)
+    log NewAdmin(_owner)
 
 
 @external
