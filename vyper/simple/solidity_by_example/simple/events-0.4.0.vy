@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.1" ], "cases": [ {
+#! { "modes": [ "V =0.4.0" ], "cases": [ {
 #!     "name": "test",
 #!     "inputs": [
 #!         {
@@ -54,6 +54,6 @@ event AnotherLog:
 
 @external
 def test():
-    log Log(sender=msg.sender, message="Hello World!")
-    log Log(sender=msg.sender, message="Hello EVM!")
+    log Log(msg.sender, "Hello World!")
+    log Log(msg.sender, "Hello EVM!")
     log AnotherLog()

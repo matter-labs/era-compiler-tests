@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.1" ], "cases": [ {
+#! { "modes": [ "V =0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -126,9 +126,9 @@ event Complex:
 
 @external
 def test(number_: uint256):
-    log Empty(a=8923892323892398)
-    log OneWord(_=-128, x=CONST)
-    log TwoWords(_=abi_encode(Str(a=1, b=1)), __=Str(a=-128, b=max_value(uint256)))
-    log ThreeWords(ei=1, _=Str(a=127, b=number_), e=2)
-    log Dynamic(_=0xabcd, __="abc")
-    log Complex(bd=b"\x12\x34\x56\x78\x90", s=Str(a=-1, b=IMMUTABLE_), _=self.storage_var, __=[0], e=[0, 2, 1])
+    log Empty(8923892323892398)
+    log OneWord(-128, CONST)
+    log TwoWords(abi_encode(Str(a=1, b=1)), Str(a=-128, b=max_value(uint256)))
+    log ThreeWords(1, Str(a=127, b=number_), 2)
+    log Dynamic(0xabcd, "abc")
+    log Complex(b"\x12\x34\x56\x78\x90", Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])

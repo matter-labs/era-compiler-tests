@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.1" ], "cases": [ {
+#! { "modes": [ "V =0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -15,32 +15,36 @@
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xf2c6b74a4e42434bf406d1452c6d967321daaad79270822b1e44a42b0aa6aa1f",
-#!                     "8923892323892398"
+#!                     "0x0c5b4f36f8745c9db21282c9894b75174f0a8eedb32b243986263bfc37423006",
+#!                     "0x000000000000000000000000000000000000000000000000001fb43b97fabcae",
+#!                     "0x58ae9129f801e721b1bbf220c77ba8c48badd9b887f33def390a8120ed73c9cc"
 #!                 ],
 #!                 "values": []
 #!             },
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xd375ad4447ce145f0c0bc7b6812f104a5a7f36ed817acb678201996744d1f90f",
-#!                     "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80"
+#!                     "0xbe85b4ebd8e836631317dea26b2fecda32ab2ca5905447e4af0679ed1ee740c1",
+#!                     "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80",
+#!                     "0x000000000000000000000000000000000000000000000000000000ffffffffff"
 #!                 ],
 #!                 "values": ["0xdeadbeef"]
 #!             },
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xac1b2b27e9276508a24daed850569935a752bee82895f1eafc931385ff464472",
-#!                     "0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f"
+#!                     "0xc99cd386e37ac9867d36011c2a04b8781b453eaba2b930457cefe962680e7356",
+#!                     "0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f",
+#!                     "-1"
 #!                 ],
 #!                 "values": ["-128", "-1"]
 #!             },
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xec112c4347f79319b45baa137e38978bf34e893fffd566bb6eac424272d4bd45",
-#!                     "1"
+#!                     "0xe2bb4728120d1154c04e4dc7219c8d627cb8234b817f23f34de5468b6f0a8455",
+#!                     "1",
+#!                     "0xdf0e45714bf256afe7c550b1150d0958439b34ae307888e184b747e3dd414a4a"
 #!                 ],
 #!                 "values": [
 #!                     "127",
@@ -51,8 +55,9 @@
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xb003e25404531c83a6d0bdc419158b8c07c1a5f3e81ab387366c8b7e572c1ae5",
-#!                     "0xabcd000000000000000000000000000000000000000000000000000000000000"
+#!                     "0xf20f5ffcb271503e510c980b74d44f6628d621d291d150a564d6e1e261862374",
+#!                     "0xabcd000000000000000000000000000000000000000000000000000000000000",
+#!                     "0xdeadbeef00000000000000000000000000000000000000000000000000000000"
 #!                 ],
 #!                 "values": [
 #!                     "0x20",
@@ -63,8 +68,9 @@
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xcf3ebc0dada12385ab7c83ed0cbf88cb2a0fae271721947ab39af2fcc3b2df9c",
-#!                     "0x3a56b02b60d4990074262f496ac34733f870e1b7815719b46ce155beac5e1a41"
+#!                     "0x5b03996195c2a3d6c7f367a1aa8a3de816ca971102b6d28044fe4074186ea7d1",
+#!                     "0x3a56b02b60d4990074262f496ac34733f870e1b7815719b46ce155beac5e1a41",
+#!                     "0x5bb661834c674f8f35aa5071b921a42aeae177c4b8bec3e41e2beb11cc404805"
 #!                 ],
 #!                 "values": [
 #!                     "-1",
@@ -99,36 +105,44 @@ struct Str:
 
 event Empty:
     a: indexed(uint256)
+    _: indexed(Bytes[100])
 
 event OneWord:
     _: indexed(int8)
     x: uint256
+    u40ind: indexed(uint40)
 
 event TwoWords:
     _: indexed(Bytes[100])
-    __: Str
+    __: indexed(int256)
+    ___: Str
 
 event ThreeWords:
     ei: indexed(uint8)
+    dyn_arr_ind: indexed(Bytes[100])
     _: Str
     e: uint8
 
 event Dynamic:
     _: indexed(bytes2)
-    __: String[100]
+    __: indexed(bytes32)
+    ___: String[100]
 
 event Complex:
     bd: indexed(Bytes[100])
+    _: indexed(Bytes[100])
     s: Str
-    _: Bytes[100]
-    __: uint256[1]
+    __: Bytes[100]
+    ___: uint256[1]
     e: DynArray[uint8, 10]
 
 @external
 def test(number_: uint256):
-    log Empty(a=8923892323892398)
-    log OneWord(_=-128, x=CONST)
-    log TwoWords(_=abi_encode(Str(a=1, b=1)), __=Str(a=-128, b=max_value(uint256)))
-    log ThreeWords(ei=1, _=Str(a=127, b=number_), e=2)
-    log Dynamic(_=0xabcd, __="abc")
-    log Complex(bd=b"\x12\x34\x56\x78\x90", s=Str(a=-1, b=IMMUTABLE_), _=self.storage_var, __=[0], e=[0, 2, 1])
+    arr_u8: uint8[2] = [255, 0]
+    log Empty(8923892323892398, abi_encode(arr_u8))
+    log OneWord(-128, CONST, max_value(uint40))
+    log TwoWords(abi_encode(Str(a=1, b=1)), -1, Str(a=-128, b=max_value(uint256)))
+    ints: DynArray[int200, 10] = [-1, 131231231232134, 1]
+    log ThreeWords(1, slice(abi_encode(ints), 64, 96), Str(a=127, b=number_), 2)
+    log Dynamic(0xabcd, convert(0xdeadbeef, bytes32), "abc")
+    log Complex(b"\x12\x34\x56\x78\x90", b"\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x09\x87\x65\x43\x21\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])

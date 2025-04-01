@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.1" ], "cases": [ {
+#! { "modes": [ "V =0.4.0" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -15,32 +15,28 @@
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xf2c6b74a4e42434bf406d1452c6d967321daaad79270822b1e44a42b0aa6aa1f",
-#!                     "8923892323892398"
+#!                     "0x3db2a12a1fcfb6e2e0de8666c64b3244166edb7b25b200204a8d0cca9b65cf37"
 #!                 ],
 #!                 "values": []
 #!             },
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xd375ad4447ce145f0c0bc7b6812f104a5a7f36ed817acb678201996744d1f90f",
-#!                     "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80"
+#!                     "0xff0604e164e758d4372a33e32e8220788be26a00dfd8adebc4bf965ba88217a7"
 #!                 ],
 #!                 "values": ["0xdeadbeef"]
 #!             },
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xac1b2b27e9276508a24daed850569935a752bee82895f1eafc931385ff464472",
-#!                     "0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f"
+#!                     "0xca3f9448a573966265a425c911e248f5d76acd7ab4f9b31f3ec2440038c63561"
 #!                 ],
 #!                 "values": ["-128", "-1"]
 #!             },
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xec112c4347f79319b45baa137e38978bf34e893fffd566bb6eac424272d4bd45",
-#!                     "1"
+#!                     "0xee10da440848b216618cdc497a9ed8ffdfa08f5efc3ad1f18822f727f7ff48ce"
 #!                 ],
 #!                 "values": [
 #!                     "127",
@@ -51,8 +47,7 @@
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xb003e25404531c83a6d0bdc419158b8c07c1a5f3e81ab387366c8b7e572c1ae5",
-#!                     "0xabcd000000000000000000000000000000000000000000000000000000000000"
+#!                     "0x6a10ac5d5f69030d7fc69d2e2d9fa31c998637f1be5ca8a27b95e9f87372b7e4"
 #!                 ],
 #!                 "values": [
 #!                     "0x20",
@@ -63,8 +58,7 @@
 #!             {
 #!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
 #!                 "topics": [
-#!                     "0xcf3ebc0dada12385ab7c83ed0cbf88cb2a0fae271721947ab39af2fcc3b2df9c",
-#!                     "0x3a56b02b60d4990074262f496ac34733f870e1b7815719b46ce155beac5e1a41"
+#!                     "0x7c75ddea4da4ca5925a023b36d01f6fed2e9e4da87b02ba2a6c733f600959cd6"
 #!                 ],
 #!                 "values": [
 #!                     "-1",
@@ -98,27 +92,22 @@ struct Str:
     b: uint256
 
 event Empty:
-    a: indexed(uint256)
+    pass
 
 event OneWord:
-    _: indexed(int8)
     x: uint256
 
 event TwoWords:
-    _: indexed(Bytes[100])
-    __: Str
+    _: Str
 
 event ThreeWords:
-    ei: indexed(uint8)
     _: Str
     e: uint8
 
 event Dynamic:
-    _: indexed(bytes2)
-    __: String[100]
+    _: String[100]
 
 event Complex:
-    bd: indexed(Bytes[100])
     s: Str
     _: Bytes[100]
     __: uint256[1]
@@ -126,9 +115,9 @@ event Complex:
 
 @external
 def test(number_: uint256):
-    log Empty(a=8923892323892398)
-    log OneWord(_=-128, x=CONST)
-    log TwoWords(_=abi_encode(Str(a=1, b=1)), __=Str(a=-128, b=max_value(uint256)))
-    log ThreeWords(ei=1, _=Str(a=127, b=number_), e=2)
-    log Dynamic(_=0xabcd, __="abc")
-    log Complex(bd=b"\x12\x34\x56\x78\x90", s=Str(a=-1, b=IMMUTABLE_), _=self.storage_var, __=[0], e=[0, 2, 1])
+    log Empty()
+    log OneWord(CONST)
+    log TwoWords(Str(a=-128, b=max_value(uint256)))
+    log ThreeWords(Str(a=127, b=number_), 2)
+    log Dynamic("abc")
+    log Complex(Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])
