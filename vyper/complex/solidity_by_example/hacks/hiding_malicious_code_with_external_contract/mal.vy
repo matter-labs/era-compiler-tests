@@ -10,4 +10,4 @@ event Log:
 # not exist by using the fallback
 @external
 def _log():
-    log Log("Mal was called")
+    log Log(message="Mal was called")

@@ -5,7 +5,7 @@ event Deposit:
 
 @external
 def deposit():
-    log Deposit(10, slice(msg.data, 0, 4), 15)
+    log Deposit(fixeda=10, dynx=slice(msg.data, 0, 4), fixedb=15)
 
 # ----
 # deposit() ->

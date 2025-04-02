@@ -6,7 +6,7 @@ event E:
 
 @external
 def createEvent(x: uint256):
-    log E(S(a=x))
+    log E(s=S(a=x))
 
 # ----
 # createEvent(uint256): 42 ->

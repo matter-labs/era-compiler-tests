@@ -3,4 +3,4 @@ event Log:
 
 @external
 def _log():
-    log Log("Bar was called")
+    log Log(message="Bar was called")

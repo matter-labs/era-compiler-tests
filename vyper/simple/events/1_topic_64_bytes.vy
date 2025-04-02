@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.0" ], "cases": [ {
+#! { "modes": [ "V >=0.4.1" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -30,4 +30,4 @@ event MyEvent:
 
 @external
 def test():
-    log MyEvent(1234567890, 1234567891)
+    log MyEvent(_=1234567890, __=1234567891)

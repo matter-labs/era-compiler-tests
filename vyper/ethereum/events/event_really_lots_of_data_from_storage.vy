@@ -7,7 +7,7 @@ event Deposit:
 @external
 def deposit():
     self.x = convert("ABC", Bytes[100])
-    log Deposit(10, self.x, 15)
+    log Deposit(fixeda=10, dynx=self.x, fixedb=15)
 
 # ----
 # deposit() ->
