@@ -6,4 +6,4 @@ event Deposit:
 @external
 @payable
 def deposit(_id: bytes32):
-    log Deposit(msg.sender, _id, msg.value)
+    log Deposit(_from=msg.sender, _id=_id, _value=msg.value)

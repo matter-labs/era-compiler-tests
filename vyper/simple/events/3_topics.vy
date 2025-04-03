@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.0" ], "cases": [ {
+#! { "modes": [ "V >=0.4.1" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -139,10 +139,17 @@ event Complex:
 @external
 def test(number_: uint256):
     arr_u8: uint8[2] = [255, 0]
-    log Empty(8923892323892398, abi_encode(arr_u8))
-    log OneWord(-128, CONST, max_value(uint40))
-    log TwoWords(abi_encode(Str(a=1, b=1)), -1, Str(a=-128, b=max_value(uint256)))
+    log Empty(a=8923892323892398, _=abi_encode(arr_u8))
+    log OneWord(_=-128, x=CONST, u40ind=max_value(uint40))
+    log TwoWords(_=abi_encode(Str(a=1, b=1)), __=-1, ___=Str(a=-128, b=max_value(uint256)))
     ints: DynArray[int200, 10] = [-1, 131231231232134, 1]
-    log ThreeWords(1, slice(abi_encode(ints), 64, 96), Str(a=127, b=number_), 2)
-    log Dynamic(0xabcd, convert(0xdeadbeef, bytes32), "abc")
-    log Complex(b"\x12\x34\x56\x78\x90", b"\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x09\x87\x65\x43\x21\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", Str(a=-1, b=IMMUTABLE_), self.storage_var, [0], [0, 2, 1])
+    log ThreeWords(ei=1, dyn_arr_ind=slice(abi_encode(ints), 64, 96), _=Str(a=127, b=number_), e=2)
+    log Dynamic(_=0xabcd, __=convert(0xdeadbeef, bytes32), ___="abc")
+    log Complex(
+        bd=b"\x12\x34\x56\x78\x90",
+        _=b"\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x12\x34\x56\x78\x90\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x09\x87\x65\x43\x21\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 
+        s=Str(a=-1, b=IMMUTABLE_), 
+        __=self.storage_var, 
+        ___=[0], 
+        e=[0, 2, 1]
+    )

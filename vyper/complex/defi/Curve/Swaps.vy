@@ -244,7 +244,15 @@ def _exchange(
         if len(response) != 0:
             assert convert(response, bool)
 
-    log TokenExchange(_sender, _receiver, _pool, _from, _to, _amount, received_amount)
+    log TokenExchange(
+        buyer=_sender,
+        receiver=_receiver,
+        pool=_pool, 
+        token_sold=_from,
+        token_bought=_to,
+        amount_sold=_amount,
+        amount_bought=received_amount
+    )
 
     return received_amount
 
@@ -333,7 +341,15 @@ def _crypto_exchange(
         if len(response) != 0:
             assert convert(response, bool)
 
-    log TokenExchange(_sender, _receiver, _pool, _from, _to, _amount, received_amount)
+    log TokenExchange(
+        buyer=_sender,
+        receiver=_receiver,
+        pool=_pool,
+        token_sold=_from,
+        token_bought=_to,
+        amount_sold=_amount,
+        amount_bought=received_amount
+    )
 
     return received_amount
 

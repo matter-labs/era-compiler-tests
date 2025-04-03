@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.0" ], "cases": [ {
+#! { "modes": [ "V >=0.4.1" ], "cases": [ {
 #!     "name": "default",
 #!     "inputs": [
 #!         {
@@ -45,5 +45,5 @@ event _Indexed:
 @external
 def test(_number: uint256):
     log Trivial()
-    log Simple(_number, convert(convert(0xdeadbeef, uint256), address))
-    log _Indexed(_number, convert(convert(0xc0ffee, uint256), address))
+    log Simple(_Number=_number, Account=convert(convert(0xdeadbeef, uint256), address))
+    log _Indexed(_Number=_number, Account=convert(convert(0xc0ffee, uint256), address))

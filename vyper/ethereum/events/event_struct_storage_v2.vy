@@ -9,7 +9,7 @@ s: S
 @external
 def createEvent(x: uint256):
     self.s.a = x
-    log E(self.s)
+    log E(_=self.s)
 
 # ----
 # createEvent(uint256): 42 ->

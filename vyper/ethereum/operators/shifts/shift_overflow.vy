@@ -1,6 +1,6 @@
 @external
 def leftU(x: uint256, y: uint16) -> uint256:
-    return shift(x, convert(y, int16))
+    return x << y
 
 # ----
 # leftU(uint256,uint16): 255, 256 -> 0

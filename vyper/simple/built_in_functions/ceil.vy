@@ -26,6 +26,7 @@
 #!     ]
 #! } ] }
 
+# pragma enable-decimals
 @external
 @pure
 def main(a: int256) -> int256:

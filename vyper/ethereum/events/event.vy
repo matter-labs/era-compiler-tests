@@ -9,9 +9,9 @@ def deposit(_id: bytes32, _manually: bool):
     if _manually:
         value: uint256 = msg.value
         sender: address = msg.sender
-        log Deposit(sender, _id, value)
+        log Deposit(_from=sender, _id=_id, _value=value)
     else:
-        log Deposit(msg.sender, _id, msg.value)
+        log Deposit(_from=msg.sender, _id=_id, _value=msg.value)
 
 # ----
 # deposit(bytes32,bool), 18 wei: 0x1234, true ->

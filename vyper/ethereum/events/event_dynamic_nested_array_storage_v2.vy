@@ -11,7 +11,7 @@ def createEvent(x: uint256):
     self.arr[0][1] = x + 1
     self.arr[1][0] = x + 2
     self.arr[1][1] = x + 3
-    log E(self.arr)
+    log E(_=self.arr)
     
 # ----
 # createEvent(uint256): 42 ->
