@@ -4,12 +4,12 @@
 ;!         {
 ;!             "method": "#fallback",
 ;!             "calldata": [
-;!                "0x0000000000000000000000000000000000000000000000000000000000000000",
+;!                "0x0000000000000000000000000000000000000000000000000000000000000000"
 ;!             ]
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0x0",
+;!                "0x0"
 ;!     ]
 ;! }, {
 ;!     "name": "2",
@@ -17,12 +17,12 @@
 ;!         {
 ;!             "method": "#fallback",
 ;!             "calldata": [
-;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
 ;!             ]
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0x100",
+;!                "0x100"
 ;!     ]
 ;! }, {
 ;!     "name": "3",
@@ -30,12 +30,12 @@
 ;!         {
 ;!             "method": "#fallback",
 ;!             "calldata": [
-;!                "0xDDCCBBAA34599887611FFCA38F98E5610123456789ABCDEF0FEDCBA987654321",
+;!                "0xDDCCBBAA34599887611FFCA38F98E5610123456789ABCDEF0FEDCBA987654321"
 ;!             ]
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0x84",
+;!                "0x84"
 ;!     ]
 ;! } ] }
 

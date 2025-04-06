@@ -4,12 +4,12 @@
 ;!         {
 ;!             "method": "#fallback",
 ;!             "calldata": [
-;!                "0x0000000000000000000000000000000000000000000000000000000000000000",
+;!                "0x0000000000000000000000000000000000000000000000000000000000000000"
 ;!             ]
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0x0000000000000000000000000000000000000000000000000000000000000000",
+;!                "0x0000000000000000000000000000000000000000000000000000000000000000"
 ;!     ]
 ;! }, {
 ;!     "name": "2",
@@ -17,12 +17,12 @@
 ;!         {
 ;!             "method": "#fallback",
 ;!             "calldata": [
-;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
 ;!             ]
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+;!                "0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
 ;!     ]
 ;! }, {
 ;!     "name": "3",
@@ -30,12 +30,12 @@
 ;!         {
 ;!             "method": "#fallback",
 ;!             "calldata": [
-;!                "0x00000000000000000000000000000000770F0E0D0C0B0A090807060504030201",
+;!                "0x00000000000000000000000000000000770F0E0D0C0B0A090807060504030201"
 ;!             ]
 ;!         }
 ;!     ],
 ;!     "expected": [
-;!                "0x0102030405060708090A0B0C0D0E0F7700000000000000000000000000000000",
+;!                "0x0102030405060708090A0B0C0D0E0F7700000000000000000000000000000000"
 ;!     ]
 ;! } ] }
 
