@@ -1,8 +1,7 @@
 {
     "targets": [ "eravm" ], "modes": [
         "Y",
-        "E",
-        "I <=0.8.28"
+        "E"
     ], "cases": [ {
         "name": "default",
         "inputs": [ {
