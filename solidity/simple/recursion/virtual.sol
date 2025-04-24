@@ -52,7 +52,3 @@ contract P0 is P1 {
   }
 }
 contract Test is P0 {}
-
-// ----
-// f(uint256): 1 -> 10
-// g(uint256): 1 -> 12

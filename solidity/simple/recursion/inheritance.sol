@@ -24,6 +24,3 @@ contract P0 {
   }
 }
 contract Test is P0 {}
-
-// ----
-// f(uint256): 1 -> 10
