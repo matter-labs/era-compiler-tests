@@ -3308,7 +3308,7 @@ entries:
             enabled: true
             version: '>=0.8.29'
           calling_nonexisting_contract.sol:
-            hash: '0x85fe219a9dbd2b7f1caa4187100f5e14'
+            hash: '0x4ec8d16d533bdeb6a37fcdce6acb2354'
             enabled: true
             version: '>=0.8.29'
           external_call_at_construction_time.sol:
@@ -5615,8 +5615,8 @@ entries:
       prediction_example.sol:
         hash: '0x15fda7431fe44ecefd638dca639fe78c'
         enabled: false
+        comment: Different address derivation algorithm
         version: '>=0.7.0'
-        comment: 'Different address derivation algorithm'
       salted_create.sol:
         hash: '0xbc8575bc6c54d63c4a988f7be7e1ef9b'
         enabled: true
