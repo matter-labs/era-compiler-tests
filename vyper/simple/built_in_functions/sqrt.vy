@@ -27,8 +27,9 @@
 #! } ] }
 
 # pragma enable-decimals
+import math
 
 @external
 @pure
 def main(a: int256) -> int256:
-    return floor(sqrt(convert(a, decimal))*100000.0)
+    return floor(math.sqrt(convert(a, decimal))*100000.0)
