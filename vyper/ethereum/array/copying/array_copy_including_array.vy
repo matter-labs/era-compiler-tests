@@ -8,10 +8,10 @@ def test() -> uint256:
     self.small[3][2][0] = 2
     self.small[1] = self.small[2]
     r: uint256 = (
-        self.small[3][2][0] * convert(0x0100, uint256) |
-        self.small[1][2][0]) * convert(0x0100, uint256) | (
-        self.large[3][2][0] * convert(0x0100, uint256) |
-        self.large[1][2][0])
+        (
+            self.small[3][2][0] * convert(0x0100, uint256) | self.small[1][2][0]
+            ) * convert(0x0100, uint256) | self.large[3][2][0]
+            ) * convert(0x0100, uint256) | self.large[1][2][0]
     self.small = empty(uint256[3][3][7])
     self.large = empty(uint256[3][90][7])
     return r
