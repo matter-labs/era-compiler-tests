@@ -1,4 +1,4 @@
-#! { "modes": [ "V >=0.4.2" ], "cases": [ {
+#! { "modes": [ "V 0.4.0", "V 0.4.1" ], "cases": [ {
 #!     "name": "first",
 #!     "inputs": [
 #!         {
@@ -27,9 +27,8 @@
 #! } ] }
 
 # pragma enable-decimals
-import math
 
 @external
 @pure
 def main(a: int256) -> int256:
-    return floor(math.sqrt(convert(a, decimal))*100000.0)
+    return floor(sqrt(convert(a, decimal))*100000.0)
