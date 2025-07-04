@@ -1090,8 +1090,12 @@ entries:
   expressions:
     enabled: true
     entries:
-      bit_operators.vy:
+      bit_operators-0.4.vy:
         enabled: true
+        version: "<=0.4.1"
+      bit_operators-0.4.vy:
+        enabled: true
+        version: ">=0.4.2"
       exp_operator_const.vy:
         enabled: true
       exp_operator_const_signed.vy:
