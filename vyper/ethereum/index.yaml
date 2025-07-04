@@ -1946,7 +1946,7 @@ entries:
         enabled: true
       packing_signed_types.vy:
         enabled: true
-      packing_unpacking_types-0-4.vy:
+      packing_unpacking_types-0.4.vy:
         enabled: true
         version: "<=0.4.1"
       packing_unpacking_types.vy:
