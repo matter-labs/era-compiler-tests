@@ -4,8 +4,8 @@ def run(a: bool, b: uint32, c: uint64) -> uint256:
     if a:
         y = 1
 
-    y = (y * convert(0x0100000000, uint256)) | (convert(b, uint256) & (2**32 - 1))
-    y = (y * convert(0x010000000000000000, uint256)) | (convert(c, uint256) & (2**64 - 1))
+    y = (y * convert(0x0100000000, uint256)) | ((~convert(b, uint256)) & (2**32-1))
+    y = (y * convert(0x010000000000000000, uint256)) | ((~convert(c, uint256)) & (2**64-1))
     return y
 
 # ----
