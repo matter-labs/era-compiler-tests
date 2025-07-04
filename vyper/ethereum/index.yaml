@@ -1093,7 +1093,7 @@ entries:
       bit_operators-0.4.vy:
         enabled: true
         version: "<=0.4.1"
-      bit_operators-0.4.vy:
+      bit_operators.vy:
         enabled: true
         version: ">=0.4.2"
       exp_operator_const.vy:
@@ -2004,8 +2004,12 @@ entries:
         version: ">=0.4.0"
       inline_tuple_with_rational_numbers.vy:
         enabled: true
+      iszero_bnot_correct-0.4.vy:
+        enabled: true
+        version: "<=0.4.1"
       iszero_bnot_correct.vy:
         enabled: true
+        version: ">=0.4.2"
       literal_empty_string-0.3.vy:
         enabled: true
         version: "<=0.3.10"
