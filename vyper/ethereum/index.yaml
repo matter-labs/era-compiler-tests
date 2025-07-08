@@ -807,7 +807,7 @@ entries:
         enabled: true
       sha256_empty.vy:
         enabled: true
-  byte_array_to_storage_cleanup-0.4.vy:
+  byte_array_to_storage_cleanup-pre-0.4.1.vy:
     enabled: true
     comment: "Without function g(with memory access from assembly)"
     version: "<=0.4.0"
@@ -983,7 +983,7 @@ entries:
   events:
     enabled: true
     entries:
-      event-0.4.vy:
+      event-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event.vy:
@@ -998,7 +998,7 @@ entries:
       event_constructor.vy:
         enabled: true
         version: ">=0.4.1"
-      event_dynamic_array_memory-0.4.vy:
+      event_dynamic_array_memory-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_dynamic_array_memory.vy:
@@ -1013,25 +1013,25 @@ entries:
       event_dynamic_array_storage.vy:
         enabled: true
         version: ">=0.4.1"
-      event_dynamic_nested_array_memory_v2-0.4.vy:
+      event_dynamic_nested_array_memory_v2-pre-0.4.1.vy:
         enabled: true
         version: ">=0.3.9, <0.4.1"
       event_dynamic_nested_array_memory_v2.vy:
         enabled: true
         version: ">=0.4.1"
-      event_dynamic_nested_array_storage_v2-0.4.vy:
+      event_dynamic_nested_array_storage_v2-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_dynamic_nested_array_storage_v2.vy:
         enabled: true
         version: ">=0.4.1"
-      event_emit-0.4.vy:
+      event_emit-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_emit.vy:
         enabled: true
         version: ">=0.4.1"
-      event_indexed_mixed-0.4.vy:
+      event_indexed_mixed-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_indexed_mixed.vy:
@@ -1040,7 +1040,7 @@ entries:
       event_indexed_string.vy:
         enabled: false
         comment: "Disabled because event indexes may only be value types"
-      event_lots_of_data-0.4.vy:
+      event_lots_of_data-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_lots_of_data.vy:
@@ -1048,25 +1048,25 @@ entries:
         version: ">=0.4.1"
       event_no_arguments.vy:
         enabled: true
-      event_really_lots_of_data-0.4.vy:
+      event_really_lots_of_data-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_really_lots_of_data.vy:
         enabled: true
         version: ">=0.4.1"
-      event_really_lots_of_data_from_storage-0.4.vy:
+      event_really_lots_of_data_from_storage-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_really_lots_of_data_from_storage.vy:
         enabled: true
         version: ">=0.4.1"
-      event_really_really_lots_of_data_from_storage-0.4.vy:
+      event_really_really_lots_of_data_from_storage-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_really_really_lots_of_data_from_storage.vy:
         enabled: true
         version: ">=0.4.1"
-      event_string-0.4.vy:
+      event_string-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_string.vy:
@@ -1081,7 +1081,7 @@ entries:
       event_struct_memory_v2.vy:
         enabled: true
         version: ">=0.4.1"
-      event_struct_storage_v2-0.4.vy:
+      event_struct_storage_v2-pre-0.4.1.vy:
         enabled: true
         version: "<=0.4.0"
       event_struct_storage_v2.vy:
@@ -1090,7 +1090,7 @@ entries:
   expressions:
     enabled: true
     entries:
-      bit_operators-0.4.vy:
+      bit_operators-pre-0.4.2.vy:
         enabled: true
         version: "<=0.4.1"
       bit_operators.vy:
@@ -1106,7 +1106,7 @@ entries:
         enabled: true
         comment: "ValueError: math domain error"
         version: "<=0.3.10"
-      unary_too_long_literal-0.4.vy:
+      unary_too_long_literal-pre-0.4.2.vy:
         enabled: true
         version: "<=0.4.1"
       unary_too_long_literal.vy:
@@ -1338,7 +1338,7 @@ entries:
   interfaceID:
     enabled: true
     entries:
-      homer-0.4.vy:
+      homer-pre-0.4.2.vy:
         enabled: true
         version: "<=0.4.1"
       homer.vy:
@@ -1946,7 +1946,7 @@ entries:
         enabled: true
       packing_signed_types.vy:
         enabled: true
-      packing_unpacking_types-0.4.vy:
+      packing_unpacking_types-pre-0.4.2.vy:
         enabled: true
         version: "<=0.4.1"
       packing_unpacking_types.vy:
@@ -2008,7 +2008,7 @@ entries:
         version: ">=0.4.0"
       inline_tuple_with_rational_numbers.vy:
         enabled: true
-      iszero_bnot_correct-0.4.vy:
+      iszero_bnot_correct-pre-0.4.2.vy:
         enabled: true
         version: "<=0.4.1"
       iszero_bnot_correct.vy:
@@ -2291,7 +2291,7 @@ entries:
       tuple_evaluation_order.vy:
         enabled: false
         comment: "Disabled because different order of fields is not allowed"
-      unary_operations-0.4.vy:
+      unary_operations-pre-0.4.2.vy:
         enabled: true
         version: "<=0.4.1"
       unary_operations.vy:
