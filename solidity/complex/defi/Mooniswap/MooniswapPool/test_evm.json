@@ -1,4 +1,4 @@
-{ "modes": [
+{ "targets": [ "evm" ], "modes": [
     "Y >=0.8.9",
     "E", "I"
 ], "cases": [ {

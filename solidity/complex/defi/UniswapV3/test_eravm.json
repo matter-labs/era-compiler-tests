@@ -1,4 +1,4 @@
-{ "targets": [ "eravm" ], "modes": [ "E+", "I", "Y" ],
+{ "targets": [ "eravm" ], "modes": [ "E +M3B*", "I +M3B*", "Y +M3B*" ],
 "comment": "E- solc error: too deep into the stack",
 "cases": [ {
     "name": "default",

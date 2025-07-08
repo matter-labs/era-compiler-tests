@@ -1,6 +1,10 @@
 { "targets": [ "eravm" ], "modes": [
-    "Y >=0.8.9",
-    "E", "I"
+    "Y +M3B* >=0.8.9",
+    "Y +MzB* >=0.8.9",
+    "E +M3B*",
+    "E +MzB*",
+    "I +M3B*",
+    "I +MzB*"
 ], "cases": [ {
     "name": "default",
     "inputs": [
