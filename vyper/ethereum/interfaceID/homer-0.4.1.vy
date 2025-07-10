@@ -18,10 +18,7 @@ implements: Simpson
 @external
 @view
 def supportsInterface(interfaceID: bytes4) -> bool:
-    return interfaceID == convert(method_id("supportsInterface(bytes4)"), bytes4) or (
-        interfaceID == convert(slice(
-            convert(convert(method_id("is2D()"), uint256) ^ convert(method_id("skinColor()"), uint256), bytes32), 28, 4
-            ), bytes4)) # ERC165 Simpson
+    return interfaceID == convert(method_id("supportsInterface(bytes4)"), bytes4) or interfaceID == convert(slice(convert(bitwise_xor(convert(method_id("is2D()"), uint256), convert(method_id("skinColor()"), uint256)), bytes32), 28, 4), bytes4) # ERC165 Simpson
         
 @external
 def is2D() -> bool:

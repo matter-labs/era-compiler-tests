@@ -6,7 +6,7 @@ def not_(a: bool) -> bool:
 @external
 @pure
 def bitnot(a: uint256) -> uint256:
-    return ~a
+    return bitwise_not(a)
 
 @external
 @pure
