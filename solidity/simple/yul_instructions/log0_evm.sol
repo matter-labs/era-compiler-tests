@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "evm" ], "cases": [ {
 //!     "name": "zero_zero",
 //!     "inputs": [
 //!         {
@@ -1563,8 +1563,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "big_ordinar_one",
@@ -1759,8 +1766,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "2_in_32_minus_32_one",
@@ -1955,8 +1969,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "2_in_32_minus_31_one",
@@ -2151,8 +2172,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "2_in_32_minus_ordinar_one",
@@ -2347,8 +2375,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "2_in_32_minus_one_one",
@@ -2543,8 +2578,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "2_in_32_one",
@@ -2739,8 +2781,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "ordinar_bigger_2_in_32_one",
@@ -2935,8 +2984,15 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
+//!         "exception": false,
+//!         "return_data": [],
+//!         "events": [
+//!             {
+//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "topics": [],
+//!                 "values": []
+//!             }
+//!         ]
 //!     }
 //! }, {
 //!     "name": "max_one",

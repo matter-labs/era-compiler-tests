@@ -1,4 +1,4 @@
-//! { "cases": [ {
+//! { "targets": [ "evm" ], "cases": [ {
 //!     "name": "zero_zero",
 //!     "inputs": [
 //!         {
@@ -1148,10 +1148,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "big_ordinar_one",
 //!     "inputs": [
@@ -1344,10 +1343,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "2_in_32_minus_32_one",
 //!     "inputs": [
@@ -1540,10 +1538,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "2_in_32_minus_31_one",
 //!     "inputs": [
@@ -1736,10 +1733,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "2_in_32_minus_ordinar_one",
 //!     "inputs": [
@@ -1932,10 +1928,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "2_in_32_minus_one_one",
 //!     "inputs": [
@@ -2128,10 +2123,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "2_in_32_one",
 //!     "inputs": [
@@ -2324,10 +2318,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "ordinar_bigger_2_in_32_one",
 //!     "inputs": [
@@ -2520,10 +2513,9 @@
 //!             ]
 //!         }
 //!     ],
-//!     "expected": {
-//!         "exception": true,
-//!         "return_data": []
-//!     }
+//!     "expected": [
+//!         "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+//!     ]
 //! }, {
 //!     "name": "max_one",
 //!     "inputs": [
