@@ -1563,7 +1563,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -1766,7 +1766,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -1969,7 +1969,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -2172,7 +2172,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -2375,7 +2375,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -2578,7 +2578,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -2781,7 +2781,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
@@ -2984,7 +2984,7 @@
 //!         }
 //!     ],
 //!     "expected": {
-//!         "exception": true,
+//!         "exception": false,
 //!         "return_data": [],
 //!         "events": [
 //!             {
