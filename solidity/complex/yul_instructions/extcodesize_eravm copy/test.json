@@ -1,5 +1,5 @@
 {
-    "cases": [
+    "targets": [ "evm" ], "cases": [
       {
         "name": "default",
         "inputs": [
@@ -51,7 +51,7 @@
               "0x8006"
             ],
             "expected": [
-              "1"
+              "0"
             ]
           },
           {
