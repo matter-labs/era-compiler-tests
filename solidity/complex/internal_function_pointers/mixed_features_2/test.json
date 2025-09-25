@@ -26,6 +26,7 @@
         },
         {
             "method": "updateStruct",
+            "caller": "$TX_ORIGIN",
             "calldata": [
                 "1",
                 "0x60",
@@ -36,21 +37,25 @@
         },
         {
             "method": "recursiveFunction",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "3" ],
             "expected": [ "6" ]
         },
         {
             "method": "viewFunction",
+            "caller": "$TX_ORIGIN",
             "calldata": [],
             "expected": [ "2" ]
         },
         {
             "method": "pureFunction",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "2" ],
             "expected": [ "4" ]
         },
         {
             "method": "testExternalCall",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "OtherContract.address", "2" ]
         }
     ],
