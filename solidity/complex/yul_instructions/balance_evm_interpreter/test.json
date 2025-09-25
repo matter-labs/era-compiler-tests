@@ -1,5 +1,5 @@
 {
-    "targets": [ "evm" ], "cases": [
+    "environments": [ "EVMInterpreter" ], "cases": [
       {
         "name": "default",
         "inputs": [
@@ -17,7 +17,7 @@
             ]
           },
           {
-            "comment": "EraVM system-contract address (3 index)",
+            "comment": "system-contract address (3 index)",
             "instance": "Main",
             "method": "main",
             "value": "100 wei",
@@ -25,12 +25,12 @@
               "0x8006"
             ],
             "expected": [
-              "1",
-              "100"
+              "0",
+              "0"
             ]
           },
           {
-            "comment": "EraVM system address (4 index)",
+            "comment": "system address (4 index)",
             "instance": "Main",
             "method": "main",
             "value": "232243433443 wei",
@@ -38,8 +38,8 @@
               "0xe63a"
             ],
             "expected": [
-              "1",
-              "232243433443"
+              "0",
+              "0"
             ]
           },
           {
@@ -52,7 +52,7 @@
             ],
             "expected": [
               "1",
-              "322"
+              "232243433865"
             ]
           },
           {
@@ -102,7 +102,7 @@
               "Main.address"
             ],
             "expected": [
-              "322"
+              "232243433865"
             ]
           },
           {
