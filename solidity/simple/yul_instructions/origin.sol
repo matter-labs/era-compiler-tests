@@ -2,6 +2,7 @@
 //!     "name": "default",
 //!     "inputs": [
 //!         {
+//!             "caller": "$TX_ORIGIN",
 //!             "method": "main",
 //!             "calldata": [
 //!             ]

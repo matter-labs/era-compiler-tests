@@ -4,6 +4,7 @@
         {
             "instance": "Test",
             "method": "addBalance",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "2" ],
             "expected": {
                 "return_data": [],
