@@ -1567,7 +1567,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -1770,7 +1770,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -1973,7 +1973,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -2176,7 +2176,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -2379,7 +2379,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -2582,7 +2582,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -2785,7 +2785,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }
@@ -2988,7 +2988,7 @@
 //!         "return_data": [],
 //!         "events": [
 //!             {
-//!                 "address": "0x9f1ebbf13029eaa4d453a2eb221f322404be895b",
+//!                 "address": "Test.address",
 //!                 "topics": [],
 //!                 "values": []
 //!             }

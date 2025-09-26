@@ -4,6 +4,7 @@
         {
             "instance": "Test",
             "method": "addBalance",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "2" ],
             "expected": {
                 "return_data": [],
@@ -13,7 +14,7 @@
                         "topics": [
                             "0x1290dc236e3724a1c8a8ee69ac741fbba372218691007a3f896ddf8408d57604",
                             "0x0000000000000000000000000000000000000000000000000000000000000000",
-                            "0x000000000000000000000000deadbeef01000000000000000000000000000000"
+                            "$TX_ORIGIN"
                         ],
                         "values": [
                             "0x0000000000000000000000000000000000000000000000000000000000000002"    
@@ -25,6 +26,7 @@
         },
         {
             "method": "updateStruct",
+            "caller": "$TX_ORIGIN",
             "calldata": [
                 "1",
                 "0x60",
@@ -35,21 +37,25 @@
         },
         {
             "method": "recursiveFunction",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "3" ],
             "expected": [ "6" ]
         },
         {
             "method": "viewFunction",
+            "caller": "$TX_ORIGIN",
             "calldata": [],
             "expected": [ "2" ]
         },
         {
             "method": "pureFunction",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "2" ],
             "expected": [ "4" ]
         },
         {
             "method": "testExternalCall",
+            "caller": "$TX_ORIGIN",
             "calldata": [ "OtherContract.address", "2" ]
         }
     ],

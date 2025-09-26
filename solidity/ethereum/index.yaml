@@ -1691,11 +1691,11 @@ entries:
       blobhash.sol:
         hash: '0xf6fa41b075941c5a4b2cbe820e7c650e'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       blobhash_shadow_resolution.sol:
         hash: '0x3dd723338ff481ce106cc1b38f5419cb'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       blockhash.sol:
         hash: '0x210dd8fc9ccad8334356984cddd0d979'
         enabled: true
@@ -3945,19 +3945,19 @@ entries:
       blobbasefee_shanghai_function.sol:
         hash: '0xeaa4b88398928b94456773826e23c031'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       blobhash.sol:
         hash: '0xd422d239d63fd5e374dfd5595f0db8cd'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       blobhash_index_exceeding_blob_count.sol:
         hash: '0xd0a06a9e49fdce3754656a8940263fd4'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       blobhash_pre_cancun.sol:
         hash: '0x31cd2ea4de09c13c19b9dab1ed1cb1a3'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       calldata_array_assign_dynamic.sol:
         hash: '0x1938c85c9cf5dbc6224ecb1b256d1487'
         enabled: true
@@ -4013,8 +4013,8 @@ entries:
         version: '>=0.6.7'
       difficulty.sol:
         hash: '0xf5ef282ea9e1d12e807e55359cd3a9c8'
-        enabled: true
-        comment: Expected updated
+        enabled: false
+        comment: 'difficulty is deprecated'
         version: '>=0.4.16, <=0.8.17'
       external_function_pointer_address.sol:
         hash: '0x0fb62f43c10ef8bf2a431432b884a054'
@@ -5717,7 +5717,7 @@ entries:
       blobhash.sol:
         hash: '0x9191a5da95ed7566cf07e19350809c50'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       block_basefee.sol:
         hash: '0xf736063ee012830ff7dd0f1530524b3f'
         enabled: true
@@ -5725,7 +5725,7 @@ entries:
       block_blobbasefee.sol:
         hash: '0x015033380595f341ec5491fea80f01c2'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       block_chainid.sol:
         hash: '0x0725e081e08576b420ded517d4462e7d'
         enabled: true
@@ -5734,27 +5734,23 @@ entries:
       block_coinbase.sol:
         hash: '0xec3e371e1975b4c1c2fcdcffc5eb01e8'
         enabled: true
-        comment: Expected updated
         version: '>=0.5.0'
       block_difficulty.sol:
         hash: '0x58b235ea108b6fb65447dac818824654'
-        enabled: true
-        comment: Expected updated
+        enabled: false
+        comment: 'difficulty is deprecated'
         version: '>=0.4.12'
       block_difficulty_post_paris.sol:
         hash: '0xaf0b815498b81d9709b312a43f61514d'
         enabled: true
-        comment: Expected updated
         version: '>=0.4.12'
       block_gaslimit.sol:
         hash: '0xf81733077b31ae2014e1bff37fb34819'
         enabled: true
-        comment: Expected updated
         version: '>=0.4.12'
       block_number.sol:
         hash: '0x7677b3a84125613671c76ca392845b30'
         enabled: true
-        comment: Expected updated
         modes:
         - '0.4'
         - '0.7'
@@ -5763,17 +5759,15 @@ entries:
       block_prevrandao.sol:
         hash: '0x0c0fefa7e5f1c572cdb0fa190b71b944'
         enabled: true
-        comment: Expected updated
         version: '>=0.8.18'
       block_prevrandao_pre_paris.sol:
         hash: '0x4f1de4a5bf963ccead4e49f5c388a676'
-        enabled: true
-        comment: Expected updated
+        enabled: false
+        comment: 'Not used in production anymore'
         version: '>=0.8.18'
       block_timestamp.sol:
         hash: '0xe33341d130db3aae593b9f66b8acdaab'
         enabled: true
-        comment: Expected updated
         modes:
         - '0.4'
         - '0.7'
@@ -5819,11 +5813,10 @@ entries:
       uncalled_blobhash.sol:
         hash: '0xd85c3cb014d5d113f9abd476f6eeb0b8'
         enabled: false
-        comment: 'TODO: zkVM v1.5.0'
+        comment: 'TODO: unsupported'
       uncalled_blockhash.sol:
         hash: '0xef0fdfaaa5e036a79f407c790c3f6468'
         enabled: true
-        comment: Expected updated
         version: '>=0.4.22'
   statements:
     enabled: true

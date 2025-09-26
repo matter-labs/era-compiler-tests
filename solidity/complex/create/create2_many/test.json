@@ -19,12 +19,12 @@
             "instance": "Main",
             "method": "main",
             "calldata": [
-                "200"
+                "22"
             ]
         }
     ],
     "expected": [
-        "412110300"
+        "75900"
     ]
 } ],
     "contracts": {

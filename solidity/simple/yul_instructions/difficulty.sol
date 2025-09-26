@@ -8,7 +8,7 @@
 //!         }
 //!     ],
 //!     "expected": [
-//!         "$DIFFICULTY"
+//!         "$PREVRANDAO"
 //!     ]
 //! } ] }
 
