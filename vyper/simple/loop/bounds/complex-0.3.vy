@@ -4,7 +4,7 @@
 #!         {
 #!             "method": "#deployer",
 #!             "calldata": [
-#!                 "0xdeadbeef01000000000000000000000000000000"
+#!                 "0xdeadbeef00000000000000000000000000000001"
 #!             ],
 #!             "expected": [
 #!                 "Test.address"
@@ -54,7 +54,7 @@
 #!         },
 #!         {
 #!             "method": "claim_fees",
-#!             "caller": "0xdeadbeef01000000000000000000000000000000",
+#!             "caller": "0xdeadbeef00000000000000000000000000000001",
 #!             "calldata": [
 #!                 "0"
 #!             ],
