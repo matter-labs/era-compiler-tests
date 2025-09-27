@@ -1,4 +1,4 @@
-# @version 0.3.10
+# @version ^0.4.0
 """
 @title Optimism Relayer
 @author CurveFi

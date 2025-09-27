@@ -13,7 +13,7 @@
 #!         ],
 #!         "events": [
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x5657a2ad92d6fdc766bbd2f2492fb87a89219bb1153e5f552d2466e46601ff05",
 #!                     "8923892323892398",
@@ -23,7 +23,7 @@
 #!                 "values": []
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xc339da287b2960b087500945943138570dd5cdc69d4aed877a0ff71f324e1286",
 #!                     "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80",
@@ -33,7 +33,7 @@
 #!                 "values": ["0xdeadbeef"]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x8c087ab10d7f59d23599ebb606cae6ed06ba6c557ca99b60817c7e2a72cc85bf",
 #!                     "0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f",
@@ -43,7 +43,7 @@
 #!                 "values": ["-128", "-1"]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x4ba39e3c9aac72a44241ab884ff82865a2909d21baf5fee87cc271871cd383fe",
 #!                     "1",
@@ -57,7 +57,7 @@
 #!                 ]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x5c94fa66620115e82ceeb70115b05cfecd92a0b72e4bf8a52cf4bc7709601933",
 #!                     "0xabcd000000000000000000000000000000000000000000000000000000000000",
@@ -71,7 +71,7 @@
 #!                 ]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x17fa1d8aafbe9422bb621ea80a3ac41a212f1dbcc4862a5c4158f67176307818",
 #!                     "0x3a56b02b60d4990074262f496ac34733f870e1b7815719b46ce155beac5e1a41",

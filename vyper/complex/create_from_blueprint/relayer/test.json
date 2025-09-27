@@ -16,7 +16,7 @@
             "method": "ownership",
             "calldata": [],
             "expected": [
-                "0x6dde28122f248191ddb19f38fd0068c23283b7c4"
+                "0x7aae22edddc5a5b46972cc1216bc66f60bb8d19e"
             ]
         },
         {
@@ -24,7 +24,7 @@
             "method": "parameter",
             "calldata": [],
             "expected": [
-                "0xeb9d0ba7636e1d27490003dfa0ae71c84f2cd9aa"
+                "0x574788f3aa779d0045d2e82993c5c2652e19d08d"
             ]
         },
         {
@@ -32,12 +32,12 @@
             "method": "emergency",
             "calldata": [],
             "expected": [
-                "0x9d29cc19d301a05ea4bd8b869bbe258275ee2930"
+                "0x47d21b82ea2bfbd2c25fabb5f23a73e1e31f8f8b"
             ]
         }
     ],
     "expected": [
-        "0x9d29cc19d301a05ea4bd8b869bbe258275ee2930"
+        "0x47d21b82ea2bfbd2c25fabb5f23a73e1e31f8f8b"
     ]
 } ],
     "contracts": {

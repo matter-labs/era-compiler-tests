@@ -13,28 +13,28 @@
 #!         ],
 #!         "events": [
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x3db2a12a1fcfb6e2e0de8666c64b3244166edb7b25b200204a8d0cca9b65cf37"
 #!                 ],
 #!                 "values": []
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xff0604e164e758d4372a33e32e8220788be26a00dfd8adebc4bf965ba88217a7"
 #!                 ],
 #!                 "values": ["0xdeadbeef"]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xca3f9448a573966265a425c911e248f5d76acd7ab4f9b31f3ec2440038c63561"
 #!                 ],
 #!                 "values": ["-128", "-1"]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xee10da440848b216618cdc497a9ed8ffdfa08f5efc3ad1f18822f727f7ff48ce"
 #!                 ],
@@ -45,7 +45,7 @@
 #!                 ]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x6a10ac5d5f69030d7fc69d2e2d9fa31c998637f1be5ca8a27b95e9f87372b7e4"
 #!                 ],
@@ -56,7 +56,7 @@
 #!                 ]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x7c75ddea4da4ca5925a023b36d01f6fed2e9e4da87b02ba2a6c733f600959cd6"
 #!                 ],

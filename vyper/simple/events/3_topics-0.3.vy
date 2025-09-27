@@ -13,7 +13,7 @@
 #!         ],
 #!         "events": [
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x0c5b4f36f8745c9db21282c9894b75174f0a8eedb32b243986263bfc37423006",
 #!                     "8923892323892398",
@@ -22,7 +22,7 @@
 #!                 "values": []
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xbe85b4ebd8e836631317dea26b2fecda32ab2ca5905447e4af0679ed1ee740c1",
 #!                     "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80",
@@ -31,7 +31,7 @@
 #!                 "values": ["0xdeadbeef"]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xc99cd386e37ac9867d36011c2a04b8781b453eaba2b930457cefe962680e7356",
 #!                     "0xcc69885fda6bcc1a4ace058b4a62bf5e179ea78fd58a1ccd71c22cc9b688792f",
@@ -40,7 +40,7 @@
 #!                 "values": ["-128", "-1"]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xe2bb4728120d1154c04e4dc7219c8d627cb8234b817f23f34de5468b6f0a8455",
 #!                     "1",
@@ -53,7 +53,7 @@
 #!                 ]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0xf20f5ffcb271503e510c980b74d44f6628d621d291d150a564d6e1e261862374",
 #!                     "0xabcd000000000000000000000000000000000000000000000000000000000000",
@@ -66,7 +66,7 @@
 #!                 ]
 #!             },
 #!             {
-#!                 "address": "0xe594ae1d7205e8e92fb22c59d040c31e1fcd139d",
+#!                 "address": "Test.address",
 #!                 "topics": [
 #!                     "0x5b03996195c2a3d6c7f367a1aa8a3de816ca971102b6d28044fe4074186ea7d1",
 #!                     "0x3a56b02b60d4990074262f496ac34733f870e1b7815719b46ce155beac5e1a41",
